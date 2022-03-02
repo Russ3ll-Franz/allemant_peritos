@@ -3,6 +3,7 @@ import 'package:allemant_peritos/core/http/api_response.dart';
 import 'package:allemant_peritos/core/http/http_exceptions.dart';
 import 'package:allemant_peritos/core/http/http_methods.dart';
 import 'package:allemant_peritos/domain/models/user/user.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class UserRepository {
   final HttpMethodsType _helper = HttpMethodsType();
@@ -31,6 +32,36 @@ class UserRepository {
     }
   }
 
+  Future<void> remove() async {
+    try {
+      const storage = FlutterSecureStorage();
+      await storage.delete(key: 'id');
+    } on Exception catch (e) {}
+  }
+
+  Future<void> saveIdUser(String idUser) async {
+    const storage = FlutterSecureStorage();
+    try {
+      await storage.write(key: 'id', value: idUser);
+    } on Exception catch (e) {}
+  }
+
+  storageUserId() async {
+    String? idValue;
+    const storage = FlutterSecureStorage();
+    idValue = await storage.read(key: 'id');
+    try {
+      if (idValue != null) {
+        print(idValue);
+        return idValue;
+      }
+    } catch (e) {
+      rethrow;
+    }
+    return idValue;
+  }
+}
+
   /* Future<User> getUser() async {
     if (_user != null) return _user;
     return Future.delayed(
@@ -38,4 +69,4 @@ class UserRepository {
       () => _user = User(id: "100", fullName: "Carlos"),
     );
   } */
-}
+

@@ -13,13 +13,16 @@ part 'authentication_state.dart';
 part 'authentication_event.dart';
 part 'authentication_bloc.freezed.dart';
 
-class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
+class AuthenticationBloc
+    extends Bloc<AuthenticationEvent, AuthenticationState> {
   AuthenticationBloc({
     required AuthenticationRepository authenticationRepository,
     required UserRepository userRepository,
   })  : _authenticationRepository = authenticationRepository,
         _userRepository = userRepository,
         super(const AuthenticationState.unknown()) {
+    final valor = userRepository.storageUserId().toString();
+    print(valor);
     on<AuthenticationStatusChanged>(_onAuthenticationStatusChanged);
     on<AuthenticationLogoutRequested>(_onAuthenticationLogoutRequested);
     _authenticationStatusSubscription = _authenticationRepository.status.listen(
@@ -29,7 +32,8 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
 
   final AuthenticationRepository _authenticationRepository;
   final UserRepository _userRepository;
-  late StreamSubscription<AuthenticationStatus> _authenticationStatusSubscription;
+  late StreamSubscription<AuthenticationStatus>
+      _authenticationStatusSubscription;
 
   @override
   Future<void> close() {
@@ -54,7 +58,9 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         final user = await _tryGetUser(userID.toString());
         print("MyUser");
         print(user);
-        return emit(user != null ? AuthenticationState.authenticated(user: user) : const AuthenticationState.unauthenticated());
+        return emit(user != null
+            ? AuthenticationState.authenticated(user: user)
+            : const AuthenticationState.unauthenticated());
       default:
         return emit(const AuthenticationState.unknown());
     }

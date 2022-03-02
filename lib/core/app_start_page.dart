@@ -14,7 +14,7 @@ class AppStartPage extends StatelessWidget {
     return Scaffold(
         body: BlocListener<AuthenticationBloc, AuthenticationState>(
             listener: (context, state) {
-              state.when((status, user) => null,
+              state.when((status) => 'Data $Data',
                   loading: (loading) {
                     const snackBar = SnackBar(
                       backgroundColor: Colors.black,
@@ -22,8 +22,10 @@ class AppStartPage extends StatelessWidget {
                     );
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   },
-                  authenticated: (authenticated) => context.router.push(const HomeRoute()),
-                  unauthenticated: (unauthenticated) => context.router.push(const SignInRoute()),
+                  authenticated: (authenticated) =>
+                      context.router.push(const HomeRoute()),
+                  unauthenticated: (unauthenticated) =>
+                      context.router.push(const SignInRoute()),
                   unknown: (unknown) {
                     const snackBar = SnackBar(
                       backgroundColor: Colors.black,
@@ -31,14 +33,7 @@ class AppStartPage extends StatelessWidget {
                     );
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   },
-                  error: (error, user) => 'Error: $error, $user');
-              /*  if (state is Loading) {
-                const CircularProgressIndicator();
-              } else if (state is Authenticated) {
-                context.router.push(const HomeRoute());
-              } else if (state is Unauthenticated) {
-                context.router.push(const SignInRoute());
-              } else {} */
+                  error: (error) => 'Error: $error');
             },
             child: const CircularProgressIndicator()));
   }

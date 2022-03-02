@@ -13,14 +13,14 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     required AuthenticationRepository authenticationRepository,
   })  : _authenticationRepository = authenticationRepository,
         super(LoginState()) {
-    on<_LoginUsernameChanged>(_onUsernameChanged);
-    on<_LoginPasswordChanged>(_onPasswordChanged);
-    on<_LoginSubmitted>(_onSubmitted);
+    on<LoginUsernameChanged>(_onUsernameChanged);
+    on<LoginPasswordChanged>(_onPasswordChanged);
+    on<LoginSubmitted>(_onSubmitted);
   }
   final AuthenticationRepository _authenticationRepository;
 
   void _onUsernameChanged(
-    _LoginUsernameChanged event,
+    LoginUsernameChanged event,
     Emitter<LoginState> emit,
   ) {
     final username = Username.dirty(event.username);
@@ -31,7 +31,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }
 
   void _onPasswordChanged(
-    _LoginPasswordChanged event,
+    LoginPasswordChanged event,
     Emitter<LoginState> emit,
   ) {
     final password = Password.dirty(event.password);
@@ -42,7 +42,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }
 
   void _onSubmitted(
-    _LoginSubmitted event,
+    LoginSubmitted event,
     Emitter<LoginState> emit,
   ) async {
     if (state.status.isValidated) {
