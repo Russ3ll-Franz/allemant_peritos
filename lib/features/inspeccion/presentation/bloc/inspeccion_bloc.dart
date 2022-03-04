@@ -1,5 +1,5 @@
 import 'package:allemant_peritos/core/http/http_exceptions.dart';
-import 'package:allemant_peritos/features/inspeccion/domain/entities/inspeccion/inspeccion.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspeccion.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
