@@ -11,8 +11,7 @@ class GridDashboard extends StatelessWidget {
     return Flexible(
         child: GridView.builder(
             itemCount: grids.length,
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             itemBuilder: (context, index) => Cards(
                   items: grids[index],
                 )));
@@ -40,8 +39,7 @@ class Cards extends StatelessWidget {
         highlightColor: Colors.greenAccent,
         borderRadius: BorderRadius.circular(20),
         child: Container(
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(20)),
+          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -49,16 +47,12 @@ class Cards extends StatelessWidget {
                 items.image,
                 scale: 1.8,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 14,
               ),
               Text(
                 items.title,
-                style: GoogleFonts.openSans(
-                    textStyle: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600)),
+                style: GoogleFonts.openSans(textStyle: const TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w600)),
               ),
             ],
           ),

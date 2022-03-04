@@ -10,7 +10,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-
+    final user = context.select(
+      (AuthenticationBloc bloc) => bloc.state.user,
+    );
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -38,8 +40,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.only(
-              left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+          padding: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
           child: Container(
             height: size.height,
             child: Column(children: <Widget>[
@@ -48,17 +49,11 @@ class HomePage extends StatelessWidget {
                 children: const <Widget>[
                   Text(
                     "ALLEMANT PERITOS",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                    style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                   Text(
                     "Menu",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                 ],
               ),
@@ -73,18 +68,17 @@ class HomePage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
-              const DrawerHeader(
+              DrawerHeader(
                 padding: EdgeInsets.zero,
                 margin: EdgeInsets.zero,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.blue,
                 ),
                 child: UserAccountsDrawerHeader(
-                  accountName: Text("userModel."),
-                  currentAccountPicture: CircleAvatar(
+                  accountName: Text(user!.full_name.toString()),
+                  currentAccountPicture: const CircleAvatar(
                     radius: 40.0,
-                    backgroundImage:
-                        AssetImage('assets/images/person/user.jpg'),
+                    backgroundImage: AssetImage('assets/images/person/user.jpg'),
                     backgroundColor: Colors.white,
                   ),
                   accountEmail: null,
@@ -110,9 +104,7 @@ class HomePage extends StatelessWidget {
                 leading: const Icon(Iconsax.logout),
                 title: const Text('Logout'),
                 onTap: () {
-                  context
-                      .read<AuthenticationBloc>()
-                      .add(const AuthenticationLogoutRequested());
+                  context.read<AuthenticationBloc>().add(const AuthenticationLogoutRequested());
                 },
               ),
             ],
