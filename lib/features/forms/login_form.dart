@@ -28,7 +28,7 @@ class LoginForm extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(
-              height: 50.h,
+              height: 140.h,
             ),
             Image.asset(
               "assets/images/logo/logo_allemant1.png",
@@ -36,7 +36,7 @@ class LoginForm extends StatelessWidget {
                         width: double.infinity, */
             ),
             SizedBox(
-              height: 50.h,
+              height: 40.h,
             ),
             _UsernameInput(),
             SizedBox(

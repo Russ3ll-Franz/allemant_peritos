@@ -1,5 +1,6 @@
 import 'package:allemant_peritos/application/bloc/login/login_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,19 +17,32 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.dark, // dark text for status bar
+        statusBarColor: Colors.transparent));
+
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
-        child: BlocProvider(
-          create: (context) {
-            return LoginBloc(
-              authenticationRepository:
-                  RepositoryProvider.of<AuthenticationRepository>(context),
-            );
-          },
-          child: const LoginForm(),
-        ),
+      /* appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ), */
+
+      body: Stack(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+            child: BlocProvider(
+              create: (context) {
+                return LoginBloc(
+                  authenticationRepository:
+                      RepositoryProvider.of<AuthenticationRepository>(context),
+                );
+              },
+              child: const LoginForm(),
+            ),
+          ),
+        ],
       ),
     );
   }
