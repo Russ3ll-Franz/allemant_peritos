@@ -57,6 +57,7 @@ dependencies:
 
   #VALIDATOR
   dartz: ^0.10.1
+  internet_connection_checker: ^0.0.1+3
 
 dev_dependencies:
   flutter_test:

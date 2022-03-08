@@ -2,13 +2,10 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:allemant_peritos/app.dart';
-import 'package:allemant_peritos/application/bloc/authentication/authentication_bloc.dart';
 import 'package:allemant_peritos/application/repository/authentication_repository.dart';
 import 'package:allemant_peritos/application/repository/user_repository.dart';
-import 'package:allemant_peritos/features/pages/home_page.dart';
-import 'package:allemant_peritos/features/pages/sign_in_page.dart';
+import 'package:allemant_peritos/core/injection/injection.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/http/http_override.dart';
 
@@ -18,6 +15,7 @@ void main() async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
+  configureDependencies();
 
   runApp(MyApp(
     authenticationRepository: AuthenticationRepository(),

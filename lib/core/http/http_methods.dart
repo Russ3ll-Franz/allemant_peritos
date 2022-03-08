@@ -87,8 +87,6 @@ class HttpMethodsType {
         options: Options(validateStatus: (status) => true, headers: headers),
       );
 
-      print(response);
-
       if (response.statusCode == null) {
         return const APIResponse.error(HttpException.error());
       }
@@ -150,7 +148,7 @@ class HttpMethodsType {
     if (newBaseUrl != null) {
       url = newBaseUrl + path;
     } else {
-      url = this._baseUrl + path;
+      url = _baseUrl + path;
     }
 
     var content = 'application/x-www-form-urlencoded';

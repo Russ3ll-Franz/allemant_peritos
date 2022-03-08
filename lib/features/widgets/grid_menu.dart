@@ -1,3 +1,4 @@
+import 'package:allemant_peritos/core/route/app_router.gr.dart';
 import 'package:allemant_peritos/features/widgets/grid.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -31,9 +32,7 @@ class Cards extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: InkWell(
-        onTap: null,
-        /* () =>
-            context.pushRoute(InspeccionRoute(tipoInspeccionId: items.id)), */
+        onTap: () => context.pushRoute(InspeccionRoute(tipoInspeccionId: items.id)),
         splashColor: Colors.yellow,
         focusColor: Colors.amber,
         highlightColor: Colors.greenAccent,

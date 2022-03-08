@@ -18,8 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$InspeccionEventTearOff {
   const _$InspeccionEventTearOff();
 
-  _Started started() {
-    return const _Started();
+  _Fetchet fetched(Inspeccion listInspeccion) {
+    return _Fetchet(
+      listInspeccion,
+    );
   }
 }
 
@@ -28,37 +30,43 @@ const $InspeccionEvent = _$InspeccionEventTearOff();
 
 /// @nodoc
 mixin _$InspeccionEvent {
+  Inspeccion get listInspeccion => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(Inspeccion listInspeccion) fetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(Inspeccion listInspeccion)? fetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(Inspeccion listInspeccion)? fetched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_Fetchet value) fetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_Fetchet value)? fetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_Fetchet value)? fetched,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $InspeccionEventCopyWith<InspeccionEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -67,6 +75,9 @@ abstract class $InspeccionEventCopyWith<$Res> {
   factory $InspeccionEventCopyWith(
           InspeccionEvent value, $Res Function(InspeccionEvent) then) =
       _$InspeccionEventCopyWithImpl<$Res>;
+  $Res call({Inspeccion listInspeccion});
+
+  $InspeccionCopyWith<$Res> get listInspeccion;
 }
 
 /// @nodoc
@@ -77,67 +88,116 @@ class _$InspeccionEventCopyWithImpl<$Res>
   final InspeccionEvent _value;
   // ignore: unused_field
   final $Res Function(InspeccionEvent) _then;
-}
-
-/// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$InspeccionEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
 
   @override
-  _Started get _value => super._value as _Started;
+  $Res call({
+    Object? listInspeccion = freezed,
+  }) {
+    return _then(_value.copyWith(
+      listInspeccion: listInspeccion == freezed
+          ? _value.listInspeccion
+          : listInspeccion // ignore: cast_nullable_to_non_nullable
+              as Inspeccion,
+    ));
+  }
+
+  @override
+  $InspeccionCopyWith<$Res> get listInspeccion {
+    return $InspeccionCopyWith<$Res>(_value.listInspeccion, (value) {
+      return _then(_value.copyWith(listInspeccion: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$FetchetCopyWith<$Res>
+    implements $InspeccionEventCopyWith<$Res> {
+  factory _$FetchetCopyWith(_Fetchet value, $Res Function(_Fetchet) then) =
+      __$FetchetCopyWithImpl<$Res>;
+  @override
+  $Res call({Inspeccion listInspeccion});
+
+  @override
+  $InspeccionCopyWith<$Res> get listInspeccion;
+}
+
+/// @nodoc
+class __$FetchetCopyWithImpl<$Res> extends _$InspeccionEventCopyWithImpl<$Res>
+    implements _$FetchetCopyWith<$Res> {
+  __$FetchetCopyWithImpl(_Fetchet _value, $Res Function(_Fetchet) _then)
+      : super(_value, (v) => _then(v as _Fetchet));
+
+  @override
+  _Fetchet get _value => super._value as _Fetchet;
+
+  @override
+  $Res call({
+    Object? listInspeccion = freezed,
+  }) {
+    return _then(_Fetchet(
+      listInspeccion == freezed
+          ? _value.listInspeccion
+          : listInspeccion // ignore: cast_nullable_to_non_nullable
+              as Inspeccion,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_Fetchet implements _Fetchet {
+  const _$_Fetchet(this.listInspeccion);
+
+  @override
+  final Inspeccion listInspeccion;
 
   @override
   String toString() {
-    return 'InspeccionEvent.started()';
+    return 'InspeccionEvent.fetched(listInspeccion: $listInspeccion)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Started);
+        (other.runtimeType == runtimeType &&
+            other is _Fetchet &&
+            const DeepCollectionEquality()
+                .equals(other.listInspeccion, listInspeccion));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(listInspeccion));
+
+  @JsonKey(ignore: true)
+  @override
+  _$FetchetCopyWith<_Fetchet> get copyWith =>
+      __$FetchetCopyWithImpl<_Fetchet>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(Inspeccion listInspeccion) fetched,
   }) {
-    return started();
+    return fetched(listInspeccion);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(Inspeccion listInspeccion)? fetched,
   }) {
-    return started?.call();
+    return fetched?.call(listInspeccion);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(Inspeccion listInspeccion)? fetched,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (fetched != null) {
+      return fetched(listInspeccion);
     }
     return orElse();
   }
@@ -145,57 +205,55 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_Fetchet value) fetched,
   }) {
-    return started(this);
+    return fetched(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_Fetchet value)? fetched,
   }) {
-    return started?.call(this);
+    return fetched?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_Fetchet value)? fetched,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (fetched != null) {
+      return fetched(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements InspeccionEvent {
-  const factory _Started() = _$_Started;
+abstract class _Fetchet implements InspeccionEvent {
+  const factory _Fetchet(Inspeccion listInspeccion) = _$_Fetchet;
+
+  @override
+  Inspeccion get listInspeccion;
+  @override
+  @JsonKey(ignore: true)
+  _$FetchetCopyWith<_Fetchet> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$InspeccionStateTearOff {
   const _$InspeccionStateTearOff();
 
-  Initial initial() {
-    return const Initial();
+  _Empty empty() {
+    return const _Empty();
   }
 
-  LoadInProgress loadInProgress() {
-    return const LoadInProgress();
-  }
-
-  Loaded inspeccionLoaded(List<Inspeccion> tipoInspeccions) {
+  Loaded inspeccionLoaded(
+      [List<Inspeccion> tipoInspeccions = const <Inspeccion>[]]) {
     return Loaded(
       tipoInspeccions,
-    );
-  }
-
-  Error error(HttpException error) {
-    return Error(
-      error,
     );
   }
 }
@@ -207,52 +265,40 @@ const $InspeccionState = _$InspeccionStateTearOff();
 mixin _$InspeccionState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
+    required TResult Function() empty,
     required TResult Function(List<Inspeccion> tipoInspeccions)
         inspeccionLoaded,
-    required TResult Function(HttpException error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
+    TResult Function()? empty,
     TResult Function(List<Inspeccion> tipoInspeccions)? inspeccionLoaded,
-    TResult Function(HttpException error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
+    TResult Function()? empty,
     TResult Function(List<Inspeccion> tipoInspeccions)? inspeccionLoaded,
-    TResult Function(HttpException error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(_Empty value) empty,
     required TResult Function(Loaded value) inspeccionLoaded,
-    required TResult Function(Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(_Empty value)? empty,
     TResult Function(Loaded value)? inspeccionLoaded,
-    TResult Function(Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(_Empty value)? empty,
     TResult Function(Loaded value)? inspeccionLoaded,
-    TResult Function(Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -276,35 +322,35 @@ class _$InspeccionStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $InitialCopyWith<$Res> {
-  factory $InitialCopyWith(Initial value, $Res Function(Initial) then) =
-      _$InitialCopyWithImpl<$Res>;
+abstract class _$EmptyCopyWith<$Res> {
+  factory _$EmptyCopyWith(_Empty value, $Res Function(_Empty) then) =
+      __$EmptyCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitialCopyWithImpl<$Res> extends _$InspeccionStateCopyWithImpl<$Res>
-    implements $InitialCopyWith<$Res> {
-  _$InitialCopyWithImpl(Initial _value, $Res Function(Initial) _then)
-      : super(_value, (v) => _then(v as Initial));
+class __$EmptyCopyWithImpl<$Res> extends _$InspeccionStateCopyWithImpl<$Res>
+    implements _$EmptyCopyWith<$Res> {
+  __$EmptyCopyWithImpl(_Empty _value, $Res Function(_Empty) _then)
+      : super(_value, (v) => _then(v as _Empty));
 
   @override
-  Initial get _value => super._value as Initial;
+  _Empty get _value => super._value as _Empty;
 }
 
 /// @nodoc
 
-class _$Initial implements Initial {
-  const _$Initial();
+class _$_Empty implements _Empty {
+  const _$_Empty();
 
   @override
   String toString() {
-    return 'InspeccionState.initial()';
+    return 'InspeccionState.empty()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Initial);
+        (other.runtimeType == runtimeType && other is _Empty);
   }
 
   @override
@@ -313,37 +359,31 @@ class _$Initial implements Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
+    required TResult Function() empty,
     required TResult Function(List<Inspeccion> tipoInspeccions)
         inspeccionLoaded,
-    required TResult Function(HttpException error) error,
   }) {
-    return initial();
+    return empty();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
+    TResult Function()? empty,
     TResult Function(List<Inspeccion> tipoInspeccions)? inspeccionLoaded,
-    TResult Function(HttpException error)? error,
   }) {
-    return initial?.call();
+    return empty?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
+    TResult Function()? empty,
     TResult Function(List<Inspeccion> tipoInspeccions)? inspeccionLoaded,
-    TResult Function(HttpException error)? error,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (empty != null) {
+      return empty();
     }
     return orElse();
   }
@@ -351,161 +391,37 @@ class _$Initial implements Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(_Empty value) empty,
     required TResult Function(Loaded value) inspeccionLoaded,
-    required TResult Function(Error value) error,
   }) {
-    return initial(this);
+    return empty(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(_Empty value)? empty,
     TResult Function(Loaded value)? inspeccionLoaded,
-    TResult Function(Error value)? error,
   }) {
-    return initial?.call(this);
+    return empty?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(_Empty value)? empty,
     TResult Function(Loaded value)? inspeccionLoaded,
-    TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (empty != null) {
+      return empty(this);
     }
     return orElse();
   }
 }
 
-abstract class Initial implements InspeccionState {
-  const factory Initial() = _$Initial;
-}
-
-/// @nodoc
-abstract class $LoadInProgressCopyWith<$Res> {
-  factory $LoadInProgressCopyWith(
-          LoadInProgress value, $Res Function(LoadInProgress) then) =
-      _$LoadInProgressCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$LoadInProgressCopyWithImpl<$Res>
-    extends _$InspeccionStateCopyWithImpl<$Res>
-    implements $LoadInProgressCopyWith<$Res> {
-  _$LoadInProgressCopyWithImpl(
-      LoadInProgress _value, $Res Function(LoadInProgress) _then)
-      : super(_value, (v) => _then(v as LoadInProgress));
-
-  @override
-  LoadInProgress get _value => super._value as LoadInProgress;
-}
-
-/// @nodoc
-
-class _$LoadInProgress implements LoadInProgress {
-  const _$LoadInProgress();
-
-  @override
-  String toString() {
-    return 'InspeccionState.loadInProgress()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LoadInProgress);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(List<Inspeccion> tipoInspeccions)
-        inspeccionLoaded,
-    required TResult Function(HttpException error) error,
-  }) {
-    return loadInProgress();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Inspeccion> tipoInspeccions)? inspeccionLoaded,
-    TResult Function(HttpException error)? error,
-  }) {
-    return loadInProgress?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Inspeccion> tipoInspeccions)? inspeccionLoaded,
-    TResult Function(HttpException error)? error,
-    required TResult orElse(),
-  }) {
-    if (loadInProgress != null) {
-      return loadInProgress();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
-    required TResult Function(Loaded value) inspeccionLoaded,
-    required TResult Function(Error value) error,
-  }) {
-    return loadInProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Loaded value)? inspeccionLoaded,
-    TResult Function(Error value)? error,
-  }) {
-    return loadInProgress?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Loaded value)? inspeccionLoaded,
-    TResult Function(Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (loadInProgress != null) {
-      return loadInProgress(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LoadInProgress implements InspeccionState {
-  const factory LoadInProgress() = _$LoadInProgress;
+abstract class _Empty implements InspeccionState {
+  const factory _Empty() = _$_Empty;
 }
 
 /// @nodoc
@@ -540,8 +456,9 @@ class _$LoadedCopyWithImpl<$Res> extends _$InspeccionStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$Loaded implements Loaded {
-  const _$Loaded(this.tipoInspeccions);
+  const _$Loaded([this.tipoInspeccions = const <Inspeccion>[]]);
 
+  @JsonKey()
   @override
   final List<Inspeccion> tipoInspeccions;
 
@@ -571,11 +488,9 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
+    required TResult Function() empty,
     required TResult Function(List<Inspeccion> tipoInspeccions)
         inspeccionLoaded,
-    required TResult Function(HttpException error) error,
   }) {
     return inspeccionLoaded(tipoInspeccions);
   }
@@ -583,10 +498,8 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
+    TResult Function()? empty,
     TResult Function(List<Inspeccion> tipoInspeccions)? inspeccionLoaded,
-    TResult Function(HttpException error)? error,
   }) {
     return inspeccionLoaded?.call(tipoInspeccions);
   }
@@ -594,10 +507,8 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
+    TResult Function()? empty,
     TResult Function(List<Inspeccion> tipoInspeccions)? inspeccionLoaded,
-    TResult Function(HttpException error)? error,
     required TResult orElse(),
   }) {
     if (inspeccionLoaded != null) {
@@ -609,10 +520,8 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(_Empty value) empty,
     required TResult Function(Loaded value) inspeccionLoaded,
-    required TResult Function(Error value) error,
   }) {
     return inspeccionLoaded(this);
   }
@@ -620,10 +529,8 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(_Empty value)? empty,
     TResult Function(Loaded value)? inspeccionLoaded,
-    TResult Function(Error value)? error,
   }) {
     return inspeccionLoaded?.call(this);
   }
@@ -631,10 +538,8 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(_Empty value)? empty,
     TResult Function(Loaded value)? inspeccionLoaded,
-    TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
     if (inspeccionLoaded != null) {
@@ -645,152 +550,9 @@ class _$Loaded implements Loaded {
 }
 
 abstract class Loaded implements InspeccionState {
-  const factory Loaded(List<Inspeccion> tipoInspeccions) = _$Loaded;
+  const factory Loaded([List<Inspeccion> tipoInspeccions]) = _$Loaded;
 
   List<Inspeccion> get tipoInspeccions;
   @JsonKey(ignore: true)
   $LoadedCopyWith<Loaded> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ErrorCopyWith<$Res> {
-  factory $ErrorCopyWith(Error value, $Res Function(Error) then) =
-      _$ErrorCopyWithImpl<$Res>;
-  $Res call({HttpException error});
-}
-
-/// @nodoc
-class _$ErrorCopyWithImpl<$Res> extends _$InspeccionStateCopyWithImpl<$Res>
-    implements $ErrorCopyWith<$Res> {
-  _$ErrorCopyWithImpl(Error _value, $Res Function(Error) _then)
-      : super(_value, (v) => _then(v as Error));
-
-  @override
-  Error get _value => super._value as Error;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(Error(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as HttpException,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$Error implements Error {
-  const _$Error(this.error);
-
-  @override
-  final HttpException error;
-
-  @override
-  String toString() {
-    return 'InspeccionState.error(error: $error)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Error &&
-            const DeepCollectionEquality().equals(other.error, error));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  $ErrorCopyWith<Error> get copyWith =>
-      _$ErrorCopyWithImpl<Error>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(List<Inspeccion> tipoInspeccions)
-        inspeccionLoaded,
-    required TResult Function(HttpException error) error,
-  }) {
-    return error(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Inspeccion> tipoInspeccions)? inspeccionLoaded,
-    TResult Function(HttpException error)? error,
-  }) {
-    return error?.call(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Inspeccion> tipoInspeccions)? inspeccionLoaded,
-    TResult Function(HttpException error)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this.error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
-    required TResult Function(Loaded value) inspeccionLoaded,
-    required TResult Function(Error value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Loaded value)? inspeccionLoaded,
-    TResult Function(Error value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Loaded value)? inspeccionLoaded,
-    TResult Function(Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Error implements InspeccionState {
-  const factory Error(HttpException error) = _$Error;
-
-  HttpException get error;
-  @JsonKey(ignore: true)
-  $ErrorCopyWith<Error> get copyWith => throw _privateConstructorUsedError;
 }
