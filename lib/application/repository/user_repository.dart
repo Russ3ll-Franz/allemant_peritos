@@ -8,7 +8,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 class UserRepository {
   final HttpMethodsType _helper = HttpMethodsType();
 
-  late User _user;
+  User? user;
 
   getUserById(userID) async {
     final users = await _helper.get("usuario/getUserID/$userID");

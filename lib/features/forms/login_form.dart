@@ -46,7 +46,10 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               height: 15.h,
             ),
-            const Align(alignment: Alignment.centerRight, child: TextFrave(text: 'Forgot Password?', color: Color(0xFF114472))),
+            const Align(
+                alignment: Alignment.centerRight,
+                child: TextFrave(
+                    text: 'Forgot Password?', color: Color(0xFF114472))),
             SizedBox(
               height: 20.h,
             ),
@@ -69,24 +72,32 @@ class _UsernameInput extends StatelessWidget {
           textInputAction: TextInputAction.next,
           maxLines: 1,
           key: const Key('loginForm_usernameInput_textField'),
-          onChanged: (username) => context.read<LoginBloc>().add(LoginUsernameChanged(username)),
+          onChanged: (username) =>
+              context.read<LoginBloc>().add(LoginUsernameChanged(username)),
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
             labelText: 'USUARIO',
             labelStyle: const TextStyle(
               fontSize: 14,
             ),
-            enabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: Color(0xFF114472), width: 1.2), borderRadius: BorderRadius.circular(10.0)),
+            enabledBorder: OutlineInputBorder(
+                borderSide:
+                    const BorderSide(color: Color(0xFF114472), width: 1.2),
+                borderRadius: BorderRadius.circular(10.0)),
             focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xFF114472), width: 1.2),
+              borderSide:
+                  const BorderSide(color: Color(0xFF114472), width: 1.2),
               borderRadius: BorderRadius.circular(10),
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color.fromARGB(255, 230, 35, 9)),
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 230, 35, 9)),
               borderRadius: BorderRadius.circular(10),
             ),
             errorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
               borderRadius: BorderRadius.circular(10),
             ),
             hintText: 'Ingrese su usuario',
@@ -116,24 +127,33 @@ class _PasswordInput extends StatelessWidget {
           maxLines: 1,
           obscureText: true,
           key: const Key('loginForm_passwordInput_textField'),
-          onChanged: (password) => context.read<LoginBloc>().add(LoginPasswordChanged(password)),
+          onChanged: (password) =>
+              context.read<LoginBloc>().add(LoginPasswordChanged(password)),
           decoration: InputDecoration(
             labelText: 'password',
-            labelStyle: TextStyle(
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+            labelStyle: const TextStyle(
               fontSize: 14,
             ),
             errorText: state.password.invalid ? 'contraseña incorrecta' : null,
-            enabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: Color(0xFF114472), width: 1.2), borderRadius: BorderRadius.circular(10.0)),
+            enabledBorder: OutlineInputBorder(
+                borderSide:
+                    const BorderSide(color: Color(0xFF114472), width: 1.2),
+                borderRadius: BorderRadius.circular(10.0)),
             focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xFF114472), width: 1.2),
+              borderSide:
+                  const BorderSide(color: Color(0xFF114472), width: 1.2),
               borderRadius: BorderRadius.circular(10),
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color.fromARGB(255, 230, 35, 9)),
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 230, 35, 9)),
               borderRadius: BorderRadius.circular(10),
             ),
             errorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
               borderRadius: BorderRadius.circular(10),
             ),
             hintText: 'Ingrese su contraseña',
@@ -161,7 +181,9 @@ class _LoginButton extends StatelessWidget {
             : Container(
                 height: 55,
                 width: double.infinity,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0), color: Color(0xFF114472)),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Color(0xFF114472)),
                 child: ElevatedButton(
                   key: const Key('loginForm_continue_raisedButton'),
                   child: Center(

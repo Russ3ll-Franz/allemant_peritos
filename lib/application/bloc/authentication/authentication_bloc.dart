@@ -21,8 +21,6 @@ class AuthenticationBloc
   })  : _authenticationRepository = authenticationRepository,
         _userRepository = userRepository,
         super(const AuthenticationState.unknown()) {
-    final valor = userRepository.storageUserId().toString();
-    print(valor);
     on<AuthenticationStatusChanged>(_onAuthenticationStatusChanged);
     on<AuthenticationLogoutRequested>(_onAuthenticationLogoutRequested);
     _authenticationStatusSubscription = _authenticationRepository.status.listen(
@@ -46,24 +44,34 @@ class AuthenticationBloc
     AuthenticationStatusChanged event,
     Emitter<AuthenticationState> emit,
   ) async {
-    switch (event.status) {
+    final userID = await _userRepository.storageUserId();
+
+    if (userID != null) {
+      final user = await _tryGetUser(userID);
+
+      return emit(AuthenticationState.authenticated(user: user));
+    } else {
+      return emit(const AuthenticationState.unauthenticated());
+    }
+
+    /* switch (event.status) {
       case AuthenticationStatus.unauthenticated:
         return emit(const AuthenticationState.unauthenticated());
       case AuthenticationStatus.authenticated:
-        const storage = FlutterSecureStorage();
+        /*  const storage = FlutterSecureStorage();
 
         final userID = await storage.read(key: 'id');
         print("MyId");
         print(userID);
         final user = await _tryGetUser(userID.toString());
         print("MyUser");
-        print(user);
+        print(user); */
         return emit(user != null
             ? AuthenticationState.authenticated(user: user)
             : const AuthenticationState.unauthenticated());
       default:
         return emit(const AuthenticationState.unknown());
-    }
+    } */
   }
 
   void _onAuthenticationLogoutRequested(

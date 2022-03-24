@@ -5,10 +5,19 @@ part 'user.g.dart';
 
 @freezed
 class User with _$User {
+  const User._(); // Added constructor
+
   factory User({
-    String? id,
-    String? full_name,
+    @Default("") String id,
+    @Default("") String full_name,
   }) = _User;
+
+  @override
+  String toString() {
+    return "User ID = $id, Name = $full_name";
+  }
+
+  factory User.empty() => User(id: '', full_name: '');
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }

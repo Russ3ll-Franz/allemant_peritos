@@ -18,15 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AuthenticationStateTearOff {
   const _$AuthenticationStateTearOff();
 
-  Data call(
-      {AuthenticationStatus status = AuthenticationStatus.unknown,
-      User? user}) {
-    return Data(
-      status: status,
-      user: user,
-    );
-  }
-
   Loading loading({User? user}) {
     return Loading(
       user: user,
@@ -67,8 +58,7 @@ mixin _$AuthenticationState {
   User? get user => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user) $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
@@ -77,8 +67,7 @@ mixin _$AuthenticationState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -87,8 +76,7 @@ mixin _$AuthenticationState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -98,8 +86,7 @@ mixin _$AuthenticationState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
@@ -108,8 +95,7 @@ mixin _$AuthenticationState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -118,8 +104,7 @@ mixin _$AuthenticationState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -175,179 +160,6 @@ class _$AuthenticationStateCopyWithImpl<$Res>
       return _then(_value.copyWith(user: value));
     });
   }
-}
-
-/// @nodoc
-abstract class $DataCopyWith<$Res>
-    implements $AuthenticationStateCopyWith<$Res> {
-  factory $DataCopyWith(Data value, $Res Function(Data) then) =
-      _$DataCopyWithImpl<$Res>;
-  @override
-  $Res call({AuthenticationStatus status, User? user});
-
-  @override
-  $UserCopyWith<$Res>? get user;
-}
-
-/// @nodoc
-class _$DataCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
-    implements $DataCopyWith<$Res> {
-  _$DataCopyWithImpl(Data _value, $Res Function(Data) _then)
-      : super(_value, (v) => _then(v as Data));
-
-  @override
-  Data get _value => super._value as Data;
-
-  @override
-  $Res call({
-    Object? status = freezed,
-    Object? user = freezed,
-  }) {
-    return _then(Data(
-      status: status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AuthenticationStatus,
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$Data implements Data {
-  _$Data({this.status = AuthenticationStatus.unknown, this.user});
-
-  @JsonKey()
-  @override
-  final AuthenticationStatus status;
-  @override
-  final User? user;
-
-  @override
-  String toString() {
-    return 'AuthenticationState(status: $status, user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Data &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other.user, user));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(user));
-
-  @JsonKey(ignore: true)
-  @override
-  $DataCopyWith<Data> get copyWith =>
-      _$DataCopyWithImpl<Data>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user) $default, {
-    required TResult Function(User? user) loading,
-    required TResult Function(User? user) unauthenticated,
-    required TResult Function(User? user) authenticated,
-    required TResult Function(User? user) unknown,
-    required TResult Function(HttpException? error, User? user) error,
-  }) {
-    return $default(status, user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
-    TResult Function(User? user)? loading,
-    TResult Function(User? user)? unauthenticated,
-    TResult Function(User? user)? authenticated,
-    TResult Function(User? user)? unknown,
-    TResult Function(HttpException? error, User? user)? error,
-  }) {
-    return $default?.call(status, user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
-    TResult Function(User? user)? loading,
-    TResult Function(User? user)? unauthenticated,
-    TResult Function(User? user)? authenticated,
-    TResult Function(User? user)? unknown,
-    TResult Function(HttpException? error, User? user)? error,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(status, user);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
-    required TResult Function(Loading value) loading,
-    required TResult Function(Unauthenticated value) unauthenticated,
-    required TResult Function(Authenticated value) authenticated,
-    required TResult Function(Unknown value) unknown,
-    required TResult Function(Error value) error,
-  }) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
-    TResult Function(Loading value)? loading,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unknown value)? unknown,
-    TResult Function(Error value)? error,
-  }) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
-    TResult Function(Loading value)? loading,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unknown value)? unknown,
-    TResult Function(Error value)? error,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Data implements AuthenticationState {
-  factory Data({AuthenticationStatus status, User? user}) = _$Data;
-
-  AuthenticationStatus get status;
-  @override
-  User? get user;
-  @override
-  @JsonKey(ignore: true)
-  $DataCopyWith<Data> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -417,8 +229,7 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user) $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
@@ -430,8 +241,7 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -443,8 +253,7 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -460,8 +269,7 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
@@ -473,8 +281,7 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -486,8 +293,7 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -581,8 +387,7 @@ class _$Unauthenticated implements Unauthenticated {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user) $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
@@ -594,8 +399,7 @@ class _$Unauthenticated implements Unauthenticated {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -607,8 +411,7 @@ class _$Unauthenticated implements Unauthenticated {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -624,8 +427,7 @@ class _$Unauthenticated implements Unauthenticated {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
@@ -637,8 +439,7 @@ class _$Unauthenticated implements Unauthenticated {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -650,8 +451,7 @@ class _$Unauthenticated implements Unauthenticated {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -746,8 +546,7 @@ class _$Authenticated implements Authenticated {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user) $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
@@ -759,8 +558,7 @@ class _$Authenticated implements Authenticated {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -772,8 +570,7 @@ class _$Authenticated implements Authenticated {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -789,8 +586,7 @@ class _$Authenticated implements Authenticated {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
@@ -802,8 +598,7 @@ class _$Authenticated implements Authenticated {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -815,8 +610,7 @@ class _$Authenticated implements Authenticated {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -909,8 +703,7 @@ class _$Unknown implements Unknown {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user) $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
@@ -922,8 +715,7 @@ class _$Unknown implements Unknown {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -935,8 +727,7 @@ class _$Unknown implements Unknown {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -952,8 +743,7 @@ class _$Unknown implements Unknown {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
@@ -965,8 +755,7 @@ class _$Unknown implements Unknown {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -978,8 +767,7 @@ class _$Unknown implements Unknown {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -1092,8 +880,7 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user) $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
@@ -1105,8 +892,7 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -1118,8 +904,7 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(AuthenticationStatus status, User? user)? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
@@ -1135,8 +920,7 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(Data value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
@@ -1148,8 +932,7 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
@@ -1161,8 +944,7 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(Data value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,

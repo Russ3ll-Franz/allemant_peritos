@@ -9,11 +9,11 @@ import '../forms/login_form.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);
-/*   static Page page() => const MaterialPage<void>(child: SignInPage());
- */
-  static Route route() {
+  static Page page() => const MaterialPage<void>(child: SignInPage());
+
+/*   static Route route() {
     return MaterialPageRoute<void>(builder: (_) => SignInPage());
-  }
+  } */
 
   @override
   Widget build(BuildContext context) {

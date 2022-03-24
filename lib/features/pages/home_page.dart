@@ -6,6 +6,7 @@ import 'package:iconsax/iconsax.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
+  static Page page() => const MaterialPage<void>(child: HomePage());
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,8 @@ class HomePage extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+          padding: const EdgeInsets.only(
+              left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
           child: Container(
             height: size.height,
             child: Column(children: <Widget>[
@@ -49,11 +51,17 @@ class HomePage extends StatelessWidget {
                 children: const <Widget>[
                   Text(
                     "ALLEMANT PERITOS",
-                    style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
                   ),
                   Text(
                     "Menu",
-                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
                   ),
                 ],
               ),
@@ -75,10 +83,11 @@ class HomePage extends StatelessWidget {
                   color: Colors.blue,
                 ),
                 child: UserAccountsDrawerHeader(
-                  accountName: Text(user!.full_name.toString()),
+                  accountName: Text(user?.full_name ?? ''),
                   currentAccountPicture: const CircleAvatar(
                     radius: 40.0,
-                    backgroundImage: AssetImage('assets/images/person/user.jpg'),
+                    backgroundImage:
+                        AssetImage('assets/images/person/user.jpg'),
                     backgroundColor: Colors.white,
                   ),
                   accountEmail: null,
@@ -104,7 +113,9 @@ class HomePage extends StatelessWidget {
                 leading: const Icon(Iconsax.logout),
                 title: const Text('Logout'),
                 onTap: () {
-                  context.read<AuthenticationBloc>().add(const AuthenticationLogoutRequested());
+                  context
+                      .read<AuthenticationBloc>()
+                      .add(const AuthenticationLogoutRequested());
                 },
               ),
             ],

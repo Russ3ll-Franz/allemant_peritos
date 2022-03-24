@@ -9,5 +9,10 @@ class AppRouteObserver extends AutoRouterObserver {
   void didPush(Route route, Route? previousRoute) {}
 }
 
-@MaterialAutoRouter(replaceInRouteName: 'Page,Route', routes: <AutoRoute>[AutoRoute(page: AppStartPage, initial: true), homeRouter, signInRouter, inspeccionRouter])
+@MaterialAutoRouter(replaceInRouteName: 'Page,Route', routes: <AutoRoute>[
+  AutoRoute(page: AppStartPage, initial: true),
+  homeRouter,
+  signInRouter,
+  inspeccionRouter
+])
 class $AppRouter {}

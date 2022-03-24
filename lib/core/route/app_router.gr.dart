@@ -38,10 +38,7 @@ class AppRouter extends _i5.RootStackRouter {
           routeData: routeData, child: const _i3.SignInPage());
     },
     InspeccionRoute.name: (routeData) {
-      final pathParams = routeData.inheritedPathParams;
-      final args = routeData.argsAs<InspeccionRouteArgs>(
-          orElse: () => InspeccionRouteArgs(
-              tipoInspeccionId: pathParams.getString('tipoInspeccionId')));
+      final args = routeData.argsAs<InspeccionRouteArgs>();
       return _i5.MaterialPageX<dynamic>(
           routeData: routeData,
           child: _i4.InspeccionPage(
@@ -90,8 +87,7 @@ class InspeccionRoute extends _i5.PageRouteInfo<InspeccionRouteArgs> {
       : super(InspeccionRoute.name,
             path: '/inspeccion/:tipoInspeccionId',
             args: InspeccionRouteArgs(
-                key: key, tipoInspeccionId: tipoInspeccionId),
-            rawPathParams: {'tipoInspeccionId': tipoInspeccionId});
+                key: key, tipoInspeccionId: tipoInspeccionId));
 
   static const String name = 'InspeccionRoute';
 }

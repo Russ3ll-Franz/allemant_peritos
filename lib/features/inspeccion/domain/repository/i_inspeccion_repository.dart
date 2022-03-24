@@ -3,7 +3,9 @@ import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspe
 import 'package:dartz/dartz.dart';
 
 abstract class IInspeccionRepository {
-  Future<Either<Failure, List<Inspeccion>>> getTypeInspeccionByUser(int userID, int tipoInspeccion);
+  Future<Either<Failure, List<Inspeccion>>> getTypeInspeccionByUser(
+      {required String userID, required String tipoInspeccion});
 
-  Future<Either<Failure, Inspeccion>> getInspeccionByCoordinacion(int coordinacionID);
+  Future<Either<Failure, Inspeccion>> getInspeccionByCoordinacion(
+      {required String coordinacionID});
 }

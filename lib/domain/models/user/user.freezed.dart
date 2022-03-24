@@ -22,7 +22,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
 class _$UserTearOff {
   const _$UserTearOff();
 
-  _User call({String? id, String? full_name}) {
+  _User call({String id = "", String full_name = ""}) {
     return _User(
       id: id,
       full_name: full_name,
@@ -39,8 +39,8 @@ const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
-  String? get id => throw _privateConstructorUsedError;
-  String? get full_name => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get full_name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,7 +51,7 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
-  $Res call({String? id, String? full_name});
+  $Res call({String id, String full_name});
 }
 
 /// @nodoc
@@ -71,11 +71,11 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       full_name: full_name == freezed
           ? _value.full_name
           : full_name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -85,7 +85,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
       __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({String? id, String? full_name});
+  $Res call({String id, String full_name});
 }
 
 /// @nodoc
@@ -106,31 +106,28 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       full_name: full_name == freezed
           ? _value.full_name
           : full_name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_User implements _User {
-  _$_User({this.id, this.full_name});
+class _$_User extends _User {
+  _$_User({this.id = "", this.full_name = ""}) : super._();
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
+  @JsonKey()
   @override
-  final String? id;
+  final String id;
+  @JsonKey()
   @override
-  final String? full_name;
-
-  @override
-  String toString() {
-    return 'User(id: $id, full_name: $full_name)';
-  }
+  final String full_name;
 
   @override
   bool operator ==(dynamic other) {
@@ -158,15 +155,16 @@ class _$_User implements _User {
   }
 }
 
-abstract class _User implements User {
-  factory _User({String? id, String? full_name}) = _$_User;
+abstract class _User extends User {
+  factory _User({String id, String full_name}) = _$_User;
+  _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
-  String? get id;
+  String get id;
   @override
-  String? get full_name;
+  String get full_name;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

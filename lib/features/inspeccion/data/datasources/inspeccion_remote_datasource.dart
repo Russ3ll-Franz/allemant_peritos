@@ -4,19 +4,21 @@ import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspe
 import 'package:injectable/injectable.dart';
 
 abstract class IInspeccionRemoteDataSource {
-  Future<List<Inspeccion>> getInspeccion(int userID, int tipoInspeccion);
-  Future<Inspeccion> getTypeInspeccionByUser(int coordinacionID);
+  Future<List<Inspeccion>> getInspeccion(String userID, String tipoInspeccion);
+  Future<Inspeccion> getTypeInspeccionByUser(String coordinacionID);
 }
 
-@LazySingleton(as: IInspeccionRemoteDataSource)
+@Injectable(as: IInspeccionRemoteDataSource)
 class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
-  InspeccionRemoteDataSource(this._helper);
+  InspeccionRemoteDataSource({required this.helper});
 
-  final HttpMethodsType _helper;
+  HttpMethodsType helper;
 
   @override
-  Future<List<Inspeccion>> getInspeccion(int userID, int tipoInspeccion) async {
-    final response = await _helper.get("operaciones/inspecciones/listAppInspeccion/$userID/$tipoInspeccion");
+  Future<List<Inspeccion>> getInspeccion(
+      String userID, String tipoInspeccion) async {
+    final response = await helper.get(
+        "operaciones/inspecciones/listAppInspeccion/$userID/$tipoInspeccion");
 
     if (response is APISuccess) {
       final value = response.value;
@@ -33,8 +35,9 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
   }
 
   @override
-  Future<Inspeccion> getTypeInspeccionByUser(int coordinacionID) async {
-    final response = await _helper.get("operaciones/inspecciones/listAppInspeccionCoordinacionId/$coordinacionID");
+  Future<Inspeccion> getTypeInspeccionByUser(String coordinacionID) async {
+    final response = await helper.get(
+        "operaciones/inspecciones/listAppInspeccionCoordinacionId/$coordinacionID");
     if (response is APISuccess) {
       final value = response.value;
       try {

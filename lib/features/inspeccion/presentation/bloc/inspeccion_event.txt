@@ -1,4 +1,4 @@
-part of 'inspeccion_bloc.dart';
+part of 'inspeccion_bloc.text';
 
 @freezed
 class InspeccionEvent with _$InspeccionEvent {
