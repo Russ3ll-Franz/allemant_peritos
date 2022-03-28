@@ -29,8 +29,10 @@ class HttpMethodsType {
 
     _dio.httpClientAdapter = DefaultHttpClientAdapter();
 
-    (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (HttpClient client) {
-      client.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+    (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (HttpClient client) {
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
     };
 
     if (kDebugMode) {
@@ -102,13 +104,15 @@ class HttpMethodsType {
         //   return const APIResponse.error(HttpException.error());
         // } else
         if (response.statusCode! == 401) {
-          return const APIResponse.error(HttpException.unauthorised("Acceso Negado"));
+          return const APIResponse.error(
+              HttpException.unauthorised("Acceso Negado"));
         } else if (response.statusCode! == 502) {
           return const APIResponse.error(HttpException.error());
         } else {
           //if (response.data['message'] != null) {
           if (response.data != null) {
-            return APIResponse.error(HttpException.errorWithMessage(response.data ?? ''));
+            return APIResponse.error(
+                HttpException.errorWithMessage(response.data ?? ''));
           } else {
             return const APIResponse.error(HttpException.error());
           }
@@ -118,18 +122,22 @@ class HttpMethodsType {
       if (e.error is SocketException) {
         return const APIResponse.error(HttpException.error());
       }
-      if (e.type == DioErrorType.connectTimeout || e.type == DioErrorType.receiveTimeout || e.type == DioErrorType.sendTimeout) {
+      if (e.type == DioErrorType.connectTimeout ||
+          e.type == DioErrorType.receiveTimeout ||
+          e.type == DioErrorType.sendTimeout) {
         return const APIResponse.error(HttpException.error());
       }
 
       if (e.response != null) {
         if (e.response!.data['message'] != null) {
-          return APIResponse.error(HttpException.errorWithMessage(e.response!.data['message']));
+          return APIResponse.error(
+              HttpException.errorWithMessage(e.response!.data['message']));
         }
       }
       return APIResponse.error(HttpException.errorWithMessage(e.message));
     } on Error catch (e) {
-      return APIResponse.error(HttpException.errorWithMessage(e.stackTrace.toString()));
+      return APIResponse.error(
+          HttpException.errorWithMessage(e.stackTrace.toString()));
     }
   }
 
@@ -154,7 +162,7 @@ class HttpMethodsType {
     var content = 'application/x-www-form-urlencoded';
 
     if (contentType == ContentType.json) {
-      content = 'application/json; charset=utf-8';
+      content = 'application/json; charset=UTF-8';
     }
 
     final headers = {
@@ -186,12 +194,14 @@ class HttpMethodsType {
         if (response.statusCode! == 404) {
           return const APIResponse.error(HttpException.error());
         } else if (response.statusCode! == 401) {
-          return const APIResponse.error(HttpException.unauthorised("Acceso No Autorizado"));
+          return const APIResponse.error(
+              HttpException.unauthorised("Acceso No Autorizado"));
         } else if (response.statusCode! == 502) {
           return const APIResponse.error(HttpException.error());
         } else {
           if (response.data != null) {
-            return APIResponse.error(HttpException.errorWithMessage(response.data ?? ''));
+            return APIResponse.error(
+                HttpException.errorWithMessage(response.data ?? ''));
           } else {
             return const APIResponse.error(HttpException.error());
           }
@@ -201,7 +211,9 @@ class HttpMethodsType {
       if (e.error is SocketException) {
         return const APIResponse.error(HttpException.error());
       }
-      if (e.type == DioErrorType.connectTimeout || e.type == DioErrorType.receiveTimeout || e.type == DioErrorType.sendTimeout) {
+      if (e.type == DioErrorType.connectTimeout ||
+          e.type == DioErrorType.receiveTimeout ||
+          e.type == DioErrorType.sendTimeout) {
         return const APIResponse.error(HttpException.error());
       }
       return const APIResponse.error(HttpException.error());

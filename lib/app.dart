@@ -1,15 +1,20 @@
+import 'dart:math';
+
 import 'package:allemant_peritos/application/bloc/authentication/authentication_bloc.dart';
 import 'package:allemant_peritos/application/repository/authentication_repository.dart';
 import 'package:allemant_peritos/application/repository/user_repository.dart';
 import 'package:allemant_peritos/core/route/app_router.dart';
 import 'package:allemant_peritos/core/route/app_router.gr.dart';
 import 'package:allemant_peritos/features/inspeccion/domain/repository/i_inspeccion_repository.dart';
+import 'package:allemant_peritos/features/inspeccion/presentation/application/coordinacion/coordinacion_cubit.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_cubit.dart';
+import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_detail_cubit.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'configs/constants.dart';
 
 class MyApp extends StatelessWidget {
   //FUNCIONANDO DE ESTA MANERA
@@ -44,12 +49,11 @@ class MyApp extends StatelessWidget {
         RepositoryProvider.value(value: userRepository),
         RepositoryProvider.value(value: inspeccionRepository),
       ],
-      child: MultiBlocProvider(
-          providers: [
-            ///
-            /// BLoCs
-            ///
-            /*  BlocProvider<AuthenticationBloc>(
+      child: MultiBlocProvider(providers: [
+        ///
+        /// BLoCs
+        ///
+        /*  BlocProvider<AuthenticationBloc>(
               create: (context) => AuthenticationBloc(
                   userRepository: context.read<UserRepository>(),
                   authenticationRepository:
@@ -61,18 +65,19 @@ class MyApp extends StatelessWidget {
               ),
             ) */
 
-            BlocProvider(
-                create: (context) => AuthenticationBloc(
-                    authenticationRepository: authenticationRepository,
-                    userRepository: userRepository)),
-            BlocProvider(
-                create: (context) => InspeccionCubit(
-                      inspeccionRepository: inspeccionRepository,
-                    )),
-          ],
-          child: ScreenUtilInit(
-            builder: () => const MyView(),
-          )),
+        BlocProvider(
+            create: (context) => AuthenticationBloc(
+                authenticationRepository: authenticationRepository,
+                userRepository: userRepository)),
+        BlocProvider(
+            create: (context) => InspeccionCubit(
+                  inspeccionRepository: inspeccionRepository,
+                )),
+        BlocProvider(
+            create: (context) => CoordinacionCubit(
+                  inspeccionRepository: inspeccionRepository,
+                )),
+      ], child: const MyView()),
     );
   }
 }
@@ -90,8 +95,23 @@ class _MyViewState extends State<MyView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      builder: (context, child) {
+        if (child == null) return SizedBox.shrink();
+
+        final data = MediaQuery.of(context);
+        final smallestSize = min(data.size.width, data.size.height);
+        final textScaleFactor =
+            min(smallestSize / AppConstants.designScreenSize.width, 1.0);
+
+        return MediaQuery(
+          data: data.copyWith(
+            textScaleFactor: textScaleFactor,
+          ),
+          child: child,
+        );
+      },
       theme: ThemeData(
-        textTheme: GoogleFonts.poppinsTextTheme(),
+        textTheme: GoogleFonts.openSansTextTheme(),
         appBarTheme:
             const AppBarTheme(color: Color.fromARGB(255, 212, 51, 212)),
         colorScheme: ColorScheme.fromSwatch(

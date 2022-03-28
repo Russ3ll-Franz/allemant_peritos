@@ -1,7 +1,6 @@
 import 'package:allemant_peritos/application/bloc/login/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:formz/formz.dart';
 
@@ -27,31 +26,31 @@ class LoginForm extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(
-              height: 100.h,
+            const SizedBox(
+              height: 100,
             ),
             Image.asset(
               "assets/images/logo/logo_allemant1.png",
-              height: 190.h,
+              height: 190,
               width: double.infinity,
             ),
             SizedBox(
-              height: 40.h,
+              height: 40,
             ),
             _UsernameInput(),
             SizedBox(
-              height: 15.h,
+              height: 15,
             ),
             _PasswordInput(),
             SizedBox(
-              height: 15.h,
+              height: 15,
             ),
             const Align(
                 alignment: Alignment.centerRight,
                 child: TextFrave(
                     text: 'Forgot Password?', color: Color(0xFF114472))),
             SizedBox(
-              height: 20.h,
+              height: 20,
             ),
             _LoginButton(),
           ],
@@ -186,12 +185,12 @@ class _LoginButton extends StatelessWidget {
                     color: Color(0xFF114472)),
                 child: ElevatedButton(
                   key: const Key('loginForm_continue_raisedButton'),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Iniciar sesion',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontWeight: FontWeight.w700,
                       ),
                     ),

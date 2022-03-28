@@ -18,12 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AuthenticationStateTearOff {
   const _$AuthenticationStateTearOff();
 
-  Loading loading({User? user}) {
-    return Loading(
-      user: user,
-    );
-  }
-
   Unauthenticated unauthenticated({User? user}) {
     return Unauthenticated(
       user: user,
@@ -59,7 +53,6 @@ mixin _$AuthenticationState {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
     required TResult Function(User? user) unknown,
@@ -68,7 +61,6 @@ mixin _$AuthenticationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
     TResult Function(User? user)? unknown,
@@ -77,7 +69,6 @@ mixin _$AuthenticationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
     TResult Function(User? user)? unknown,
@@ -87,7 +78,6 @@ mixin _$AuthenticationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unknown value) unknown,
@@ -96,7 +86,6 @@ mixin _$AuthenticationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unknown value)? unknown,
@@ -105,7 +94,6 @@ mixin _$AuthenticationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unknown value)? unknown,
@@ -160,162 +148,6 @@ class _$AuthenticationStateCopyWithImpl<$Res>
       return _then(_value.copyWith(user: value));
     });
   }
-}
-
-/// @nodoc
-abstract class $LoadingCopyWith<$Res>
-    implements $AuthenticationStateCopyWith<$Res> {
-  factory $LoadingCopyWith(Loading value, $Res Function(Loading) then) =
-      _$LoadingCopyWithImpl<$Res>;
-  @override
-  $Res call({User? user});
-
-  @override
-  $UserCopyWith<$Res>? get user;
-}
-
-/// @nodoc
-class _$LoadingCopyWithImpl<$Res>
-    extends _$AuthenticationStateCopyWithImpl<$Res>
-    implements $LoadingCopyWith<$Res> {
-  _$LoadingCopyWithImpl(Loading _value, $Res Function(Loading) _then)
-      : super(_value, (v) => _then(v as Loading));
-
-  @override
-  Loading get _value => super._value as Loading;
-
-  @override
-  $Res call({
-    Object? user = freezed,
-  }) {
-    return _then(Loading(
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$Loading implements Loading {
-  const _$Loading({this.user});
-
-  @override
-  final User? user;
-
-  @override
-  String toString() {
-    return 'AuthenticationState.loading(user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Loading &&
-            const DeepCollectionEquality().equals(other.user, user));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
-
-  @JsonKey(ignore: true)
-  @override
-  $LoadingCopyWith<Loading> get copyWith =>
-      _$LoadingCopyWithImpl<Loading>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(User? user) loading,
-    required TResult Function(User? user) unauthenticated,
-    required TResult Function(User? user) authenticated,
-    required TResult Function(User? user) unknown,
-    required TResult Function(HttpException? error, User? user) error,
-  }) {
-    return loading(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(User? user)? loading,
-    TResult Function(User? user)? unauthenticated,
-    TResult Function(User? user)? authenticated,
-    TResult Function(User? user)? unknown,
-    TResult Function(HttpException? error, User? user)? error,
-  }) {
-    return loading?.call(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User? user)? loading,
-    TResult Function(User? user)? unauthenticated,
-    TResult Function(User? user)? authenticated,
-    TResult Function(User? user)? unknown,
-    TResult Function(HttpException? error, User? user)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(user);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
-    required TResult Function(Unauthenticated value) unauthenticated,
-    required TResult Function(Authenticated value) authenticated,
-    required TResult Function(Unknown value) unknown,
-    required TResult Function(Error value) error,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unknown value)? unknown,
-    TResult Function(Error value)? error,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unknown value)? unknown,
-    TResult Function(Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Loading implements AuthenticationState {
-  const factory Loading({User? user}) = _$Loading;
-
-  @override
-  User? get user;
-  @override
-  @JsonKey(ignore: true)
-  $LoadingCopyWith<Loading> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -388,7 +220,6 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
     required TResult Function(User? user) unknown,
@@ -400,7 +231,6 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
     TResult Function(User? user)? unknown,
@@ -412,7 +242,6 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
     TResult Function(User? user)? unknown,
@@ -428,7 +257,6 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unknown value) unknown,
@@ -440,7 +268,6 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unknown value)? unknown,
@@ -452,7 +279,6 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unknown value)? unknown,
@@ -547,7 +373,6 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
     required TResult Function(User? user) unknown,
@@ -559,7 +384,6 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
     TResult Function(User? user)? unknown,
@@ -571,7 +395,6 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
     TResult Function(User? user)? unknown,
@@ -587,7 +410,6 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unknown value) unknown,
@@ -599,7 +421,6 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unknown value)? unknown,
@@ -611,7 +432,6 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unknown value)? unknown,
@@ -704,7 +524,6 @@ class _$Unknown implements Unknown {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
     required TResult Function(User? user) unknown,
@@ -716,7 +535,6 @@ class _$Unknown implements Unknown {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
     TResult Function(User? user)? unknown,
@@ -728,7 +546,6 @@ class _$Unknown implements Unknown {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
     TResult Function(User? user)? unknown,
@@ -744,7 +561,6 @@ class _$Unknown implements Unknown {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unknown value) unknown,
@@ -756,7 +572,6 @@ class _$Unknown implements Unknown {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unknown value)? unknown,
@@ -768,7 +583,6 @@ class _$Unknown implements Unknown {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unknown value)? unknown,
@@ -881,7 +695,6 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(User? user) loading,
     required TResult Function(User? user) unauthenticated,
     required TResult Function(User? user) authenticated,
     required TResult Function(User? user) unknown,
@@ -893,7 +706,6 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
     TResult Function(User? user)? unknown,
@@ -905,7 +717,6 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User? user)? loading,
     TResult Function(User? user)? unauthenticated,
     TResult Function(User? user)? authenticated,
     TResult Function(User? user)? unknown,
@@ -921,7 +732,6 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unknown value) unknown,
@@ -933,7 +743,6 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unknown value)? unknown,
@@ -945,7 +754,6 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
     TResult Function(Unauthenticated value)? unauthenticated,
     TResult Function(Authenticated value)? authenticated,
     TResult Function(Unknown value)? unknown,

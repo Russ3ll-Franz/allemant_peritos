@@ -46,7 +46,6 @@ class AppStartPage extends StatelessWidget {
       state: context.select((AuthenticationBloc bloc) => bloc.state),
       onGeneratePages: (authState, pages) {
         return authState.when(
-          loading: (loading) => [LoadingWidget.page()],
           unauthenticated: (unauthenticated) => [SignInPage.page()],
           authenticated: (authenticated) => [HomePage.page()],
           unknown: (unknown) => [LoadingWidget.page()],

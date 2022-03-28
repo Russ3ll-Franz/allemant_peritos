@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: implicit_dynamic_parameter, cast_nullable_to_non_nullable, require_trailing_commas
+
 part of 'inspeccion.dart';
 
 // **************************************************************************
@@ -7,56 +9,143 @@ part of 'inspeccion.dart';
 // **************************************************************************
 
 _$_Inspeccion _$$_InspeccionFromJson(Map<String, dynamic> json) =>
-    _$_Inspeccion(
-      cotizacionId: json['cotizacion_id'] as String?,
-      coordinacionId: json['coordinacion_id'] as String?,
-      coordinacionCorrelativo: json['coordinacion_correlativo'] as String?,
-      riesgoId: json['riesgo_id'] as String?,
-      riesgoNombre: json['riesgo_nombre'] as String?,
-      coordinadorId: json['coordinador_id'] as String?,
-      coordinadorNombre: json['coordinador_nombre'] as String?,
-      fechaSolicitud: json['fecha_solicitud'] as String?,
-      entregaAlClienteFecha: json['entrega_al_cliente_fecha'] as String?,
-      fechaEntrega: json['fecha_entrega'] as String?,
-      solicitanteId: json['solicitante_id'] as String?,
-      solicitanteNombre: json['solicitante_nombre'] as String?,
-      contactoId: json['contacto_id'] as String?,
-      contactoNombre: json['contacto_nombre'] as String?,
-      clienteId: json['cliente_id'] as String?,
-      clienteNombre: json['cliente_nombre'] as String?,
-      servicioTipoId: json['servicio_tipo_id'] as String?,
-      servicioTipoNombre: json['servicio_tipo_nombre'] as String?,
-      tipoCambioId: json['tipo_cambio_id'] as String?,
-      tipoCambioNombre: json['tipo_cambio_nombre'] as String?,
-      tipoInspeccionId: json['tipo_inspeccion_id'] as String?,
-      tipoInspeccionNombre: json['tipo_inspeccion_nombre'] as String?,
-      modalidadId: json['modalidad_id'] as String?,
-      modalidadNombre: json['modalidad_nombre'] as String?,
-      inspeccionId: json['inspeccion_id'] as String?,
-      peritoId: json['perito_id'] as String?,
-      peritoNombre: json['perito_nombre'] as String?,
-      inspeccionContacto: json['inspeccion_contacto'] as String?,
-      inspeccionFecha: json['inspeccion_fecha'] as String?,
-      inspeccionFechaNormal: json['inspeccion_fecha_normal'] as String?,
-      inspeccionHora: json['inspeccion_hora'] as String?,
-      inspeccionHoraTipo: json['inspeccion_hora_tipo'] as String?,
-      distritoId: json['distrito_id'] as String?,
-      distritoNombre: json['distrito_nombre'] as String?,
-      provinciaId: json['provincia_id'] as String?,
-      provinciaNombre: json['provincia_nombre'] as String?,
-      departamentoId: json['departamento_id'] as String?,
-      departamentoNombre: json['departamento_nombre'] as String?,
-      inspeccionDireccion: json['inspeccion_direccion'] as String?,
-      inspeccionLatitud: json['inspeccion_latitud'] as String?,
-      inspeccionLongitud: json['inspeccion_longitud'] as String?,
-      inspeccionObservacion: json['inspeccion_observacion'] as String?,
-      estadoId: json['estado_id'] as String?,
-      estadoNombre: json['estado_nombre'] as String?,
-      infoStatus: json['info_status'] as String?,
-      digitadorId: json['digitador_id'] as String?,
-      digitadorNombre: json['digitador_nombre'] as String?,
-      controlCalidadId: json['control_calidad_id'] as String?,
-      controlCalidadNombre: json['control_calidad_nombre'] as String?,
+    $checkedCreate(
+      r'_$_Inspeccion',
+      json,
+      ($checkedConvert) {
+        final val = _$_Inspeccion(
+          cotizacionId: $checkedConvert('cotizacion_id', (v) => v as String),
+          coordinacionId:
+              $checkedConvert('coordinacion_id', (v) => v as String),
+          coordinacionCorrelativo:
+              $checkedConvert('coordinacion_correlativo', (v) => v as String),
+          riesgoId: $checkedConvert('riesgo_id', (v) => v as String),
+          riesgoNombre: $checkedConvert('riesgo_nombre', (v) => v as String),
+          coordinadorId: $checkedConvert('coordinador_id', (v) => v as String),
+          coordinadorNombre:
+              $checkedConvert('coordinador_nombre', (v) => v as String),
+          fechaSolicitud:
+              $checkedConvert('fecha_solicitud', (v) => v as String),
+          entregaAlClienteFecha:
+              $checkedConvert('entrega_al_cliente_fecha', (v) => v as String),
+          fechaEntrega: $checkedConvert('fecha_entrega', (v) => v as String),
+          solicitanteId: $checkedConvert('solicitante_id', (v) => v as String),
+          solicitanteNombre:
+              $checkedConvert('solicitante_nombre', (v) => v as String),
+          contactoId: $checkedConvert('contacto_id', (v) => v as String),
+          contactoNombre:
+              $checkedConvert('contacto_nombre', (v) => v as String),
+          clienteId: $checkedConvert('cliente_id', (v) => v as String),
+          clienteNombre: $checkedConvert('cliente_nombre', (v) => v as String),
+          servicioTipoId:
+              $checkedConvert('servicio_tipo_id', (v) => v as String),
+          servicioTipoNombre:
+              $checkedConvert('servicio_tipo_nombre', (v) => v as String),
+          tipoCambioId: $checkedConvert('tipo_cambio_id', (v) => v as String),
+          tipoCambioNombre:
+              $checkedConvert('tipo_cambio_nombre', (v) => v as String),
+          tipoInspeccionId:
+              $checkedConvert('tipo_inspeccion_id', (v) => v as String),
+          tipoInspeccionNombre:
+              $checkedConvert('tipo_inspeccion_nombre', (v) => v as String),
+          modalidadId: $checkedConvert('modalidad_id', (v) => v as String),
+          modalidadNombre:
+              $checkedConvert('modalidad_nombre', (v) => v as String),
+          inspeccionId: $checkedConvert('inspeccion_id', (v) => v as String),
+          peritoId: $checkedConvert('perito_id', (v) => v as String),
+          peritoNombre: $checkedConvert('perito_nombre', (v) => v as String),
+          inspeccionContacto:
+              $checkedConvert('inspeccion_contacto', (v) => v as String),
+          inspeccionFecha:
+              $checkedConvert('inspeccion_fecha', (v) => v as String),
+          inspeccionFechaNormal:
+              $checkedConvert('inspeccion_fecha_normal', (v) => v as String),
+          inspeccionHora:
+              $checkedConvert('inspeccion_hora', (v) => v as String),
+          inspeccionHoraTipo:
+              $checkedConvert('inspeccion_hora_tipo', (v) => v as String),
+          distritoId: $checkedConvert('distrito_id', (v) => v as String),
+          distritoNombre:
+              $checkedConvert('distrito_nombre', (v) => v as String),
+          provinciaId: $checkedConvert('provincia_id', (v) => v as String),
+          provinciaNombre:
+              $checkedConvert('provincia_nombre', (v) => v as String),
+          departamentoId:
+              $checkedConvert('departamento_id', (v) => v as String),
+          departamentoNombre:
+              $checkedConvert('departamento_nombre', (v) => v as String),
+          inspeccionDireccion:
+              $checkedConvert('inspeccion_direccion', (v) => v as String),
+          inspeccionLatitud:
+              $checkedConvert('inspeccion_latitud', (v) => v as String),
+          inspeccionLongitud:
+              $checkedConvert('inspeccion_longitud', (v) => v as String),
+          inspeccionObservacion:
+              $checkedConvert('inspeccion_observacion', (v) => v as String?),
+          estadoId: $checkedConvert('estado_id', (v) => v as String),
+          estadoNombre: $checkedConvert('estado_nombre', (v) => v as String),
+          infoStatus: $checkedConvert('info_status', (v) => v as String),
+          digitadorId: $checkedConvert('digitador_id', (v) => v as String),
+          digitadorNombre:
+              $checkedConvert('digitador_nombre', (v) => v as String),
+          controlCalidadId:
+              $checkedConvert('control_calidad_id', (v) => v as String),
+          controlCalidadNombre:
+              $checkedConvert('control_calidad_nombre', (v) => v as String),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'cotizacionId': 'cotizacion_id',
+        'coordinacionId': 'coordinacion_id',
+        'coordinacionCorrelativo': 'coordinacion_correlativo',
+        'riesgoId': 'riesgo_id',
+        'riesgoNombre': 'riesgo_nombre',
+        'coordinadorId': 'coordinador_id',
+        'coordinadorNombre': 'coordinador_nombre',
+        'fechaSolicitud': 'fecha_solicitud',
+        'entregaAlClienteFecha': 'entrega_al_cliente_fecha',
+        'fechaEntrega': 'fecha_entrega',
+        'solicitanteId': 'solicitante_id',
+        'solicitanteNombre': 'solicitante_nombre',
+        'contactoId': 'contacto_id',
+        'contactoNombre': 'contacto_nombre',
+        'clienteId': 'cliente_id',
+        'clienteNombre': 'cliente_nombre',
+        'servicioTipoId': 'servicio_tipo_id',
+        'servicioTipoNombre': 'servicio_tipo_nombre',
+        'tipoCambioId': 'tipo_cambio_id',
+        'tipoCambioNombre': 'tipo_cambio_nombre',
+        'tipoInspeccionId': 'tipo_inspeccion_id',
+        'tipoInspeccionNombre': 'tipo_inspeccion_nombre',
+        'modalidadId': 'modalidad_id',
+        'modalidadNombre': 'modalidad_nombre',
+        'inspeccionId': 'inspeccion_id',
+        'peritoId': 'perito_id',
+        'peritoNombre': 'perito_nombre',
+        'inspeccionContacto': 'inspeccion_contacto',
+        'inspeccionFecha': 'inspeccion_fecha',
+        'inspeccionFechaNormal': 'inspeccion_fecha_normal',
+        'inspeccionHora': 'inspeccion_hora',
+        'inspeccionHoraTipo': 'inspeccion_hora_tipo',
+        'distritoId': 'distrito_id',
+        'distritoNombre': 'distrito_nombre',
+        'provinciaId': 'provincia_id',
+        'provinciaNombre': 'provincia_nombre',
+        'departamentoId': 'departamento_id',
+        'departamentoNombre': 'departamento_nombre',
+        'inspeccionDireccion': 'inspeccion_direccion',
+        'inspeccionLatitud': 'inspeccion_latitud',
+        'inspeccionLongitud': 'inspeccion_longitud',
+        'inspeccionObservacion': 'inspeccion_observacion',
+        'estadoId': 'estado_id',
+        'estadoNombre': 'estado_nombre',
+        'infoStatus': 'info_status',
+        'digitadorId': 'digitador_id',
+        'digitadorNombre': 'digitador_nombre',
+        'controlCalidadId': 'control_calidad_id',
+        'controlCalidadNombre': 'control_calidad_nombre'
+      },
     );
 
 Map<String, dynamic> _$$_InspeccionToJson(_$_Inspeccion instance) =>

@@ -8,7 +8,6 @@ class AuthenticationState with _$AuthenticationState {
 
   /* final AuthenticationStatus status;
   final User user; */
-  const factory AuthenticationState.loading({User? user}) = Loading;
   const factory AuthenticationState.unauthenticated({User? user}) =
       Unauthenticated;
   const factory AuthenticationState.authenticated({User? user}) = Authenticated;

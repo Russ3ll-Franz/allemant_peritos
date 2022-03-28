@@ -19,16 +19,18 @@ class InspeccionCubit extends Cubit<InspeccionState> {
   Future<void> getTypeInspeccionByUser(String tipoInspeccion) async {
     emit(const InspeccionState.inspeccionLoading());
 
+    await Future.delayed(const Duration(milliseconds: 600), () {});
+
     const storage = FlutterSecureStorage();
     String userID = await storage.read(key: 'id') ?? '';
-    final either = await inspeccionRepository.getTypeInspeccionByUser(
+    final either = await inspeccionRepository.getInspeccionTypeByUser(
         userID: userID, tipoInspeccion: tipoInspeccion);
 
     final response = either.fold(
       (l) => throw _getFailureAndThrowExpection(l),
       (r) => r,
     );
-    return emit(InspeccionState.inspeccionLoaded(tipoInspeccions: response));
+    emit(InspeccionState.inspeccionLoaded(tipoInspeccions: response));
   }
 
   Exception _getFailureAndThrowExpection(Failure l) {

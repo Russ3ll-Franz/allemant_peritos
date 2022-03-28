@@ -24,103 +24,103 @@ class _$InspeccionTearOff {
 
   _Inspeccion call(
       {@JsonKey(name: 'cotizacion_id')
-          String? cotizacionId,
+          required String cotizacionId,
       @JsonKey(name: 'coordinacion_id')
-          String? coordinacionId,
+          required String coordinacionId,
       @JsonKey(name: 'coordinacion_correlativo')
-          String? coordinacionCorrelativo,
+          required String coordinacionCorrelativo,
       @JsonKey(name: 'riesgo_id')
-          String? riesgoId,
+          required String riesgoId,
       @JsonKey(name: 'riesgo_nombre')
-          String? riesgoNombre,
+          required String riesgoNombre,
       @JsonKey(name: 'coordinador_id')
-          String? coordinadorId,
+          required String coordinadorId,
       @JsonKey(name: 'coordinador_nombre')
-          String? coordinadorNombre,
+          required String coordinadorNombre,
       @JsonKey(name: 'fecha_solicitud')
-          String? fechaSolicitud,
+          required String fechaSolicitud,
       @JsonKey(name: 'entrega_al_cliente_fecha')
-          String? entregaAlClienteFecha,
+          required String entregaAlClienteFecha,
       @JsonKey(name: 'fecha_entrega')
-          String? fechaEntrega,
+          required String fechaEntrega,
       @JsonKey(name: 'solicitante_id')
-          String? solicitanteId,
+          required String solicitanteId,
       @JsonKey(name: 'solicitante_nombre')
-          String? solicitanteNombre,
+          required String solicitanteNombre,
       @JsonKey(name: 'contacto_id')
-          String? contactoId,
+          required String contactoId,
       @JsonKey(name: 'contacto_nombre')
-          String? contactoNombre,
+          required String contactoNombre,
       @JsonKey(name: 'cliente_id')
-          String? clienteId,
+          required String clienteId,
       @JsonKey(name: 'cliente_nombre')
-          String? clienteNombre,
+          required String clienteNombre,
       @JsonKey(name: 'servicio_tipo_id')
-          String? servicioTipoId,
+          required String servicioTipoId,
       @JsonKey(name: 'servicio_tipo_nombre')
-          String? servicioTipoNombre,
+          required String servicioTipoNombre,
       @JsonKey(name: 'tipo_cambio_id')
-          String? tipoCambioId,
+          required String tipoCambioId,
       @JsonKey(name: 'tipo_cambio_nombre')
-          String? tipoCambioNombre,
+          required String tipoCambioNombre,
       @JsonKey(name: 'tipo_inspeccion_id')
-          String? tipoInspeccionId,
+          required String tipoInspeccionId,
       @JsonKey(name: 'tipo_inspeccion_nombre')
-          String? tipoInspeccionNombre,
+          required String tipoInspeccionNombre,
       @JsonKey(name: 'modalidad_id')
-          String? modalidadId,
+          required String modalidadId,
       @JsonKey(name: 'modalidad_nombre')
-          String? modalidadNombre,
+          required String modalidadNombre,
       @JsonKey(name: 'inspeccion_id')
-          String? inspeccionId,
+          required String inspeccionId,
       @JsonKey(name: 'perito_id')
-          String? peritoId,
+          required String peritoId,
       @JsonKey(name: 'perito_nombre')
-          String? peritoNombre,
+          required String peritoNombre,
       @JsonKey(name: 'inspeccion_contacto')
-          String? inspeccionContacto,
+          required String inspeccionContacto,
       @JsonKey(name: 'inspeccion_fecha')
-          String? inspeccionFecha,
+          required String inspeccionFecha,
       @JsonKey(name: 'inspeccion_fecha_normal')
-          String? inspeccionFechaNormal,
+          required String inspeccionFechaNormal,
       @JsonKey(name: 'inspeccion_hora')
-          String? inspeccionHora,
+          required String inspeccionHora,
       @JsonKey(name: 'inspeccion_hora_tipo')
-          String? inspeccionHoraTipo,
+          required String inspeccionHoraTipo,
       @JsonKey(name: 'distrito_id')
-          String? distritoId,
+          required String distritoId,
       @JsonKey(name: 'distrito_nombre')
-          String? distritoNombre,
+          required String distritoNombre,
       @JsonKey(name: 'provincia_id')
-          String? provinciaId,
+          required String provinciaId,
       @JsonKey(name: 'provincia_nombre')
-          String? provinciaNombre,
+          required String provinciaNombre,
       @JsonKey(name: 'departamento_id')
-          String? departamentoId,
+          required String departamentoId,
       @JsonKey(name: 'departamento_nombre')
-          String? departamentoNombre,
+          required String departamentoNombre,
       @JsonKey(name: 'inspeccion_direccion')
-          String? inspeccionDireccion,
+          required String inspeccionDireccion,
       @JsonKey(name: 'inspeccion_latitud')
-          String? inspeccionLatitud,
+          required String inspeccionLatitud,
       @JsonKey(name: 'inspeccion_longitud')
-          String? inspeccionLongitud,
+          required String inspeccionLongitud,
       @JsonKey(name: 'inspeccion_observacion')
           String? inspeccionObservacion,
       @JsonKey(name: 'estado_id')
-          String? estadoId,
+          required String estadoId,
       @JsonKey(name: 'estado_nombre')
-          String? estadoNombre,
+          required String estadoNombre,
       @JsonKey(name: 'info_status')
-          String? infoStatus,
+          required String infoStatus,
       @JsonKey(name: 'digitador_id')
-          String? digitadorId,
+          required String digitadorId,
       @JsonKey(name: 'digitador_nombre')
-          String? digitadorNombre,
+          required String digitadorNombre,
       @JsonKey(name: 'control_calidad_id')
-          String? controlCalidadId,
+          required String controlCalidadId,
       @JsonKey(name: 'control_calidad_nombre')
-          String? controlCalidadNombre}) {
+          required String controlCalidadNombre}) {
     return _Inspeccion(
       cotizacionId: cotizacionId,
       coordinacionId: coordinacionId,
@@ -185,103 +185,103 @@ const $Inspeccion = _$InspeccionTearOff();
 /// @nodoc
 mixin _$Inspeccion {
   @JsonKey(name: 'cotizacion_id')
-  String? get cotizacionId => throw _privateConstructorUsedError;
+  String get cotizacionId => throw _privateConstructorUsedError;
   @JsonKey(name: 'coordinacion_id')
-  String? get coordinacionId => throw _privateConstructorUsedError;
+  String get coordinacionId => throw _privateConstructorUsedError;
   @JsonKey(name: 'coordinacion_correlativo')
-  String? get coordinacionCorrelativo => throw _privateConstructorUsedError;
+  String get coordinacionCorrelativo => throw _privateConstructorUsedError;
   @JsonKey(name: 'riesgo_id')
-  String? get riesgoId => throw _privateConstructorUsedError;
+  String get riesgoId => throw _privateConstructorUsedError;
   @JsonKey(name: 'riesgo_nombre')
-  String? get riesgoNombre => throw _privateConstructorUsedError;
+  String get riesgoNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'coordinador_id')
-  String? get coordinadorId => throw _privateConstructorUsedError;
+  String get coordinadorId => throw _privateConstructorUsedError;
   @JsonKey(name: 'coordinador_nombre')
-  String? get coordinadorNombre => throw _privateConstructorUsedError;
+  String get coordinadorNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'fecha_solicitud')
-  String? get fechaSolicitud => throw _privateConstructorUsedError;
+  String get fechaSolicitud => throw _privateConstructorUsedError;
   @JsonKey(name: 'entrega_al_cliente_fecha')
-  String? get entregaAlClienteFecha => throw _privateConstructorUsedError;
+  String get entregaAlClienteFecha => throw _privateConstructorUsedError;
   @JsonKey(name: 'fecha_entrega')
-  String? get fechaEntrega => throw _privateConstructorUsedError;
+  String get fechaEntrega => throw _privateConstructorUsedError;
   @JsonKey(name: 'solicitante_id')
-  String? get solicitanteId => throw _privateConstructorUsedError;
+  String get solicitanteId => throw _privateConstructorUsedError;
   @JsonKey(name: 'solicitante_nombre')
-  String? get solicitanteNombre => throw _privateConstructorUsedError;
+  String get solicitanteNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'contacto_id')
-  String? get contactoId => throw _privateConstructorUsedError;
+  String get contactoId => throw _privateConstructorUsedError;
   @JsonKey(name: 'contacto_nombre')
-  String? get contactoNombre => throw _privateConstructorUsedError;
+  String get contactoNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'cliente_id')
-  String? get clienteId => throw _privateConstructorUsedError;
+  String get clienteId => throw _privateConstructorUsedError;
   @JsonKey(name: 'cliente_nombre')
-  String? get clienteNombre => throw _privateConstructorUsedError;
+  String get clienteNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'servicio_tipo_id')
-  String? get servicioTipoId => throw _privateConstructorUsedError;
+  String get servicioTipoId => throw _privateConstructorUsedError;
   @JsonKey(name: 'servicio_tipo_nombre')
-  String? get servicioTipoNombre => throw _privateConstructorUsedError;
+  String get servicioTipoNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'tipo_cambio_id')
-  String? get tipoCambioId => throw _privateConstructorUsedError;
+  String get tipoCambioId => throw _privateConstructorUsedError;
   @JsonKey(name: 'tipo_cambio_nombre')
-  String? get tipoCambioNombre => throw _privateConstructorUsedError;
+  String get tipoCambioNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'tipo_inspeccion_id')
-  String? get tipoInspeccionId => throw _privateConstructorUsedError;
+  String get tipoInspeccionId => throw _privateConstructorUsedError;
   @JsonKey(name: 'tipo_inspeccion_nombre')
-  String? get tipoInspeccionNombre => throw _privateConstructorUsedError;
+  String get tipoInspeccionNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'modalidad_id')
-  String? get modalidadId => throw _privateConstructorUsedError;
+  String get modalidadId => throw _privateConstructorUsedError;
   @JsonKey(name: 'modalidad_nombre')
-  String? get modalidadNombre => throw _privateConstructorUsedError;
+  String get modalidadNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'inspeccion_id')
-  String? get inspeccionId => throw _privateConstructorUsedError;
+  String get inspeccionId => throw _privateConstructorUsedError;
   @JsonKey(name: 'perito_id')
-  String? get peritoId => throw _privateConstructorUsedError;
+  String get peritoId => throw _privateConstructorUsedError;
   @JsonKey(name: 'perito_nombre')
-  String? get peritoNombre => throw _privateConstructorUsedError;
+  String get peritoNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'inspeccion_contacto')
-  String? get inspeccionContacto => throw _privateConstructorUsedError;
+  String get inspeccionContacto => throw _privateConstructorUsedError;
   @JsonKey(name: 'inspeccion_fecha')
-  String? get inspeccionFecha => throw _privateConstructorUsedError;
+  String get inspeccionFecha => throw _privateConstructorUsedError;
   @JsonKey(name: 'inspeccion_fecha_normal')
-  String? get inspeccionFechaNormal => throw _privateConstructorUsedError;
+  String get inspeccionFechaNormal => throw _privateConstructorUsedError;
   @JsonKey(name: 'inspeccion_hora')
-  String? get inspeccionHora => throw _privateConstructorUsedError;
+  String get inspeccionHora => throw _privateConstructorUsedError;
   @JsonKey(name: 'inspeccion_hora_tipo')
-  String? get inspeccionHoraTipo => throw _privateConstructorUsedError;
+  String get inspeccionHoraTipo => throw _privateConstructorUsedError;
   @JsonKey(name: 'distrito_id')
-  String? get distritoId => throw _privateConstructorUsedError;
+  String get distritoId => throw _privateConstructorUsedError;
   @JsonKey(name: 'distrito_nombre')
-  String? get distritoNombre => throw _privateConstructorUsedError;
+  String get distritoNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'provincia_id')
-  String? get provinciaId => throw _privateConstructorUsedError;
+  String get provinciaId => throw _privateConstructorUsedError;
   @JsonKey(name: 'provincia_nombre')
-  String? get provinciaNombre => throw _privateConstructorUsedError;
+  String get provinciaNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'departamento_id')
-  String? get departamentoId => throw _privateConstructorUsedError;
+  String get departamentoId => throw _privateConstructorUsedError;
   @JsonKey(name: 'departamento_nombre')
-  String? get departamentoNombre => throw _privateConstructorUsedError;
+  String get departamentoNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'inspeccion_direccion')
-  String? get inspeccionDireccion => throw _privateConstructorUsedError;
+  String get inspeccionDireccion => throw _privateConstructorUsedError;
   @JsonKey(name: 'inspeccion_latitud')
-  String? get inspeccionLatitud => throw _privateConstructorUsedError;
+  String get inspeccionLatitud => throw _privateConstructorUsedError;
   @JsonKey(name: 'inspeccion_longitud')
-  String? get inspeccionLongitud => throw _privateConstructorUsedError;
+  String get inspeccionLongitud => throw _privateConstructorUsedError;
   @JsonKey(name: 'inspeccion_observacion')
   String? get inspeccionObservacion => throw _privateConstructorUsedError;
   @JsonKey(name: 'estado_id')
-  String? get estadoId => throw _privateConstructorUsedError;
+  String get estadoId => throw _privateConstructorUsedError;
   @JsonKey(name: 'estado_nombre')
-  String? get estadoNombre => throw _privateConstructorUsedError;
+  String get estadoNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'info_status')
-  String? get infoStatus => throw _privateConstructorUsedError;
+  String get infoStatus => throw _privateConstructorUsedError;
   @JsonKey(name: 'digitador_id')
-  String? get digitadorId => throw _privateConstructorUsedError;
+  String get digitadorId => throw _privateConstructorUsedError;
   @JsonKey(name: 'digitador_nombre')
-  String? get digitadorNombre => throw _privateConstructorUsedError;
+  String get digitadorNombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'control_calidad_id')
-  String? get controlCalidadId => throw _privateConstructorUsedError;
+  String get controlCalidadId => throw _privateConstructorUsedError;
   @JsonKey(name: 'control_calidad_nombre')
-  String? get controlCalidadNombre => throw _privateConstructorUsedError;
+  String get controlCalidadNombre => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -295,104 +295,55 @@ abstract class $InspeccionCopyWith<$Res> {
           Inspeccion value, $Res Function(Inspeccion) then) =
       _$InspeccionCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'cotizacion_id')
-          String? cotizacionId,
-      @JsonKey(name: 'coordinacion_id')
-          String? coordinacionId,
-      @JsonKey(name: 'coordinacion_correlativo')
-          String? coordinacionCorrelativo,
-      @JsonKey(name: 'riesgo_id')
-          String? riesgoId,
-      @JsonKey(name: 'riesgo_nombre')
-          String? riesgoNombre,
-      @JsonKey(name: 'coordinador_id')
-          String? coordinadorId,
-      @JsonKey(name: 'coordinador_nombre')
-          String? coordinadorNombre,
-      @JsonKey(name: 'fecha_solicitud')
-          String? fechaSolicitud,
-      @JsonKey(name: 'entrega_al_cliente_fecha')
-          String? entregaAlClienteFecha,
-      @JsonKey(name: 'fecha_entrega')
-          String? fechaEntrega,
-      @JsonKey(name: 'solicitante_id')
-          String? solicitanteId,
-      @JsonKey(name: 'solicitante_nombre')
-          String? solicitanteNombre,
-      @JsonKey(name: 'contacto_id')
-          String? contactoId,
-      @JsonKey(name: 'contacto_nombre')
-          String? contactoNombre,
-      @JsonKey(name: 'cliente_id')
-          String? clienteId,
-      @JsonKey(name: 'cliente_nombre')
-          String? clienteNombre,
-      @JsonKey(name: 'servicio_tipo_id')
-          String? servicioTipoId,
-      @JsonKey(name: 'servicio_tipo_nombre')
-          String? servicioTipoNombre,
-      @JsonKey(name: 'tipo_cambio_id')
-          String? tipoCambioId,
-      @JsonKey(name: 'tipo_cambio_nombre')
-          String? tipoCambioNombre,
-      @JsonKey(name: 'tipo_inspeccion_id')
-          String? tipoInspeccionId,
-      @JsonKey(name: 'tipo_inspeccion_nombre')
-          String? tipoInspeccionNombre,
-      @JsonKey(name: 'modalidad_id')
-          String? modalidadId,
-      @JsonKey(name: 'modalidad_nombre')
-          String? modalidadNombre,
-      @JsonKey(name: 'inspeccion_id')
-          String? inspeccionId,
-      @JsonKey(name: 'perito_id')
-          String? peritoId,
-      @JsonKey(name: 'perito_nombre')
-          String? peritoNombre,
-      @JsonKey(name: 'inspeccion_contacto')
-          String? inspeccionContacto,
-      @JsonKey(name: 'inspeccion_fecha')
-          String? inspeccionFecha,
-      @JsonKey(name: 'inspeccion_fecha_normal')
-          String? inspeccionFechaNormal,
-      @JsonKey(name: 'inspeccion_hora')
-          String? inspeccionHora,
-      @JsonKey(name: 'inspeccion_hora_tipo')
-          String? inspeccionHoraTipo,
-      @JsonKey(name: 'distrito_id')
-          String? distritoId,
-      @JsonKey(name: 'distrito_nombre')
-          String? distritoNombre,
-      @JsonKey(name: 'provincia_id')
-          String? provinciaId,
-      @JsonKey(name: 'provincia_nombre')
-          String? provinciaNombre,
-      @JsonKey(name: 'departamento_id')
-          String? departamentoId,
-      @JsonKey(name: 'departamento_nombre')
-          String? departamentoNombre,
-      @JsonKey(name: 'inspeccion_direccion')
-          String? inspeccionDireccion,
-      @JsonKey(name: 'inspeccion_latitud')
-          String? inspeccionLatitud,
-      @JsonKey(name: 'inspeccion_longitud')
-          String? inspeccionLongitud,
-      @JsonKey(name: 'inspeccion_observacion')
-          String? inspeccionObservacion,
-      @JsonKey(name: 'estado_id')
-          String? estadoId,
-      @JsonKey(name: 'estado_nombre')
-          String? estadoNombre,
-      @JsonKey(name: 'info_status')
-          String? infoStatus,
-      @JsonKey(name: 'digitador_id')
-          String? digitadorId,
-      @JsonKey(name: 'digitador_nombre')
-          String? digitadorNombre,
-      @JsonKey(name: 'control_calidad_id')
-          String? controlCalidadId,
-      @JsonKey(name: 'control_calidad_nombre')
-          String? controlCalidadNombre});
+      {@JsonKey(name: 'cotizacion_id') String cotizacionId,
+      @JsonKey(name: 'coordinacion_id') String coordinacionId,
+      @JsonKey(name: 'coordinacion_correlativo') String coordinacionCorrelativo,
+      @JsonKey(name: 'riesgo_id') String riesgoId,
+      @JsonKey(name: 'riesgo_nombre') String riesgoNombre,
+      @JsonKey(name: 'coordinador_id') String coordinadorId,
+      @JsonKey(name: 'coordinador_nombre') String coordinadorNombre,
+      @JsonKey(name: 'fecha_solicitud') String fechaSolicitud,
+      @JsonKey(name: 'entrega_al_cliente_fecha') String entregaAlClienteFecha,
+      @JsonKey(name: 'fecha_entrega') String fechaEntrega,
+      @JsonKey(name: 'solicitante_id') String solicitanteId,
+      @JsonKey(name: 'solicitante_nombre') String solicitanteNombre,
+      @JsonKey(name: 'contacto_id') String contactoId,
+      @JsonKey(name: 'contacto_nombre') String contactoNombre,
+      @JsonKey(name: 'cliente_id') String clienteId,
+      @JsonKey(name: 'cliente_nombre') String clienteNombre,
+      @JsonKey(name: 'servicio_tipo_id') String servicioTipoId,
+      @JsonKey(name: 'servicio_tipo_nombre') String servicioTipoNombre,
+      @JsonKey(name: 'tipo_cambio_id') String tipoCambioId,
+      @JsonKey(name: 'tipo_cambio_nombre') String tipoCambioNombre,
+      @JsonKey(name: 'tipo_inspeccion_id') String tipoInspeccionId,
+      @JsonKey(name: 'tipo_inspeccion_nombre') String tipoInspeccionNombre,
+      @JsonKey(name: 'modalidad_id') String modalidadId,
+      @JsonKey(name: 'modalidad_nombre') String modalidadNombre,
+      @JsonKey(name: 'inspeccion_id') String inspeccionId,
+      @JsonKey(name: 'perito_id') String peritoId,
+      @JsonKey(name: 'perito_nombre') String peritoNombre,
+      @JsonKey(name: 'inspeccion_contacto') String inspeccionContacto,
+      @JsonKey(name: 'inspeccion_fecha') String inspeccionFecha,
+      @JsonKey(name: 'inspeccion_fecha_normal') String inspeccionFechaNormal,
+      @JsonKey(name: 'inspeccion_hora') String inspeccionHora,
+      @JsonKey(name: 'inspeccion_hora_tipo') String inspeccionHoraTipo,
+      @JsonKey(name: 'distrito_id') String distritoId,
+      @JsonKey(name: 'distrito_nombre') String distritoNombre,
+      @JsonKey(name: 'provincia_id') String provinciaId,
+      @JsonKey(name: 'provincia_nombre') String provinciaNombre,
+      @JsonKey(name: 'departamento_id') String departamentoId,
+      @JsonKey(name: 'departamento_nombre') String departamentoNombre,
+      @JsonKey(name: 'inspeccion_direccion') String inspeccionDireccion,
+      @JsonKey(name: 'inspeccion_latitud') String inspeccionLatitud,
+      @JsonKey(name: 'inspeccion_longitud') String inspeccionLongitud,
+      @JsonKey(name: 'inspeccion_observacion') String? inspeccionObservacion,
+      @JsonKey(name: 'estado_id') String estadoId,
+      @JsonKey(name: 'estado_nombre') String estadoNombre,
+      @JsonKey(name: 'info_status') String infoStatus,
+      @JsonKey(name: 'digitador_id') String digitadorId,
+      @JsonKey(name: 'digitador_nombre') String digitadorNombre,
+      @JsonKey(name: 'control_calidad_id') String controlCalidadId,
+      @JsonKey(name: 'control_calidad_nombre') String controlCalidadNombre});
 }
 
 /// @nodoc
@@ -459,167 +410,167 @@ class _$InspeccionCopyWithImpl<$Res> implements $InspeccionCopyWith<$Res> {
       cotizacionId: cotizacionId == freezed
           ? _value.cotizacionId
           : cotizacionId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       coordinacionId: coordinacionId == freezed
           ? _value.coordinacionId
           : coordinacionId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       coordinacionCorrelativo: coordinacionCorrelativo == freezed
           ? _value.coordinacionCorrelativo
           : coordinacionCorrelativo // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       riesgoId: riesgoId == freezed
           ? _value.riesgoId
           : riesgoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       riesgoNombre: riesgoNombre == freezed
           ? _value.riesgoNombre
           : riesgoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       coordinadorId: coordinadorId == freezed
           ? _value.coordinadorId
           : coordinadorId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       coordinadorNombre: coordinadorNombre == freezed
           ? _value.coordinadorNombre
           : coordinadorNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       fechaSolicitud: fechaSolicitud == freezed
           ? _value.fechaSolicitud
           : fechaSolicitud // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       entregaAlClienteFecha: entregaAlClienteFecha == freezed
           ? _value.entregaAlClienteFecha
           : entregaAlClienteFecha // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       fechaEntrega: fechaEntrega == freezed
           ? _value.fechaEntrega
           : fechaEntrega // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       solicitanteId: solicitanteId == freezed
           ? _value.solicitanteId
           : solicitanteId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       solicitanteNombre: solicitanteNombre == freezed
           ? _value.solicitanteNombre
           : solicitanteNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       contactoId: contactoId == freezed
           ? _value.contactoId
           : contactoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       contactoNombre: contactoNombre == freezed
           ? _value.contactoNombre
           : contactoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       clienteId: clienteId == freezed
           ? _value.clienteId
           : clienteId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       clienteNombre: clienteNombre == freezed
           ? _value.clienteNombre
           : clienteNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       servicioTipoId: servicioTipoId == freezed
           ? _value.servicioTipoId
           : servicioTipoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       servicioTipoNombre: servicioTipoNombre == freezed
           ? _value.servicioTipoNombre
           : servicioTipoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       tipoCambioId: tipoCambioId == freezed
           ? _value.tipoCambioId
           : tipoCambioId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       tipoCambioNombre: tipoCambioNombre == freezed
           ? _value.tipoCambioNombre
           : tipoCambioNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       tipoInspeccionId: tipoInspeccionId == freezed
           ? _value.tipoInspeccionId
           : tipoInspeccionId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       tipoInspeccionNombre: tipoInspeccionNombre == freezed
           ? _value.tipoInspeccionNombre
           : tipoInspeccionNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       modalidadId: modalidadId == freezed
           ? _value.modalidadId
           : modalidadId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       modalidadNombre: modalidadNombre == freezed
           ? _value.modalidadNombre
           : modalidadNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionId: inspeccionId == freezed
           ? _value.inspeccionId
           : inspeccionId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       peritoId: peritoId == freezed
           ? _value.peritoId
           : peritoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       peritoNombre: peritoNombre == freezed
           ? _value.peritoNombre
           : peritoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionContacto: inspeccionContacto == freezed
           ? _value.inspeccionContacto
           : inspeccionContacto // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionFecha: inspeccionFecha == freezed
           ? _value.inspeccionFecha
           : inspeccionFecha // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionFechaNormal: inspeccionFechaNormal == freezed
           ? _value.inspeccionFechaNormal
           : inspeccionFechaNormal // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionHora: inspeccionHora == freezed
           ? _value.inspeccionHora
           : inspeccionHora // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionHoraTipo: inspeccionHoraTipo == freezed
           ? _value.inspeccionHoraTipo
           : inspeccionHoraTipo // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       distritoId: distritoId == freezed
           ? _value.distritoId
           : distritoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       distritoNombre: distritoNombre == freezed
           ? _value.distritoNombre
           : distritoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       provinciaId: provinciaId == freezed
           ? _value.provinciaId
           : provinciaId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       provinciaNombre: provinciaNombre == freezed
           ? _value.provinciaNombre
           : provinciaNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       departamentoId: departamentoId == freezed
           ? _value.departamentoId
           : departamentoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       departamentoNombre: departamentoNombre == freezed
           ? _value.departamentoNombre
           : departamentoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionDireccion: inspeccionDireccion == freezed
           ? _value.inspeccionDireccion
           : inspeccionDireccion // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionLatitud: inspeccionLatitud == freezed
           ? _value.inspeccionLatitud
           : inspeccionLatitud // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionLongitud: inspeccionLongitud == freezed
           ? _value.inspeccionLongitud
           : inspeccionLongitud // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionObservacion: inspeccionObservacion == freezed
           ? _value.inspeccionObservacion
           : inspeccionObservacion // ignore: cast_nullable_to_non_nullable
@@ -627,31 +578,31 @@ class _$InspeccionCopyWithImpl<$Res> implements $InspeccionCopyWith<$Res> {
       estadoId: estadoId == freezed
           ? _value.estadoId
           : estadoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       estadoNombre: estadoNombre == freezed
           ? _value.estadoNombre
           : estadoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       infoStatus: infoStatus == freezed
           ? _value.infoStatus
           : infoStatus // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       digitadorId: digitadorId == freezed
           ? _value.digitadorId
           : digitadorId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       digitadorNombre: digitadorNombre == freezed
           ? _value.digitadorNombre
           : digitadorNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       controlCalidadId: controlCalidadId == freezed
           ? _value.controlCalidadId
           : controlCalidadId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       controlCalidadNombre: controlCalidadNombre == freezed
           ? _value.controlCalidadNombre
           : controlCalidadNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -663,104 +614,55 @@ abstract class _$InspeccionCopyWith<$Res> implements $InspeccionCopyWith<$Res> {
       __$InspeccionCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'cotizacion_id')
-          String? cotizacionId,
-      @JsonKey(name: 'coordinacion_id')
-          String? coordinacionId,
-      @JsonKey(name: 'coordinacion_correlativo')
-          String? coordinacionCorrelativo,
-      @JsonKey(name: 'riesgo_id')
-          String? riesgoId,
-      @JsonKey(name: 'riesgo_nombre')
-          String? riesgoNombre,
-      @JsonKey(name: 'coordinador_id')
-          String? coordinadorId,
-      @JsonKey(name: 'coordinador_nombre')
-          String? coordinadorNombre,
-      @JsonKey(name: 'fecha_solicitud')
-          String? fechaSolicitud,
-      @JsonKey(name: 'entrega_al_cliente_fecha')
-          String? entregaAlClienteFecha,
-      @JsonKey(name: 'fecha_entrega')
-          String? fechaEntrega,
-      @JsonKey(name: 'solicitante_id')
-          String? solicitanteId,
-      @JsonKey(name: 'solicitante_nombre')
-          String? solicitanteNombre,
-      @JsonKey(name: 'contacto_id')
-          String? contactoId,
-      @JsonKey(name: 'contacto_nombre')
-          String? contactoNombre,
-      @JsonKey(name: 'cliente_id')
-          String? clienteId,
-      @JsonKey(name: 'cliente_nombre')
-          String? clienteNombre,
-      @JsonKey(name: 'servicio_tipo_id')
-          String? servicioTipoId,
-      @JsonKey(name: 'servicio_tipo_nombre')
-          String? servicioTipoNombre,
-      @JsonKey(name: 'tipo_cambio_id')
-          String? tipoCambioId,
-      @JsonKey(name: 'tipo_cambio_nombre')
-          String? tipoCambioNombre,
-      @JsonKey(name: 'tipo_inspeccion_id')
-          String? tipoInspeccionId,
-      @JsonKey(name: 'tipo_inspeccion_nombre')
-          String? tipoInspeccionNombre,
-      @JsonKey(name: 'modalidad_id')
-          String? modalidadId,
-      @JsonKey(name: 'modalidad_nombre')
-          String? modalidadNombre,
-      @JsonKey(name: 'inspeccion_id')
-          String? inspeccionId,
-      @JsonKey(name: 'perito_id')
-          String? peritoId,
-      @JsonKey(name: 'perito_nombre')
-          String? peritoNombre,
-      @JsonKey(name: 'inspeccion_contacto')
-          String? inspeccionContacto,
-      @JsonKey(name: 'inspeccion_fecha')
-          String? inspeccionFecha,
-      @JsonKey(name: 'inspeccion_fecha_normal')
-          String? inspeccionFechaNormal,
-      @JsonKey(name: 'inspeccion_hora')
-          String? inspeccionHora,
-      @JsonKey(name: 'inspeccion_hora_tipo')
-          String? inspeccionHoraTipo,
-      @JsonKey(name: 'distrito_id')
-          String? distritoId,
-      @JsonKey(name: 'distrito_nombre')
-          String? distritoNombre,
-      @JsonKey(name: 'provincia_id')
-          String? provinciaId,
-      @JsonKey(name: 'provincia_nombre')
-          String? provinciaNombre,
-      @JsonKey(name: 'departamento_id')
-          String? departamentoId,
-      @JsonKey(name: 'departamento_nombre')
-          String? departamentoNombre,
-      @JsonKey(name: 'inspeccion_direccion')
-          String? inspeccionDireccion,
-      @JsonKey(name: 'inspeccion_latitud')
-          String? inspeccionLatitud,
-      @JsonKey(name: 'inspeccion_longitud')
-          String? inspeccionLongitud,
-      @JsonKey(name: 'inspeccion_observacion')
-          String? inspeccionObservacion,
-      @JsonKey(name: 'estado_id')
-          String? estadoId,
-      @JsonKey(name: 'estado_nombre')
-          String? estadoNombre,
-      @JsonKey(name: 'info_status')
-          String? infoStatus,
-      @JsonKey(name: 'digitador_id')
-          String? digitadorId,
-      @JsonKey(name: 'digitador_nombre')
-          String? digitadorNombre,
-      @JsonKey(name: 'control_calidad_id')
-          String? controlCalidadId,
-      @JsonKey(name: 'control_calidad_nombre')
-          String? controlCalidadNombre});
+      {@JsonKey(name: 'cotizacion_id') String cotizacionId,
+      @JsonKey(name: 'coordinacion_id') String coordinacionId,
+      @JsonKey(name: 'coordinacion_correlativo') String coordinacionCorrelativo,
+      @JsonKey(name: 'riesgo_id') String riesgoId,
+      @JsonKey(name: 'riesgo_nombre') String riesgoNombre,
+      @JsonKey(name: 'coordinador_id') String coordinadorId,
+      @JsonKey(name: 'coordinador_nombre') String coordinadorNombre,
+      @JsonKey(name: 'fecha_solicitud') String fechaSolicitud,
+      @JsonKey(name: 'entrega_al_cliente_fecha') String entregaAlClienteFecha,
+      @JsonKey(name: 'fecha_entrega') String fechaEntrega,
+      @JsonKey(name: 'solicitante_id') String solicitanteId,
+      @JsonKey(name: 'solicitante_nombre') String solicitanteNombre,
+      @JsonKey(name: 'contacto_id') String contactoId,
+      @JsonKey(name: 'contacto_nombre') String contactoNombre,
+      @JsonKey(name: 'cliente_id') String clienteId,
+      @JsonKey(name: 'cliente_nombre') String clienteNombre,
+      @JsonKey(name: 'servicio_tipo_id') String servicioTipoId,
+      @JsonKey(name: 'servicio_tipo_nombre') String servicioTipoNombre,
+      @JsonKey(name: 'tipo_cambio_id') String tipoCambioId,
+      @JsonKey(name: 'tipo_cambio_nombre') String tipoCambioNombre,
+      @JsonKey(name: 'tipo_inspeccion_id') String tipoInspeccionId,
+      @JsonKey(name: 'tipo_inspeccion_nombre') String tipoInspeccionNombre,
+      @JsonKey(name: 'modalidad_id') String modalidadId,
+      @JsonKey(name: 'modalidad_nombre') String modalidadNombre,
+      @JsonKey(name: 'inspeccion_id') String inspeccionId,
+      @JsonKey(name: 'perito_id') String peritoId,
+      @JsonKey(name: 'perito_nombre') String peritoNombre,
+      @JsonKey(name: 'inspeccion_contacto') String inspeccionContacto,
+      @JsonKey(name: 'inspeccion_fecha') String inspeccionFecha,
+      @JsonKey(name: 'inspeccion_fecha_normal') String inspeccionFechaNormal,
+      @JsonKey(name: 'inspeccion_hora') String inspeccionHora,
+      @JsonKey(name: 'inspeccion_hora_tipo') String inspeccionHoraTipo,
+      @JsonKey(name: 'distrito_id') String distritoId,
+      @JsonKey(name: 'distrito_nombre') String distritoNombre,
+      @JsonKey(name: 'provincia_id') String provinciaId,
+      @JsonKey(name: 'provincia_nombre') String provinciaNombre,
+      @JsonKey(name: 'departamento_id') String departamentoId,
+      @JsonKey(name: 'departamento_nombre') String departamentoNombre,
+      @JsonKey(name: 'inspeccion_direccion') String inspeccionDireccion,
+      @JsonKey(name: 'inspeccion_latitud') String inspeccionLatitud,
+      @JsonKey(name: 'inspeccion_longitud') String inspeccionLongitud,
+      @JsonKey(name: 'inspeccion_observacion') String? inspeccionObservacion,
+      @JsonKey(name: 'estado_id') String estadoId,
+      @JsonKey(name: 'estado_nombre') String estadoNombre,
+      @JsonKey(name: 'info_status') String infoStatus,
+      @JsonKey(name: 'digitador_id') String digitadorId,
+      @JsonKey(name: 'digitador_nombre') String digitadorNombre,
+      @JsonKey(name: 'control_calidad_id') String controlCalidadId,
+      @JsonKey(name: 'control_calidad_nombre') String controlCalidadNombre});
 }
 
 /// @nodoc
@@ -829,167 +731,167 @@ class __$InspeccionCopyWithImpl<$Res> extends _$InspeccionCopyWithImpl<$Res>
       cotizacionId: cotizacionId == freezed
           ? _value.cotizacionId
           : cotizacionId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       coordinacionId: coordinacionId == freezed
           ? _value.coordinacionId
           : coordinacionId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       coordinacionCorrelativo: coordinacionCorrelativo == freezed
           ? _value.coordinacionCorrelativo
           : coordinacionCorrelativo // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       riesgoId: riesgoId == freezed
           ? _value.riesgoId
           : riesgoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       riesgoNombre: riesgoNombre == freezed
           ? _value.riesgoNombre
           : riesgoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       coordinadorId: coordinadorId == freezed
           ? _value.coordinadorId
           : coordinadorId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       coordinadorNombre: coordinadorNombre == freezed
           ? _value.coordinadorNombre
           : coordinadorNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       fechaSolicitud: fechaSolicitud == freezed
           ? _value.fechaSolicitud
           : fechaSolicitud // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       entregaAlClienteFecha: entregaAlClienteFecha == freezed
           ? _value.entregaAlClienteFecha
           : entregaAlClienteFecha // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       fechaEntrega: fechaEntrega == freezed
           ? _value.fechaEntrega
           : fechaEntrega // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       solicitanteId: solicitanteId == freezed
           ? _value.solicitanteId
           : solicitanteId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       solicitanteNombre: solicitanteNombre == freezed
           ? _value.solicitanteNombre
           : solicitanteNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       contactoId: contactoId == freezed
           ? _value.contactoId
           : contactoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       contactoNombre: contactoNombre == freezed
           ? _value.contactoNombre
           : contactoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       clienteId: clienteId == freezed
           ? _value.clienteId
           : clienteId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       clienteNombre: clienteNombre == freezed
           ? _value.clienteNombre
           : clienteNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       servicioTipoId: servicioTipoId == freezed
           ? _value.servicioTipoId
           : servicioTipoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       servicioTipoNombre: servicioTipoNombre == freezed
           ? _value.servicioTipoNombre
           : servicioTipoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       tipoCambioId: tipoCambioId == freezed
           ? _value.tipoCambioId
           : tipoCambioId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       tipoCambioNombre: tipoCambioNombre == freezed
           ? _value.tipoCambioNombre
           : tipoCambioNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       tipoInspeccionId: tipoInspeccionId == freezed
           ? _value.tipoInspeccionId
           : tipoInspeccionId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       tipoInspeccionNombre: tipoInspeccionNombre == freezed
           ? _value.tipoInspeccionNombre
           : tipoInspeccionNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       modalidadId: modalidadId == freezed
           ? _value.modalidadId
           : modalidadId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       modalidadNombre: modalidadNombre == freezed
           ? _value.modalidadNombre
           : modalidadNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionId: inspeccionId == freezed
           ? _value.inspeccionId
           : inspeccionId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       peritoId: peritoId == freezed
           ? _value.peritoId
           : peritoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       peritoNombre: peritoNombre == freezed
           ? _value.peritoNombre
           : peritoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionContacto: inspeccionContacto == freezed
           ? _value.inspeccionContacto
           : inspeccionContacto // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionFecha: inspeccionFecha == freezed
           ? _value.inspeccionFecha
           : inspeccionFecha // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionFechaNormal: inspeccionFechaNormal == freezed
           ? _value.inspeccionFechaNormal
           : inspeccionFechaNormal // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionHora: inspeccionHora == freezed
           ? _value.inspeccionHora
           : inspeccionHora // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionHoraTipo: inspeccionHoraTipo == freezed
           ? _value.inspeccionHoraTipo
           : inspeccionHoraTipo // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       distritoId: distritoId == freezed
           ? _value.distritoId
           : distritoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       distritoNombre: distritoNombre == freezed
           ? _value.distritoNombre
           : distritoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       provinciaId: provinciaId == freezed
           ? _value.provinciaId
           : provinciaId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       provinciaNombre: provinciaNombre == freezed
           ? _value.provinciaNombre
           : provinciaNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       departamentoId: departamentoId == freezed
           ? _value.departamentoId
           : departamentoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       departamentoNombre: departamentoNombre == freezed
           ? _value.departamentoNombre
           : departamentoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionDireccion: inspeccionDireccion == freezed
           ? _value.inspeccionDireccion
           : inspeccionDireccion // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionLatitud: inspeccionLatitud == freezed
           ? _value.inspeccionLatitud
           : inspeccionLatitud // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionLongitud: inspeccionLongitud == freezed
           ? _value.inspeccionLongitud
           : inspeccionLongitud // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       inspeccionObservacion: inspeccionObservacion == freezed
           ? _value.inspeccionObservacion
           : inspeccionObservacion // ignore: cast_nullable_to_non_nullable
@@ -997,31 +899,31 @@ class __$InspeccionCopyWithImpl<$Res> extends _$InspeccionCopyWithImpl<$Res>
       estadoId: estadoId == freezed
           ? _value.estadoId
           : estadoId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       estadoNombre: estadoNombre == freezed
           ? _value.estadoNombre
           : estadoNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       infoStatus: infoStatus == freezed
           ? _value.infoStatus
           : infoStatus // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       digitadorId: digitadorId == freezed
           ? _value.digitadorId
           : digitadorId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       digitadorNombre: digitadorNombre == freezed
           ? _value.digitadorNombre
           : digitadorNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       controlCalidadId: controlCalidadId == freezed
           ? _value.controlCalidadId
           : controlCalidadId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       controlCalidadNombre: controlCalidadNombre == freezed
           ? _value.controlCalidadNombre
           : controlCalidadNombre // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -1030,206 +932,255 @@ class __$InspeccionCopyWithImpl<$Res> extends _$InspeccionCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Inspeccion implements _Inspeccion {
   _$_Inspeccion(
-      {@JsonKey(name: 'cotizacion_id') this.cotizacionId,
-      @JsonKey(name: 'coordinacion_id') this.coordinacionId,
-      @JsonKey(name: 'coordinacion_correlativo') this.coordinacionCorrelativo,
-      @JsonKey(name: 'riesgo_id') this.riesgoId,
-      @JsonKey(name: 'riesgo_nombre') this.riesgoNombre,
-      @JsonKey(name: 'coordinador_id') this.coordinadorId,
-      @JsonKey(name: 'coordinador_nombre') this.coordinadorNombre,
-      @JsonKey(name: 'fecha_solicitud') this.fechaSolicitud,
-      @JsonKey(name: 'entrega_al_cliente_fecha') this.entregaAlClienteFecha,
-      @JsonKey(name: 'fecha_entrega') this.fechaEntrega,
-      @JsonKey(name: 'solicitante_id') this.solicitanteId,
-      @JsonKey(name: 'solicitante_nombre') this.solicitanteNombre,
-      @JsonKey(name: 'contacto_id') this.contactoId,
-      @JsonKey(name: 'contacto_nombre') this.contactoNombre,
-      @JsonKey(name: 'cliente_id') this.clienteId,
-      @JsonKey(name: 'cliente_nombre') this.clienteNombre,
-      @JsonKey(name: 'servicio_tipo_id') this.servicioTipoId,
-      @JsonKey(name: 'servicio_tipo_nombre') this.servicioTipoNombre,
-      @JsonKey(name: 'tipo_cambio_id') this.tipoCambioId,
-      @JsonKey(name: 'tipo_cambio_nombre') this.tipoCambioNombre,
-      @JsonKey(name: 'tipo_inspeccion_id') this.tipoInspeccionId,
-      @JsonKey(name: 'tipo_inspeccion_nombre') this.tipoInspeccionNombre,
-      @JsonKey(name: 'modalidad_id') this.modalidadId,
-      @JsonKey(name: 'modalidad_nombre') this.modalidadNombre,
-      @JsonKey(name: 'inspeccion_id') this.inspeccionId,
-      @JsonKey(name: 'perito_id') this.peritoId,
-      @JsonKey(name: 'perito_nombre') this.peritoNombre,
-      @JsonKey(name: 'inspeccion_contacto') this.inspeccionContacto,
-      @JsonKey(name: 'inspeccion_fecha') this.inspeccionFecha,
-      @JsonKey(name: 'inspeccion_fecha_normal') this.inspeccionFechaNormal,
-      @JsonKey(name: 'inspeccion_hora') this.inspeccionHora,
-      @JsonKey(name: 'inspeccion_hora_tipo') this.inspeccionHoraTipo,
-      @JsonKey(name: 'distrito_id') this.distritoId,
-      @JsonKey(name: 'distrito_nombre') this.distritoNombre,
-      @JsonKey(name: 'provincia_id') this.provinciaId,
-      @JsonKey(name: 'provincia_nombre') this.provinciaNombre,
-      @JsonKey(name: 'departamento_id') this.departamentoId,
-      @JsonKey(name: 'departamento_nombre') this.departamentoNombre,
-      @JsonKey(name: 'inspeccion_direccion') this.inspeccionDireccion,
-      @JsonKey(name: 'inspeccion_latitud') this.inspeccionLatitud,
-      @JsonKey(name: 'inspeccion_longitud') this.inspeccionLongitud,
-      @JsonKey(name: 'inspeccion_observacion') this.inspeccionObservacion,
-      @JsonKey(name: 'estado_id') this.estadoId,
-      @JsonKey(name: 'estado_nombre') this.estadoNombre,
-      @JsonKey(name: 'info_status') this.infoStatus,
-      @JsonKey(name: 'digitador_id') this.digitadorId,
-      @JsonKey(name: 'digitador_nombre') this.digitadorNombre,
-      @JsonKey(name: 'control_calidad_id') this.controlCalidadId,
-      @JsonKey(name: 'control_calidad_nombre') this.controlCalidadNombre});
+      {@JsonKey(name: 'cotizacion_id')
+          required this.cotizacionId,
+      @JsonKey(name: 'coordinacion_id')
+          required this.coordinacionId,
+      @JsonKey(name: 'coordinacion_correlativo')
+          required this.coordinacionCorrelativo,
+      @JsonKey(name: 'riesgo_id')
+          required this.riesgoId,
+      @JsonKey(name: 'riesgo_nombre')
+          required this.riesgoNombre,
+      @JsonKey(name: 'coordinador_id')
+          required this.coordinadorId,
+      @JsonKey(name: 'coordinador_nombre')
+          required this.coordinadorNombre,
+      @JsonKey(name: 'fecha_solicitud')
+          required this.fechaSolicitud,
+      @JsonKey(name: 'entrega_al_cliente_fecha')
+          required this.entregaAlClienteFecha,
+      @JsonKey(name: 'fecha_entrega')
+          required this.fechaEntrega,
+      @JsonKey(name: 'solicitante_id')
+          required this.solicitanteId,
+      @JsonKey(name: 'solicitante_nombre')
+          required this.solicitanteNombre,
+      @JsonKey(name: 'contacto_id')
+          required this.contactoId,
+      @JsonKey(name: 'contacto_nombre')
+          required this.contactoNombre,
+      @JsonKey(name: 'cliente_id')
+          required this.clienteId,
+      @JsonKey(name: 'cliente_nombre')
+          required this.clienteNombre,
+      @JsonKey(name: 'servicio_tipo_id')
+          required this.servicioTipoId,
+      @JsonKey(name: 'servicio_tipo_nombre')
+          required this.servicioTipoNombre,
+      @JsonKey(name: 'tipo_cambio_id')
+          required this.tipoCambioId,
+      @JsonKey(name: 'tipo_cambio_nombre')
+          required this.tipoCambioNombre,
+      @JsonKey(name: 'tipo_inspeccion_id')
+          required this.tipoInspeccionId,
+      @JsonKey(name: 'tipo_inspeccion_nombre')
+          required this.tipoInspeccionNombre,
+      @JsonKey(name: 'modalidad_id')
+          required this.modalidadId,
+      @JsonKey(name: 'modalidad_nombre')
+          required this.modalidadNombre,
+      @JsonKey(name: 'inspeccion_id')
+          required this.inspeccionId,
+      @JsonKey(name: 'perito_id')
+          required this.peritoId,
+      @JsonKey(name: 'perito_nombre')
+          required this.peritoNombre,
+      @JsonKey(name: 'inspeccion_contacto')
+          required this.inspeccionContacto,
+      @JsonKey(name: 'inspeccion_fecha')
+          required this.inspeccionFecha,
+      @JsonKey(name: 'inspeccion_fecha_normal')
+          required this.inspeccionFechaNormal,
+      @JsonKey(name: 'inspeccion_hora')
+          required this.inspeccionHora,
+      @JsonKey(name: 'inspeccion_hora_tipo')
+          required this.inspeccionHoraTipo,
+      @JsonKey(name: 'distrito_id')
+          required this.distritoId,
+      @JsonKey(name: 'distrito_nombre')
+          required this.distritoNombre,
+      @JsonKey(name: 'provincia_id')
+          required this.provinciaId,
+      @JsonKey(name: 'provincia_nombre')
+          required this.provinciaNombre,
+      @JsonKey(name: 'departamento_id')
+          required this.departamentoId,
+      @JsonKey(name: 'departamento_nombre')
+          required this.departamentoNombre,
+      @JsonKey(name: 'inspeccion_direccion')
+          required this.inspeccionDireccion,
+      @JsonKey(name: 'inspeccion_latitud')
+          required this.inspeccionLatitud,
+      @JsonKey(name: 'inspeccion_longitud')
+          required this.inspeccionLongitud,
+      @JsonKey(name: 'inspeccion_observacion')
+          this.inspeccionObservacion,
+      @JsonKey(name: 'estado_id')
+          required this.estadoId,
+      @JsonKey(name: 'estado_nombre')
+          required this.estadoNombre,
+      @JsonKey(name: 'info_status')
+          required this.infoStatus,
+      @JsonKey(name: 'digitador_id')
+          required this.digitadorId,
+      @JsonKey(name: 'digitador_nombre')
+          required this.digitadorNombre,
+      @JsonKey(name: 'control_calidad_id')
+          required this.controlCalidadId,
+      @JsonKey(name: 'control_calidad_nombre')
+          required this.controlCalidadNombre});
 
   factory _$_Inspeccion.fromJson(Map<String, dynamic> json) =>
       _$$_InspeccionFromJson(json);
 
   @override
   @JsonKey(name: 'cotizacion_id')
-  final String? cotizacionId;
+  final String cotizacionId;
   @override
   @JsonKey(name: 'coordinacion_id')
-  final String? coordinacionId;
+  final String coordinacionId;
   @override
   @JsonKey(name: 'coordinacion_correlativo')
-  final String? coordinacionCorrelativo;
+  final String coordinacionCorrelativo;
   @override
   @JsonKey(name: 'riesgo_id')
-  final String? riesgoId;
+  final String riesgoId;
   @override
   @JsonKey(name: 'riesgo_nombre')
-  final String? riesgoNombre;
+  final String riesgoNombre;
   @override
   @JsonKey(name: 'coordinador_id')
-  final String? coordinadorId;
+  final String coordinadorId;
   @override
   @JsonKey(name: 'coordinador_nombre')
-  final String? coordinadorNombre;
+  final String coordinadorNombre;
   @override
   @JsonKey(name: 'fecha_solicitud')
-  final String? fechaSolicitud;
+  final String fechaSolicitud;
   @override
   @JsonKey(name: 'entrega_al_cliente_fecha')
-  final String? entregaAlClienteFecha;
+  final String entregaAlClienteFecha;
   @override
   @JsonKey(name: 'fecha_entrega')
-  final String? fechaEntrega;
+  final String fechaEntrega;
   @override
   @JsonKey(name: 'solicitante_id')
-  final String? solicitanteId;
+  final String solicitanteId;
   @override
   @JsonKey(name: 'solicitante_nombre')
-  final String? solicitanteNombre;
+  final String solicitanteNombre;
   @override
   @JsonKey(name: 'contacto_id')
-  final String? contactoId;
+  final String contactoId;
   @override
   @JsonKey(name: 'contacto_nombre')
-  final String? contactoNombre;
+  final String contactoNombre;
   @override
   @JsonKey(name: 'cliente_id')
-  final String? clienteId;
+  final String clienteId;
   @override
   @JsonKey(name: 'cliente_nombre')
-  final String? clienteNombre;
+  final String clienteNombre;
   @override
   @JsonKey(name: 'servicio_tipo_id')
-  final String? servicioTipoId;
+  final String servicioTipoId;
   @override
   @JsonKey(name: 'servicio_tipo_nombre')
-  final String? servicioTipoNombre;
+  final String servicioTipoNombre;
   @override
   @JsonKey(name: 'tipo_cambio_id')
-  final String? tipoCambioId;
+  final String tipoCambioId;
   @override
   @JsonKey(name: 'tipo_cambio_nombre')
-  final String? tipoCambioNombre;
+  final String tipoCambioNombre;
   @override
   @JsonKey(name: 'tipo_inspeccion_id')
-  final String? tipoInspeccionId;
+  final String tipoInspeccionId;
   @override
   @JsonKey(name: 'tipo_inspeccion_nombre')
-  final String? tipoInspeccionNombre;
+  final String tipoInspeccionNombre;
   @override
   @JsonKey(name: 'modalidad_id')
-  final String? modalidadId;
+  final String modalidadId;
   @override
   @JsonKey(name: 'modalidad_nombre')
-  final String? modalidadNombre;
+  final String modalidadNombre;
   @override
   @JsonKey(name: 'inspeccion_id')
-  final String? inspeccionId;
+  final String inspeccionId;
   @override
   @JsonKey(name: 'perito_id')
-  final String? peritoId;
+  final String peritoId;
   @override
   @JsonKey(name: 'perito_nombre')
-  final String? peritoNombre;
+  final String peritoNombre;
   @override
   @JsonKey(name: 'inspeccion_contacto')
-  final String? inspeccionContacto;
+  final String inspeccionContacto;
   @override
   @JsonKey(name: 'inspeccion_fecha')
-  final String? inspeccionFecha;
+  final String inspeccionFecha;
   @override
   @JsonKey(name: 'inspeccion_fecha_normal')
-  final String? inspeccionFechaNormal;
+  final String inspeccionFechaNormal;
   @override
   @JsonKey(name: 'inspeccion_hora')
-  final String? inspeccionHora;
+  final String inspeccionHora;
   @override
   @JsonKey(name: 'inspeccion_hora_tipo')
-  final String? inspeccionHoraTipo;
+  final String inspeccionHoraTipo;
   @override
   @JsonKey(name: 'distrito_id')
-  final String? distritoId;
+  final String distritoId;
   @override
   @JsonKey(name: 'distrito_nombre')
-  final String? distritoNombre;
+  final String distritoNombre;
   @override
   @JsonKey(name: 'provincia_id')
-  final String? provinciaId;
+  final String provinciaId;
   @override
   @JsonKey(name: 'provincia_nombre')
-  final String? provinciaNombre;
+  final String provinciaNombre;
   @override
   @JsonKey(name: 'departamento_id')
-  final String? departamentoId;
+  final String departamentoId;
   @override
   @JsonKey(name: 'departamento_nombre')
-  final String? departamentoNombre;
+  final String departamentoNombre;
   @override
   @JsonKey(name: 'inspeccion_direccion')
-  final String? inspeccionDireccion;
+  final String inspeccionDireccion;
   @override
   @JsonKey(name: 'inspeccion_latitud')
-  final String? inspeccionLatitud;
+  final String inspeccionLatitud;
   @override
   @JsonKey(name: 'inspeccion_longitud')
-  final String? inspeccionLongitud;
+  final String inspeccionLongitud;
   @override
   @JsonKey(name: 'inspeccion_observacion')
   final String? inspeccionObservacion;
   @override
   @JsonKey(name: 'estado_id')
-  final String? estadoId;
+  final String estadoId;
   @override
   @JsonKey(name: 'estado_nombre')
-  final String? estadoNombre;
+  final String estadoNombre;
   @override
   @JsonKey(name: 'info_status')
-  final String? infoStatus;
+  final String infoStatus;
   @override
   @JsonKey(name: 'digitador_id')
-  final String? digitadorId;
+  final String digitadorId;
   @override
   @JsonKey(name: 'digitador_nombre')
-  final String? digitadorNombre;
+  final String digitadorNombre;
   @override
   @JsonKey(name: 'control_calidad_id')
-  final String? controlCalidadId;
+  final String controlCalidadId;
   @override
   @JsonKey(name: 'control_calidad_nombre')
-  final String? controlCalidadNombre;
+  final String controlCalidadNombre;
 
   @override
   String toString() {
@@ -1404,254 +1355,254 @@ class _$_Inspeccion implements _Inspeccion {
 abstract class _Inspeccion implements Inspeccion {
   factory _Inspeccion(
       {@JsonKey(name: 'cotizacion_id')
-          String? cotizacionId,
+          required String cotizacionId,
       @JsonKey(name: 'coordinacion_id')
-          String? coordinacionId,
+          required String coordinacionId,
       @JsonKey(name: 'coordinacion_correlativo')
-          String? coordinacionCorrelativo,
+          required String coordinacionCorrelativo,
       @JsonKey(name: 'riesgo_id')
-          String? riesgoId,
+          required String riesgoId,
       @JsonKey(name: 'riesgo_nombre')
-          String? riesgoNombre,
+          required String riesgoNombre,
       @JsonKey(name: 'coordinador_id')
-          String? coordinadorId,
+          required String coordinadorId,
       @JsonKey(name: 'coordinador_nombre')
-          String? coordinadorNombre,
+          required String coordinadorNombre,
       @JsonKey(name: 'fecha_solicitud')
-          String? fechaSolicitud,
+          required String fechaSolicitud,
       @JsonKey(name: 'entrega_al_cliente_fecha')
-          String? entregaAlClienteFecha,
+          required String entregaAlClienteFecha,
       @JsonKey(name: 'fecha_entrega')
-          String? fechaEntrega,
+          required String fechaEntrega,
       @JsonKey(name: 'solicitante_id')
-          String? solicitanteId,
+          required String solicitanteId,
       @JsonKey(name: 'solicitante_nombre')
-          String? solicitanteNombre,
+          required String solicitanteNombre,
       @JsonKey(name: 'contacto_id')
-          String? contactoId,
+          required String contactoId,
       @JsonKey(name: 'contacto_nombre')
-          String? contactoNombre,
+          required String contactoNombre,
       @JsonKey(name: 'cliente_id')
-          String? clienteId,
+          required String clienteId,
       @JsonKey(name: 'cliente_nombre')
-          String? clienteNombre,
+          required String clienteNombre,
       @JsonKey(name: 'servicio_tipo_id')
-          String? servicioTipoId,
+          required String servicioTipoId,
       @JsonKey(name: 'servicio_tipo_nombre')
-          String? servicioTipoNombre,
+          required String servicioTipoNombre,
       @JsonKey(name: 'tipo_cambio_id')
-          String? tipoCambioId,
+          required String tipoCambioId,
       @JsonKey(name: 'tipo_cambio_nombre')
-          String? tipoCambioNombre,
+          required String tipoCambioNombre,
       @JsonKey(name: 'tipo_inspeccion_id')
-          String? tipoInspeccionId,
+          required String tipoInspeccionId,
       @JsonKey(name: 'tipo_inspeccion_nombre')
-          String? tipoInspeccionNombre,
+          required String tipoInspeccionNombre,
       @JsonKey(name: 'modalidad_id')
-          String? modalidadId,
+          required String modalidadId,
       @JsonKey(name: 'modalidad_nombre')
-          String? modalidadNombre,
+          required String modalidadNombre,
       @JsonKey(name: 'inspeccion_id')
-          String? inspeccionId,
+          required String inspeccionId,
       @JsonKey(name: 'perito_id')
-          String? peritoId,
+          required String peritoId,
       @JsonKey(name: 'perito_nombre')
-          String? peritoNombre,
+          required String peritoNombre,
       @JsonKey(name: 'inspeccion_contacto')
-          String? inspeccionContacto,
+          required String inspeccionContacto,
       @JsonKey(name: 'inspeccion_fecha')
-          String? inspeccionFecha,
+          required String inspeccionFecha,
       @JsonKey(name: 'inspeccion_fecha_normal')
-          String? inspeccionFechaNormal,
+          required String inspeccionFechaNormal,
       @JsonKey(name: 'inspeccion_hora')
-          String? inspeccionHora,
+          required String inspeccionHora,
       @JsonKey(name: 'inspeccion_hora_tipo')
-          String? inspeccionHoraTipo,
+          required String inspeccionHoraTipo,
       @JsonKey(name: 'distrito_id')
-          String? distritoId,
+          required String distritoId,
       @JsonKey(name: 'distrito_nombre')
-          String? distritoNombre,
+          required String distritoNombre,
       @JsonKey(name: 'provincia_id')
-          String? provinciaId,
+          required String provinciaId,
       @JsonKey(name: 'provincia_nombre')
-          String? provinciaNombre,
+          required String provinciaNombre,
       @JsonKey(name: 'departamento_id')
-          String? departamentoId,
+          required String departamentoId,
       @JsonKey(name: 'departamento_nombre')
-          String? departamentoNombre,
+          required String departamentoNombre,
       @JsonKey(name: 'inspeccion_direccion')
-          String? inspeccionDireccion,
+          required String inspeccionDireccion,
       @JsonKey(name: 'inspeccion_latitud')
-          String? inspeccionLatitud,
+          required String inspeccionLatitud,
       @JsonKey(name: 'inspeccion_longitud')
-          String? inspeccionLongitud,
+          required String inspeccionLongitud,
       @JsonKey(name: 'inspeccion_observacion')
           String? inspeccionObservacion,
       @JsonKey(name: 'estado_id')
-          String? estadoId,
+          required String estadoId,
       @JsonKey(name: 'estado_nombre')
-          String? estadoNombre,
+          required String estadoNombre,
       @JsonKey(name: 'info_status')
-          String? infoStatus,
+          required String infoStatus,
       @JsonKey(name: 'digitador_id')
-          String? digitadorId,
+          required String digitadorId,
       @JsonKey(name: 'digitador_nombre')
-          String? digitadorNombre,
+          required String digitadorNombre,
       @JsonKey(name: 'control_calidad_id')
-          String? controlCalidadId,
+          required String controlCalidadId,
       @JsonKey(name: 'control_calidad_nombre')
-          String? controlCalidadNombre}) = _$_Inspeccion;
+          required String controlCalidadNombre}) = _$_Inspeccion;
 
   factory _Inspeccion.fromJson(Map<String, dynamic> json) =
       _$_Inspeccion.fromJson;
 
   @override
   @JsonKey(name: 'cotizacion_id')
-  String? get cotizacionId;
+  String get cotizacionId;
   @override
   @JsonKey(name: 'coordinacion_id')
-  String? get coordinacionId;
+  String get coordinacionId;
   @override
   @JsonKey(name: 'coordinacion_correlativo')
-  String? get coordinacionCorrelativo;
+  String get coordinacionCorrelativo;
   @override
   @JsonKey(name: 'riesgo_id')
-  String? get riesgoId;
+  String get riesgoId;
   @override
   @JsonKey(name: 'riesgo_nombre')
-  String? get riesgoNombre;
+  String get riesgoNombre;
   @override
   @JsonKey(name: 'coordinador_id')
-  String? get coordinadorId;
+  String get coordinadorId;
   @override
   @JsonKey(name: 'coordinador_nombre')
-  String? get coordinadorNombre;
+  String get coordinadorNombre;
   @override
   @JsonKey(name: 'fecha_solicitud')
-  String? get fechaSolicitud;
+  String get fechaSolicitud;
   @override
   @JsonKey(name: 'entrega_al_cliente_fecha')
-  String? get entregaAlClienteFecha;
+  String get entregaAlClienteFecha;
   @override
   @JsonKey(name: 'fecha_entrega')
-  String? get fechaEntrega;
+  String get fechaEntrega;
   @override
   @JsonKey(name: 'solicitante_id')
-  String? get solicitanteId;
+  String get solicitanteId;
   @override
   @JsonKey(name: 'solicitante_nombre')
-  String? get solicitanteNombre;
+  String get solicitanteNombre;
   @override
   @JsonKey(name: 'contacto_id')
-  String? get contactoId;
+  String get contactoId;
   @override
   @JsonKey(name: 'contacto_nombre')
-  String? get contactoNombre;
+  String get contactoNombre;
   @override
   @JsonKey(name: 'cliente_id')
-  String? get clienteId;
+  String get clienteId;
   @override
   @JsonKey(name: 'cliente_nombre')
-  String? get clienteNombre;
+  String get clienteNombre;
   @override
   @JsonKey(name: 'servicio_tipo_id')
-  String? get servicioTipoId;
+  String get servicioTipoId;
   @override
   @JsonKey(name: 'servicio_tipo_nombre')
-  String? get servicioTipoNombre;
+  String get servicioTipoNombre;
   @override
   @JsonKey(name: 'tipo_cambio_id')
-  String? get tipoCambioId;
+  String get tipoCambioId;
   @override
   @JsonKey(name: 'tipo_cambio_nombre')
-  String? get tipoCambioNombre;
+  String get tipoCambioNombre;
   @override
   @JsonKey(name: 'tipo_inspeccion_id')
-  String? get tipoInspeccionId;
+  String get tipoInspeccionId;
   @override
   @JsonKey(name: 'tipo_inspeccion_nombre')
-  String? get tipoInspeccionNombre;
+  String get tipoInspeccionNombre;
   @override
   @JsonKey(name: 'modalidad_id')
-  String? get modalidadId;
+  String get modalidadId;
   @override
   @JsonKey(name: 'modalidad_nombre')
-  String? get modalidadNombre;
+  String get modalidadNombre;
   @override
   @JsonKey(name: 'inspeccion_id')
-  String? get inspeccionId;
+  String get inspeccionId;
   @override
   @JsonKey(name: 'perito_id')
-  String? get peritoId;
+  String get peritoId;
   @override
   @JsonKey(name: 'perito_nombre')
-  String? get peritoNombre;
+  String get peritoNombre;
   @override
   @JsonKey(name: 'inspeccion_contacto')
-  String? get inspeccionContacto;
+  String get inspeccionContacto;
   @override
   @JsonKey(name: 'inspeccion_fecha')
-  String? get inspeccionFecha;
+  String get inspeccionFecha;
   @override
   @JsonKey(name: 'inspeccion_fecha_normal')
-  String? get inspeccionFechaNormal;
+  String get inspeccionFechaNormal;
   @override
   @JsonKey(name: 'inspeccion_hora')
-  String? get inspeccionHora;
+  String get inspeccionHora;
   @override
   @JsonKey(name: 'inspeccion_hora_tipo')
-  String? get inspeccionHoraTipo;
+  String get inspeccionHoraTipo;
   @override
   @JsonKey(name: 'distrito_id')
-  String? get distritoId;
+  String get distritoId;
   @override
   @JsonKey(name: 'distrito_nombre')
-  String? get distritoNombre;
+  String get distritoNombre;
   @override
   @JsonKey(name: 'provincia_id')
-  String? get provinciaId;
+  String get provinciaId;
   @override
   @JsonKey(name: 'provincia_nombre')
-  String? get provinciaNombre;
+  String get provinciaNombre;
   @override
   @JsonKey(name: 'departamento_id')
-  String? get departamentoId;
+  String get departamentoId;
   @override
   @JsonKey(name: 'departamento_nombre')
-  String? get departamentoNombre;
+  String get departamentoNombre;
   @override
   @JsonKey(name: 'inspeccion_direccion')
-  String? get inspeccionDireccion;
+  String get inspeccionDireccion;
   @override
   @JsonKey(name: 'inspeccion_latitud')
-  String? get inspeccionLatitud;
+  String get inspeccionLatitud;
   @override
   @JsonKey(name: 'inspeccion_longitud')
-  String? get inspeccionLongitud;
+  String get inspeccionLongitud;
   @override
   @JsonKey(name: 'inspeccion_observacion')
   String? get inspeccionObservacion;
   @override
   @JsonKey(name: 'estado_id')
-  String? get estadoId;
+  String get estadoId;
   @override
   @JsonKey(name: 'estado_nombre')
-  String? get estadoNombre;
+  String get estadoNombre;
   @override
   @JsonKey(name: 'info_status')
-  String? get infoStatus;
+  String get infoStatus;
   @override
   @JsonKey(name: 'digitador_id')
-  String? get digitadorId;
+  String get digitadorId;
   @override
   @JsonKey(name: 'digitador_nombre')
-  String? get digitadorNombre;
+  String get digitadorNombre;
   @override
   @JsonKey(name: 'control_calidad_id')
-  String? get controlCalidadId;
+  String get controlCalidadId;
   @override
   @JsonKey(name: 'control_calidad_nombre')
-  String? get controlCalidadNombre;
+  String get controlCalidadNombre;
   @override
   @JsonKey(ignore: true)
   _$InspeccionCopyWith<_Inspeccion> get copyWith =>

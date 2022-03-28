@@ -1,11 +1,15 @@
+import 'dart:convert';
+
 import 'package:allemant_peritos/core/http/api_response.dart';
 import 'package:allemant_peritos/core/http/http_methods.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/coordinacion/coordinacion.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspeccion.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class IInspeccionRemoteDataSource {
-  Future<List<Inspeccion>> getInspeccion(String userID, String tipoInspeccion);
-  Future<Inspeccion> getTypeInspeccionByUser(String coordinacionID);
+  Future<List<Inspeccion>> getInspeccionTypeByUser(
+      String userID, String tipoInspeccion);
+  Future<Coordinacion> getInspeccionByCoordinacion(String coordinacionID);
 }
 
 @Injectable(as: IInspeccionRemoteDataSource)
@@ -15,7 +19,7 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
   HttpMethodsType helper;
 
   @override
-  Future<List<Inspeccion>> getInspeccion(
+  Future<List<Inspeccion>> getInspeccionTypeByUser(
       String userID, String tipoInspeccion) async {
     final response = await helper.get(
         "operaciones/inspecciones/listAppInspeccion/$userID/$tipoInspeccion");
@@ -35,15 +39,17 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
   }
 
   @override
-  Future<Inspeccion> getTypeInspeccionByUser(String coordinacionID) async {
-    final response = await helper.get(
-        "operaciones/inspecciones/listAppInspeccionCoordinacionId/$coordinacionID");
-    if (response is APISuccess) {
-      final value = response.value;
-      try {
-        final _inspeccions = Inspeccion.fromJson(value);
+  Future<Coordinacion> getInspeccionByCoordinacion(
+      String coordinacionID) async {
+    final response = await helper
+        .get("intranet/inspeccion/search?coordinacion_codigo=$coordinacionID");
 
-        return _inspeccions;
+    if (response is APISuccess) {
+      final data = response.value;
+      try {
+        final inspeccion = Coordinacion.fromJson(data);
+
+        return inspeccion;
       } catch (e) {
         throw Exception(e.toString());
       }

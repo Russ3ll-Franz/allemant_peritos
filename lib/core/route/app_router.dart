@@ -13,6 +13,7 @@ class AppRouteObserver extends AutoRouterObserver {
   AutoRoute(page: AppStartPage, initial: true),
   homeRouter,
   signInRouter,
-  inspeccionRouter
+  inspeccionRouter,
+  inspeccionDetailRouter
 ])
 class $AppRouter {}

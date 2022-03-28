@@ -1,17 +1,37 @@
+import 'package:allemant_peritos/configs/colors.dart';
+import 'package:flutter/cupertino.dart';
+
 class MyListGrid {
   final String title, image;
+  final Color color;
   final String id;
 
-  MyListGrid({required this.id, required this.title, required this.image});
+  MyListGrid(
+      {required this.id,
+      required this.title,
+      required this.image,
+      required this.color});
 }
 
 final List grids = [
   MyListGrid(
-      id: "1", title: "Interior", image: "assets/images/menu/interior.png"),
+      id: "1",
+      title: "INTERIOR",
+      image: "assets/images/menu/interior.png",
+      color: AppColors.lightBlue),
   MyListGrid(
-      id: "2", title: "Exterior", image: "assets/images/menu/casita.png"),
+      id: "2",
+      title: "EXTERIOR",
+      image: "assets/images/menu/casita.png",
+      color: AppColors.lightCyan),
   MyListGrid(
-      id: "3", title: "Vehiculos", image: "assets/images/menu/vehiculo.png"),
+      id: "3",
+      title: "VEHICULOS",
+      image: "assets/images/menu/vehiculo.png",
+      color: AppColors.lightPink),
   MyListGrid(
-      id: "4", title: "Maquinarias", image: "assets/images/menu/machine.png"),
+      id: "4",
+      title: "MAQUINARIAS",
+      image: "assets/images/menu/machine.png",
+      color: AppColors.lightYellow),
 ];

@@ -2,7 +2,6 @@ import 'package:allemant_peritos/application/bloc/login/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../application/repository/authentication_repository.dart';
 import '../forms/login_form.dart';
@@ -31,7 +30,7 @@ class SignInPage extends StatelessWidget {
       body: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: BlocProvider(
               create: (context) {
                 return LoginBloc(

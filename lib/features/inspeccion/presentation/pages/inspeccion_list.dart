@@ -1,6 +1,13 @@
+import 'dart:ffi';
+
+import 'package:allemant_peritos/configs/colors.dart';
+import 'package:allemant_peritos/core/route/app_router.gr.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspeccion.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_cubit.dart';
+import 'package:allemant_peritos/features/inspeccion/presentation/routes/routes.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/widgets/inspeccion_tipo_screen.dart';
+import 'package:allemant_peritos/features/widgets/loading_indicators.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax/iconsax.dart';
@@ -46,29 +53,25 @@ class _InspeccionBodyState extends State<InspeccionBody> {
     return BlocBuilder<InspeccionCubit, InspeccionState>(
       builder: (_, state) {
         if (state is InspeccionLoading) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return LoadingIndicators.instance.smallLoadingAnimation(context);
         } else if (state is InspeccionLoaded) {
-          return Expanded(
-            child: Column(children: <Widget>[
-              AnimatedOpacity(
-                duration: const Duration(milliseconds: 200),
-                opacity: closeTopContainer ? 0 : 1,
-                child: AnimatedContainer(
-                    //color: Colors.amber,
-                    duration: const Duration(milliseconds: 200),
-                    width: widget.mySize.width,
-                    alignment: Alignment.topCenter,
-                    height: closeTopContainer ? 0 : widget.myCategoryHeight,
-                    child: categoriesScroller),
-              ),
-              InspeccionLista(
-                  inspeccionList: (state as dynamic).tipoInspeccions,
-                  topContainer: topContainer,
-                  myscroller: controller)
-            ]),
-          );
+          return Column(children: <Widget>[
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 200),
+              opacity: closeTopContainer ? 0 : 1,
+              child: AnimatedContainer(
+                  //color: Colors.amber,
+                  duration: const Duration(milliseconds: 200),
+                  width: widget.mySize.width,
+                  alignment: Alignment.topCenter,
+                  height: closeTopContainer ? 0 : widget.myCategoryHeight,
+                  child: categoriesScroller),
+            ),
+            InspeccionLista(
+                inspeccionList: (state as dynamic).tipoInspeccions,
+                topContainer: topContainer,
+                myscroller: controller)
+          ]);
         }
         //error state
         return Column(
@@ -92,30 +95,6 @@ class _InspeccionBodyState extends State<InspeccionBody> {
             )
           ],
         );
-        /*  return state.(
-          inspeccionLoaded: (data) {
-            return Expanded(
-              child: Column(children: <Widget>[
-                AnimatedOpacity(
-                  duration: const Duration(milliseconds: 200),
-                  opacity: closeTopContainer ? 0 : 1,
-                  child: AnimatedContainer(
-                      //color: Colors.amber,
-                      duration: const Duration(milliseconds: 200),
-                      width: widget.mySize.width,
-                      alignment: Alignment.topCenter,
-                      height: closeTopContainer ? 0 : widget.myCategoryHeight,
-                      child: categoriesScroller),
-                ),
-                InspeccionLista(
-                    inspeccionList: data,
-                    topContainer: topContainer,
-                    myscroller: controller)
-              ]),
-            );
-          },
-          inspeccionLoading: () => const CircularProgressIndicator(),
-        ); */
       },
     );
   }
@@ -134,11 +113,11 @@ class InspeccionLista extends StatelessWidget {
 
   Color? getColor(String riesgoID) {
     if (riesgoID == "1") {
-      return Colors.greenAccent[700];
+      return AppColors.lightTeal;
     } else if (riesgoID == "2") {
-      return Colors.yellowAccent[700];
+      return AppColors.lightYellow;
     } else {
-      return Colors.redAccent[700];
+      return AppColors.lightRed;
     }
   }
 
@@ -292,8 +271,9 @@ class InspeccionLista extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-/*                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => InspeccionDetailScreen()));
- */
+                    context.pushRoute(InspeccionDetailRoute(
+                        coordinacionID:
+                            inspeccionList[index].coordinacionId.toString()));
                   },
                 ),
               ),

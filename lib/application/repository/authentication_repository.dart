@@ -32,22 +32,23 @@ class AuthenticationRepository {
 
     print(response);
 
-    response.when(loading: (loading) async {
-      return const AuthenticationState.loading();
-    }, success: (success) async {
-      final userID = LoginResponse.fromJson(success);
+    response.when(
+        loading: (loading) async {},
+        success: (success) async {
+          final userID = LoginResponse.fromJson(success);
 
-      await userRepository.saveIdUser(userID.user!.id.toString());
+          await userRepository.saveIdUser(userID.user!.id.toString());
 
-      _controller.add(AuthenticationStatus.authenticated);
-      print("LLEGO");
-      print(userID);
+          _controller.add(AuthenticationStatus.authenticated);
+          print("LLEGO");
+          print(userID);
 /*       return userID;
  */
-      return AuthenticationStatus.authenticated;
-    }, error: (error) async {
-      return AuthenticationStatus.unknown;
-    });
+          return AuthenticationStatus.authenticated;
+        },
+        error: (error) async {
+          return AuthenticationStatus.unknown;
+        });
     /*   SharedPreferences preferences = await SharedPreferences.getInstance();
     final dataResponse = Useresponse.fromJson(response);
     preferences.setString("id", dataResponse.user.usuId); */
