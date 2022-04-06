@@ -63,7 +63,6 @@ class RecordsFind with _$RecordsFind {
     @JsonKey(name: 'control_calidad_id') required String controlCalidadId,
     @JsonKey(name: 'control_calidad_nombre')
         required String controlCalidadNombre,
-    @JsonKey(name: 'visita_id') required String visitaId,
   }) = _RecordsFind;
 
   factory RecordsFind.fromJson(Map<String, dynamic> json) =>

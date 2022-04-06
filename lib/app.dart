@@ -6,14 +6,15 @@ import 'package:allemant_peritos/application/repository/user_repository.dart';
 import 'package:allemant_peritos/core/route/app_router.dart';
 import 'package:allemant_peritos/core/route/app_router.gr.dart';
 import 'package:allemant_peritos/features/inspeccion/domain/repository/i_inspeccion_repository.dart';
+import 'package:allemant_peritos/features/inspeccion/presentation/application/bloc/visitas_bloc.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/application/coordinacion/coordinacion_cubit.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_cubit.dart';
-import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_detail_cubit.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'configs/constants.dart';
 
 class MyApp extends StatelessWidget {
@@ -77,6 +78,10 @@ class MyApp extends StatelessWidget {
             create: (context) => CoordinacionCubit(
                   inspeccionRepository: inspeccionRepository,
                 )),
+        BlocProvider(
+            create: (context) => VisitasBloc(
+                  inspeccionRepository: inspeccionRepository,
+                )),
       ], child: const MyView()),
     );
   }
@@ -119,6 +124,15 @@ class _MyViewState extends State<MyView> {
         ),
       ),
       debugShowCheckedModeBanner: false,
+      supportedLocales: const [
+        Locale('es'),
+      ],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        FormBuilderLocalizations.delegate,
+      ],
       routerDelegate: AutoRouterDelegate(
         _appRouter,
         navigatorObservers: () => [AppRouteObserver()],

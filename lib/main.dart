@@ -8,6 +8,7 @@ import 'package:allemant_peritos/core/http/http_methods.dart';
 import 'package:allemant_peritos/features/inspeccion/data/datasources/inspeccion_remote_datasource.dart';
 import 'package:allemant_peritos/features/inspeccion/data/repositories/inspeccion_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/http/http_override.dart';
 

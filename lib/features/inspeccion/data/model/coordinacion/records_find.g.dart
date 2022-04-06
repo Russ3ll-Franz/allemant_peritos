@@ -95,7 +95,6 @@ _$_RecordsFind _$$_RecordsFindFromJson(Map<String, dynamic> json) =>
               $checkedConvert('control_calidad_id', (v) => v as String),
           controlCalidadNombre:
               $checkedConvert('control_calidad_nombre', (v) => v as String),
-          visitaId: $checkedConvert('visita_id', (v) => v as String),
         );
         return val;
       },
@@ -151,7 +150,6 @@ _$_RecordsFind _$$_RecordsFindFromJson(Map<String, dynamic> json) =>
         'digitadorNombre': 'digitador_nombre',
         'controlCalidadId': 'control_calidad_id',
         'controlCalidadNombre': 'control_calidad_nombre',
-        'visitaId': 'visita_id'
       },
     );
 
@@ -208,5 +206,4 @@ Map<String, dynamic> _$$_RecordsFindToJson(_$_RecordsFind instance) =>
       'digitador_nombre': instance.digitadorNombre,
       'control_calidad_id': instance.controlCalidadId,
       'control_calidad_nombre': instance.controlCalidadNombre,
-      'visita_id': instance.visitaId,
     };

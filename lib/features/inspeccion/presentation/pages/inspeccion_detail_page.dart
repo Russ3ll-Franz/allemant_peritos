@@ -1,9 +1,5 @@
-import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_detail_cubit.dart';
-import 'package:allemant_peritos/features/inspeccion/presentation/pages/inspeccion_detail_test_page.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/pages/inspeccion_detail_view_page.dart';
-import 'package:allemant_peritos/features/widgets/loading_indicators.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax/iconsax.dart';
 
 class InspeccionDetailPage extends StatelessWidget {

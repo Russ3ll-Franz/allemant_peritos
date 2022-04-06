@@ -48,7 +48,7 @@ class LoginForm extends StatelessWidget {
             const Align(
                 alignment: Alignment.centerRight,
                 child: TextFrave(
-                    text: 'Forgot Password?', color: Color(0xFF114472))),
+                    text: 'OLVIDO CONTRASEÑA?', color: Color(0xFF114472))),
             SizedBox(
               height: 20,
             ),
@@ -99,7 +99,7 @@ class _UsernameInput extends StatelessWidget {
                   const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
               borderRadius: BorderRadius.circular(10),
             ),
-            hintText: 'Ingrese su usuario',
+            hintText: 'INGRESE SU USUARIO',
             hintStyle: const TextStyle(color: Color(0xFF114472)),
             prefixIcon: const Icon(
               Iconsax.user,
@@ -155,7 +155,7 @@ class _PasswordInput extends StatelessWidget {
                   const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
               borderRadius: BorderRadius.circular(10),
             ),
-            hintText: 'Ingrese su contraseña',
+            hintText: 'INGRESE SU CONTRASEÑA',
             hintStyle: const TextStyle(color: Color(0xFF114472)),
             prefixIcon: const Icon(
               Iconsax.key,
@@ -182,7 +182,7 @@ class _LoginButton extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: Color(0xFF114472)),
+                    color: const Color(0xFF114472)),
                 child: ElevatedButton(
                   key: const Key('loginForm_continue_raisedButton'),
                   child: const Center(

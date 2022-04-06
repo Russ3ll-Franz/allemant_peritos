@@ -124,9 +124,7 @@ class _$RecordsFindTearOff {
       @JsonKey(name: 'control_calidad_id')
           required String controlCalidadId,
       @JsonKey(name: 'control_calidad_nombre')
-          required String controlCalidadNombre,
-      @JsonKey(name: 'visita_id')
-          required String visitaId}) {
+          required String controlCalidadNombre}) {
     return _RecordsFind(
       cotizacionId: cotizacionId,
       coordinacionId: coordinacionId,
@@ -179,7 +177,6 @@ class _$RecordsFindTearOff {
       digitadorNombre: digitadorNombre,
       controlCalidadId: controlCalidadId,
       controlCalidadNombre: controlCalidadNombre,
-      visitaId: visitaId,
     );
   }
 
@@ -295,8 +292,6 @@ mixin _$RecordsFind {
   String get controlCalidadId => throw _privateConstructorUsedError;
   @JsonKey(name: 'control_calidad_nombre')
   String get controlCalidadNombre => throw _privateConstructorUsedError;
-  @JsonKey(name: 'visita_id')
-  String get visitaId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -360,8 +355,7 @@ abstract class $RecordsFindCopyWith<$Res> {
       @JsonKey(name: 'digitador_id') String digitadorId,
       @JsonKey(name: 'digitador_nombre') String digitadorNombre,
       @JsonKey(name: 'control_calidad_id') String controlCalidadId,
-      @JsonKey(name: 'control_calidad_nombre') String controlCalidadNombre,
-      @JsonKey(name: 'visita_id') String visitaId});
+      @JsonKey(name: 'control_calidad_nombre') String controlCalidadNombre});
 }
 
 /// @nodoc
@@ -425,7 +419,6 @@ class _$RecordsFindCopyWithImpl<$Res> implements $RecordsFindCopyWith<$Res> {
     Object? digitadorNombre = freezed,
     Object? controlCalidadId = freezed,
     Object? controlCalidadNombre = freezed,
-    Object? visitaId = freezed,
   }) {
     return _then(_value.copyWith(
       cotizacionId: cotizacionId == freezed
@@ -632,10 +625,6 @@ class _$RecordsFindCopyWithImpl<$Res> implements $RecordsFindCopyWith<$Res> {
           ? _value.controlCalidadNombre
           : controlCalidadNombre // ignore: cast_nullable_to_non_nullable
               as String,
-      visitaId: visitaId == freezed
-          ? _value.visitaId
-          : visitaId // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -698,8 +687,7 @@ abstract class _$RecordsFindCopyWith<$Res>
       @JsonKey(name: 'digitador_id') String digitadorId,
       @JsonKey(name: 'digitador_nombre') String digitadorNombre,
       @JsonKey(name: 'control_calidad_id') String controlCalidadId,
-      @JsonKey(name: 'control_calidad_nombre') String controlCalidadNombre,
-      @JsonKey(name: 'visita_id') String visitaId});
+      @JsonKey(name: 'control_calidad_nombre') String controlCalidadNombre});
 }
 
 /// @nodoc
@@ -765,7 +753,6 @@ class __$RecordsFindCopyWithImpl<$Res> extends _$RecordsFindCopyWithImpl<$Res>
     Object? digitadorNombre = freezed,
     Object? controlCalidadId = freezed,
     Object? controlCalidadNombre = freezed,
-    Object? visitaId = freezed,
   }) {
     return _then(_RecordsFind(
       cotizacionId: cotizacionId == freezed
@@ -972,10 +959,6 @@ class __$RecordsFindCopyWithImpl<$Res> extends _$RecordsFindCopyWithImpl<$Res>
           ? _value.controlCalidadNombre
           : controlCalidadNombre // ignore: cast_nullable_to_non_nullable
               as String,
-      visitaId: visitaId == freezed
-          ? _value.visitaId
-          : visitaId // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -1085,9 +1068,7 @@ class _$_RecordsFind implements _RecordsFind {
       @JsonKey(name: 'control_calidad_id')
           required this.controlCalidadId,
       @JsonKey(name: 'control_calidad_nombre')
-          required this.controlCalidadNombre,
-      @JsonKey(name: 'visita_id')
-          required this.visitaId});
+          required this.controlCalidadNombre});
 
   factory _$_RecordsFind.fromJson(Map<String, dynamic> json) =>
       _$$_RecordsFindFromJson(json);
@@ -1245,13 +1226,10 @@ class _$_RecordsFind implements _RecordsFind {
   @override
   @JsonKey(name: 'control_calidad_nombre')
   final String controlCalidadNombre;
-  @override
-  @JsonKey(name: 'visita_id')
-  final String visitaId;
 
   @override
   String toString() {
-    return 'RecordsFind(cotizacionId: $cotizacionId, coordinacionId: $coordinacionId, coordinacionCorrelativo: $coordinacionCorrelativo, riesgoId: $riesgoId, riesgoNombre: $riesgoNombre, coorEstadoId: $coorEstadoId, coorEstadoNombre: $coorEstadoNombre, coordinadorId: $coordinadorId, coordinadorNombre: $coordinadorNombre, fechaSolicitud: $fechaSolicitud, entregaAlClienteFecha: $entregaAlClienteFecha, fechaEntrega: $fechaEntrega, solicitanteId: $solicitanteId, solicitanteNombre: $solicitanteNombre, contactoId: $contactoId, contactoNombre: $contactoNombre, clienteId: $clienteId, clienteNombre: $clienteNombre, servicioTipoId: $servicioTipoId, servicioTipoNombre: $servicioTipoNombre, tipoCambioId: $tipoCambioId, tipoCambioNombre: $tipoCambioNombre, tipoInspeccionId: $tipoInspeccionId, tipoInspeccionNombre: $tipoInspeccionNombre, modalidadId: $modalidadId, modalidadNombre: $modalidadNombre, inspeccionId: $inspeccionId, peritoId: $peritoId, peritoNombre: $peritoNombre, inspeccionContacto: $inspeccionContacto, inspeccionFecha: $inspeccionFecha, inspeccionFechaNormal: $inspeccionFechaNormal, inspeccionHora: $inspeccionHora, inspeccionHoraTipo: $inspeccionHoraTipo, distritoId: $distritoId, distritoNombre: $distritoNombre, provinciaId: $provinciaId, provinciaNombre: $provinciaNombre, departamentoId: $departamentoId, departamentoNombre: $departamentoNombre, inspeccionDireccion: $inspeccionDireccion, inspeccionLatitud: $inspeccionLatitud, inspeccionLongitud: $inspeccionLongitud, inspeccionObservacion: $inspeccionObservacion, estadoId: $estadoId, estadoNombre: $estadoNombre, infoStatus: $infoStatus, digitadorId: $digitadorId, digitadorNombre: $digitadorNombre, controlCalidadId: $controlCalidadId, controlCalidadNombre: $controlCalidadNombre, visitaId: $visitaId)';
+    return 'RecordsFind(cotizacionId: $cotizacionId, coordinacionId: $coordinacionId, coordinacionCorrelativo: $coordinacionCorrelativo, riesgoId: $riesgoId, riesgoNombre: $riesgoNombre, coorEstadoId: $coorEstadoId, coorEstadoNombre: $coorEstadoNombre, coordinadorId: $coordinadorId, coordinadorNombre: $coordinadorNombre, fechaSolicitud: $fechaSolicitud, entregaAlClienteFecha: $entregaAlClienteFecha, fechaEntrega: $fechaEntrega, solicitanteId: $solicitanteId, solicitanteNombre: $solicitanteNombre, contactoId: $contactoId, contactoNombre: $contactoNombre, clienteId: $clienteId, clienteNombre: $clienteNombre, servicioTipoId: $servicioTipoId, servicioTipoNombre: $servicioTipoNombre, tipoCambioId: $tipoCambioId, tipoCambioNombre: $tipoCambioNombre, tipoInspeccionId: $tipoInspeccionId, tipoInspeccionNombre: $tipoInspeccionNombre, modalidadId: $modalidadId, modalidadNombre: $modalidadNombre, inspeccionId: $inspeccionId, peritoId: $peritoId, peritoNombre: $peritoNombre, inspeccionContacto: $inspeccionContacto, inspeccionFecha: $inspeccionFecha, inspeccionFechaNormal: $inspeccionFechaNormal, inspeccionHora: $inspeccionHora, inspeccionHoraTipo: $inspeccionHoraTipo, distritoId: $distritoId, distritoNombre: $distritoNombre, provinciaId: $provinciaId, provinciaNombre: $provinciaNombre, departamentoId: $departamentoId, departamentoNombre: $departamentoNombre, inspeccionDireccion: $inspeccionDireccion, inspeccionLatitud: $inspeccionLatitud, inspeccionLongitud: $inspeccionLongitud, inspeccionObservacion: $inspeccionObservacion, estadoId: $estadoId, estadoNombre: $estadoNombre, infoStatus: $infoStatus, digitadorId: $digitadorId, digitadorNombre: $digitadorNombre, controlCalidadId: $controlCalidadId, controlCalidadNombre: $controlCalidadNombre)';
   }
 
   @override
@@ -1353,8 +1331,7 @@ class _$_RecordsFind implements _RecordsFind {
                 .equals(other.digitadorId, digitadorId) &&
             const DeepCollectionEquality().equals(other.digitadorNombre, digitadorNombre) &&
             const DeepCollectionEquality().equals(other.controlCalidadId, controlCalidadId) &&
-            const DeepCollectionEquality().equals(other.controlCalidadNombre, controlCalidadNombre) &&
-            const DeepCollectionEquality().equals(other.visitaId, visitaId));
+            const DeepCollectionEquality().equals(other.controlCalidadNombre, controlCalidadNombre));
   }
 
   @override
@@ -1410,8 +1387,7 @@ class _$_RecordsFind implements _RecordsFind {
         const DeepCollectionEquality().hash(digitadorId),
         const DeepCollectionEquality().hash(digitadorNombre),
         const DeepCollectionEquality().hash(controlCalidadId),
-        const DeepCollectionEquality().hash(controlCalidadNombre),
-        const DeepCollectionEquality().hash(visitaId)
+        const DeepCollectionEquality().hash(controlCalidadNombre)
       ]);
 
   @JsonKey(ignore: true)
@@ -1528,9 +1504,7 @@ abstract class _RecordsFind implements RecordsFind {
       @JsonKey(name: 'control_calidad_id')
           required String controlCalidadId,
       @JsonKey(name: 'control_calidad_nombre')
-          required String controlCalidadNombre,
-      @JsonKey(name: 'visita_id')
-          required String visitaId}) = _$_RecordsFind;
+          required String controlCalidadNombre}) = _$_RecordsFind;
 
   factory _RecordsFind.fromJson(Map<String, dynamic> json) =
       _$_RecordsFind.fromJson;
@@ -1688,9 +1662,6 @@ abstract class _RecordsFind implements RecordsFind {
   @override
   @JsonKey(name: 'control_calidad_nombre')
   String get controlCalidadNombre;
-  @override
-  @JsonKey(name: 'visita_id')
-  String get visitaId;
   @override
   @JsonKey(ignore: true)
   _$RecordsFindCopyWith<_RecordsFind> get copyWith =>

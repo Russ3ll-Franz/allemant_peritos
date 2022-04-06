@@ -14,6 +14,7 @@ class AppRouteObserver extends AutoRouterObserver {
   homeRouter,
   signInRouter,
   inspeccionRouter,
-  inspeccionDetailRouter
+  inspeccionDetailRouter,
+  inspeccionRegisterRouter
 ])
 class $AppRouter {}
