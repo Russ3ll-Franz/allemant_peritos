@@ -149,7 +149,7 @@ _$_RecordsFind _$$_RecordsFindFromJson(Map<String, dynamic> json) =>
         'digitadorId': 'digitador_id',
         'digitadorNombre': 'digitador_nombre',
         'controlCalidadId': 'control_calidad_id',
-        'controlCalidadNombre': 'control_calidad_nombre',
+        'controlCalidadNombre': 'control_calidad_nombre'
       },
     );
 

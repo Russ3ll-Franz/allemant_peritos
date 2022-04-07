@@ -24,6 +24,8 @@ class Assets {
   /// assets/icon/svg/square-arrow-right.svg
   static const String assetsIconSvgSquareArrowRight =
       "assets/icon/svg/square-arrow-right.svg";
+  static const String assetsIconSvgDoorClosed =
+      "assets/icon/svg/door-closed.svg";
 
   /// Assets for assetsIconSvgUserTie
   /// assets/icon/svg/user-tie.svg

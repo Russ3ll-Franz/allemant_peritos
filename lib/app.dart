@@ -124,7 +124,7 @@ class _MyViewState extends State<MyView> {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      supportedLocales: const [
+      /*     supportedLocales: const [
         Locale('es'),
       ],
       localizationsDelegates: const [
@@ -132,7 +132,7 @@ class _MyViewState extends State<MyView> {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         FormBuilderLocalizations.delegate,
-      ],
+      ], */
       routerDelegate: AutoRouterDelegate(
         _appRouter,
         navigatorObservers: () => [AppRouteObserver()],
