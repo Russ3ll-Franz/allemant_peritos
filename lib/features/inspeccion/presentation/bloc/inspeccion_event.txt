@@ -1,6 +1,0 @@
-part of 'inspeccion_bloc.text';
-
-@freezed
-class InspeccionEvent with _$InspeccionEvent {
-  const factory InspeccionEvent.fetched(Inspeccion listInspeccion) = _Fetchet;
-}

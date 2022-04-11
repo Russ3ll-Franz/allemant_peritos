@@ -3,6 +3,7 @@ import 'package:allemant_peritos/core/error/failures.dart';
 import 'package:allemant_peritos/features/inspeccion/data/datasources/inspeccion_remote_datasource.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/coordinacion/coordinacion.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspeccion.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/uso_inmueble/uso_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visitaResponse.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita.dart';
 import 'package:allemant_peritos/features/inspeccion/domain/repository/i_inspeccion_repository.dart';
@@ -41,12 +42,22 @@ class InspeccionRepository implements IInspeccionRepository {
     }
   }
 
-   @override
+  @override
   Future<Either<Failure, VisitaResponse>> insertInspeccion(
       {required Visita visita}) async {
     try {
       final inserVisita = await remoteDataSource.insertInspeccion(visita);
       return Right(inserVisita);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, UsoInmueble>> getUsoInmueble(String name) async {
+    try {
+      final getUso = await remoteDataSource.postUsoInmueble(name);
+      return Right(getUso);
     } on ServerException {
       return Left(ServerFailure());
     }

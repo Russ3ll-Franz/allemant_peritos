@@ -74,7 +74,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                 BoxShadow(color: Colors.black.withAlpha(80), blurRadius: 10.0),
               ]),
           child: Center(
-            child: Text(displayInspeccion!.recordsFind[0].riesgoNombre,
+            child: Text(displayInspeccion!.recordsFind[0].riesgoNombre!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     //backgroundColor: Colors.green,
@@ -96,7 +96,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                 BoxShadow(color: Colors.black.withAlpha(80), blurRadius: 10.0),
               ]),
           child: Center(
-            child: Text(displayInspeccion!.recordsFind[0].riesgoNombre,
+            child: Text(displayInspeccion!.recordsFind[0].riesgoNombre!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     //backgroundColor: Colors.green,
@@ -118,7 +118,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                 BoxShadow(color: Colors.black.withAlpha(80), blurRadius: 10.0),
               ]),
           child: Center(
-            child: Text(displayInspeccion!.recordsFind[0].riesgoNombre,
+            child: Text(displayInspeccion!.recordsFind[0].riesgoNombre!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     //backgroundColor: Colors.green,
@@ -170,7 +170,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                         ),
                         SizeBox.sizeRow,
                         Text(
-                          displayInspeccion!.recordsFind[0].coordinadorNombre
+                          displayInspeccion!.recordsFind[0].coordinadorNombre!
                               .toUpperCase(),
                           style: const TextStyle(
                               fontSize: 14,
@@ -196,7 +196,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                         SizeBox.sizeRow,
                         Text(
                           displayInspeccion!
-                              .recordsFind[0].coordinacionCorrelativo
+                              .recordsFind[0].coordinacionCorrelativo!
                               .toUpperCase(),
                           style: const TextStyle(
                               fontFamily: 'Nunito',
@@ -248,7 +248,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                         ),
                         SizeBox.sizeRow,
                         Text(
-                          displayInspeccion!.recordsFind[0].peritoNombre
+                          displayInspeccion!.recordsFind[0].peritoNombre!
                               .toUpperCase(),
                           style: const TextStyle(
                               fontSize: 14,
@@ -281,7 +281,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                         ),
                         SizeBox.sizeRow,
                         Text(
-                          displayInspeccion!.recordsFind[0].fechaSolicitud
+                          displayInspeccion!.recordsFind[0].fechaSolicitud!
                               .toUpperCase(),
                           style: const TextStyle(
                               fontSize: 14,
@@ -306,7 +306,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                         ),
                         SizeBox.sizeRow,
                         Text(
-                          displayInspeccion!.recordsFind[0].fechaEntrega
+                          displayInspeccion!.recordsFind[0].fechaEntrega!
                               .toUpperCase(),
                           style: const TextStyle(
                               fontSize: 14,
@@ -333,7 +333,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                 ),
                 SizeBox.sizeRow,
                 Text(
-                  displayInspeccion!.recordsFind[0].solicitanteNombre
+                  displayInspeccion!.recordsFind[0].solicitanteNombre!
                       .toUpperCase(),
                   style: const TextStyle(
                       fontSize: 14,
@@ -355,7 +355,8 @@ class InspeccionDetailViewBody extends StatelessWidget {
                 ),
                 SizeBox.sizeRow,
                 Text(
-                  displayInspeccion!.recordsFind[0].clienteNombre.toUpperCase(),
+                  displayInspeccion!.recordsFind[0].clienteNombre!
+                      .toUpperCase(),
                   style: const TextStyle(
                       fontSize: 14,
                       color: Color(0xFF545D68),
@@ -377,7 +378,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                 ),
                 SizeBox.sizeRow,
                 Text(
-                  displayInspeccion!.recordsFind[0].tipoInspeccionNombre
+                  displayInspeccion!.recordsFind[0].tipoInspeccionNombre!
                       .toUpperCase(),
                   style: const TextStyle(
                       fontSize: 14,
@@ -397,7 +398,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                             fontWeight: FontWeight.w900)),
                     SizeBox.sizeSpaceWidthIcon,
                     Text(
-                      displayInspeccion!.recordsFind[0].contactoNombre
+                      displayInspeccion!.recordsFind[0].contactoNombre!
                           .toUpperCase(),
                       style: const TextStyle(
                           fontSize: 14,
@@ -422,7 +423,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                 ),
                 SizeBox.sizeRow,
                 Text(
-                  displayInspeccion!.recordsFind[0].inspeccionDireccion
+                  displayInspeccion!.recordsFind[0].inspeccionDireccion!
                       .toUpperCase(),
                   style: const TextStyle(
                       fontSize: 14,
@@ -444,7 +445,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                 ),
                 SizeBox.sizeRow,
                 Text(
-                  displayInspeccion!.recordsFind[0].servicioTipoNombre
+                  displayInspeccion!.recordsFind[0].servicioTipoNombre!
                       .toUpperCase(),
                   style: const TextStyle(
                       fontSize: 14,
@@ -466,7 +467,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                 ),
                 SizeBox.sizeRow,
                 Text(
-                  displayInspeccion!.recordsFind[0].inspeccionObservacion
+                  displayInspeccion!.recordsFind[0].inspeccionObservacion!
                       .toUpperCase(),
                   style: const TextStyle(
                       fontSize: 14,
@@ -481,7 +482,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
                         onPressed: () {
                           AutoRouter.of(context).push(InspeccionRegisterRoute(
                               inspeccionID: displayInspeccion!
-                                  .recordsFind[0].inspeccionId));
+                                  .recordsFind[0].inspeccionId!));
                         },
                         icon: const Icon(
                           FontAwesomeIcons.home,

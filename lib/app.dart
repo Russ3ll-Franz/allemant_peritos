@@ -8,6 +8,7 @@ import 'package:allemant_peritos/core/route/app_router.gr.dart';
 import 'package:allemant_peritos/features/inspeccion/domain/repository/i_inspeccion_repository.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/application/bloc/visitas_bloc.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/application/coordinacion/coordinacion_cubit.dart';
+import 'package:allemant_peritos/features/inspeccion/presentation/application/dropdown/dropdown_cubit.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_cubit.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -80,6 +81,10 @@ class MyApp extends StatelessWidget {
                 )),
         BlocProvider(
             create: (context) => VisitasBloc(
+                  inspeccionRepository: inspeccionRepository,
+                )),
+        BlocProvider(
+            create: (context) => DropdownCubit(
                   inspeccionRepository: inspeccionRepository,
                 )),
       ], child: const MyView()),

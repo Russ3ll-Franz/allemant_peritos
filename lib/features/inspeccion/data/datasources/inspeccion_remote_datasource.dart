@@ -4,6 +4,7 @@ import 'package:allemant_peritos/core/http/api_response.dart';
 import 'package:allemant_peritos/core/http/http_methods.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/coordinacion/coordinacion.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspeccion.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/uso_inmueble/uso_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visitaResponse.dart';
 import 'package:injectable/injectable.dart';
@@ -13,6 +14,7 @@ abstract class IInspeccionRemoteDataSource {
       String userID, String tipoInspeccion);
   Future<Coordinacion> getInspeccionByCoordinacion(String coordinacionID);
   Future<VisitaResponse> insertInspeccion(Visita visita);
+  Future<UsoInmueble> postUsoInmueble(String nombre);
 }
 
 @Injectable(as: IInspeccionRemoteDataSource)
@@ -69,6 +71,22 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
       try {
         final inspeccion = VisitaResponse.fromJson(data);
 
+        return inspeccion;
+      } catch (e) {
+        throw Exception(e.toString());
+      }
+    } else {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<UsoInmueble> postUsoInmueble(String nombre) async {
+    final response = await helper.post("intranet/uso/search", nombre);
+    if (response is APISuccess) {
+      final data = response.value;
+      try {
+        final inspeccion = UsoInmueble.fromJson(data);
         return inspeccion;
       } catch (e) {
         throw Exception(e.toString());

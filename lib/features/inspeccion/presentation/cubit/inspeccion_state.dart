@@ -8,5 +8,6 @@ class InspeccionState with _$InspeccionState {
   const factory InspeccionState.inspeccionLoaded(
           {@Default(<Inspeccion>[]) List<Inspeccion> tipoInspeccions}) =
       InspeccionLoaded;
+
   const factory InspeccionState.error(String message) = InspeccionErrorState;
 }

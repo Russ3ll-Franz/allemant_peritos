@@ -14,84 +14,84 @@ _$_Inspeccion _$$_InspeccionFromJson(Map<String, dynamic> json) =>
       json,
       ($checkedConvert) {
         final val = _$_Inspeccion(
-          cotizacionId: $checkedConvert('cotizacion_id', (v) => v as String),
+          cotizacionId: $checkedConvert('cotizacion_id', (v) => v as String?),
           coordinacionId:
-              $checkedConvert('coordinacion_id', (v) => v as String),
+              $checkedConvert('coordinacion_id', (v) => v as String?),
           coordinacionCorrelativo:
-              $checkedConvert('coordinacion_correlativo', (v) => v as String),
-          riesgoId: $checkedConvert('riesgo_id', (v) => v as String),
-          riesgoNombre: $checkedConvert('riesgo_nombre', (v) => v as String),
-          coordinadorId: $checkedConvert('coordinador_id', (v) => v as String),
+              $checkedConvert('coordinacion_correlativo', (v) => v as String?),
+          riesgoId: $checkedConvert('riesgo_id', (v) => v as String?),
+          riesgoNombre: $checkedConvert('riesgo_nombre', (v) => v as String?),
+          coordinadorId: $checkedConvert('coordinador_id', (v) => v as String?),
           coordinadorNombre:
-              $checkedConvert('coordinador_nombre', (v) => v as String),
+              $checkedConvert('coordinador_nombre', (v) => v as String?),
           fechaSolicitud:
-              $checkedConvert('fecha_solicitud', (v) => v as String),
+              $checkedConvert('fecha_solicitud', (v) => v as String?),
           entregaAlClienteFecha:
-              $checkedConvert('entrega_al_cliente_fecha', (v) => v as String),
-          fechaEntrega: $checkedConvert('fecha_entrega', (v) => v as String),
-          solicitanteId: $checkedConvert('solicitante_id', (v) => v as String),
+              $checkedConvert('entrega_al_cliente_fecha', (v) => v as String?),
+          fechaEntrega: $checkedConvert('fecha_entrega', (v) => v as String?),
+          solicitanteId: $checkedConvert('solicitante_id', (v) => v as String?),
           solicitanteNombre:
-              $checkedConvert('solicitante_nombre', (v) => v as String),
-          contactoId: $checkedConvert('contacto_id', (v) => v as String),
+              $checkedConvert('solicitante_nombre', (v) => v as String?),
+          contactoId: $checkedConvert('contacto_id', (v) => v as String?),
           contactoNombre:
-              $checkedConvert('contacto_nombre', (v) => v as String),
-          clienteId: $checkedConvert('cliente_id', (v) => v as String),
-          clienteNombre: $checkedConvert('cliente_nombre', (v) => v as String),
+              $checkedConvert('contacto_nombre', (v) => v as String?),
+          clienteId: $checkedConvert('cliente_id', (v) => v as String?),
+          clienteNombre: $checkedConvert('cliente_nombre', (v) => v as String?),
           servicioTipoId:
-              $checkedConvert('servicio_tipo_id', (v) => v as String),
+              $checkedConvert('servicio_tipo_id', (v) => v as String?),
           servicioTipoNombre:
-              $checkedConvert('servicio_tipo_nombre', (v) => v as String),
-          tipoCambioId: $checkedConvert('tipo_cambio_id', (v) => v as String),
+              $checkedConvert('servicio_tipo_nombre', (v) => v as String?),
+          tipoCambioId: $checkedConvert('tipo_cambio_id', (v) => v as String?),
           tipoCambioNombre:
-              $checkedConvert('tipo_cambio_nombre', (v) => v as String),
+              $checkedConvert('tipo_cambio_nombre', (v) => v as String?),
           tipoInspeccionId:
-              $checkedConvert('tipo_inspeccion_id', (v) => v as String),
+              $checkedConvert('tipo_inspeccion_id', (v) => v as String?),
           tipoInspeccionNombre:
-              $checkedConvert('tipo_inspeccion_nombre', (v) => v as String),
-          modalidadId: $checkedConvert('modalidad_id', (v) => v as String),
+              $checkedConvert('tipo_inspeccion_nombre', (v) => v as String?),
+          modalidadId: $checkedConvert('modalidad_id', (v) => v as String?),
           modalidadNombre:
-              $checkedConvert('modalidad_nombre', (v) => v as String),
-          inspeccionId: $checkedConvert('inspeccion_id', (v) => v as String),
-          peritoId: $checkedConvert('perito_id', (v) => v as String),
-          peritoNombre: $checkedConvert('perito_nombre', (v) => v as String),
+              $checkedConvert('modalidad_nombre', (v) => v as String?),
+          inspeccionId: $checkedConvert('inspeccion_id', (v) => v as String?),
+          peritoId: $checkedConvert('perito_id', (v) => v as String?),
+          peritoNombre: $checkedConvert('perito_nombre', (v) => v as String?),
           inspeccionContacto:
-              $checkedConvert('inspeccion_contacto', (v) => v as String),
+              $checkedConvert('inspeccion_contacto', (v) => v as String?),
           inspeccionFecha:
-              $checkedConvert('inspeccion_fecha', (v) => v as String),
+              $checkedConvert('inspeccion_fecha', (v) => v as String?),
           inspeccionFechaNormal:
-              $checkedConvert('inspeccion_fecha_normal', (v) => v as String),
+              $checkedConvert('inspeccion_fecha_normal', (v) => v as String?),
           inspeccionHora:
-              $checkedConvert('inspeccion_hora', (v) => v as String),
+              $checkedConvert('inspeccion_hora', (v) => v as String?),
           inspeccionHoraTipo:
-              $checkedConvert('inspeccion_hora_tipo', (v) => v as String),
-          distritoId: $checkedConvert('distrito_id', (v) => v as String),
+              $checkedConvert('inspeccion_hora_tipo', (v) => v as String?),
+          distritoId: $checkedConvert('distrito_id', (v) => v as String?),
           distritoNombre:
-              $checkedConvert('distrito_nombre', (v) => v as String),
-          provinciaId: $checkedConvert('provincia_id', (v) => v as String),
+              $checkedConvert('distrito_nombre', (v) => v as String?),
+          provinciaId: $checkedConvert('provincia_id', (v) => v as String?),
           provinciaNombre:
-              $checkedConvert('provincia_nombre', (v) => v as String),
+              $checkedConvert('provincia_nombre', (v) => v as String?),
           departamentoId:
-              $checkedConvert('departamento_id', (v) => v as String),
+              $checkedConvert('departamento_id', (v) => v as String?),
           departamentoNombre:
-              $checkedConvert('departamento_nombre', (v) => v as String),
+              $checkedConvert('departamento_nombre', (v) => v as String?),
           inspeccionDireccion:
-              $checkedConvert('inspeccion_direccion', (v) => v as String),
+              $checkedConvert('inspeccion_direccion', (v) => v as String?),
           inspeccionLatitud:
-              $checkedConvert('inspeccion_latitud', (v) => v as String),
+              $checkedConvert('inspeccion_latitud', (v) => v as String?),
           inspeccionLongitud:
-              $checkedConvert('inspeccion_longitud', (v) => v as String),
+              $checkedConvert('inspeccion_longitud', (v) => v as String?),
           inspeccionObservacion:
               $checkedConvert('inspeccion_observacion', (v) => v as String?),
-          estadoId: $checkedConvert('estado_id', (v) => v as String),
-          estadoNombre: $checkedConvert('estado_nombre', (v) => v as String),
-          infoStatus: $checkedConvert('info_status', (v) => v as String),
-          digitadorId: $checkedConvert('digitador_id', (v) => v as String),
+          estadoId: $checkedConvert('estado_id', (v) => v as String?),
+          estadoNombre: $checkedConvert('estado_nombre', (v) => v as String?),
+          infoStatus: $checkedConvert('info_status', (v) => v as String?),
+          digitadorId: $checkedConvert('digitador_id', (v) => v as String?),
           digitadorNombre:
-              $checkedConvert('digitador_nombre', (v) => v as String),
+              $checkedConvert('digitador_nombre', (v) => v as String?),
           controlCalidadId:
-              $checkedConvert('control_calidad_id', (v) => v as String),
+              $checkedConvert('control_calidad_id', (v) => v as String?),
           controlCalidadNombre:
-              $checkedConvert('control_calidad_nombre', (v) => v as String),
+              $checkedConvert('control_calidad_nombre', (v) => v as String?),
         );
         return val;
       },
