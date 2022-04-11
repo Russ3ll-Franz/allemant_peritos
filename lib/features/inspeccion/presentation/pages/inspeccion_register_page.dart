@@ -37,51 +37,20 @@ class InspeccionRegisterPage extends StatelessWidget {
       TextEditingController();
   @override
   Widget build(BuildContext context) {
-    List<String> itemsUso = {
-     "records_find": [
-        {
-            "uso_id": "1",
-            "uso_nombre": "Vivienda",
-            "uso_estado": "1"
-        },
-        {
-            "uso_id": "2",
-            "uso_nombre": "Comercio",
-            "uso_estado": "1"
-        },
-        {
-            "uso_id": "3",
-            "uso_nombre": "Oficina",
-            "uso_estado": "1"
-        },
-        {
-            "uso_id": "4",
-            "uso_nombre": "Desocupado",
-            "uso_estado": "1"
-        },
-        {
-            "uso_id": "5",
-            "uso_nombre": "Almacen",
-            "uso_estado": "1"
-        },
-        {
-            "uso_id": "6",
-            "uso_nombre": "Deposito",
-            "uso_estado": "1"
-        },
-        {
-            "uso_id": "7",
-            "uso_nombre": "Taller",
-            "uso_estado": "1"
-        },
-        {
-            "uso_id": "8",
-            "uso_nombre": "Otros usos",
-            "uso_estado": "1"
-        }
-    ]
-    }
+    var itemsUso = {
+      "records_find": [
+        {"uso_id": "1", "uso_nombre": "Vivienda", "uso_estado": "1"},
+        {"uso_id": "2", "uso_nombre": "Comercio", "uso_estado": "1"},
+        {"uso_id": "3", "uso_nombre": "Oficina", "uso_estado": "1"},
+        {"uso_id": "4", "uso_nombre": "Desocupado", "uso_estado": "1"},
+        {"uso_id": "5", "uso_nombre": "Almacen", "uso_estado": "1"},
+        {"uso_id": "6", "uso_nombre": "Deposito", "uso_estado": "1"},
+        {"uso_id": "7", "uso_nombre": "Taller", "uso_estado": "1"},
+        {"uso_id": "8", "uso_nombre": "Otros usos", "uso_estado": "1"}
+      ]
+    };
 
+    var list = [];
 
 
     String? dropDownValueUso;
