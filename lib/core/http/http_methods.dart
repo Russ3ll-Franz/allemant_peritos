@@ -94,7 +94,7 @@ class HttpMethodsType {
       }
 
       if (response.statusCode! < 300) {
-        if (response.data['data'] != null) {
+        if (response.data != null) {
           return APIResponse.success(response.data);
         } else {
           return APIResponse.success(response.data);

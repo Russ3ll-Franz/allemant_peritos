@@ -1,7 +1,6 @@
 import 'package:allemant_peritos/core/error/exceptions.dart';
 import 'package:allemant_peritos/core/error/failures.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/coordinacion/coordinacion.dart';
-import 'package:allemant_peritos/features/inspeccion/data/model/coordinacion/records_find.dart';
 import 'package:allemant_peritos/features/inspeccion/domain/repository/i_inspeccion_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

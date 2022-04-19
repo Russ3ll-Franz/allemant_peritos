@@ -7,6 +7,7 @@ import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita.da
 import 'package:allemant_peritos/features/inspeccion/presentation/application/bloc/visitas_bloc.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/application/dropdown/dropdown_cubit.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_cubit.dart';
+import 'package:allemant_peritos/features/inspeccion/presentation/pages/inspeccion_register_form.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/widgets/inspeccion_form_controller.dart';
 import 'package:allemant_peritos/features/widgets/alertify.dart';
 import 'package:allemant_peritos/features/widgets/loading_widget.dart';
@@ -37,24 +38,6 @@ class InspeccionRegisterPage extends StatelessWidget {
       TextEditingController();
   @override
   Widget build(BuildContext context) {
-    var itemsUso = {
-      "records_find": [
-        {"uso_id": "1", "uso_nombre": "Vivienda", "uso_estado": "1"},
-        {"uso_id": "2", "uso_nombre": "Comercio", "uso_estado": "1"},
-        {"uso_id": "3", "uso_nombre": "Oficina", "uso_estado": "1"},
-        {"uso_id": "4", "uso_nombre": "Desocupado", "uso_estado": "1"},
-        {"uso_id": "5", "uso_nombre": "Almacen", "uso_estado": "1"},
-        {"uso_id": "6", "uso_nombre": "Deposito", "uso_estado": "1"},
-        {"uso_id": "7", "uso_nombre": "Taller", "uso_estado": "1"},
-        {"uso_id": "8", "uso_nombre": "Otros usos", "uso_estado": "1"}
-      ]
-    };
-
-    var list = [];
-
-
-    String? dropDownValueUso;
-
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         statusBarIconBrightness: Brightness.dark, // dark text for status bar
         statusBarColor: Colors.transparent));
@@ -62,83 +45,63 @@ class InspeccionRegisterPage extends StatelessWidget {
       appBar: buildAppBar(context),
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  BlocListener<VisitasBloc, VisitasState>(
-                      listener: (context, state) {
-                        state.maybeWhen(success: (success) {
-                          Alertify(
-                            content: success!.message,
-                            context: context,
-                            isDismissible: true,
-                            title: 'REGISTRADO',
-                            alertType: AlertifyType.success,
-                            buttonText: 'OK',
-                            animationType: AnimationType.outToIn,
-                            barrierColor: Colors.black.withOpacity(0.5),
-                            onDismiss: () {
-                              AutoRouter.of(context).navigateNamed('/home');
+          Column(
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Container(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Column(
+                      children: [
+                        BlocListener<VisitasBloc, VisitasState>(
+                            listener: (context, state) {
+                              state.maybeWhen(success: (success) {
+                                Alertify(
+                                  content: success!.message,
+                                  context: context,
+                                  isDismissible: true,
+                                  title: 'REGISTRADO',
+                                  alertType: AlertifyType.success,
+                                  buttonText: 'OK',
+                                  animationType: AnimationType.outToIn,
+                                  barrierColor: Colors.black.withOpacity(0.5),
+                                  onDismiss: () {
+                                    AutoRouter.of(context)
+                                        .navigateNamed('/home');
+                                  },
+                                ).show();
+                              }, orElse: () {
+                                Alertify(
+                                  content: "NO SE PUDO GRABAR",
+                                  context: context,
+                                  isDismissible: true,
+                                  title: 'ERROR',
+                                  alertType: AlertifyType.error,
+                                  buttonText: 'OK',
+                                  animationType: AnimationType.outToIn,
+                                  barrierColor: Colors.black.withOpacity(0.5),
+                                  onDismiss: () {
+                                    AutoRouter.of(context)
+                                        .navigateNamed('/home');
+                                  },
+                                ).show();
+                              });
                             },
-                          ).show();
-                        }, orElse: () {
-                          Alertify(
-                            content: "NO SE PUDO GRABAR",
-                            context: context,
-                            isDismissible: true,
-                            title: 'ERROR',
-                            alertType: AlertifyType.error,
-                            buttonText: 'OK',
-                            animationType: AnimationType.outToIn,
-                            barrierColor: Colors.black.withOpacity(0.5),
-                            onDismiss: () {
-                              AutoRouter.of(context).navigateNamed('/home');
-                            },
-                          ).show();
-                        });
-                      },
-                      child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            children: [
-                              BlocBuilder<DropdownCubit, DropdownState>(
-                                builder: (context, state) {
-                                  return DropdownButton<String>(
-                                      value: dropDownValueUso,
-                                      icon: const Icon(
-                                        Icons.arrow_drop_down,
-                                      ),
-                                      isExpanded: true,
-                                      onChanged: (String? val) {
-                                        if (val != null) {
-                                          dropDownValueUso = val;
-                                        }
-                                      },
-                                      hint: Text(
-                                        "Seleccione",
-                                        style: TextStyle(
-                                            color: Color(0xFF8B8B8B),
-                                            fontSize: 15),
-                                      ),
-                                      items: itemsUso.map((String value) {
-                                        return DropdownMenuItem<String>(
-                                          value: value,
-                                          child: Text(
-                                            value,
-                                            style: TextStyle(fontSize: 15),
-                                          ),
-                                        );
-                                      }).toList());
-                                },
-                              ),
-                            ],
-                          )))
-                ],
-              ),
-            ),
-          ),
+                            child:
+                                const InspeccionRegisterForm() /* Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 20, right: 20),
+                                child: Column(
+                                  children: [InspeccionRegisterForm()],
+                                )) */
+                            )
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          )
         ],
       ),
     );

@@ -1,0 +1,14 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'records_find.dart';
+
+@freezed
+class Coordinacion with _$Coordinacion {
+  factory Coordinacion({
+    @JsonKey(name: 'records_find')
+        required List<RecordsFindCoordinacion> recordsFindCoordinacion,
+  }) = _Coordinacion;
+
+  factory Coordinacion.fromJson(Map<String, dynamic> json) =>
+      _$CoordinacionFromJson(json);
+}

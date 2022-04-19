@@ -14,18 +14,22 @@ _$_UsoInmueble _$$_UsoInmuebleFromJson(Map<String, dynamic> json) =>
       json,
       ($checkedConvert) {
         final val = _$_UsoInmueble(
-          recordsFind: $checkedConvert(
-              'records_find',
-              (v) => (v as List<dynamic>?)
-                  ?.map((e) => RecordsFind.fromJson(e as Map<String, dynamic>))
-                  .toList()),
+          usoId: $checkedConvert('uso_id', (v) => v as String?),
+          usoNombre: $checkedConvert('uso_nombre', (v) => v as String?),
+          usoEstado: $checkedConvert('uso_estado', (v) => v as String?),
         );
         return val;
       },
-      fieldKeyMap: const {'recordsFind': 'records_find'},
+      fieldKeyMap: const {
+        'usoId': 'uso_id',
+        'usoNombre': 'uso_nombre',
+        'usoEstado': 'uso_estado'
+      },
     );
 
 Map<String, dynamic> _$$_UsoInmuebleToJson(_$_UsoInmueble instance) =>
     <String, dynamic>{
-      'records_find': instance.recordsFind,
+      'uso_id': instance.usoId,
+      'uso_nombre': instance.usoNombre,
+      'uso_estado': instance.usoEstado,
     };

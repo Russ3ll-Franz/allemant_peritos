@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'records_find.freezed.dart';
-part 'records_find.g.dart';
+
+part of 'coordinacion.dart';
 
 @freezed
-class RecordsFind with _$RecordsFind {
-  factory RecordsFind({
+class RecordsFindCoordinacion with _$RecordsFindCoordinacion {
+  factory RecordsFindCoordinacion({
     @JsonKey(name: 'cotizacion_id') String? cotizacionId,
     @JsonKey(name: 'coordinacion_id') String? coordinacionId,
     @JsonKey(name: 'coordinacion_correlativo') String? coordinacionCorrelativo,
@@ -57,8 +57,8 @@ class RecordsFind with _$RecordsFind {
     @JsonKey(name: 'digitador_nombre') String? digitadorNombre,
     @JsonKey(name: 'control_calidad_id') String? controlCalidadId,
     @JsonKey(name: 'control_calidad_nombre') String? controlCalidadNombre,
-  }) = _RecordsFind;
+  }) = _RecordsFindCoordinacion;
 
-  factory RecordsFind.fromJson(Map<String, dynamic> json) =>
-      _$RecordsFindFromJson(json);
+  factory RecordsFindCoordinacion.fromJson(Map<String, dynamic> json) =>
+      _$RecordsFindCoordinacionFromJson(json);
 }

@@ -26,9 +26,32 @@ class _$DropdownStateTearOff {
     return const _Loading();
   }
 
-  DropUsoInmueble dropDownUsoInmueble({UsoInmueble? usoInmueble}) {
+  DropUsoInmueble dropDownUsoInmueble(
+      {List<UsoInmueble> usoInmueble = const <UsoInmueble>[]}) {
     return DropUsoInmueble(
       usoInmueble: usoInmueble,
+    );
+  }
+
+  DropOcupadoInmueble dropDownOcupadoInmueble(
+      {List<UsoInmueble> usoInmueble = const <UsoInmueble>[],
+      List<OcupadoInmueble> ocupadoInmueble = const <OcupadoInmueble>[],
+      List<MuroInmueble> muroInmueble = const <MuroInmueble>[],
+      List<TechoInmueble> techoInmueble = const <TechoInmueble>[],
+      List<InstalacionElectricaInmueble> iElectricaInmueble =
+          const <InstalacionElectricaInmueble>[],
+      List<InstalacionSanitariaInmueble> iSanitariaInmueble =
+          const <InstalacionSanitariaInmueble>[],
+      List<PuertaSistemaInmueble> puertaSistemaInmueble =
+          const <PuertaSistemaInmueble>[]}) {
+    return DropOcupadoInmueble(
+      usoInmueble: usoInmueble,
+      ocupadoInmueble: ocupadoInmueble,
+      muroInmueble: muroInmueble,
+      techoInmueble: techoInmueble,
+      iElectricaInmueble: iElectricaInmueble,
+      iSanitariaInmueble: iSanitariaInmueble,
+      puertaSistemaInmueble: puertaSistemaInmueble,
     );
   }
 
@@ -48,7 +71,17 @@ mixin _$DropdownState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UsoInmueble? usoInmueble) dropDownUsoInmueble,
+    required TResult Function(List<UsoInmueble> usoInmueble)
+        dropDownUsoInmueble,
+    required TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+        dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,7 +89,16 @@ mixin _$DropdownState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UsoInmueble? usoInmueble)? dropDownUsoInmueble,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,7 +106,16 @@ mixin _$DropdownState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UsoInmueble? usoInmueble)? dropDownUsoInmueble,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -74,6 +125,8 @@ mixin _$DropdownState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
+    required TResult Function(DropOcupadoInmueble value)
+        dropDownOcupadoInmueble,
     required TResult Function(_ErrorState value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -82,6 +135,7 @@ mixin _$DropdownState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
     TResult Function(_ErrorState value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -90,6 +144,7 @@ mixin _$DropdownState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
     TResult Function(_ErrorState value)? error,
     required TResult orElse(),
   }) =>
@@ -153,7 +208,17 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UsoInmueble? usoInmueble) dropDownUsoInmueble,
+    required TResult Function(List<UsoInmueble> usoInmueble)
+        dropDownUsoInmueble,
+    required TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+        dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -164,7 +229,16 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UsoInmueble? usoInmueble)? dropDownUsoInmueble,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) {
     return initial?.call();
@@ -175,7 +249,16 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UsoInmueble? usoInmueble)? dropDownUsoInmueble,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -191,6 +274,8 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
+    required TResult Function(DropOcupadoInmueble value)
+        dropDownOcupadoInmueble,
     required TResult Function(_ErrorState value) error,
   }) {
     return initial(this);
@@ -202,6 +287,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
     TResult Function(_ErrorState value)? error,
   }) {
     return initial?.call(this);
@@ -213,6 +299,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
     TResult Function(_ErrorState value)? error,
     required TResult orElse(),
   }) {
@@ -267,7 +354,17 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UsoInmueble? usoInmueble) dropDownUsoInmueble,
+    required TResult Function(List<UsoInmueble> usoInmueble)
+        dropDownUsoInmueble,
+    required TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+        dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -278,7 +375,16 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UsoInmueble? usoInmueble)? dropDownUsoInmueble,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) {
     return loading?.call();
@@ -289,7 +395,16 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UsoInmueble? usoInmueble)? dropDownUsoInmueble,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -305,6 +420,8 @@ class _$_Loading implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
+    required TResult Function(DropOcupadoInmueble value)
+        dropDownOcupadoInmueble,
     required TResult Function(_ErrorState value) error,
   }) {
     return loading(this);
@@ -316,6 +433,7 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
     TResult Function(_ErrorState value)? error,
   }) {
     return loading?.call(this);
@@ -327,6 +445,7 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
     TResult Function(_ErrorState value)? error,
     required TResult orElse(),
   }) {
@@ -346,9 +465,7 @@ abstract class $DropUsoInmuebleCopyWith<$Res> {
   factory $DropUsoInmuebleCopyWith(
           DropUsoInmueble value, $Res Function(DropUsoInmueble) then) =
       _$DropUsoInmuebleCopyWithImpl<$Res>;
-  $Res call({UsoInmueble? usoInmueble});
-
-  $UsoInmuebleCopyWith<$Res>? get usoInmueble;
+  $Res call({List<UsoInmueble> usoInmueble});
 }
 
 /// @nodoc
@@ -370,29 +487,19 @@ class _$DropUsoInmuebleCopyWithImpl<$Res>
       usoInmueble: usoInmueble == freezed
           ? _value.usoInmueble
           : usoInmueble // ignore: cast_nullable_to_non_nullable
-              as UsoInmueble?,
+              as List<UsoInmueble>,
     ));
-  }
-
-  @override
-  $UsoInmuebleCopyWith<$Res>? get usoInmueble {
-    if (_value.usoInmueble == null) {
-      return null;
-    }
-
-    return $UsoInmuebleCopyWith<$Res>(_value.usoInmueble!, (value) {
-      return _then(_value.copyWith(usoInmueble: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$DropUsoInmueble implements DropUsoInmueble {
-  const _$DropUsoInmueble({this.usoInmueble});
+  const _$DropUsoInmueble({this.usoInmueble = const <UsoInmueble>[]});
 
+  @JsonKey()
   @override
-  final UsoInmueble? usoInmueble;
+  final List<UsoInmueble> usoInmueble;
 
   @override
   String toString() {
@@ -422,7 +529,17 @@ class _$DropUsoInmueble implements DropUsoInmueble {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UsoInmueble? usoInmueble) dropDownUsoInmueble,
+    required TResult Function(List<UsoInmueble> usoInmueble)
+        dropDownUsoInmueble,
+    required TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+        dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) {
     return dropDownUsoInmueble(usoInmueble);
@@ -433,7 +550,16 @@ class _$DropUsoInmueble implements DropUsoInmueble {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UsoInmueble? usoInmueble)? dropDownUsoInmueble,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) {
     return dropDownUsoInmueble?.call(usoInmueble);
@@ -444,7 +570,16 @@ class _$DropUsoInmueble implements DropUsoInmueble {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UsoInmueble? usoInmueble)? dropDownUsoInmueble,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -460,6 +595,8 @@ class _$DropUsoInmueble implements DropUsoInmueble {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
+    required TResult Function(DropOcupadoInmueble value)
+        dropDownOcupadoInmueble,
     required TResult Function(_ErrorState value) error,
   }) {
     return dropDownUsoInmueble(this);
@@ -471,6 +608,7 @@ class _$DropUsoInmueble implements DropUsoInmueble {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
     TResult Function(_ErrorState value)? error,
   }) {
     return dropDownUsoInmueble?.call(this);
@@ -482,6 +620,7 @@ class _$DropUsoInmueble implements DropUsoInmueble {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
     TResult Function(_ErrorState value)? error,
     required TResult orElse(),
   }) {
@@ -493,11 +632,308 @@ class _$DropUsoInmueble implements DropUsoInmueble {
 }
 
 abstract class DropUsoInmueble implements DropdownState {
-  const factory DropUsoInmueble({UsoInmueble? usoInmueble}) = _$DropUsoInmueble;
+  const factory DropUsoInmueble({List<UsoInmueble> usoInmueble}) =
+      _$DropUsoInmueble;
 
-  UsoInmueble? get usoInmueble;
+  List<UsoInmueble> get usoInmueble;
   @JsonKey(ignore: true)
   $DropUsoInmuebleCopyWith<DropUsoInmueble> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DropOcupadoInmuebleCopyWith<$Res> {
+  factory $DropOcupadoInmuebleCopyWith(
+          DropOcupadoInmueble value, $Res Function(DropOcupadoInmueble) then) =
+      _$DropOcupadoInmuebleCopyWithImpl<$Res>;
+  $Res call(
+      {List<UsoInmueble> usoInmueble,
+      List<OcupadoInmueble> ocupadoInmueble,
+      List<MuroInmueble> muroInmueble,
+      List<TechoInmueble> techoInmueble,
+      List<InstalacionElectricaInmueble> iElectricaInmueble,
+      List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+      List<PuertaSistemaInmueble> puertaSistemaInmueble});
+}
+
+/// @nodoc
+class _$DropOcupadoInmuebleCopyWithImpl<$Res>
+    extends _$DropdownStateCopyWithImpl<$Res>
+    implements $DropOcupadoInmuebleCopyWith<$Res> {
+  _$DropOcupadoInmuebleCopyWithImpl(
+      DropOcupadoInmueble _value, $Res Function(DropOcupadoInmueble) _then)
+      : super(_value, (v) => _then(v as DropOcupadoInmueble));
+
+  @override
+  DropOcupadoInmueble get _value => super._value as DropOcupadoInmueble;
+
+  @override
+  $Res call({
+    Object? usoInmueble = freezed,
+    Object? ocupadoInmueble = freezed,
+    Object? muroInmueble = freezed,
+    Object? techoInmueble = freezed,
+    Object? iElectricaInmueble = freezed,
+    Object? iSanitariaInmueble = freezed,
+    Object? puertaSistemaInmueble = freezed,
+  }) {
+    return _then(DropOcupadoInmueble(
+      usoInmueble: usoInmueble == freezed
+          ? _value.usoInmueble
+          : usoInmueble // ignore: cast_nullable_to_non_nullable
+              as List<UsoInmueble>,
+      ocupadoInmueble: ocupadoInmueble == freezed
+          ? _value.ocupadoInmueble
+          : ocupadoInmueble // ignore: cast_nullable_to_non_nullable
+              as List<OcupadoInmueble>,
+      muroInmueble: muroInmueble == freezed
+          ? _value.muroInmueble
+          : muroInmueble // ignore: cast_nullable_to_non_nullable
+              as List<MuroInmueble>,
+      techoInmueble: techoInmueble == freezed
+          ? _value.techoInmueble
+          : techoInmueble // ignore: cast_nullable_to_non_nullable
+              as List<TechoInmueble>,
+      iElectricaInmueble: iElectricaInmueble == freezed
+          ? _value.iElectricaInmueble
+          : iElectricaInmueble // ignore: cast_nullable_to_non_nullable
+              as List<InstalacionElectricaInmueble>,
+      iSanitariaInmueble: iSanitariaInmueble == freezed
+          ? _value.iSanitariaInmueble
+          : iSanitariaInmueble // ignore: cast_nullable_to_non_nullable
+              as List<InstalacionSanitariaInmueble>,
+      puertaSistemaInmueble: puertaSistemaInmueble == freezed
+          ? _value.puertaSistemaInmueble
+          : puertaSistemaInmueble // ignore: cast_nullable_to_non_nullable
+              as List<PuertaSistemaInmueble>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DropOcupadoInmueble implements DropOcupadoInmueble {
+  const _$DropOcupadoInmueble(
+      {this.usoInmueble = const <UsoInmueble>[],
+      this.ocupadoInmueble = const <OcupadoInmueble>[],
+      this.muroInmueble = const <MuroInmueble>[],
+      this.techoInmueble = const <TechoInmueble>[],
+      this.iElectricaInmueble = const <InstalacionElectricaInmueble>[],
+      this.iSanitariaInmueble = const <InstalacionSanitariaInmueble>[],
+      this.puertaSistemaInmueble = const <PuertaSistemaInmueble>[]});
+
+  @JsonKey()
+  @override
+  final List<UsoInmueble> usoInmueble;
+  @JsonKey()
+  @override
+  final List<OcupadoInmueble> ocupadoInmueble;
+  @JsonKey()
+  @override
+  final List<MuroInmueble> muroInmueble;
+  @JsonKey()
+  @override
+  final List<TechoInmueble> techoInmueble;
+  @JsonKey()
+  @override
+  final List<InstalacionElectricaInmueble> iElectricaInmueble;
+  @JsonKey()
+  @override
+  final List<InstalacionSanitariaInmueble> iSanitariaInmueble;
+  @JsonKey()
+  @override
+  final List<PuertaSistemaInmueble> puertaSistemaInmueble;
+
+  @override
+  String toString() {
+    return 'DropdownState.dropDownOcupadoInmueble(usoInmueble: $usoInmueble, ocupadoInmueble: $ocupadoInmueble, muroInmueble: $muroInmueble, techoInmueble: $techoInmueble, iElectricaInmueble: $iElectricaInmueble, iSanitariaInmueble: $iSanitariaInmueble, puertaSistemaInmueble: $puertaSistemaInmueble)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DropOcupadoInmueble &&
+            const DeepCollectionEquality()
+                .equals(other.usoInmueble, usoInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.ocupadoInmueble, ocupadoInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.muroInmueble, muroInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.techoInmueble, techoInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.iElectricaInmueble, iElectricaInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.iSanitariaInmueble, iSanitariaInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.puertaSistemaInmueble, puertaSistemaInmueble));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(usoInmueble),
+      const DeepCollectionEquality().hash(ocupadoInmueble),
+      const DeepCollectionEquality().hash(muroInmueble),
+      const DeepCollectionEquality().hash(techoInmueble),
+      const DeepCollectionEquality().hash(iElectricaInmueble),
+      const DeepCollectionEquality().hash(iSanitariaInmueble),
+      const DeepCollectionEquality().hash(puertaSistemaInmueble));
+
+  @JsonKey(ignore: true)
+  @override
+  $DropOcupadoInmuebleCopyWith<DropOcupadoInmueble> get copyWith =>
+      _$DropOcupadoInmuebleCopyWithImpl<DropOcupadoInmueble>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<UsoInmueble> usoInmueble)
+        dropDownUsoInmueble,
+    required TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+        dropDownOcupadoInmueble,
+    required TResult Function(String message) error,
+  }) {
+    return dropDownOcupadoInmueble(
+        usoInmueble,
+        ocupadoInmueble,
+        muroInmueble,
+        techoInmueble,
+        iElectricaInmueble,
+        iSanitariaInmueble,
+        puertaSistemaInmueble);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
+    TResult Function(String message)? error,
+  }) {
+    return dropDownOcupadoInmueble?.call(
+        usoInmueble,
+        ocupadoInmueble,
+        muroInmueble,
+        techoInmueble,
+        iElectricaInmueble,
+        iSanitariaInmueble,
+        puertaSistemaInmueble);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (dropDownOcupadoInmueble != null) {
+      return dropDownOcupadoInmueble(
+          usoInmueble,
+          ocupadoInmueble,
+          muroInmueble,
+          techoInmueble,
+          iElectricaInmueble,
+          iSanitariaInmueble,
+          puertaSistemaInmueble);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
+    required TResult Function(DropOcupadoInmueble value)
+        dropDownOcupadoInmueble,
+    required TResult Function(_ErrorState value) error,
+  }) {
+    return dropDownOcupadoInmueble(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
+    TResult Function(_ErrorState value)? error,
+  }) {
+    return dropDownOcupadoInmueble?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
+    TResult Function(_ErrorState value)? error,
+    required TResult orElse(),
+  }) {
+    if (dropDownOcupadoInmueble != null) {
+      return dropDownOcupadoInmueble(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DropOcupadoInmueble implements DropdownState {
+  const factory DropOcupadoInmueble(
+          {List<UsoInmueble> usoInmueble,
+          List<OcupadoInmueble> ocupadoInmueble,
+          List<MuroInmueble> muroInmueble,
+          List<TechoInmueble> techoInmueble,
+          List<InstalacionElectricaInmueble> iElectricaInmueble,
+          List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+          List<PuertaSistemaInmueble> puertaSistemaInmueble}) =
+      _$DropOcupadoInmueble;
+
+  List<UsoInmueble> get usoInmueble;
+  List<OcupadoInmueble> get ocupadoInmueble;
+  List<MuroInmueble> get muroInmueble;
+  List<TechoInmueble> get techoInmueble;
+  List<InstalacionElectricaInmueble> get iElectricaInmueble;
+  List<InstalacionSanitariaInmueble> get iSanitariaInmueble;
+  List<PuertaSistemaInmueble> get puertaSistemaInmueble;
+  @JsonKey(ignore: true)
+  $DropOcupadoInmuebleCopyWith<DropOcupadoInmueble> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -567,7 +1003,17 @@ class _$_ErrorState implements _ErrorState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UsoInmueble? usoInmueble) dropDownUsoInmueble,
+    required TResult Function(List<UsoInmueble> usoInmueble)
+        dropDownUsoInmueble,
+    required TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+        dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -578,7 +1024,16 @@ class _$_ErrorState implements _ErrorState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UsoInmueble? usoInmueble)? dropDownUsoInmueble,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) {
     return error?.call(message);
@@ -589,7 +1044,16 @@ class _$_ErrorState implements _ErrorState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UsoInmueble? usoInmueble)? dropDownUsoInmueble,
+    TResult Function(List<UsoInmueble> usoInmueble)? dropDownUsoInmueble,
+    TResult Function(
+            List<UsoInmueble> usoInmueble,
+            List<OcupadoInmueble> ocupadoInmueble,
+            List<MuroInmueble> muroInmueble,
+            List<TechoInmueble> techoInmueble,
+            List<InstalacionElectricaInmueble> iElectricaInmueble,
+            List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+        dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -605,6 +1069,8 @@ class _$_ErrorState implements _ErrorState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
+    required TResult Function(DropOcupadoInmueble value)
+        dropDownOcupadoInmueble,
     required TResult Function(_ErrorState value) error,
   }) {
     return error(this);
@@ -616,6 +1082,7 @@ class _$_ErrorState implements _ErrorState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
     TResult Function(_ErrorState value)? error,
   }) {
     return error?.call(this);
@@ -627,6 +1094,7 @@ class _$_ErrorState implements _ErrorState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
+    TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
     TResult Function(_ErrorState value)? error,
     required TResult orElse(),
   }) {

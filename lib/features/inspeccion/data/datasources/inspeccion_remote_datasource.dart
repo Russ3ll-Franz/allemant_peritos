@@ -4,6 +4,12 @@ import 'package:allemant_peritos/core/http/api_response.dart';
 import 'package:allemant_peritos/core/http/http_methods.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/coordinacion/coordinacion.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspeccion.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/instalacion_electrica_inmueble/instalacion_electrica_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/instalacion_sanitaria_inmueble/instalacion_sanitaria_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/muro_inmueble/muro_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/ocupado_inmueble/ocupado_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/puerta_sistema_inmueble/puerta_sistema_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/techo_inmueble/techo_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/uso_inmueble/uso_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visitaResponse.dart';
@@ -14,7 +20,16 @@ abstract class IInspeccionRemoteDataSource {
       String userID, String tipoInspeccion);
   Future<Coordinacion> getInspeccionByCoordinacion(String coordinacionID);
   Future<VisitaResponse> insertInspeccion(Visita visita);
-  Future<UsoInmueble> postUsoInmueble(String nombre);
+  Future<List<UsoInmueble>> postUsoInmueble(String nombre);
+  Future<List<OcupadoInmueble>> postOcupadoInmueble(String nombre);
+  Future<List<MuroInmueble>> postMuroInmueble(String nombre);
+  Future<List<TechoInmueble>> postTechoInmueble(String nombre);
+  Future<List<InstalacionElectricaInmueble>> postInstalacionElectricaInmueble(
+      String nombre);
+  Future<List<InstalacionSanitariaInmueble>> postInstalacionSanitariaInmueble(
+      String nombre);
+
+  Future<List<PuertaSistemaInmueble>> postPuertaSistemaInmueble(String nombre);
 }
 
 @Injectable(as: IInspeccionRemoteDataSource)
@@ -51,8 +66,9 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
 
     if (response is APISuccess) {
       final data = response.value;
+
       try {
-        final inspeccion = Coordinacion.fromJson(data);
+        final inspeccion = Coordinacion.fromJson(response.value[0]);
 
         return inspeccion;
       } catch (e) {
@@ -81,13 +97,117 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
   }
 
   @override
-  Future<UsoInmueble> postUsoInmueble(String nombre) async {
+  Future<List<UsoInmueble>> postUsoInmueble(String nombre) async {
     final response = await helper.post("intranet/uso/search", nombre);
     if (response is APISuccess) {
       final data = response.value;
       try {
-        final inspeccion = UsoInmueble.fromJson(data);
+        final inspeccion = usoInmuebleFromJson(data);
+
         return inspeccion;
+      } catch (e) {
+        throw Exception(e.toString());
+      }
+    } else {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<List<OcupadoInmueble>> postOcupadoInmueble(String nombre) async {
+    final response = await helper.post("intranet/ocupado/search", nombre);
+    if (response is APISuccess) {
+      final data = response.value;
+      try {
+        final ocupadoInmueble = ocupadoInmuebleFromJson(data);
+        return ocupadoInmueble;
+      } catch (e) {
+        throw Exception(e.toString());
+      }
+    } else {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<List<MuroInmueble>> postMuroInmueble(String nombre) async {
+    final response = await helper.post("intranet/muro/search", nombre);
+    if (response is APISuccess) {
+      final data = response.value;
+      try {
+        final ocupadoInmueble = muroInmuebleFromJson(data);
+        return ocupadoInmueble;
+      } catch (e) {
+        throw Exception(e.toString());
+      }
+    } else {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<List<TechoInmueble>> postTechoInmueble(String nombre) async {
+    final response = await helper.post("intranet/techo/search", nombre);
+    if (response is APISuccess) {
+      try {
+        final mydata = (response.value as List)
+            .map((i) => TechoInmueble.fromJson(i))
+            .toList();
+        return mydata;
+      } catch (e) {
+        throw Exception(e.toString());
+      }
+    } else {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<List<PuertaSistemaInmueble>> postPuertaSistemaInmueble(
+      String nombre) async {
+    final response = await helper.post("intranet/psistema/search", nombre);
+    if (response is APISuccess) {
+      try {
+        final mydata = (response.value as List)
+            .map((i) => PuertaSistemaInmueble.fromJson(i))
+            .toList();
+        return mydata;
+      } catch (e) {
+        throw Exception(e.toString());
+      }
+    } else {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<List<InstalacionElectricaInmueble>> postInstalacionElectricaInmueble(
+      String nombre) async {
+    final response = await helper.post("intranet/ielectrica/search", nombre);
+    if (response is APISuccess) {
+      try {
+        final mydata = (response.value as List)
+            .map((i) => InstalacionElectricaInmueble.fromJson(i))
+            .toList();
+        return mydata;
+      } catch (e) {
+        throw Exception(e.toString());
+      }
+    } else {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<List<InstalacionSanitariaInmueble>> postInstalacionSanitariaInmueble(
+      String nombre) async {
+    final response = await helper.post("intranet/isanitaria/search", nombre);
+    if (response is APISuccess) {
+      try {
+        final mydata = (response.value as List)
+            .map((i) => InstalacionSanitariaInmueble.fromJson(i))
+            .toList();
+        return mydata;
       } catch (e) {
         throw Exception(e.toString());
       }

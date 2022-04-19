@@ -55,23 +55,26 @@ class _InspeccionBodyState extends State<InspeccionBody> {
         if (state is InspeccionLoading) {
           return LoadingIndicators.instance.smallLoadingAnimation(context);
         } else if (state is InspeccionLoaded) {
-          return Column(children: <Widget>[
-            AnimatedOpacity(
-              duration: const Duration(milliseconds: 200),
-              opacity: closeTopContainer ? 0 : 1,
-              child: AnimatedContainer(
-                  //color: Colors.amber,
-                  duration: const Duration(milliseconds: 200),
-                  width: widget.mySize.width,
-                  alignment: Alignment.topCenter,
-                  height: closeTopContainer ? 0 : widget.myCategoryHeight,
-                  child: categoriesScroller),
-            ),
-            InspeccionLista(
-                inspeccionList: (state as dynamic).tipoInspeccions,
-                topContainer: topContainer,
-                myscroller: controller)
-          ]);
+          return Container(
+            color: Colors.white,
+            child: Column(children: <Widget>[
+              AnimatedOpacity(
+                duration: const Duration(milliseconds: 200),
+                opacity: closeTopContainer ? 0 : 1,
+                child: AnimatedContainer(
+                    //color: Colors.amber,
+                    duration: const Duration(milliseconds: 200),
+                    width: widget.mySize.width,
+                    alignment: Alignment.topCenter,
+                    height: closeTopContainer ? 0 : widget.myCategoryHeight,
+                    child: categoriesScroller),
+              ),
+              InspeccionLista(
+                  inspeccionList: (state as dynamic).tipoInspeccions,
+                  topContainer: topContainer,
+                  myscroller: controller)
+            ]),
+          );
         }
         //error state
         return Column(
