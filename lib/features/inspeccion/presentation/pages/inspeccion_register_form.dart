@@ -76,6 +76,8 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
   InfraestructuraEstadoConservacion? alcantarilladoEstadoConservacionValue;
   InfraestructuraEstadoConservacion? aguaPotableEstadoConservacionValue;
   InfraestructuraEstadoConservacion? alumbradoEstadoConservacionValue;
+  String? latitud;
+  String? longitud;
 
   final TextEditingController _atendidoController = TextEditingController();
   final TextEditingController _direccionController = TextEditingController();
@@ -84,6 +86,9 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
   final TextEditingController _nroPuertaController = TextEditingController();
   final TextEditingController _detalleDistribucionController =
       TextEditingController();
+  final TextEditingController _observacionController = TextEditingController();
+  final TextEditingController _latitud = TextEditingController();
+  final TextEditingController _longitud = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -184,6 +189,143 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
               fontSize: 16,
             ),
             hintText: 'INGRESE LA DIRECCIÓN DEL DOMICILIO',
+            hintStyle: const TextStyle(color: Color(0xFF114472)),
+            enabledBorder: OutlineInputBorder(
+                borderSide:
+                    const BorderSide(color: Color(0xFF114472), width: 1.2),
+                borderRadius: BorderRadius.circular(10.0)),
+            focusedBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color(0xFF114472), width: 1.2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 230, 35, 9)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            prefixIcon: const Icon(
+              Iconsax.house,
+              color: Color(0xFF114472),
+            ),
+            floatingLabelBehavior: FloatingLabelBehavior.never,
+          ),
+        ),
+        SizeBox.sizeRow,
+        BlocBuilder<LocationCubit, LocationState>(builder: (_, state) {
+          state.maybeWhen(
+              orElse: () {},
+              locationUpdate: (position) {
+                latitud = position.latitude.toString();
+                longitud = position.longitude.toString();
+                print(latitud);
+                print(longitud);
+                return Column(
+                  children: [
+                    TextFormField(
+                      autofocus: false,
+                      textInputAction: TextInputAction.next,
+                      controller: _latitud,
+                      onChanged: (text) {
+                        text = position.latitude.toString();
+                      },
+                      maxLines: 1,
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 10.0),
+                        labelText: 'LATITUD',
+                        labelStyle: const TextStyle(
+                          fontSize: 16,
+                        ),
+                        hintStyle: const TextStyle(color: Color(0xFF114472)),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                                color: Color(0xFF114472), width: 1.2),
+                            borderRadius: BorderRadius.circular(10.0)),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color(0xFF114472), width: 1.2),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 230, 35, 9)),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 192, 11, 11)),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        prefixIcon: const Icon(
+                          Iconsax.house,
+                          color: Color(0xFF114472),
+                        ),
+                        floatingLabelBehavior: FloatingLabelBehavior.never,
+                      ),
+                    ),
+                  ],
+                );
+              });
+          return const SizedBox.shrink();
+        }),
+        TextFormField(
+          autofocus: false,
+          textInputAction: TextInputAction.next,
+          controller: _latitud,
+          maxLines: 1,
+          decoration: InputDecoration(
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+            labelText: 'LATITUD',
+            labelStyle: const TextStyle(
+              fontSize: 16,
+            ),
+            hintStyle: const TextStyle(color: Color(0xFF114472)),
+            enabledBorder: OutlineInputBorder(
+                borderSide:
+                    const BorderSide(color: Color(0xFF114472), width: 1.2),
+                borderRadius: BorderRadius.circular(10.0)),
+            focusedBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color(0xFF114472), width: 1.2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 230, 35, 9)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            prefixIcon: const Icon(
+              Iconsax.house,
+              color: Color(0xFF114472),
+            ),
+            floatingLabelBehavior: FloatingLabelBehavior.never,
+          ),
+        ),
+        SizeBox.sizeRow,
+        TextFormField(
+          autofocus: false,
+          textInputAction: TextInputAction.next,
+          controller: _longitud,
+          maxLines: 1,
+          decoration: InputDecoration(
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+            labelText: 'LONGITUD',
+            labelStyle: const TextStyle(
+              fontSize: 16,
+            ),
             hintStyle: const TextStyle(color: Color(0xFF114472)),
             enabledBorder: OutlineInputBorder(
                 borderSide:
@@ -1674,14 +1816,91 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
             return const SizedBox.shrink();
           },
         ),
-        BlocBuilder<LocationCubit, LocationState>(builder: (_, state) {
-          state.maybeWhen(
-              orElse: () {},
-              locationUpdate: (position) {
-                print(position);
-              });
-          return const SizedBox.shrink();
-        }),
+        SizeBox.sizeRow,
+        TextFormField(
+          autofocus: false,
+          textInputAction: TextInputAction.next,
+          controller: _detalleDistribucionController,
+          maxLines: 6,
+          style: const TextStyle(fontSize: 20, color: Colors.black),
+          decoration: InputDecoration(
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+            labelText: 'DISTRIBUCIÓN DEL INMUEBLE',
+            labelStyle: const TextStyle(
+              fontSize: 16,
+            ),
+            hintText: 'INGRESE LA DISTRIBUCIÓN DEL INMUEBLE',
+            hintStyle: const TextStyle(color: Color(0xFF114472)),
+            enabledBorder: OutlineInputBorder(
+                borderSide:
+                    const BorderSide(color: Color(0xFF114472), width: 1.2),
+                borderRadius: BorderRadius.circular(10.0)),
+            focusedBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color(0xFF114472), width: 1.2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 230, 35, 9)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            prefixIcon: const Icon(
+              Iconsax.user,
+              color: Color(0xFF114472),
+            ),
+            floatingLabelBehavior: FloatingLabelBehavior.never,
+          ),
+        ),
+        SizeBox.sizeRow,
+        TextFormField(
+          autofocus: false,
+          textInputAction: TextInputAction.next,
+          controller: _detalleDistribucionController,
+          maxLines: 6,
+          style: const TextStyle(fontSize: 20, color: Colors.black),
+          decoration: InputDecoration(
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+            labelText: 'OBSERVACIÓN DEL INMUEBLE',
+            labelStyle: const TextStyle(
+              fontSize: 16,
+            ),
+            hintText: 'INGRESE OBSERVACIÓN SUCITADA EN LA INSPECCIÓN',
+            hintStyle: const TextStyle(color: Color(0xFF114472)),
+            enabledBorder: OutlineInputBorder(
+                borderSide:
+                    const BorderSide(color: Color(0xFF114472), width: 1.2),
+                borderRadius: BorderRadius.circular(10.0)),
+            focusedBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color(0xFF114472), width: 1.2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 230, 35, 9)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            prefixIcon: const Icon(
+              Iconsax.user,
+              color: Color(0xFF114472),
+            ),
+            floatingLabelBehavior: FloatingLabelBehavior.never,
+          ),
+        ),
+        SizeBox.sizeRow,
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
@@ -1785,8 +2004,8 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
         latitud: "0.000000",
         longitud: "0.000000",
         usuario: "3",
-        distribucionInmueble: "asdsadsadasdsad",
-        observacion: "asdsadad+");
+        distribucionInmueble: _detalleDistribucionController.text,
+        observacion: _observacionController.text);
     _registerVisitaBloc.add(VisitasEvent.visitaSubmitted(newVisita));
   }
 }
