@@ -13,145 +13,198 @@ _$_Visita _$$_VisitaFromJson(Map<String, dynamic> json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = _$_Visita(
-          inspeccionId: $checkedConvert('inspeccion_id', (v) => v as String?),
+          inspeccionCodigo:
+              $checkedConvert('inspeccion_codigo', (v) => v as String?),
           atendido: $checkedConvert('atendido', (v) => v as String?),
           direccion: $checkedConvert('direccion', (v) => v as String?),
           nroSuministro: $checkedConvert('nro_suministro', (v) => v as String?),
           nroPuerta: $checkedConvert('nro_puerta', (v) => v as String?),
-          ocupado: $checkedConvert('ocupado', (v) => v as String?),
-          uso: $checkedConvert('uso', (v) => v as String?),
-          muros: $checkedConvert('muros', (v) => v as String?),
-          techos: $checkedConvert('techos', (v) => v as String?),
-          instElectricas:
-              $checkedConvert('inst_electricas', (v) => v as String?),
-          instSanitarias:
-              $checkedConvert('inst_sanitarias', (v) => v as String?),
-          calidadConstruccion:
-              $checkedConvert('calidad_construccion', (v) => v as String?),
-          puertaTipo: $checkedConvert('puerta_tipo', (v) => v as String?),
-          puertaMaterial:
-              $checkedConvert('puerta_material', (v) => v as String?),
-          puertaSistema: $checkedConvert('puerta_sistema', (v) => v as String?),
-          ventanaMarco: $checkedConvert('ventana_marco', (v) => v as String?),
-          ventanaVidrio: $checkedConvert('ventana_vidrio', (v) => v as String?),
-          ventanaSistema:
-              $checkedConvert('ventana_sistema', (v) => v as String?),
-          pisoTipo: $checkedConvert('piso_tipo', (v) => v as String?),
-          pisoMaterial: $checkedConvert('piso_material', (v) => v as String?),
-          revestimientoTipo:
-              $checkedConvert('revestimiento_tipo', (v) => v as String?),
-          revestimientoMaterial:
-              $checkedConvert('revestimiento_material', (v) => v as String?),
-          viasDispone: $checkedConvert('vias_dispone', (v) => v as String?),
-          viasCalidad: $checkedConvert('vias_calidad', (v) => v as String?),
-          viasConservacion:
-              $checkedConvert('vias_conservacion', (v) => v as String?),
-          veredasDispone:
-              $checkedConvert('veredas_dispone', (v) => v as String?),
-          veredasCalidad:
-              $checkedConvert('veredas_calidad', (v) => v as String?),
-          veredasConservacion:
-              $checkedConvert('veredas_conservacion', (v) => v as String?),
-          alcantarilladoDispone:
-              $checkedConvert('alcantarillado_dispone', (v) => v as String?),
-          alcantarilladoCalidad:
-              $checkedConvert('alcantarillado_calidad', (v) => v as String?),
-          alcantarilladoConservacion: $checkedConvert(
-              'alcantarillado_conservacion', (v) => v as String?),
-          aguapotableDispone:
-              $checkedConvert('aguapotable_dispone', (v) => v as String?),
-          aguapotableCalidad:
-              $checkedConvert('aguapotable_calidad', (v) => v as String?),
-          aguapotableConservacion:
-              $checkedConvert('aguapotable_conservacion', (v) => v as String?),
-          alumbradoDispone:
-              $checkedConvert('alumbrado_dispone', (v) => v as String?),
-          alumbradoCalidad:
-              $checkedConvert('alumbrado_calidad', (v) => v as String?),
-          alumbradoConservacion:
-              $checkedConvert('alumbrado_conservacion', (v) => v as String?),
+          ocupadoCodigo: $checkedConvert('ocupado_codigo', (v) => v as String?),
+          usoCodigo: $checkedConvert('uso_codigo', (v) => v as String?),
+          muroCodigo: $checkedConvert('muro_codigo', (v) => v as String?),
+          techoCodigo: $checkedConvert('techo_codigo', (v) => v as String?),
+          instalacionElectricaCodigo: $checkedConvert(
+              'instalacion_electrica_codigo', (v) => v as String?),
+          instalacionSanitariaCodigo: $checkedConvert(
+              'instalacion_sanitaria_codigo', (v) => v as String?),
+          calidadConstruccionCodigo: $checkedConvert(
+              'calidad_construccion_codigo', (v) => v as String?),
+          puertaTipoCodigo:
+              $checkedConvert('puerta_tipo_codigo', (v) => v as String?),
+          puertaSistemaCodigo:
+              $checkedConvert('puerta_sistema_codigo', (v) => v as String?),
+          puertaMaterialCodigo:
+              $checkedConvert('puerta_material_codigo', (v) => v as String?),
+          ventanaMarcoCodigo:
+              $checkedConvert('ventana_marco_codigo', (v) => v as String?),
+          ventanaVidrioCodigo:
+              $checkedConvert('ventana_vidrio_codigo', (v) => v as String?),
+          ventanaSistemaCodigo:
+              $checkedConvert('ventana_sistema_codigo', (v) => v as String?),
+          pisoTipoCodigo:
+              $checkedConvert('piso_tipo_codigo', (v) => v as String?),
+          pisoTipo2Codigo:
+              $checkedConvert('piso_tipo2_codigo', (v) => v as String?),
+          revestimientoTipoCodigo:
+              $checkedConvert('revestimiento_tipo_codigo', (v) => v as String?),
+          revestimientoTipo2Codigo: $checkedConvert(
+              'revestimiento_tipo2_codigo', (v) => v as String?),
+          infraestructuraDisponibleViasCodigo: $checkedConvert(
+              'infraestructura_disponible_vias_codigo', (v) => v as String?),
+          infraestructuraDisponibleVeredasCodigo: $checkedConvert(
+              'infraestructura_disponible_veredas_codigo', (v) => v as String?),
+          infraestructuraDisponibleAlcantarilladoCodigo: $checkedConvert(
+              'infraestructura_disponible_alcantarillado_codigo',
+              (v) => v as String?),
+          infraestructuraDisponibleAguaCodigo: $checkedConvert(
+              'infraestructura_disponible_agua_codigo', (v) => v as String?),
+          infraestructuraDisponibleAlumbradoCodigo: $checkedConvert(
+              'infraestructura_disponible_alumbrado_codigo',
+              (v) => v as String?),
+          infraestructuraCalidadViasCodigo: $checkedConvert(
+              'infraestructura_calidad_vias_codigo', (v) => v as String?),
+          infraestructuraCalidadVeredasCodigo: $checkedConvert(
+              'infraestructura_calidad_veredas_codigo', (v) => v as String?),
+          infraestructuraCalidadAlcantarilladoCodigo: $checkedConvert(
+              'infraestructura_calidad_alcantarillado_codigo',
+              (v) => v as String?),
+          infraestructuraCalidadAguaCodigo: $checkedConvert(
+              'infraestructura_calidad_agua_codigo', (v) => v as String?),
+          infraestructuraCalidadAlumbradoCodigo: $checkedConvert(
+              'infraestructura_calidad_alumbrado_codigo', (v) => v as String?),
+          infraestructuraConservacionViasCodigo: $checkedConvert(
+              'infraestructura_conservacion_vias_codigo', (v) => v as String?),
+          infraestructuraConservacionVeredasCodigo: $checkedConvert(
+              'infraestructura_conservacion_veredas_codigo',
+              (v) => v as String?),
+          infraestructuraConservacionAlcantarilladoCodigo: $checkedConvert(
+              'infraestructura_conservacion_alcantarillado_codigo',
+              (v) => v as String?),
+          infraestructuraConservacionAguaCodigo: $checkedConvert(
+              'infraestructura_conservacion_agua_codigo', (v) => v as String?),
+          infraestructuraConservacionAlumbradoCodigo: $checkedConvert(
+              'infraestructura_conservacion_alumbrado_codigo',
+              (v) => v as String?),
+          longitud: $checkedConvert('longitud', (v) => v as String?),
+          latitud: $checkedConvert('latitud', (v) => v as String?),
+          usuario: $checkedConvert('usuario', (v) => v as String?),
           distribucionInmueble:
               $checkedConvert('distribucion_inmueble', (v) => v as String?),
-          latitud: $checkedConvert('latitud', (v) => v as String?),
-          longitud: $checkedConvert('longitud', (v) => v as String?),
+          observacion: $checkedConvert('observacion', (v) => v as String?),
         );
         return val;
       },
       fieldKeyMap: const {
-        'inspeccionId': 'inspeccion_id',
+        'inspeccionCodigo': 'inspeccion_codigo',
         'nroSuministro': 'nro_suministro',
         'nroPuerta': 'nro_puerta',
-        'instElectricas': 'inst_electricas',
-        'instSanitarias': 'inst_sanitarias',
-        'calidadConstruccion': 'calidad_construccion',
-        'puertaTipo': 'puerta_tipo',
-        'puertaMaterial': 'puerta_material',
-        'puertaSistema': 'puerta_sistema',
-        'ventanaMarco': 'ventana_marco',
-        'ventanaVidrio': 'ventana_vidrio',
-        'ventanaSistema': 'ventana_sistema',
-        'pisoTipo': 'piso_tipo',
-        'pisoMaterial': 'piso_material',
-        'revestimientoTipo': 'revestimiento_tipo',
-        'revestimientoMaterial': 'revestimiento_material',
-        'viasDispone': 'vias_dispone',
-        'viasCalidad': 'vias_calidad',
-        'viasConservacion': 'vias_conservacion',
-        'veredasDispone': 'veredas_dispone',
-        'veredasCalidad': 'veredas_calidad',
-        'veredasConservacion': 'veredas_conservacion',
-        'alcantarilladoDispone': 'alcantarillado_dispone',
-        'alcantarilladoCalidad': 'alcantarillado_calidad',
-        'alcantarilladoConservacion': 'alcantarillado_conservacion',
-        'aguapotableDispone': 'aguapotable_dispone',
-        'aguapotableCalidad': 'aguapotable_calidad',
-        'aguapotableConservacion': 'aguapotable_conservacion',
-        'alumbradoDispone': 'alumbrado_dispone',
-        'alumbradoCalidad': 'alumbrado_calidad',
-        'alumbradoConservacion': 'alumbrado_conservacion',
+        'ocupadoCodigo': 'ocupado_codigo',
+        'usoCodigo': 'uso_codigo',
+        'muroCodigo': 'muro_codigo',
+        'techoCodigo': 'techo_codigo',
+        'instalacionElectricaCodigo': 'instalacion_electrica_codigo',
+        'instalacionSanitariaCodigo': 'instalacion_sanitaria_codigo',
+        'calidadConstruccionCodigo': 'calidad_construccion_codigo',
+        'puertaTipoCodigo': 'puerta_tipo_codigo',
+        'puertaSistemaCodigo': 'puerta_sistema_codigo',
+        'puertaMaterialCodigo': 'puerta_material_codigo',
+        'ventanaMarcoCodigo': 'ventana_marco_codigo',
+        'ventanaVidrioCodigo': 'ventana_vidrio_codigo',
+        'ventanaSistemaCodigo': 'ventana_sistema_codigo',
+        'pisoTipoCodigo': 'piso_tipo_codigo',
+        'pisoTipo2Codigo': 'piso_tipo2_codigo',
+        'revestimientoTipoCodigo': 'revestimiento_tipo_codigo',
+        'revestimientoTipo2Codigo': 'revestimiento_tipo2_codigo',
+        'infraestructuraDisponibleViasCodigo':
+            'infraestructura_disponible_vias_codigo',
+        'infraestructuraDisponibleVeredasCodigo':
+            'infraestructura_disponible_veredas_codigo',
+        'infraestructuraDisponibleAlcantarilladoCodigo':
+            'infraestructura_disponible_alcantarillado_codigo',
+        'infraestructuraDisponibleAguaCodigo':
+            'infraestructura_disponible_agua_codigo',
+        'infraestructuraDisponibleAlumbradoCodigo':
+            'infraestructura_disponible_alumbrado_codigo',
+        'infraestructuraCalidadViasCodigo':
+            'infraestructura_calidad_vias_codigo',
+        'infraestructuraCalidadVeredasCodigo':
+            'infraestructura_calidad_veredas_codigo',
+        'infraestructuraCalidadAlcantarilladoCodigo':
+            'infraestructura_calidad_alcantarillado_codigo',
+        'infraestructuraCalidadAguaCodigo':
+            'infraestructura_calidad_agua_codigo',
+        'infraestructuraCalidadAlumbradoCodigo':
+            'infraestructura_calidad_alumbrado_codigo',
+        'infraestructuraConservacionViasCodigo':
+            'infraestructura_conservacion_vias_codigo',
+        'infraestructuraConservacionVeredasCodigo':
+            'infraestructura_conservacion_veredas_codigo',
+        'infraestructuraConservacionAlcantarilladoCodigo':
+            'infraestructura_conservacion_alcantarillado_codigo',
+        'infraestructuraConservacionAguaCodigo':
+            'infraestructura_conservacion_agua_codigo',
+        'infraestructuraConservacionAlumbradoCodigo':
+            'infraestructura_conservacion_alumbrado_codigo',
         'distribucionInmueble': 'distribucion_inmueble'
       },
     );
 
 Map<String, dynamic> _$$_VisitaToJson(_$_Visita instance) => <String, dynamic>{
-      'inspeccion_id': instance.inspeccionId,
+      'inspeccion_codigo': instance.inspeccionCodigo,
       'atendido': instance.atendido,
       'direccion': instance.direccion,
       'nro_suministro': instance.nroSuministro,
       'nro_puerta': instance.nroPuerta,
-      'ocupado': instance.ocupado,
-      'uso': instance.uso,
-      'muros': instance.muros,
-      'techos': instance.techos,
-      'inst_electricas': instance.instElectricas,
-      'inst_sanitarias': instance.instSanitarias,
-      'calidad_construccion': instance.calidadConstruccion,
-      'puerta_tipo': instance.puertaTipo,
-      'puerta_material': instance.puertaMaterial,
-      'puerta_sistema': instance.puertaSistema,
-      'ventana_marco': instance.ventanaMarco,
-      'ventana_vidrio': instance.ventanaVidrio,
-      'ventana_sistema': instance.ventanaSistema,
-      'piso_tipo': instance.pisoTipo,
-      'piso_material': instance.pisoMaterial,
-      'revestimiento_tipo': instance.revestimientoTipo,
-      'revestimiento_material': instance.revestimientoMaterial,
-      'vias_dispone': instance.viasDispone,
-      'vias_calidad': instance.viasCalidad,
-      'vias_conservacion': instance.viasConservacion,
-      'veredas_dispone': instance.veredasDispone,
-      'veredas_calidad': instance.veredasCalidad,
-      'veredas_conservacion': instance.veredasConservacion,
-      'alcantarillado_dispone': instance.alcantarilladoDispone,
-      'alcantarillado_calidad': instance.alcantarilladoCalidad,
-      'alcantarillado_conservacion': instance.alcantarilladoConservacion,
-      'aguapotable_dispone': instance.aguapotableDispone,
-      'aguapotable_calidad': instance.aguapotableCalidad,
-      'aguapotable_conservacion': instance.aguapotableConservacion,
-      'alumbrado_dispone': instance.alumbradoDispone,
-      'alumbrado_calidad': instance.alumbradoCalidad,
-      'alumbrado_conservacion': instance.alumbradoConservacion,
-      'distribucion_inmueble': instance.distribucionInmueble,
-      'latitud': instance.latitud,
+      'ocupado_codigo': instance.ocupadoCodigo,
+      'uso_codigo': instance.usoCodigo,
+      'muro_codigo': instance.muroCodigo,
+      'techo_codigo': instance.techoCodigo,
+      'instalacion_electrica_codigo': instance.instalacionElectricaCodigo,
+      'instalacion_sanitaria_codigo': instance.instalacionSanitariaCodigo,
+      'calidad_construccion_codigo': instance.calidadConstruccionCodigo,
+      'puerta_tipo_codigo': instance.puertaTipoCodigo,
+      'puerta_sistema_codigo': instance.puertaSistemaCodigo,
+      'puerta_material_codigo': instance.puertaMaterialCodigo,
+      'ventana_marco_codigo': instance.ventanaMarcoCodigo,
+      'ventana_vidrio_codigo': instance.ventanaVidrioCodigo,
+      'ventana_sistema_codigo': instance.ventanaSistemaCodigo,
+      'piso_tipo_codigo': instance.pisoTipoCodigo,
+      'piso_tipo2_codigo': instance.pisoTipo2Codigo,
+      'revestimiento_tipo_codigo': instance.revestimientoTipoCodigo,
+      'revestimiento_tipo2_codigo': instance.revestimientoTipo2Codigo,
+      'infraestructura_disponible_vias_codigo':
+          instance.infraestructuraDisponibleViasCodigo,
+      'infraestructura_disponible_veredas_codigo':
+          instance.infraestructuraDisponibleVeredasCodigo,
+      'infraestructura_disponible_alcantarillado_codigo':
+          instance.infraestructuraDisponibleAlcantarilladoCodigo,
+      'infraestructura_disponible_agua_codigo':
+          instance.infraestructuraDisponibleAguaCodigo,
+      'infraestructura_disponible_alumbrado_codigo':
+          instance.infraestructuraDisponibleAlumbradoCodigo,
+      'infraestructura_calidad_vias_codigo':
+          instance.infraestructuraCalidadViasCodigo,
+      'infraestructura_calidad_veredas_codigo':
+          instance.infraestructuraCalidadVeredasCodigo,
+      'infraestructura_calidad_alcantarillado_codigo':
+          instance.infraestructuraCalidadAlcantarilladoCodigo,
+      'infraestructura_calidad_agua_codigo':
+          instance.infraestructuraCalidadAguaCodigo,
+      'infraestructura_calidad_alumbrado_codigo':
+          instance.infraestructuraCalidadAlumbradoCodigo,
+      'infraestructura_conservacion_vias_codigo':
+          instance.infraestructuraConservacionViasCodigo,
+      'infraestructura_conservacion_veredas_codigo':
+          instance.infraestructuraConservacionVeredasCodigo,
+      'infraestructura_conservacion_alcantarillado_codigo':
+          instance.infraestructuraConservacionAlcantarilladoCodigo,
+      'infraestructura_conservacion_agua_codigo':
+          instance.infraestructuraConservacionAguaCodigo,
+      'infraestructura_conservacion_alumbrado_codigo':
+          instance.infraestructuraConservacionAlumbradoCodigo,
       'longitud': instance.longitud,
+      'latitud': instance.latitud,
+      'usuario': instance.usuario,
+      'distribucion_inmueble': instance.distribucionInmueble,
+      'observacion': instance.observacion,
     };

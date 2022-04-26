@@ -120,7 +120,7 @@ class InspeccionDetailViewBody extends StatelessWidget {
           child: Center(
             child: Text(displayInspeccion!.riesgoNombre!,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                     //backgroundColor: Colors.green,
                     fontFamily: 'Nunito',
                     fontSize: 16,

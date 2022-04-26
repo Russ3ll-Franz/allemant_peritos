@@ -23,119 +23,137 @@ class _$VisitaTearOff {
   const _$VisitaTearOff();
 
   _Visita call(
-      {@JsonKey(name: 'inspeccion_id')
-          String? inspeccionId,
+      {@JsonKey(name: 'inspeccion_codigo')
+          String? inspeccionCodigo,
       String? atendido,
       String? direccion,
       @JsonKey(name: 'nro_suministro')
           String? nroSuministro,
       @JsonKey(name: 'nro_puerta')
           String? nroPuerta,
-      String? ocupado,
-      String? uso,
-      String? muros,
-      String? techos,
-      @JsonKey(name: 'inst_electricas')
-          String? instElectricas,
-      @JsonKey(name: 'inst_sanitarias')
-          String? instSanitarias,
-      @JsonKey(name: 'calidad_construccion')
-          String? calidadConstruccion,
-      @JsonKey(name: 'puerta_tipo')
-          String? puertaTipo,
-      @JsonKey(name: 'puerta_material')
-          String? puertaMaterial,
-      @JsonKey(name: 'puerta_sistema')
-          String? puertaSistema,
-      @JsonKey(name: 'ventana_marco')
-          String? ventanaMarco,
-      @JsonKey(name: 'ventana_vidrio')
-          String? ventanaVidrio,
-      @JsonKey(name: 'ventana_sistema')
-          String? ventanaSistema,
-      @JsonKey(name: 'piso_tipo')
-          String? pisoTipo,
-      @JsonKey(name: 'piso_material')
-          String? pisoMaterial,
-      @JsonKey(name: 'revestimiento_tipo')
-          String? revestimientoTipo,
-      @JsonKey(name: 'revestimiento_material')
-          String? revestimientoMaterial,
-      @JsonKey(name: 'vias_dispone')
-          String? viasDispone,
-      @JsonKey(name: 'vias_calidad')
-          String? viasCalidad,
-      @JsonKey(name: 'vias_conservacion')
-          String? viasConservacion,
-      @JsonKey(name: 'veredas_dispone')
-          String? veredasDispone,
-      @JsonKey(name: 'veredas_calidad')
-          String? veredasCalidad,
-      @JsonKey(name: 'veredas_conservacion')
-          String? veredasConservacion,
-      @JsonKey(name: 'alcantarillado_dispone')
-          String? alcantarilladoDispone,
-      @JsonKey(name: 'alcantarillado_calidad')
-          String? alcantarilladoCalidad,
-      @JsonKey(name: 'alcantarillado_conservacion')
-          String? alcantarilladoConservacion,
-      @JsonKey(name: 'aguapotable_dispone')
-          String? aguapotableDispone,
-      @JsonKey(name: 'aguapotable_calidad')
-          String? aguapotableCalidad,
-      @JsonKey(name: 'aguapotable_conservacion')
-          String? aguapotableConservacion,
-      @JsonKey(name: 'alumbrado_dispone')
-          String? alumbradoDispone,
-      @JsonKey(name: 'alumbrado_calidad')
-          String? alumbradoCalidad,
-      @JsonKey(name: 'alumbrado_conservacion')
-          String? alumbradoConservacion,
+      @JsonKey(name: 'ocupado_codigo')
+          String? ocupadoCodigo,
+      @JsonKey(name: 'uso_codigo')
+          String? usoCodigo,
+      @JsonKey(name: 'muro_codigo')
+          String? muroCodigo,
+      @JsonKey(name: 'techo_codigo')
+          String? techoCodigo,
+      @JsonKey(name: 'instalacion_electrica_codigo')
+          String? instalacionElectricaCodigo,
+      @JsonKey(name: 'instalacion_sanitaria_codigo')
+          String? instalacionSanitariaCodigo,
+      @JsonKey(name: 'calidad_construccion_codigo')
+          String? calidadConstruccionCodigo,
+      @JsonKey(name: 'puerta_tipo_codigo')
+          String? puertaTipoCodigo,
+      @JsonKey(name: 'puerta_sistema_codigo')
+          String? puertaSistemaCodigo,
+      @JsonKey(name: 'puerta_material_codigo')
+          String? puertaMaterialCodigo,
+      @JsonKey(name: 'ventana_marco_codigo')
+          String? ventanaMarcoCodigo,
+      @JsonKey(name: 'ventana_vidrio_codigo')
+          String? ventanaVidrioCodigo,
+      @JsonKey(name: 'ventana_sistema_codigo')
+          String? ventanaSistemaCodigo,
+      @JsonKey(name: 'piso_tipo_codigo')
+          String? pisoTipoCodigo,
+      @JsonKey(name: 'piso_tipo2_codigo')
+          String? pisoTipo2Codigo,
+      @JsonKey(name: 'revestimiento_tipo_codigo')
+          String? revestimientoTipoCodigo,
+      @JsonKey(name: 'revestimiento_tipo2_codigo')
+          String? revestimientoTipo2Codigo,
+      @JsonKey(name: 'infraestructura_disponible_vias_codigo')
+          String? infraestructuraDisponibleViasCodigo,
+      @JsonKey(name: 'infraestructura_disponible_veredas_codigo')
+          String? infraestructuraDisponibleVeredasCodigo,
+      @JsonKey(name: 'infraestructura_disponible_alcantarillado_codigo')
+          String? infraestructuraDisponibleAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_disponible_agua_codigo')
+          String? infraestructuraDisponibleAguaCodigo,
+      @JsonKey(name: 'infraestructura_disponible_alumbrado_codigo')
+          String? infraestructuraDisponibleAlumbradoCodigo,
+      @JsonKey(name: 'infraestructura_calidad_vias_codigo')
+          String? infraestructuraCalidadViasCodigo,
+      @JsonKey(name: 'infraestructura_calidad_veredas_codigo')
+          String? infraestructuraCalidadVeredasCodigo,
+      @JsonKey(name: 'infraestructura_calidad_alcantarillado_codigo')
+          String? infraestructuraCalidadAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_calidad_agua_codigo')
+          String? infraestructuraCalidadAguaCodigo,
+      @JsonKey(name: 'infraestructura_calidad_alumbrado_codigo')
+          String? infraestructuraCalidadAlumbradoCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_vias_codigo')
+          String? infraestructuraConservacionViasCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_veredas_codigo')
+          String? infraestructuraConservacionVeredasCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_alcantarillado_codigo')
+          String? infraestructuraConservacionAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_agua_codigo')
+          String? infraestructuraConservacionAguaCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_alumbrado_codigo')
+          String? infraestructuraConservacionAlumbradoCodigo,
+      String? longitud,
+      String? latitud,
+      String? usuario,
       @JsonKey(name: 'distribucion_inmueble')
           String? distribucionInmueble,
-      String? latitud,
-      String? longitud}) {
+      String? observacion}) {
     return _Visita(
-      inspeccionId: inspeccionId,
+      inspeccionCodigo: inspeccionCodigo,
       atendido: atendido,
       direccion: direccion,
       nroSuministro: nroSuministro,
       nroPuerta: nroPuerta,
-      ocupado: ocupado,
-      uso: uso,
-      muros: muros,
-      techos: techos,
-      instElectricas: instElectricas,
-      instSanitarias: instSanitarias,
-      calidadConstruccion: calidadConstruccion,
-      puertaTipo: puertaTipo,
-      puertaMaterial: puertaMaterial,
-      puertaSistema: puertaSistema,
-      ventanaMarco: ventanaMarco,
-      ventanaVidrio: ventanaVidrio,
-      ventanaSistema: ventanaSistema,
-      pisoTipo: pisoTipo,
-      pisoMaterial: pisoMaterial,
-      revestimientoTipo: revestimientoTipo,
-      revestimientoMaterial: revestimientoMaterial,
-      viasDispone: viasDispone,
-      viasCalidad: viasCalidad,
-      viasConservacion: viasConservacion,
-      veredasDispone: veredasDispone,
-      veredasCalidad: veredasCalidad,
-      veredasConservacion: veredasConservacion,
-      alcantarilladoDispone: alcantarilladoDispone,
-      alcantarilladoCalidad: alcantarilladoCalidad,
-      alcantarilladoConservacion: alcantarilladoConservacion,
-      aguapotableDispone: aguapotableDispone,
-      aguapotableCalidad: aguapotableCalidad,
-      aguapotableConservacion: aguapotableConservacion,
-      alumbradoDispone: alumbradoDispone,
-      alumbradoCalidad: alumbradoCalidad,
-      alumbradoConservacion: alumbradoConservacion,
-      distribucionInmueble: distribucionInmueble,
-      latitud: latitud,
+      ocupadoCodigo: ocupadoCodigo,
+      usoCodigo: usoCodigo,
+      muroCodigo: muroCodigo,
+      techoCodigo: techoCodigo,
+      instalacionElectricaCodigo: instalacionElectricaCodigo,
+      instalacionSanitariaCodigo: instalacionSanitariaCodigo,
+      calidadConstruccionCodigo: calidadConstruccionCodigo,
+      puertaTipoCodigo: puertaTipoCodigo,
+      puertaSistemaCodigo: puertaSistemaCodigo,
+      puertaMaterialCodigo: puertaMaterialCodigo,
+      ventanaMarcoCodigo: ventanaMarcoCodigo,
+      ventanaVidrioCodigo: ventanaVidrioCodigo,
+      ventanaSistemaCodigo: ventanaSistemaCodigo,
+      pisoTipoCodigo: pisoTipoCodigo,
+      pisoTipo2Codigo: pisoTipo2Codigo,
+      revestimientoTipoCodigo: revestimientoTipoCodigo,
+      revestimientoTipo2Codigo: revestimientoTipo2Codigo,
+      infraestructuraDisponibleViasCodigo: infraestructuraDisponibleViasCodigo,
+      infraestructuraDisponibleVeredasCodigo:
+          infraestructuraDisponibleVeredasCodigo,
+      infraestructuraDisponibleAlcantarilladoCodigo:
+          infraestructuraDisponibleAlcantarilladoCodigo,
+      infraestructuraDisponibleAguaCodigo: infraestructuraDisponibleAguaCodigo,
+      infraestructuraDisponibleAlumbradoCodigo:
+          infraestructuraDisponibleAlumbradoCodigo,
+      infraestructuraCalidadViasCodigo: infraestructuraCalidadViasCodigo,
+      infraestructuraCalidadVeredasCodigo: infraestructuraCalidadVeredasCodigo,
+      infraestructuraCalidadAlcantarilladoCodigo:
+          infraestructuraCalidadAlcantarilladoCodigo,
+      infraestructuraCalidadAguaCodigo: infraestructuraCalidadAguaCodigo,
+      infraestructuraCalidadAlumbradoCodigo:
+          infraestructuraCalidadAlumbradoCodigo,
+      infraestructuraConservacionViasCodigo:
+          infraestructuraConservacionViasCodigo,
+      infraestructuraConservacionVeredasCodigo:
+          infraestructuraConservacionVeredasCodigo,
+      infraestructuraConservacionAlcantarilladoCodigo:
+          infraestructuraConservacionAlcantarilladoCodigo,
+      infraestructuraConservacionAguaCodigo:
+          infraestructuraConservacionAguaCodigo,
+      infraestructuraConservacionAlumbradoCodigo:
+          infraestructuraConservacionAlumbradoCodigo,
       longitud: longitud,
+      latitud: latitud,
+      usuario: usuario,
+      distribucionInmueble: distribucionInmueble,
+      observacion: observacion,
     );
   }
 
@@ -149,78 +167,99 @@ const $Visita = _$VisitaTearOff();
 
 /// @nodoc
 mixin _$Visita {
-  @JsonKey(name: 'inspeccion_id')
-  String? get inspeccionId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'inspeccion_codigo')
+  String? get inspeccionCodigo => throw _privateConstructorUsedError;
   String? get atendido => throw _privateConstructorUsedError;
   String? get direccion => throw _privateConstructorUsedError;
   @JsonKey(name: 'nro_suministro')
   String? get nroSuministro => throw _privateConstructorUsedError;
   @JsonKey(name: 'nro_puerta')
   String? get nroPuerta => throw _privateConstructorUsedError;
-  String? get ocupado => throw _privateConstructorUsedError;
-  String? get uso => throw _privateConstructorUsedError;
-  String? get muros => throw _privateConstructorUsedError;
-  String? get techos => throw _privateConstructorUsedError;
-  @JsonKey(name: 'inst_electricas')
-  String? get instElectricas => throw _privateConstructorUsedError;
-  @JsonKey(name: 'inst_sanitarias')
-  String? get instSanitarias => throw _privateConstructorUsedError;
-  @JsonKey(name: 'calidad_construccion')
-  String? get calidadConstruccion => throw _privateConstructorUsedError;
-  @JsonKey(name: 'puerta_tipo')
-  String? get puertaTipo => throw _privateConstructorUsedError;
-  @JsonKey(name: 'puerta_material')
-  String? get puertaMaterial => throw _privateConstructorUsedError;
-  @JsonKey(name: 'puerta_sistema')
-  String? get puertaSistema => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ventana_marco')
-  String? get ventanaMarco => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ventana_vidrio')
-  String? get ventanaVidrio => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ventana_sistema')
-  String? get ventanaSistema => throw _privateConstructorUsedError;
-  @JsonKey(name: 'piso_tipo')
-  String? get pisoTipo => throw _privateConstructorUsedError;
-  @JsonKey(name: 'piso_material')
-  String? get pisoMaterial => throw _privateConstructorUsedError;
-  @JsonKey(name: 'revestimiento_tipo')
-  String? get revestimientoTipo => throw _privateConstructorUsedError;
-  @JsonKey(name: 'revestimiento_material')
-  String? get revestimientoMaterial => throw _privateConstructorUsedError;
-  @JsonKey(name: 'vias_dispone')
-  String? get viasDispone => throw _privateConstructorUsedError;
-  @JsonKey(name: 'vias_calidad')
-  String? get viasCalidad => throw _privateConstructorUsedError;
-  @JsonKey(name: 'vias_conservacion')
-  String? get viasConservacion => throw _privateConstructorUsedError;
-  @JsonKey(name: 'veredas_dispone')
-  String? get veredasDispone => throw _privateConstructorUsedError;
-  @JsonKey(name: 'veredas_calidad')
-  String? get veredasCalidad => throw _privateConstructorUsedError;
-  @JsonKey(name: 'veredas_conservacion')
-  String? get veredasConservacion => throw _privateConstructorUsedError;
-  @JsonKey(name: 'alcantarillado_dispone')
-  String? get alcantarilladoDispone => throw _privateConstructorUsedError;
-  @JsonKey(name: 'alcantarillado_calidad')
-  String? get alcantarilladoCalidad => throw _privateConstructorUsedError;
-  @JsonKey(name: 'alcantarillado_conservacion')
-  String? get alcantarilladoConservacion => throw _privateConstructorUsedError;
-  @JsonKey(name: 'aguapotable_dispone')
-  String? get aguapotableDispone => throw _privateConstructorUsedError;
-  @JsonKey(name: 'aguapotable_calidad')
-  String? get aguapotableCalidad => throw _privateConstructorUsedError;
-  @JsonKey(name: 'aguapotable_conservacion')
-  String? get aguapotableConservacion => throw _privateConstructorUsedError;
-  @JsonKey(name: 'alumbrado_dispone')
-  String? get alumbradoDispone => throw _privateConstructorUsedError;
-  @JsonKey(name: 'alumbrado_calidad')
-  String? get alumbradoCalidad => throw _privateConstructorUsedError;
-  @JsonKey(name: 'alumbrado_conservacion')
-  String? get alumbradoConservacion => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ocupado_codigo')
+  String? get ocupadoCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'uso_codigo')
+  String? get usoCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'muro_codigo')
+  String? get muroCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'techo_codigo')
+  String? get techoCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'instalacion_electrica_codigo')
+  String? get instalacionElectricaCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'instalacion_sanitaria_codigo')
+  String? get instalacionSanitariaCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'calidad_construccion_codigo')
+  String? get calidadConstruccionCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'puerta_tipo_codigo')
+  String? get puertaTipoCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'puerta_sistema_codigo')
+  String? get puertaSistemaCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'puerta_material_codigo')
+  String? get puertaMaterialCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ventana_marco_codigo')
+  String? get ventanaMarcoCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ventana_vidrio_codigo')
+  String? get ventanaVidrioCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ventana_sistema_codigo')
+  String? get ventanaSistemaCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'piso_tipo_codigo')
+  String? get pisoTipoCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'piso_tipo2_codigo')
+  String? get pisoTipo2Codigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'revestimiento_tipo_codigo')
+  String? get revestimientoTipoCodigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'revestimiento_tipo2_codigo')
+  String? get revestimientoTipo2Codigo => throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_disponible_vias_codigo')
+  String? get infraestructuraDisponibleViasCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_disponible_veredas_codigo')
+  String? get infraestructuraDisponibleVeredasCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_disponible_alcantarillado_codigo')
+  String? get infraestructuraDisponibleAlcantarilladoCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_disponible_agua_codigo')
+  String? get infraestructuraDisponibleAguaCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_disponible_alumbrado_codigo')
+  String? get infraestructuraDisponibleAlumbradoCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_calidad_vias_codigo')
+  String? get infraestructuraCalidadViasCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_calidad_veredas_codigo')
+  String? get infraestructuraCalidadVeredasCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_calidad_alcantarillado_codigo')
+  String? get infraestructuraCalidadAlcantarilladoCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_calidad_agua_codigo')
+  String? get infraestructuraCalidadAguaCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_calidad_alumbrado_codigo')
+  String? get infraestructuraCalidadAlumbradoCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_conservacion_vias_codigo')
+  String? get infraestructuraConservacionViasCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_conservacion_veredas_codigo')
+  String? get infraestructuraConservacionVeredasCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_conservacion_alcantarillado_codigo')
+  String? get infraestructuraConservacionAlcantarilladoCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_conservacion_agua_codigo')
+  String? get infraestructuraConservacionAguaCodigo =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'infraestructura_conservacion_alumbrado_codigo')
+  String? get infraestructuraConservacionAlumbradoCodigo =>
+      throw _privateConstructorUsedError;
+  String? get longitud => throw _privateConstructorUsedError;
+  String? get latitud => throw _privateConstructorUsedError;
+  String? get usuario => throw _privateConstructorUsedError;
   @JsonKey(name: 'distribucion_inmueble')
   String? get distribucionInmueble => throw _privateConstructorUsedError;
-  String? get latitud => throw _privateConstructorUsedError;
-  String? get longitud => throw _privateConstructorUsedError;
+  String? get observacion => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -232,78 +271,84 @@ abstract class $VisitaCopyWith<$Res> {
   factory $VisitaCopyWith(Visita value, $Res Function(Visita) then) =
       _$VisitaCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'inspeccion_id')
-          String? inspeccionId,
+      {@JsonKey(name: 'inspeccion_codigo')
+          String? inspeccionCodigo,
       String? atendido,
       String? direccion,
       @JsonKey(name: 'nro_suministro')
           String? nroSuministro,
       @JsonKey(name: 'nro_puerta')
           String? nroPuerta,
-      String? ocupado,
-      String? uso,
-      String? muros,
-      String? techos,
-      @JsonKey(name: 'inst_electricas')
-          String? instElectricas,
-      @JsonKey(name: 'inst_sanitarias')
-          String? instSanitarias,
-      @JsonKey(name: 'calidad_construccion')
-          String? calidadConstruccion,
-      @JsonKey(name: 'puerta_tipo')
-          String? puertaTipo,
-      @JsonKey(name: 'puerta_material')
-          String? puertaMaterial,
-      @JsonKey(name: 'puerta_sistema')
-          String? puertaSistema,
-      @JsonKey(name: 'ventana_marco')
-          String? ventanaMarco,
-      @JsonKey(name: 'ventana_vidrio')
-          String? ventanaVidrio,
-      @JsonKey(name: 'ventana_sistema')
-          String? ventanaSistema,
-      @JsonKey(name: 'piso_tipo')
-          String? pisoTipo,
-      @JsonKey(name: 'piso_material')
-          String? pisoMaterial,
-      @JsonKey(name: 'revestimiento_tipo')
-          String? revestimientoTipo,
-      @JsonKey(name: 'revestimiento_material')
-          String? revestimientoMaterial,
-      @JsonKey(name: 'vias_dispone')
-          String? viasDispone,
-      @JsonKey(name: 'vias_calidad')
-          String? viasCalidad,
-      @JsonKey(name: 'vias_conservacion')
-          String? viasConservacion,
-      @JsonKey(name: 'veredas_dispone')
-          String? veredasDispone,
-      @JsonKey(name: 'veredas_calidad')
-          String? veredasCalidad,
-      @JsonKey(name: 'veredas_conservacion')
-          String? veredasConservacion,
-      @JsonKey(name: 'alcantarillado_dispone')
-          String? alcantarilladoDispone,
-      @JsonKey(name: 'alcantarillado_calidad')
-          String? alcantarilladoCalidad,
-      @JsonKey(name: 'alcantarillado_conservacion')
-          String? alcantarilladoConservacion,
-      @JsonKey(name: 'aguapotable_dispone')
-          String? aguapotableDispone,
-      @JsonKey(name: 'aguapotable_calidad')
-          String? aguapotableCalidad,
-      @JsonKey(name: 'aguapotable_conservacion')
-          String? aguapotableConservacion,
-      @JsonKey(name: 'alumbrado_dispone')
-          String? alumbradoDispone,
-      @JsonKey(name: 'alumbrado_calidad')
-          String? alumbradoCalidad,
-      @JsonKey(name: 'alumbrado_conservacion')
-          String? alumbradoConservacion,
+      @JsonKey(name: 'ocupado_codigo')
+          String? ocupadoCodigo,
+      @JsonKey(name: 'uso_codigo')
+          String? usoCodigo,
+      @JsonKey(name: 'muro_codigo')
+          String? muroCodigo,
+      @JsonKey(name: 'techo_codigo')
+          String? techoCodigo,
+      @JsonKey(name: 'instalacion_electrica_codigo')
+          String? instalacionElectricaCodigo,
+      @JsonKey(name: 'instalacion_sanitaria_codigo')
+          String? instalacionSanitariaCodigo,
+      @JsonKey(name: 'calidad_construccion_codigo')
+          String? calidadConstruccionCodigo,
+      @JsonKey(name: 'puerta_tipo_codigo')
+          String? puertaTipoCodigo,
+      @JsonKey(name: 'puerta_sistema_codigo')
+          String? puertaSistemaCodigo,
+      @JsonKey(name: 'puerta_material_codigo')
+          String? puertaMaterialCodigo,
+      @JsonKey(name: 'ventana_marco_codigo')
+          String? ventanaMarcoCodigo,
+      @JsonKey(name: 'ventana_vidrio_codigo')
+          String? ventanaVidrioCodigo,
+      @JsonKey(name: 'ventana_sistema_codigo')
+          String? ventanaSistemaCodigo,
+      @JsonKey(name: 'piso_tipo_codigo')
+          String? pisoTipoCodigo,
+      @JsonKey(name: 'piso_tipo2_codigo')
+          String? pisoTipo2Codigo,
+      @JsonKey(name: 'revestimiento_tipo_codigo')
+          String? revestimientoTipoCodigo,
+      @JsonKey(name: 'revestimiento_tipo2_codigo')
+          String? revestimientoTipo2Codigo,
+      @JsonKey(name: 'infraestructura_disponible_vias_codigo')
+          String? infraestructuraDisponibleViasCodigo,
+      @JsonKey(name: 'infraestructura_disponible_veredas_codigo')
+          String? infraestructuraDisponibleVeredasCodigo,
+      @JsonKey(name: 'infraestructura_disponible_alcantarillado_codigo')
+          String? infraestructuraDisponibleAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_disponible_agua_codigo')
+          String? infraestructuraDisponibleAguaCodigo,
+      @JsonKey(name: 'infraestructura_disponible_alumbrado_codigo')
+          String? infraestructuraDisponibleAlumbradoCodigo,
+      @JsonKey(name: 'infraestructura_calidad_vias_codigo')
+          String? infraestructuraCalidadViasCodigo,
+      @JsonKey(name: 'infraestructura_calidad_veredas_codigo')
+          String? infraestructuraCalidadVeredasCodigo,
+      @JsonKey(name: 'infraestructura_calidad_alcantarillado_codigo')
+          String? infraestructuraCalidadAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_calidad_agua_codigo')
+          String? infraestructuraCalidadAguaCodigo,
+      @JsonKey(name: 'infraestructura_calidad_alumbrado_codigo')
+          String? infraestructuraCalidadAlumbradoCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_vias_codigo')
+          String? infraestructuraConservacionViasCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_veredas_codigo')
+          String? infraestructuraConservacionVeredasCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_alcantarillado_codigo')
+          String? infraestructuraConservacionAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_agua_codigo')
+          String? infraestructuraConservacionAguaCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_alumbrado_codigo')
+          String? infraestructuraConservacionAlumbradoCodigo,
+      String? longitud,
+      String? latitud,
+      String? usuario,
       @JsonKey(name: 'distribucion_inmueble')
           String? distribucionInmueble,
-      String? latitud,
-      String? longitud});
+      String? observacion});
 }
 
 /// @nodoc
@@ -316,51 +361,53 @@ class _$VisitaCopyWithImpl<$Res> implements $VisitaCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? inspeccionId = freezed,
+    Object? inspeccionCodigo = freezed,
     Object? atendido = freezed,
     Object? direccion = freezed,
     Object? nroSuministro = freezed,
     Object? nroPuerta = freezed,
-    Object? ocupado = freezed,
-    Object? uso = freezed,
-    Object? muros = freezed,
-    Object? techos = freezed,
-    Object? instElectricas = freezed,
-    Object? instSanitarias = freezed,
-    Object? calidadConstruccion = freezed,
-    Object? puertaTipo = freezed,
-    Object? puertaMaterial = freezed,
-    Object? puertaSistema = freezed,
-    Object? ventanaMarco = freezed,
-    Object? ventanaVidrio = freezed,
-    Object? ventanaSistema = freezed,
-    Object? pisoTipo = freezed,
-    Object? pisoMaterial = freezed,
-    Object? revestimientoTipo = freezed,
-    Object? revestimientoMaterial = freezed,
-    Object? viasDispone = freezed,
-    Object? viasCalidad = freezed,
-    Object? viasConservacion = freezed,
-    Object? veredasDispone = freezed,
-    Object? veredasCalidad = freezed,
-    Object? veredasConservacion = freezed,
-    Object? alcantarilladoDispone = freezed,
-    Object? alcantarilladoCalidad = freezed,
-    Object? alcantarilladoConservacion = freezed,
-    Object? aguapotableDispone = freezed,
-    Object? aguapotableCalidad = freezed,
-    Object? aguapotableConservacion = freezed,
-    Object? alumbradoDispone = freezed,
-    Object? alumbradoCalidad = freezed,
-    Object? alumbradoConservacion = freezed,
-    Object? distribucionInmueble = freezed,
-    Object? latitud = freezed,
+    Object? ocupadoCodigo = freezed,
+    Object? usoCodigo = freezed,
+    Object? muroCodigo = freezed,
+    Object? techoCodigo = freezed,
+    Object? instalacionElectricaCodigo = freezed,
+    Object? instalacionSanitariaCodigo = freezed,
+    Object? calidadConstruccionCodigo = freezed,
+    Object? puertaTipoCodigo = freezed,
+    Object? puertaSistemaCodigo = freezed,
+    Object? puertaMaterialCodigo = freezed,
+    Object? ventanaMarcoCodigo = freezed,
+    Object? ventanaVidrioCodigo = freezed,
+    Object? ventanaSistemaCodigo = freezed,
+    Object? pisoTipoCodigo = freezed,
+    Object? pisoTipo2Codigo = freezed,
+    Object? revestimientoTipoCodigo = freezed,
+    Object? revestimientoTipo2Codigo = freezed,
+    Object? infraestructuraDisponibleViasCodigo = freezed,
+    Object? infraestructuraDisponibleVeredasCodigo = freezed,
+    Object? infraestructuraDisponibleAlcantarilladoCodigo = freezed,
+    Object? infraestructuraDisponibleAguaCodigo = freezed,
+    Object? infraestructuraDisponibleAlumbradoCodigo = freezed,
+    Object? infraestructuraCalidadViasCodigo = freezed,
+    Object? infraestructuraCalidadVeredasCodigo = freezed,
+    Object? infraestructuraCalidadAlcantarilladoCodigo = freezed,
+    Object? infraestructuraCalidadAguaCodigo = freezed,
+    Object? infraestructuraCalidadAlumbradoCodigo = freezed,
+    Object? infraestructuraConservacionViasCodigo = freezed,
+    Object? infraestructuraConservacionVeredasCodigo = freezed,
+    Object? infraestructuraConservacionAlcantarilladoCodigo = freezed,
+    Object? infraestructuraConservacionAguaCodigo = freezed,
+    Object? infraestructuraConservacionAlumbradoCodigo = freezed,
     Object? longitud = freezed,
+    Object? latitud = freezed,
+    Object? usuario = freezed,
+    Object? distribucionInmueble = freezed,
+    Object? observacion = freezed,
   }) {
     return _then(_value.copyWith(
-      inspeccionId: inspeccionId == freezed
-          ? _value.inspeccionId
-          : inspeccionId // ignore: cast_nullable_to_non_nullable
+      inspeccionCodigo: inspeccionCodigo == freezed
+          ? _value.inspeccionCodigo
+          : inspeccionCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
       atendido: atendido == freezed
           ? _value.atendido
@@ -378,145 +425,168 @@ class _$VisitaCopyWithImpl<$Res> implements $VisitaCopyWith<$Res> {
           ? _value.nroPuerta
           : nroPuerta // ignore: cast_nullable_to_non_nullable
               as String?,
-      ocupado: ocupado == freezed
-          ? _value.ocupado
-          : ocupado // ignore: cast_nullable_to_non_nullable
+      ocupadoCodigo: ocupadoCodigo == freezed
+          ? _value.ocupadoCodigo
+          : ocupadoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      uso: uso == freezed
-          ? _value.uso
-          : uso // ignore: cast_nullable_to_non_nullable
+      usoCodigo: usoCodigo == freezed
+          ? _value.usoCodigo
+          : usoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      muros: muros == freezed
-          ? _value.muros
-          : muros // ignore: cast_nullable_to_non_nullable
+      muroCodigo: muroCodigo == freezed
+          ? _value.muroCodigo
+          : muroCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      techos: techos == freezed
-          ? _value.techos
-          : techos // ignore: cast_nullable_to_non_nullable
+      techoCodigo: techoCodigo == freezed
+          ? _value.techoCodigo
+          : techoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      instElectricas: instElectricas == freezed
-          ? _value.instElectricas
-          : instElectricas // ignore: cast_nullable_to_non_nullable
+      instalacionElectricaCodigo: instalacionElectricaCodigo == freezed
+          ? _value.instalacionElectricaCodigo
+          : instalacionElectricaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      instSanitarias: instSanitarias == freezed
-          ? _value.instSanitarias
-          : instSanitarias // ignore: cast_nullable_to_non_nullable
+      instalacionSanitariaCodigo: instalacionSanitariaCodigo == freezed
+          ? _value.instalacionSanitariaCodigo
+          : instalacionSanitariaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      calidadConstruccion: calidadConstruccion == freezed
-          ? _value.calidadConstruccion
-          : calidadConstruccion // ignore: cast_nullable_to_non_nullable
+      calidadConstruccionCodigo: calidadConstruccionCodigo == freezed
+          ? _value.calidadConstruccionCodigo
+          : calidadConstruccionCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      puertaTipo: puertaTipo == freezed
-          ? _value.puertaTipo
-          : puertaTipo // ignore: cast_nullable_to_non_nullable
+      puertaTipoCodigo: puertaTipoCodigo == freezed
+          ? _value.puertaTipoCodigo
+          : puertaTipoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      puertaMaterial: puertaMaterial == freezed
-          ? _value.puertaMaterial
-          : puertaMaterial // ignore: cast_nullable_to_non_nullable
+      puertaSistemaCodigo: puertaSistemaCodigo == freezed
+          ? _value.puertaSistemaCodigo
+          : puertaSistemaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      puertaSistema: puertaSistema == freezed
-          ? _value.puertaSistema
-          : puertaSistema // ignore: cast_nullable_to_non_nullable
+      puertaMaterialCodigo: puertaMaterialCodigo == freezed
+          ? _value.puertaMaterialCodigo
+          : puertaMaterialCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      ventanaMarco: ventanaMarco == freezed
-          ? _value.ventanaMarco
-          : ventanaMarco // ignore: cast_nullable_to_non_nullable
+      ventanaMarcoCodigo: ventanaMarcoCodigo == freezed
+          ? _value.ventanaMarcoCodigo
+          : ventanaMarcoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      ventanaVidrio: ventanaVidrio == freezed
-          ? _value.ventanaVidrio
-          : ventanaVidrio // ignore: cast_nullable_to_non_nullable
+      ventanaVidrioCodigo: ventanaVidrioCodigo == freezed
+          ? _value.ventanaVidrioCodigo
+          : ventanaVidrioCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      ventanaSistema: ventanaSistema == freezed
-          ? _value.ventanaSistema
-          : ventanaSistema // ignore: cast_nullable_to_non_nullable
+      ventanaSistemaCodigo: ventanaSistemaCodigo == freezed
+          ? _value.ventanaSistemaCodigo
+          : ventanaSistemaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      pisoTipo: pisoTipo == freezed
-          ? _value.pisoTipo
-          : pisoTipo // ignore: cast_nullable_to_non_nullable
+      pisoTipoCodigo: pisoTipoCodigo == freezed
+          ? _value.pisoTipoCodigo
+          : pisoTipoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      pisoMaterial: pisoMaterial == freezed
-          ? _value.pisoMaterial
-          : pisoMaterial // ignore: cast_nullable_to_non_nullable
+      pisoTipo2Codigo: pisoTipo2Codigo == freezed
+          ? _value.pisoTipo2Codigo
+          : pisoTipo2Codigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      revestimientoTipo: revestimientoTipo == freezed
-          ? _value.revestimientoTipo
-          : revestimientoTipo // ignore: cast_nullable_to_non_nullable
+      revestimientoTipoCodigo: revestimientoTipoCodigo == freezed
+          ? _value.revestimientoTipoCodigo
+          : revestimientoTipoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      revestimientoMaterial: revestimientoMaterial == freezed
-          ? _value.revestimientoMaterial
-          : revestimientoMaterial // ignore: cast_nullable_to_non_nullable
+      revestimientoTipo2Codigo: revestimientoTipo2Codigo == freezed
+          ? _value.revestimientoTipo2Codigo
+          : revestimientoTipo2Codigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      viasDispone: viasDispone == freezed
-          ? _value.viasDispone
-          : viasDispone // ignore: cast_nullable_to_non_nullable
+      infraestructuraDisponibleViasCodigo: infraestructuraDisponibleViasCodigo ==
+              freezed
+          ? _value.infraestructuraDisponibleViasCodigo
+          : infraestructuraDisponibleViasCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      viasCalidad: viasCalidad == freezed
-          ? _value.viasCalidad
-          : viasCalidad // ignore: cast_nullable_to_non_nullable
+      infraestructuraDisponibleVeredasCodigo:
+          infraestructuraDisponibleVeredasCodigo == freezed
+              ? _value.infraestructuraDisponibleVeredasCodigo
+              : infraestructuraDisponibleVeredasCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraDisponibleAlcantarilladoCodigo:
+          infraestructuraDisponibleAlcantarilladoCodigo == freezed
+              ? _value.infraestructuraDisponibleAlcantarilladoCodigo
+              : infraestructuraDisponibleAlcantarilladoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraDisponibleAguaCodigo: infraestructuraDisponibleAguaCodigo ==
+              freezed
+          ? _value.infraestructuraDisponibleAguaCodigo
+          : infraestructuraDisponibleAguaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      viasConservacion: viasConservacion == freezed
-          ? _value.viasConservacion
-          : viasConservacion // ignore: cast_nullable_to_non_nullable
+      infraestructuraDisponibleAlumbradoCodigo:
+          infraestructuraDisponibleAlumbradoCodigo == freezed
+              ? _value.infraestructuraDisponibleAlumbradoCodigo
+              : infraestructuraDisponibleAlumbradoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraCalidadViasCodigo: infraestructuraCalidadViasCodigo ==
+              freezed
+          ? _value.infraestructuraCalidadViasCodigo
+          : infraestructuraCalidadViasCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      veredasDispone: veredasDispone == freezed
-          ? _value.veredasDispone
-          : veredasDispone // ignore: cast_nullable_to_non_nullable
+      infraestructuraCalidadVeredasCodigo: infraestructuraCalidadVeredasCodigo ==
+              freezed
+          ? _value.infraestructuraCalidadVeredasCodigo
+          : infraestructuraCalidadVeredasCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      veredasCalidad: veredasCalidad == freezed
-          ? _value.veredasCalidad
-          : veredasCalidad // ignore: cast_nullable_to_non_nullable
+      infraestructuraCalidadAlcantarilladoCodigo:
+          infraestructuraCalidadAlcantarilladoCodigo == freezed
+              ? _value.infraestructuraCalidadAlcantarilladoCodigo
+              : infraestructuraCalidadAlcantarilladoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraCalidadAguaCodigo: infraestructuraCalidadAguaCodigo ==
+              freezed
+          ? _value.infraestructuraCalidadAguaCodigo
+          : infraestructuraCalidadAguaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      veredasConservacion: veredasConservacion == freezed
-          ? _value.veredasConservacion
-          : veredasConservacion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alcantarilladoDispone: alcantarilladoDispone == freezed
-          ? _value.alcantarilladoDispone
-          : alcantarilladoDispone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alcantarilladoCalidad: alcantarilladoCalidad == freezed
-          ? _value.alcantarilladoCalidad
-          : alcantarilladoCalidad // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alcantarilladoConservacion: alcantarilladoConservacion == freezed
-          ? _value.alcantarilladoConservacion
-          : alcantarilladoConservacion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      aguapotableDispone: aguapotableDispone == freezed
-          ? _value.aguapotableDispone
-          : aguapotableDispone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      aguapotableCalidad: aguapotableCalidad == freezed
-          ? _value.aguapotableCalidad
-          : aguapotableCalidad // ignore: cast_nullable_to_non_nullable
-              as String?,
-      aguapotableConservacion: aguapotableConservacion == freezed
-          ? _value.aguapotableConservacion
-          : aguapotableConservacion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alumbradoDispone: alumbradoDispone == freezed
-          ? _value.alumbradoDispone
-          : alumbradoDispone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alumbradoCalidad: alumbradoCalidad == freezed
-          ? _value.alumbradoCalidad
-          : alumbradoCalidad // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alumbradoConservacion: alumbradoConservacion == freezed
-          ? _value.alumbradoConservacion
-          : alumbradoConservacion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      distribucionInmueble: distribucionInmueble == freezed
-          ? _value.distribucionInmueble
-          : distribucionInmueble // ignore: cast_nullable_to_non_nullable
+      infraestructuraCalidadAlumbradoCodigo:
+          infraestructuraCalidadAlumbradoCodigo == freezed
+              ? _value.infraestructuraCalidadAlumbradoCodigo
+              : infraestructuraCalidadAlumbradoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraConservacionViasCodigo:
+          infraestructuraConservacionViasCodigo == freezed
+              ? _value.infraestructuraConservacionViasCodigo
+              : infraestructuraConservacionViasCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraConservacionVeredasCodigo:
+          infraestructuraConservacionVeredasCodigo == freezed
+              ? _value.infraestructuraConservacionVeredasCodigo
+              : infraestructuraConservacionVeredasCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraConservacionAlcantarilladoCodigo:
+          infraestructuraConservacionAlcantarilladoCodigo == freezed
+              ? _value.infraestructuraConservacionAlcantarilladoCodigo
+              : infraestructuraConservacionAlcantarilladoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraConservacionAguaCodigo:
+          infraestructuraConservacionAguaCodigo == freezed
+              ? _value.infraestructuraConservacionAguaCodigo
+              : infraestructuraConservacionAguaCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraConservacionAlumbradoCodigo:
+          infraestructuraConservacionAlumbradoCodigo == freezed
+              ? _value.infraestructuraConservacionAlumbradoCodigo
+              : infraestructuraConservacionAlumbradoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      longitud: longitud == freezed
+          ? _value.longitud
+          : longitud // ignore: cast_nullable_to_non_nullable
               as String?,
       latitud: latitud == freezed
           ? _value.latitud
           : latitud // ignore: cast_nullable_to_non_nullable
               as String?,
-      longitud: longitud == freezed
-          ? _value.longitud
-          : longitud // ignore: cast_nullable_to_non_nullable
+      usuario: usuario == freezed
+          ? _value.usuario
+          : usuario // ignore: cast_nullable_to_non_nullable
+              as String?,
+      distribucionInmueble: distribucionInmueble == freezed
+          ? _value.distribucionInmueble
+          : distribucionInmueble // ignore: cast_nullable_to_non_nullable
+              as String?,
+      observacion: observacion == freezed
+          ? _value.observacion
+          : observacion // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -528,78 +598,84 @@ abstract class _$VisitaCopyWith<$Res> implements $VisitaCopyWith<$Res> {
       __$VisitaCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'inspeccion_id')
-          String? inspeccionId,
+      {@JsonKey(name: 'inspeccion_codigo')
+          String? inspeccionCodigo,
       String? atendido,
       String? direccion,
       @JsonKey(name: 'nro_suministro')
           String? nroSuministro,
       @JsonKey(name: 'nro_puerta')
           String? nroPuerta,
-      String? ocupado,
-      String? uso,
-      String? muros,
-      String? techos,
-      @JsonKey(name: 'inst_electricas')
-          String? instElectricas,
-      @JsonKey(name: 'inst_sanitarias')
-          String? instSanitarias,
-      @JsonKey(name: 'calidad_construccion')
-          String? calidadConstruccion,
-      @JsonKey(name: 'puerta_tipo')
-          String? puertaTipo,
-      @JsonKey(name: 'puerta_material')
-          String? puertaMaterial,
-      @JsonKey(name: 'puerta_sistema')
-          String? puertaSistema,
-      @JsonKey(name: 'ventana_marco')
-          String? ventanaMarco,
-      @JsonKey(name: 'ventana_vidrio')
-          String? ventanaVidrio,
-      @JsonKey(name: 'ventana_sistema')
-          String? ventanaSistema,
-      @JsonKey(name: 'piso_tipo')
-          String? pisoTipo,
-      @JsonKey(name: 'piso_material')
-          String? pisoMaterial,
-      @JsonKey(name: 'revestimiento_tipo')
-          String? revestimientoTipo,
-      @JsonKey(name: 'revestimiento_material')
-          String? revestimientoMaterial,
-      @JsonKey(name: 'vias_dispone')
-          String? viasDispone,
-      @JsonKey(name: 'vias_calidad')
-          String? viasCalidad,
-      @JsonKey(name: 'vias_conservacion')
-          String? viasConservacion,
-      @JsonKey(name: 'veredas_dispone')
-          String? veredasDispone,
-      @JsonKey(name: 'veredas_calidad')
-          String? veredasCalidad,
-      @JsonKey(name: 'veredas_conservacion')
-          String? veredasConservacion,
-      @JsonKey(name: 'alcantarillado_dispone')
-          String? alcantarilladoDispone,
-      @JsonKey(name: 'alcantarillado_calidad')
-          String? alcantarilladoCalidad,
-      @JsonKey(name: 'alcantarillado_conservacion')
-          String? alcantarilladoConservacion,
-      @JsonKey(name: 'aguapotable_dispone')
-          String? aguapotableDispone,
-      @JsonKey(name: 'aguapotable_calidad')
-          String? aguapotableCalidad,
-      @JsonKey(name: 'aguapotable_conservacion')
-          String? aguapotableConservacion,
-      @JsonKey(name: 'alumbrado_dispone')
-          String? alumbradoDispone,
-      @JsonKey(name: 'alumbrado_calidad')
-          String? alumbradoCalidad,
-      @JsonKey(name: 'alumbrado_conservacion')
-          String? alumbradoConservacion,
+      @JsonKey(name: 'ocupado_codigo')
+          String? ocupadoCodigo,
+      @JsonKey(name: 'uso_codigo')
+          String? usoCodigo,
+      @JsonKey(name: 'muro_codigo')
+          String? muroCodigo,
+      @JsonKey(name: 'techo_codigo')
+          String? techoCodigo,
+      @JsonKey(name: 'instalacion_electrica_codigo')
+          String? instalacionElectricaCodigo,
+      @JsonKey(name: 'instalacion_sanitaria_codigo')
+          String? instalacionSanitariaCodigo,
+      @JsonKey(name: 'calidad_construccion_codigo')
+          String? calidadConstruccionCodigo,
+      @JsonKey(name: 'puerta_tipo_codigo')
+          String? puertaTipoCodigo,
+      @JsonKey(name: 'puerta_sistema_codigo')
+          String? puertaSistemaCodigo,
+      @JsonKey(name: 'puerta_material_codigo')
+          String? puertaMaterialCodigo,
+      @JsonKey(name: 'ventana_marco_codigo')
+          String? ventanaMarcoCodigo,
+      @JsonKey(name: 'ventana_vidrio_codigo')
+          String? ventanaVidrioCodigo,
+      @JsonKey(name: 'ventana_sistema_codigo')
+          String? ventanaSistemaCodigo,
+      @JsonKey(name: 'piso_tipo_codigo')
+          String? pisoTipoCodigo,
+      @JsonKey(name: 'piso_tipo2_codigo')
+          String? pisoTipo2Codigo,
+      @JsonKey(name: 'revestimiento_tipo_codigo')
+          String? revestimientoTipoCodigo,
+      @JsonKey(name: 'revestimiento_tipo2_codigo')
+          String? revestimientoTipo2Codigo,
+      @JsonKey(name: 'infraestructura_disponible_vias_codigo')
+          String? infraestructuraDisponibleViasCodigo,
+      @JsonKey(name: 'infraestructura_disponible_veredas_codigo')
+          String? infraestructuraDisponibleVeredasCodigo,
+      @JsonKey(name: 'infraestructura_disponible_alcantarillado_codigo')
+          String? infraestructuraDisponibleAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_disponible_agua_codigo')
+          String? infraestructuraDisponibleAguaCodigo,
+      @JsonKey(name: 'infraestructura_disponible_alumbrado_codigo')
+          String? infraestructuraDisponibleAlumbradoCodigo,
+      @JsonKey(name: 'infraestructura_calidad_vias_codigo')
+          String? infraestructuraCalidadViasCodigo,
+      @JsonKey(name: 'infraestructura_calidad_veredas_codigo')
+          String? infraestructuraCalidadVeredasCodigo,
+      @JsonKey(name: 'infraestructura_calidad_alcantarillado_codigo')
+          String? infraestructuraCalidadAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_calidad_agua_codigo')
+          String? infraestructuraCalidadAguaCodigo,
+      @JsonKey(name: 'infraestructura_calidad_alumbrado_codigo')
+          String? infraestructuraCalidadAlumbradoCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_vias_codigo')
+          String? infraestructuraConservacionViasCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_veredas_codigo')
+          String? infraestructuraConservacionVeredasCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_alcantarillado_codigo')
+          String? infraestructuraConservacionAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_agua_codigo')
+          String? infraestructuraConservacionAguaCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_alumbrado_codigo')
+          String? infraestructuraConservacionAlumbradoCodigo,
+      String? longitud,
+      String? latitud,
+      String? usuario,
       @JsonKey(name: 'distribucion_inmueble')
           String? distribucionInmueble,
-      String? latitud,
-      String? longitud});
+      String? observacion});
 }
 
 /// @nodoc
@@ -613,51 +689,53 @@ class __$VisitaCopyWithImpl<$Res> extends _$VisitaCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? inspeccionId = freezed,
+    Object? inspeccionCodigo = freezed,
     Object? atendido = freezed,
     Object? direccion = freezed,
     Object? nroSuministro = freezed,
     Object? nroPuerta = freezed,
-    Object? ocupado = freezed,
-    Object? uso = freezed,
-    Object? muros = freezed,
-    Object? techos = freezed,
-    Object? instElectricas = freezed,
-    Object? instSanitarias = freezed,
-    Object? calidadConstruccion = freezed,
-    Object? puertaTipo = freezed,
-    Object? puertaMaterial = freezed,
-    Object? puertaSistema = freezed,
-    Object? ventanaMarco = freezed,
-    Object? ventanaVidrio = freezed,
-    Object? ventanaSistema = freezed,
-    Object? pisoTipo = freezed,
-    Object? pisoMaterial = freezed,
-    Object? revestimientoTipo = freezed,
-    Object? revestimientoMaterial = freezed,
-    Object? viasDispone = freezed,
-    Object? viasCalidad = freezed,
-    Object? viasConservacion = freezed,
-    Object? veredasDispone = freezed,
-    Object? veredasCalidad = freezed,
-    Object? veredasConservacion = freezed,
-    Object? alcantarilladoDispone = freezed,
-    Object? alcantarilladoCalidad = freezed,
-    Object? alcantarilladoConservacion = freezed,
-    Object? aguapotableDispone = freezed,
-    Object? aguapotableCalidad = freezed,
-    Object? aguapotableConservacion = freezed,
-    Object? alumbradoDispone = freezed,
-    Object? alumbradoCalidad = freezed,
-    Object? alumbradoConservacion = freezed,
-    Object? distribucionInmueble = freezed,
-    Object? latitud = freezed,
+    Object? ocupadoCodigo = freezed,
+    Object? usoCodigo = freezed,
+    Object? muroCodigo = freezed,
+    Object? techoCodigo = freezed,
+    Object? instalacionElectricaCodigo = freezed,
+    Object? instalacionSanitariaCodigo = freezed,
+    Object? calidadConstruccionCodigo = freezed,
+    Object? puertaTipoCodigo = freezed,
+    Object? puertaSistemaCodigo = freezed,
+    Object? puertaMaterialCodigo = freezed,
+    Object? ventanaMarcoCodigo = freezed,
+    Object? ventanaVidrioCodigo = freezed,
+    Object? ventanaSistemaCodigo = freezed,
+    Object? pisoTipoCodigo = freezed,
+    Object? pisoTipo2Codigo = freezed,
+    Object? revestimientoTipoCodigo = freezed,
+    Object? revestimientoTipo2Codigo = freezed,
+    Object? infraestructuraDisponibleViasCodigo = freezed,
+    Object? infraestructuraDisponibleVeredasCodigo = freezed,
+    Object? infraestructuraDisponibleAlcantarilladoCodigo = freezed,
+    Object? infraestructuraDisponibleAguaCodigo = freezed,
+    Object? infraestructuraDisponibleAlumbradoCodigo = freezed,
+    Object? infraestructuraCalidadViasCodigo = freezed,
+    Object? infraestructuraCalidadVeredasCodigo = freezed,
+    Object? infraestructuraCalidadAlcantarilladoCodigo = freezed,
+    Object? infraestructuraCalidadAguaCodigo = freezed,
+    Object? infraestructuraCalidadAlumbradoCodigo = freezed,
+    Object? infraestructuraConservacionViasCodigo = freezed,
+    Object? infraestructuraConservacionVeredasCodigo = freezed,
+    Object? infraestructuraConservacionAlcantarilladoCodigo = freezed,
+    Object? infraestructuraConservacionAguaCodigo = freezed,
+    Object? infraestructuraConservacionAlumbradoCodigo = freezed,
     Object? longitud = freezed,
+    Object? latitud = freezed,
+    Object? usuario = freezed,
+    Object? distribucionInmueble = freezed,
+    Object? observacion = freezed,
   }) {
     return _then(_Visita(
-      inspeccionId: inspeccionId == freezed
-          ? _value.inspeccionId
-          : inspeccionId // ignore: cast_nullable_to_non_nullable
+      inspeccionCodigo: inspeccionCodigo == freezed
+          ? _value.inspeccionCodigo
+          : inspeccionCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
       atendido: atendido == freezed
           ? _value.atendido
@@ -675,145 +753,168 @@ class __$VisitaCopyWithImpl<$Res> extends _$VisitaCopyWithImpl<$Res>
           ? _value.nroPuerta
           : nroPuerta // ignore: cast_nullable_to_non_nullable
               as String?,
-      ocupado: ocupado == freezed
-          ? _value.ocupado
-          : ocupado // ignore: cast_nullable_to_non_nullable
+      ocupadoCodigo: ocupadoCodigo == freezed
+          ? _value.ocupadoCodigo
+          : ocupadoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      uso: uso == freezed
-          ? _value.uso
-          : uso // ignore: cast_nullable_to_non_nullable
+      usoCodigo: usoCodigo == freezed
+          ? _value.usoCodigo
+          : usoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      muros: muros == freezed
-          ? _value.muros
-          : muros // ignore: cast_nullable_to_non_nullable
+      muroCodigo: muroCodigo == freezed
+          ? _value.muroCodigo
+          : muroCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      techos: techos == freezed
-          ? _value.techos
-          : techos // ignore: cast_nullable_to_non_nullable
+      techoCodigo: techoCodigo == freezed
+          ? _value.techoCodigo
+          : techoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      instElectricas: instElectricas == freezed
-          ? _value.instElectricas
-          : instElectricas // ignore: cast_nullable_to_non_nullable
+      instalacionElectricaCodigo: instalacionElectricaCodigo == freezed
+          ? _value.instalacionElectricaCodigo
+          : instalacionElectricaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      instSanitarias: instSanitarias == freezed
-          ? _value.instSanitarias
-          : instSanitarias // ignore: cast_nullable_to_non_nullable
+      instalacionSanitariaCodigo: instalacionSanitariaCodigo == freezed
+          ? _value.instalacionSanitariaCodigo
+          : instalacionSanitariaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      calidadConstruccion: calidadConstruccion == freezed
-          ? _value.calidadConstruccion
-          : calidadConstruccion // ignore: cast_nullable_to_non_nullable
+      calidadConstruccionCodigo: calidadConstruccionCodigo == freezed
+          ? _value.calidadConstruccionCodigo
+          : calidadConstruccionCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      puertaTipo: puertaTipo == freezed
-          ? _value.puertaTipo
-          : puertaTipo // ignore: cast_nullable_to_non_nullable
+      puertaTipoCodigo: puertaTipoCodigo == freezed
+          ? _value.puertaTipoCodigo
+          : puertaTipoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      puertaMaterial: puertaMaterial == freezed
-          ? _value.puertaMaterial
-          : puertaMaterial // ignore: cast_nullable_to_non_nullable
+      puertaSistemaCodigo: puertaSistemaCodigo == freezed
+          ? _value.puertaSistemaCodigo
+          : puertaSistemaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      puertaSistema: puertaSistema == freezed
-          ? _value.puertaSistema
-          : puertaSistema // ignore: cast_nullable_to_non_nullable
+      puertaMaterialCodigo: puertaMaterialCodigo == freezed
+          ? _value.puertaMaterialCodigo
+          : puertaMaterialCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      ventanaMarco: ventanaMarco == freezed
-          ? _value.ventanaMarco
-          : ventanaMarco // ignore: cast_nullable_to_non_nullable
+      ventanaMarcoCodigo: ventanaMarcoCodigo == freezed
+          ? _value.ventanaMarcoCodigo
+          : ventanaMarcoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      ventanaVidrio: ventanaVidrio == freezed
-          ? _value.ventanaVidrio
-          : ventanaVidrio // ignore: cast_nullable_to_non_nullable
+      ventanaVidrioCodigo: ventanaVidrioCodigo == freezed
+          ? _value.ventanaVidrioCodigo
+          : ventanaVidrioCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      ventanaSistema: ventanaSistema == freezed
-          ? _value.ventanaSistema
-          : ventanaSistema // ignore: cast_nullable_to_non_nullable
+      ventanaSistemaCodigo: ventanaSistemaCodigo == freezed
+          ? _value.ventanaSistemaCodigo
+          : ventanaSistemaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      pisoTipo: pisoTipo == freezed
-          ? _value.pisoTipo
-          : pisoTipo // ignore: cast_nullable_to_non_nullable
+      pisoTipoCodigo: pisoTipoCodigo == freezed
+          ? _value.pisoTipoCodigo
+          : pisoTipoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      pisoMaterial: pisoMaterial == freezed
-          ? _value.pisoMaterial
-          : pisoMaterial // ignore: cast_nullable_to_non_nullable
+      pisoTipo2Codigo: pisoTipo2Codigo == freezed
+          ? _value.pisoTipo2Codigo
+          : pisoTipo2Codigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      revestimientoTipo: revestimientoTipo == freezed
-          ? _value.revestimientoTipo
-          : revestimientoTipo // ignore: cast_nullable_to_non_nullable
+      revestimientoTipoCodigo: revestimientoTipoCodigo == freezed
+          ? _value.revestimientoTipoCodigo
+          : revestimientoTipoCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      revestimientoMaterial: revestimientoMaterial == freezed
-          ? _value.revestimientoMaterial
-          : revestimientoMaterial // ignore: cast_nullable_to_non_nullable
+      revestimientoTipo2Codigo: revestimientoTipo2Codigo == freezed
+          ? _value.revestimientoTipo2Codigo
+          : revestimientoTipo2Codigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      viasDispone: viasDispone == freezed
-          ? _value.viasDispone
-          : viasDispone // ignore: cast_nullable_to_non_nullable
+      infraestructuraDisponibleViasCodigo: infraestructuraDisponibleViasCodigo ==
+              freezed
+          ? _value.infraestructuraDisponibleViasCodigo
+          : infraestructuraDisponibleViasCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      viasCalidad: viasCalidad == freezed
-          ? _value.viasCalidad
-          : viasCalidad // ignore: cast_nullable_to_non_nullable
+      infraestructuraDisponibleVeredasCodigo:
+          infraestructuraDisponibleVeredasCodigo == freezed
+              ? _value.infraestructuraDisponibleVeredasCodigo
+              : infraestructuraDisponibleVeredasCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraDisponibleAlcantarilladoCodigo:
+          infraestructuraDisponibleAlcantarilladoCodigo == freezed
+              ? _value.infraestructuraDisponibleAlcantarilladoCodigo
+              : infraestructuraDisponibleAlcantarilladoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraDisponibleAguaCodigo: infraestructuraDisponibleAguaCodigo ==
+              freezed
+          ? _value.infraestructuraDisponibleAguaCodigo
+          : infraestructuraDisponibleAguaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      viasConservacion: viasConservacion == freezed
-          ? _value.viasConservacion
-          : viasConservacion // ignore: cast_nullable_to_non_nullable
+      infraestructuraDisponibleAlumbradoCodigo:
+          infraestructuraDisponibleAlumbradoCodigo == freezed
+              ? _value.infraestructuraDisponibleAlumbradoCodigo
+              : infraestructuraDisponibleAlumbradoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraCalidadViasCodigo: infraestructuraCalidadViasCodigo ==
+              freezed
+          ? _value.infraestructuraCalidadViasCodigo
+          : infraestructuraCalidadViasCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      veredasDispone: veredasDispone == freezed
-          ? _value.veredasDispone
-          : veredasDispone // ignore: cast_nullable_to_non_nullable
+      infraestructuraCalidadVeredasCodigo: infraestructuraCalidadVeredasCodigo ==
+              freezed
+          ? _value.infraestructuraCalidadVeredasCodigo
+          : infraestructuraCalidadVeredasCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      veredasCalidad: veredasCalidad == freezed
-          ? _value.veredasCalidad
-          : veredasCalidad // ignore: cast_nullable_to_non_nullable
+      infraestructuraCalidadAlcantarilladoCodigo:
+          infraestructuraCalidadAlcantarilladoCodigo == freezed
+              ? _value.infraestructuraCalidadAlcantarilladoCodigo
+              : infraestructuraCalidadAlcantarilladoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraCalidadAguaCodigo: infraestructuraCalidadAguaCodigo ==
+              freezed
+          ? _value.infraestructuraCalidadAguaCodigo
+          : infraestructuraCalidadAguaCodigo // ignore: cast_nullable_to_non_nullable
               as String?,
-      veredasConservacion: veredasConservacion == freezed
-          ? _value.veredasConservacion
-          : veredasConservacion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alcantarilladoDispone: alcantarilladoDispone == freezed
-          ? _value.alcantarilladoDispone
-          : alcantarilladoDispone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alcantarilladoCalidad: alcantarilladoCalidad == freezed
-          ? _value.alcantarilladoCalidad
-          : alcantarilladoCalidad // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alcantarilladoConservacion: alcantarilladoConservacion == freezed
-          ? _value.alcantarilladoConservacion
-          : alcantarilladoConservacion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      aguapotableDispone: aguapotableDispone == freezed
-          ? _value.aguapotableDispone
-          : aguapotableDispone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      aguapotableCalidad: aguapotableCalidad == freezed
-          ? _value.aguapotableCalidad
-          : aguapotableCalidad // ignore: cast_nullable_to_non_nullable
-              as String?,
-      aguapotableConservacion: aguapotableConservacion == freezed
-          ? _value.aguapotableConservacion
-          : aguapotableConservacion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alumbradoDispone: alumbradoDispone == freezed
-          ? _value.alumbradoDispone
-          : alumbradoDispone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alumbradoCalidad: alumbradoCalidad == freezed
-          ? _value.alumbradoCalidad
-          : alumbradoCalidad // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alumbradoConservacion: alumbradoConservacion == freezed
-          ? _value.alumbradoConservacion
-          : alumbradoConservacion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      distribucionInmueble: distribucionInmueble == freezed
-          ? _value.distribucionInmueble
-          : distribucionInmueble // ignore: cast_nullable_to_non_nullable
+      infraestructuraCalidadAlumbradoCodigo:
+          infraestructuraCalidadAlumbradoCodigo == freezed
+              ? _value.infraestructuraCalidadAlumbradoCodigo
+              : infraestructuraCalidadAlumbradoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraConservacionViasCodigo:
+          infraestructuraConservacionViasCodigo == freezed
+              ? _value.infraestructuraConservacionViasCodigo
+              : infraestructuraConservacionViasCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraConservacionVeredasCodigo:
+          infraestructuraConservacionVeredasCodigo == freezed
+              ? _value.infraestructuraConservacionVeredasCodigo
+              : infraestructuraConservacionVeredasCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraConservacionAlcantarilladoCodigo:
+          infraestructuraConservacionAlcantarilladoCodigo == freezed
+              ? _value.infraestructuraConservacionAlcantarilladoCodigo
+              : infraestructuraConservacionAlcantarilladoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraConservacionAguaCodigo:
+          infraestructuraConservacionAguaCodigo == freezed
+              ? _value.infraestructuraConservacionAguaCodigo
+              : infraestructuraConservacionAguaCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      infraestructuraConservacionAlumbradoCodigo:
+          infraestructuraConservacionAlumbradoCodigo == freezed
+              ? _value.infraestructuraConservacionAlumbradoCodigo
+              : infraestructuraConservacionAlumbradoCodigo // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      longitud: longitud == freezed
+          ? _value.longitud
+          : longitud // ignore: cast_nullable_to_non_nullable
               as String?,
       latitud: latitud == freezed
           ? _value.latitud
           : latitud // ignore: cast_nullable_to_non_nullable
               as String?,
-      longitud: longitud == freezed
-          ? _value.longitud
-          : longitud // ignore: cast_nullable_to_non_nullable
+      usuario: usuario == freezed
+          ? _value.usuario
+          : usuario // ignore: cast_nullable_to_non_nullable
+              as String?,
+      distribucionInmueble: distribucionInmueble == freezed
+          ? _value.distribucionInmueble
+          : distribucionInmueble // ignore: cast_nullable_to_non_nullable
+              as String?,
+      observacion: observacion == freezed
+          ? _value.observacion
+          : observacion // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -823,85 +924,91 @@ class __$VisitaCopyWithImpl<$Res> extends _$VisitaCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Visita implements _Visita {
   _$_Visita(
-      {@JsonKey(name: 'inspeccion_id')
-          this.inspeccionId,
+      {@JsonKey(name: 'inspeccion_codigo')
+          this.inspeccionCodigo,
       this.atendido,
       this.direccion,
       @JsonKey(name: 'nro_suministro')
           this.nroSuministro,
       @JsonKey(name: 'nro_puerta')
           this.nroPuerta,
-      this.ocupado,
-      this.uso,
-      this.muros,
-      this.techos,
-      @JsonKey(name: 'inst_electricas')
-          this.instElectricas,
-      @JsonKey(name: 'inst_sanitarias')
-          this.instSanitarias,
-      @JsonKey(name: 'calidad_construccion')
-          this.calidadConstruccion,
-      @JsonKey(name: 'puerta_tipo')
-          this.puertaTipo,
-      @JsonKey(name: 'puerta_material')
-          this.puertaMaterial,
-      @JsonKey(name: 'puerta_sistema')
-          this.puertaSistema,
-      @JsonKey(name: 'ventana_marco')
-          this.ventanaMarco,
-      @JsonKey(name: 'ventana_vidrio')
-          this.ventanaVidrio,
-      @JsonKey(name: 'ventana_sistema')
-          this.ventanaSistema,
-      @JsonKey(name: 'piso_tipo')
-          this.pisoTipo,
-      @JsonKey(name: 'piso_material')
-          this.pisoMaterial,
-      @JsonKey(name: 'revestimiento_tipo')
-          this.revestimientoTipo,
-      @JsonKey(name: 'revestimiento_material')
-          this.revestimientoMaterial,
-      @JsonKey(name: 'vias_dispone')
-          this.viasDispone,
-      @JsonKey(name: 'vias_calidad')
-          this.viasCalidad,
-      @JsonKey(name: 'vias_conservacion')
-          this.viasConservacion,
-      @JsonKey(name: 'veredas_dispone')
-          this.veredasDispone,
-      @JsonKey(name: 'veredas_calidad')
-          this.veredasCalidad,
-      @JsonKey(name: 'veredas_conservacion')
-          this.veredasConservacion,
-      @JsonKey(name: 'alcantarillado_dispone')
-          this.alcantarilladoDispone,
-      @JsonKey(name: 'alcantarillado_calidad')
-          this.alcantarilladoCalidad,
-      @JsonKey(name: 'alcantarillado_conservacion')
-          this.alcantarilladoConservacion,
-      @JsonKey(name: 'aguapotable_dispone')
-          this.aguapotableDispone,
-      @JsonKey(name: 'aguapotable_calidad')
-          this.aguapotableCalidad,
-      @JsonKey(name: 'aguapotable_conservacion')
-          this.aguapotableConservacion,
-      @JsonKey(name: 'alumbrado_dispone')
-          this.alumbradoDispone,
-      @JsonKey(name: 'alumbrado_calidad')
-          this.alumbradoCalidad,
-      @JsonKey(name: 'alumbrado_conservacion')
-          this.alumbradoConservacion,
+      @JsonKey(name: 'ocupado_codigo')
+          this.ocupadoCodigo,
+      @JsonKey(name: 'uso_codigo')
+          this.usoCodigo,
+      @JsonKey(name: 'muro_codigo')
+          this.muroCodigo,
+      @JsonKey(name: 'techo_codigo')
+          this.techoCodigo,
+      @JsonKey(name: 'instalacion_electrica_codigo')
+          this.instalacionElectricaCodigo,
+      @JsonKey(name: 'instalacion_sanitaria_codigo')
+          this.instalacionSanitariaCodigo,
+      @JsonKey(name: 'calidad_construccion_codigo')
+          this.calidadConstruccionCodigo,
+      @JsonKey(name: 'puerta_tipo_codigo')
+          this.puertaTipoCodigo,
+      @JsonKey(name: 'puerta_sistema_codigo')
+          this.puertaSistemaCodigo,
+      @JsonKey(name: 'puerta_material_codigo')
+          this.puertaMaterialCodigo,
+      @JsonKey(name: 'ventana_marco_codigo')
+          this.ventanaMarcoCodigo,
+      @JsonKey(name: 'ventana_vidrio_codigo')
+          this.ventanaVidrioCodigo,
+      @JsonKey(name: 'ventana_sistema_codigo')
+          this.ventanaSistemaCodigo,
+      @JsonKey(name: 'piso_tipo_codigo')
+          this.pisoTipoCodigo,
+      @JsonKey(name: 'piso_tipo2_codigo')
+          this.pisoTipo2Codigo,
+      @JsonKey(name: 'revestimiento_tipo_codigo')
+          this.revestimientoTipoCodigo,
+      @JsonKey(name: 'revestimiento_tipo2_codigo')
+          this.revestimientoTipo2Codigo,
+      @JsonKey(name: 'infraestructura_disponible_vias_codigo')
+          this.infraestructuraDisponibleViasCodigo,
+      @JsonKey(name: 'infraestructura_disponible_veredas_codigo')
+          this.infraestructuraDisponibleVeredasCodigo,
+      @JsonKey(name: 'infraestructura_disponible_alcantarillado_codigo')
+          this.infraestructuraDisponibleAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_disponible_agua_codigo')
+          this.infraestructuraDisponibleAguaCodigo,
+      @JsonKey(name: 'infraestructura_disponible_alumbrado_codigo')
+          this.infraestructuraDisponibleAlumbradoCodigo,
+      @JsonKey(name: 'infraestructura_calidad_vias_codigo')
+          this.infraestructuraCalidadViasCodigo,
+      @JsonKey(name: 'infraestructura_calidad_veredas_codigo')
+          this.infraestructuraCalidadVeredasCodigo,
+      @JsonKey(name: 'infraestructura_calidad_alcantarillado_codigo')
+          this.infraestructuraCalidadAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_calidad_agua_codigo')
+          this.infraestructuraCalidadAguaCodigo,
+      @JsonKey(name: 'infraestructura_calidad_alumbrado_codigo')
+          this.infraestructuraCalidadAlumbradoCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_vias_codigo')
+          this.infraestructuraConservacionViasCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_veredas_codigo')
+          this.infraestructuraConservacionVeredasCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_alcantarillado_codigo')
+          this.infraestructuraConservacionAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_agua_codigo')
+          this.infraestructuraConservacionAguaCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_alumbrado_codigo')
+          this.infraestructuraConservacionAlumbradoCodigo,
+      this.longitud,
+      this.latitud,
+      this.usuario,
       @JsonKey(name: 'distribucion_inmueble')
           this.distribucionInmueble,
-      this.latitud,
-      this.longitud});
+      this.observacion});
 
   factory _$_Visita.fromJson(Map<String, dynamic> json) =>
       _$$_VisitaFromJson(json);
 
   @override
-  @JsonKey(name: 'inspeccion_id')
-  final String? inspeccionId;
+  @JsonKey(name: 'inspeccion_codigo')
+  final String? inspeccionCodigo;
   @override
   final String? atendido;
   @override
@@ -913,108 +1020,116 @@ class _$_Visita implements _Visita {
   @JsonKey(name: 'nro_puerta')
   final String? nroPuerta;
   @override
-  final String? ocupado;
+  @JsonKey(name: 'ocupado_codigo')
+  final String? ocupadoCodigo;
   @override
-  final String? uso;
+  @JsonKey(name: 'uso_codigo')
+  final String? usoCodigo;
   @override
-  final String? muros;
+  @JsonKey(name: 'muro_codigo')
+  final String? muroCodigo;
   @override
-  final String? techos;
+  @JsonKey(name: 'techo_codigo')
+  final String? techoCodigo;
   @override
-  @JsonKey(name: 'inst_electricas')
-  final String? instElectricas;
+  @JsonKey(name: 'instalacion_electrica_codigo')
+  final String? instalacionElectricaCodigo;
   @override
-  @JsonKey(name: 'inst_sanitarias')
-  final String? instSanitarias;
+  @JsonKey(name: 'instalacion_sanitaria_codigo')
+  final String? instalacionSanitariaCodigo;
   @override
-  @JsonKey(name: 'calidad_construccion')
-  final String? calidadConstruccion;
+  @JsonKey(name: 'calidad_construccion_codigo')
+  final String? calidadConstruccionCodigo;
   @override
-  @JsonKey(name: 'puerta_tipo')
-  final String? puertaTipo;
+  @JsonKey(name: 'puerta_tipo_codigo')
+  final String? puertaTipoCodigo;
   @override
-  @JsonKey(name: 'puerta_material')
-  final String? puertaMaterial;
+  @JsonKey(name: 'puerta_sistema_codigo')
+  final String? puertaSistemaCodigo;
   @override
-  @JsonKey(name: 'puerta_sistema')
-  final String? puertaSistema;
+  @JsonKey(name: 'puerta_material_codigo')
+  final String? puertaMaterialCodigo;
   @override
-  @JsonKey(name: 'ventana_marco')
-  final String? ventanaMarco;
+  @JsonKey(name: 'ventana_marco_codigo')
+  final String? ventanaMarcoCodigo;
   @override
-  @JsonKey(name: 'ventana_vidrio')
-  final String? ventanaVidrio;
+  @JsonKey(name: 'ventana_vidrio_codigo')
+  final String? ventanaVidrioCodigo;
   @override
-  @JsonKey(name: 'ventana_sistema')
-  final String? ventanaSistema;
+  @JsonKey(name: 'ventana_sistema_codigo')
+  final String? ventanaSistemaCodigo;
   @override
-  @JsonKey(name: 'piso_tipo')
-  final String? pisoTipo;
+  @JsonKey(name: 'piso_tipo_codigo')
+  final String? pisoTipoCodigo;
   @override
-  @JsonKey(name: 'piso_material')
-  final String? pisoMaterial;
+  @JsonKey(name: 'piso_tipo2_codigo')
+  final String? pisoTipo2Codigo;
   @override
-  @JsonKey(name: 'revestimiento_tipo')
-  final String? revestimientoTipo;
+  @JsonKey(name: 'revestimiento_tipo_codigo')
+  final String? revestimientoTipoCodigo;
   @override
-  @JsonKey(name: 'revestimiento_material')
-  final String? revestimientoMaterial;
+  @JsonKey(name: 'revestimiento_tipo2_codigo')
+  final String? revestimientoTipo2Codigo;
   @override
-  @JsonKey(name: 'vias_dispone')
-  final String? viasDispone;
+  @JsonKey(name: 'infraestructura_disponible_vias_codigo')
+  final String? infraestructuraDisponibleViasCodigo;
   @override
-  @JsonKey(name: 'vias_calidad')
-  final String? viasCalidad;
+  @JsonKey(name: 'infraestructura_disponible_veredas_codigo')
+  final String? infraestructuraDisponibleVeredasCodigo;
   @override
-  @JsonKey(name: 'vias_conservacion')
-  final String? viasConservacion;
+  @JsonKey(name: 'infraestructura_disponible_alcantarillado_codigo')
+  final String? infraestructuraDisponibleAlcantarilladoCodigo;
   @override
-  @JsonKey(name: 'veredas_dispone')
-  final String? veredasDispone;
+  @JsonKey(name: 'infraestructura_disponible_agua_codigo')
+  final String? infraestructuraDisponibleAguaCodigo;
   @override
-  @JsonKey(name: 'veredas_calidad')
-  final String? veredasCalidad;
+  @JsonKey(name: 'infraestructura_disponible_alumbrado_codigo')
+  final String? infraestructuraDisponibleAlumbradoCodigo;
   @override
-  @JsonKey(name: 'veredas_conservacion')
-  final String? veredasConservacion;
+  @JsonKey(name: 'infraestructura_calidad_vias_codigo')
+  final String? infraestructuraCalidadViasCodigo;
   @override
-  @JsonKey(name: 'alcantarillado_dispone')
-  final String? alcantarilladoDispone;
+  @JsonKey(name: 'infraestructura_calidad_veredas_codigo')
+  final String? infraestructuraCalidadVeredasCodigo;
   @override
-  @JsonKey(name: 'alcantarillado_calidad')
-  final String? alcantarilladoCalidad;
+  @JsonKey(name: 'infraestructura_calidad_alcantarillado_codigo')
+  final String? infraestructuraCalidadAlcantarilladoCodigo;
   @override
-  @JsonKey(name: 'alcantarillado_conservacion')
-  final String? alcantarilladoConservacion;
+  @JsonKey(name: 'infraestructura_calidad_agua_codigo')
+  final String? infraestructuraCalidadAguaCodigo;
   @override
-  @JsonKey(name: 'aguapotable_dispone')
-  final String? aguapotableDispone;
+  @JsonKey(name: 'infraestructura_calidad_alumbrado_codigo')
+  final String? infraestructuraCalidadAlumbradoCodigo;
   @override
-  @JsonKey(name: 'aguapotable_calidad')
-  final String? aguapotableCalidad;
+  @JsonKey(name: 'infraestructura_conservacion_vias_codigo')
+  final String? infraestructuraConservacionViasCodigo;
   @override
-  @JsonKey(name: 'aguapotable_conservacion')
-  final String? aguapotableConservacion;
+  @JsonKey(name: 'infraestructura_conservacion_veredas_codigo')
+  final String? infraestructuraConservacionVeredasCodigo;
   @override
-  @JsonKey(name: 'alumbrado_dispone')
-  final String? alumbradoDispone;
+  @JsonKey(name: 'infraestructura_conservacion_alcantarillado_codigo')
+  final String? infraestructuraConservacionAlcantarilladoCodigo;
   @override
-  @JsonKey(name: 'alumbrado_calidad')
-  final String? alumbradoCalidad;
+  @JsonKey(name: 'infraestructura_conservacion_agua_codigo')
+  final String? infraestructuraConservacionAguaCodigo;
   @override
-  @JsonKey(name: 'alumbrado_conservacion')
-  final String? alumbradoConservacion;
+  @JsonKey(name: 'infraestructura_conservacion_alumbrado_codigo')
+  final String? infraestructuraConservacionAlumbradoCodigo;
+  @override
+  final String? longitud;
+  @override
+  final String? latitud;
+  @override
+  final String? usuario;
   @override
   @JsonKey(name: 'distribucion_inmueble')
   final String? distribucionInmueble;
   @override
-  final String? latitud;
-  @override
-  final String? longitud;
+  final String? observacion;
 
   @override
   String toString() {
-    return 'Visita(inspeccionId: $inspeccionId, atendido: $atendido, direccion: $direccion, nroSuministro: $nroSuministro, nroPuerta: $nroPuerta, ocupado: $ocupado, uso: $uso, muros: $muros, techos: $techos, instElectricas: $instElectricas, instSanitarias: $instSanitarias, calidadConstruccion: $calidadConstruccion, puertaTipo: $puertaTipo, puertaMaterial: $puertaMaterial, puertaSistema: $puertaSistema, ventanaMarco: $ventanaMarco, ventanaVidrio: $ventanaVidrio, ventanaSistema: $ventanaSistema, pisoTipo: $pisoTipo, pisoMaterial: $pisoMaterial, revestimientoTipo: $revestimientoTipo, revestimientoMaterial: $revestimientoMaterial, viasDispone: $viasDispone, viasCalidad: $viasCalidad, viasConservacion: $viasConservacion, veredasDispone: $veredasDispone, veredasCalidad: $veredasCalidad, veredasConservacion: $veredasConservacion, alcantarilladoDispone: $alcantarilladoDispone, alcantarilladoCalidad: $alcantarilladoCalidad, alcantarilladoConservacion: $alcantarilladoConservacion, aguapotableDispone: $aguapotableDispone, aguapotableCalidad: $aguapotableCalidad, aguapotableConservacion: $aguapotableConservacion, alumbradoDispone: $alumbradoDispone, alumbradoCalidad: $alumbradoCalidad, alumbradoConservacion: $alumbradoConservacion, distribucionInmueble: $distribucionInmueble, latitud: $latitud, longitud: $longitud)';
+    return 'Visita(inspeccionCodigo: $inspeccionCodigo, atendido: $atendido, direccion: $direccion, nroSuministro: $nroSuministro, nroPuerta: $nroPuerta, ocupadoCodigo: $ocupadoCodigo, usoCodigo: $usoCodigo, muroCodigo: $muroCodigo, techoCodigo: $techoCodigo, instalacionElectricaCodigo: $instalacionElectricaCodigo, instalacionSanitariaCodigo: $instalacionSanitariaCodigo, calidadConstruccionCodigo: $calidadConstruccionCodigo, puertaTipoCodigo: $puertaTipoCodigo, puertaSistemaCodigo: $puertaSistemaCodigo, puertaMaterialCodigo: $puertaMaterialCodigo, ventanaMarcoCodigo: $ventanaMarcoCodigo, ventanaVidrioCodigo: $ventanaVidrioCodigo, ventanaSistemaCodigo: $ventanaSistemaCodigo, pisoTipoCodigo: $pisoTipoCodigo, pisoTipo2Codigo: $pisoTipo2Codigo, revestimientoTipoCodigo: $revestimientoTipoCodigo, revestimientoTipo2Codigo: $revestimientoTipo2Codigo, infraestructuraDisponibleViasCodigo: $infraestructuraDisponibleViasCodigo, infraestructuraDisponibleVeredasCodigo: $infraestructuraDisponibleVeredasCodigo, infraestructuraDisponibleAlcantarilladoCodigo: $infraestructuraDisponibleAlcantarilladoCodigo, infraestructuraDisponibleAguaCodigo: $infraestructuraDisponibleAguaCodigo, infraestructuraDisponibleAlumbradoCodigo: $infraestructuraDisponibleAlumbradoCodigo, infraestructuraCalidadViasCodigo: $infraestructuraCalidadViasCodigo, infraestructuraCalidadVeredasCodigo: $infraestructuraCalidadVeredasCodigo, infraestructuraCalidadAlcantarilladoCodigo: $infraestructuraCalidadAlcantarilladoCodigo, infraestructuraCalidadAguaCodigo: $infraestructuraCalidadAguaCodigo, infraestructuraCalidadAlumbradoCodigo: $infraestructuraCalidadAlumbradoCodigo, infraestructuraConservacionViasCodigo: $infraestructuraConservacionViasCodigo, infraestructuraConservacionVeredasCodigo: $infraestructuraConservacionVeredasCodigo, infraestructuraConservacionAlcantarilladoCodigo: $infraestructuraConservacionAlcantarilladoCodigo, infraestructuraConservacionAguaCodigo: $infraestructuraConservacionAguaCodigo, infraestructuraConservacionAlumbradoCodigo: $infraestructuraConservacionAlumbradoCodigo, longitud: $longitud, latitud: $latitud, usuario: $usuario, distribucionInmueble: $distribucionInmueble, observacion: $observacion)';
   }
 
   @override
@@ -1023,120 +1138,149 @@ class _$_Visita implements _Visita {
         (other.runtimeType == runtimeType &&
             other is _Visita &&
             const DeepCollectionEquality()
-                .equals(other.inspeccionId, inspeccionId) &&
+                .equals(other.inspeccionCodigo, inspeccionCodigo) &&
             const DeepCollectionEquality().equals(other.atendido, atendido) &&
             const DeepCollectionEquality().equals(other.direccion, direccion) &&
             const DeepCollectionEquality()
                 .equals(other.nroSuministro, nroSuministro) &&
             const DeepCollectionEquality().equals(other.nroPuerta, nroPuerta) &&
-            const DeepCollectionEquality().equals(other.ocupado, ocupado) &&
-            const DeepCollectionEquality().equals(other.uso, uso) &&
-            const DeepCollectionEquality().equals(other.muros, muros) &&
-            const DeepCollectionEquality().equals(other.techos, techos) &&
             const DeepCollectionEquality()
-                .equals(other.instElectricas, instElectricas) &&
+                .equals(other.ocupadoCodigo, ocupadoCodigo) &&
+            const DeepCollectionEquality().equals(other.usoCodigo, usoCodigo) &&
             const DeepCollectionEquality()
-                .equals(other.instSanitarias, instSanitarias) &&
+                .equals(other.muroCodigo, muroCodigo) &&
             const DeepCollectionEquality()
-                .equals(other.calidadConstruccion, calidadConstruccion) &&
-            const DeepCollectionEquality()
-                .equals(other.puertaTipo, puertaTipo) &&
-            const DeepCollectionEquality()
-                .equals(other.puertaMaterial, puertaMaterial) &&
-            const DeepCollectionEquality()
-                .equals(other.puertaSistema, puertaSistema) &&
-            const DeepCollectionEquality()
-                .equals(other.ventanaMarco, ventanaMarco) &&
-            const DeepCollectionEquality()
-                .equals(other.ventanaVidrio, ventanaVidrio) &&
-            const DeepCollectionEquality()
-                .equals(other.ventanaSistema, ventanaSistema) &&
-            const DeepCollectionEquality().equals(other.pisoTipo, pisoTipo) &&
-            const DeepCollectionEquality()
-                .equals(other.pisoMaterial, pisoMaterial) &&
-            const DeepCollectionEquality()
-                .equals(other.revestimientoTipo, revestimientoTipo) &&
-            const DeepCollectionEquality()
-                .equals(other.revestimientoMaterial, revestimientoMaterial) &&
-            const DeepCollectionEquality()
-                .equals(other.viasDispone, viasDispone) &&
-            const DeepCollectionEquality()
-                .equals(other.viasCalidad, viasCalidad) &&
-            const DeepCollectionEquality()
-                .equals(other.viasConservacion, viasConservacion) &&
-            const DeepCollectionEquality()
-                .equals(other.veredasDispone, veredasDispone) &&
-            const DeepCollectionEquality()
-                .equals(other.veredasCalidad, veredasCalidad) &&
-            const DeepCollectionEquality()
-                .equals(other.veredasConservacion, veredasConservacion) &&
-            const DeepCollectionEquality()
-                .equals(other.alcantarilladoDispone, alcantarilladoDispone) &&
-            const DeepCollectionEquality()
-                .equals(other.alcantarilladoCalidad, alcantarilladoCalidad) &&
+                .equals(other.techoCodigo, techoCodigo) &&
             const DeepCollectionEquality().equals(
-                other.alcantarilladoConservacion, alcantarilladoConservacion) &&
-            const DeepCollectionEquality()
-                .equals(other.aguapotableDispone, aguapotableDispone) &&
-            const DeepCollectionEquality()
-                .equals(other.aguapotableCalidad, aguapotableCalidad) &&
+                other.instalacionElectricaCodigo, instalacionElectricaCodigo) &&
             const DeepCollectionEquality().equals(
-                other.aguapotableConservacion, aguapotableConservacion) &&
+                other.instalacionSanitariaCodigo, instalacionSanitariaCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.calidadConstruccionCodigo, calidadConstruccionCodigo) &&
             const DeepCollectionEquality()
-                .equals(other.alumbradoDispone, alumbradoDispone) &&
+                .equals(other.puertaTipoCodigo, puertaTipoCodigo) &&
             const DeepCollectionEquality()
-                .equals(other.alumbradoCalidad, alumbradoCalidad) &&
+                .equals(other.puertaSistemaCodigo, puertaSistemaCodigo) &&
             const DeepCollectionEquality()
-                .equals(other.alumbradoConservacion, alumbradoConservacion) &&
+                .equals(other.puertaMaterialCodigo, puertaMaterialCodigo) &&
             const DeepCollectionEquality()
-                .equals(other.distribucionInmueble, distribucionInmueble) &&
+                .equals(other.ventanaMarcoCodigo, ventanaMarcoCodigo) &&
+            const DeepCollectionEquality()
+                .equals(other.ventanaVidrioCodigo, ventanaVidrioCodigo) &&
+            const DeepCollectionEquality()
+                .equals(other.ventanaSistemaCodigo, ventanaSistemaCodigo) &&
+            const DeepCollectionEquality()
+                .equals(other.pisoTipoCodigo, pisoTipoCodigo) &&
+            const DeepCollectionEquality()
+                .equals(other.pisoTipo2Codigo, pisoTipo2Codigo) &&
+            const DeepCollectionEquality().equals(
+                other.revestimientoTipoCodigo, revestimientoTipoCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.revestimientoTipo2Codigo, revestimientoTipo2Codigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraDisponibleViasCodigo,
+                infraestructuraDisponibleViasCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraDisponibleVeredasCodigo,
+                infraestructuraDisponibleVeredasCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraDisponibleAlcantarilladoCodigo,
+                infraestructuraDisponibleAlcantarilladoCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraDisponibleAguaCodigo,
+                infraestructuraDisponibleAguaCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraDisponibleAlumbradoCodigo,
+                infraestructuraDisponibleAlumbradoCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraCalidadViasCodigo,
+                infraestructuraCalidadViasCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraCalidadVeredasCodigo,
+                infraestructuraCalidadVeredasCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraCalidadAlcantarilladoCodigo,
+                infraestructuraCalidadAlcantarilladoCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraCalidadAguaCodigo,
+                infraestructuraCalidadAguaCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraCalidadAlumbradoCodigo,
+                infraestructuraCalidadAlumbradoCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraConservacionViasCodigo,
+                infraestructuraConservacionViasCodigo) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraConservacionVeredasCodigo,
+                infraestructuraConservacionVeredasCodigo) &&
+            const DeepCollectionEquality().equals(other.infraestructuraConservacionAlcantarilladoCodigo, infraestructuraConservacionAlcantarilladoCodigo) &&
+            const DeepCollectionEquality().equals(other.infraestructuraConservacionAguaCodigo, infraestructuraConservacionAguaCodigo) &&
+            const DeepCollectionEquality().equals(other.infraestructuraConservacionAlumbradoCodigo, infraestructuraConservacionAlumbradoCodigo) &&
+            const DeepCollectionEquality().equals(other.longitud, longitud) &&
             const DeepCollectionEquality().equals(other.latitud, latitud) &&
-            const DeepCollectionEquality().equals(other.longitud, longitud));
+            const DeepCollectionEquality().equals(other.usuario, usuario) &&
+            const DeepCollectionEquality().equals(other.distribucionInmueble, distribucionInmueble) &&
+            const DeepCollectionEquality().equals(other.observacion, observacion));
   }
 
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(inspeccionId),
+        const DeepCollectionEquality().hash(inspeccionCodigo),
         const DeepCollectionEquality().hash(atendido),
         const DeepCollectionEquality().hash(direccion),
         const DeepCollectionEquality().hash(nroSuministro),
         const DeepCollectionEquality().hash(nroPuerta),
-        const DeepCollectionEquality().hash(ocupado),
-        const DeepCollectionEquality().hash(uso),
-        const DeepCollectionEquality().hash(muros),
-        const DeepCollectionEquality().hash(techos),
-        const DeepCollectionEquality().hash(instElectricas),
-        const DeepCollectionEquality().hash(instSanitarias),
-        const DeepCollectionEquality().hash(calidadConstruccion),
-        const DeepCollectionEquality().hash(puertaTipo),
-        const DeepCollectionEquality().hash(puertaMaterial),
-        const DeepCollectionEquality().hash(puertaSistema),
-        const DeepCollectionEquality().hash(ventanaMarco),
-        const DeepCollectionEquality().hash(ventanaVidrio),
-        const DeepCollectionEquality().hash(ventanaSistema),
-        const DeepCollectionEquality().hash(pisoTipo),
-        const DeepCollectionEquality().hash(pisoMaterial),
-        const DeepCollectionEquality().hash(revestimientoTipo),
-        const DeepCollectionEquality().hash(revestimientoMaterial),
-        const DeepCollectionEquality().hash(viasDispone),
-        const DeepCollectionEquality().hash(viasCalidad),
-        const DeepCollectionEquality().hash(viasConservacion),
-        const DeepCollectionEquality().hash(veredasDispone),
-        const DeepCollectionEquality().hash(veredasCalidad),
-        const DeepCollectionEquality().hash(veredasConservacion),
-        const DeepCollectionEquality().hash(alcantarilladoDispone),
-        const DeepCollectionEquality().hash(alcantarilladoCalidad),
-        const DeepCollectionEquality().hash(alcantarilladoConservacion),
-        const DeepCollectionEquality().hash(aguapotableDispone),
-        const DeepCollectionEquality().hash(aguapotableCalidad),
-        const DeepCollectionEquality().hash(aguapotableConservacion),
-        const DeepCollectionEquality().hash(alumbradoDispone),
-        const DeepCollectionEquality().hash(alumbradoCalidad),
-        const DeepCollectionEquality().hash(alumbradoConservacion),
-        const DeepCollectionEquality().hash(distribucionInmueble),
+        const DeepCollectionEquality().hash(ocupadoCodigo),
+        const DeepCollectionEquality().hash(usoCodigo),
+        const DeepCollectionEquality().hash(muroCodigo),
+        const DeepCollectionEquality().hash(techoCodigo),
+        const DeepCollectionEquality().hash(instalacionElectricaCodigo),
+        const DeepCollectionEquality().hash(instalacionSanitariaCodigo),
+        const DeepCollectionEquality().hash(calidadConstruccionCodigo),
+        const DeepCollectionEquality().hash(puertaTipoCodigo),
+        const DeepCollectionEquality().hash(puertaSistemaCodigo),
+        const DeepCollectionEquality().hash(puertaMaterialCodigo),
+        const DeepCollectionEquality().hash(ventanaMarcoCodigo),
+        const DeepCollectionEquality().hash(ventanaVidrioCodigo),
+        const DeepCollectionEquality().hash(ventanaSistemaCodigo),
+        const DeepCollectionEquality().hash(pisoTipoCodigo),
+        const DeepCollectionEquality().hash(pisoTipo2Codigo),
+        const DeepCollectionEquality().hash(revestimientoTipoCodigo),
+        const DeepCollectionEquality().hash(revestimientoTipo2Codigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraDisponibleViasCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraDisponibleVeredasCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraDisponibleAlcantarilladoCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraDisponibleAguaCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraDisponibleAlumbradoCodigo),
+        const DeepCollectionEquality().hash(infraestructuraCalidadViasCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraCalidadVeredasCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraCalidadAlcantarilladoCodigo),
+        const DeepCollectionEquality().hash(infraestructuraCalidadAguaCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraCalidadAlumbradoCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraConservacionViasCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraConservacionVeredasCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraConservacionAlcantarilladoCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraConservacionAguaCodigo),
+        const DeepCollectionEquality()
+            .hash(infraestructuraConservacionAlumbradoCodigo),
+        const DeepCollectionEquality().hash(longitud),
         const DeepCollectionEquality().hash(latitud),
-        const DeepCollectionEquality().hash(longitud)
+        const DeepCollectionEquality().hash(usuario),
+        const DeepCollectionEquality().hash(distribucionInmueble),
+        const DeepCollectionEquality().hash(observacion)
       ]);
 
   @JsonKey(ignore: true)
@@ -1152,84 +1296,90 @@ class _$_Visita implements _Visita {
 
 abstract class _Visita implements Visita {
   factory _Visita(
-      {@JsonKey(name: 'inspeccion_id')
-          String? inspeccionId,
+      {@JsonKey(name: 'inspeccion_codigo')
+          String? inspeccionCodigo,
       String? atendido,
       String? direccion,
       @JsonKey(name: 'nro_suministro')
           String? nroSuministro,
       @JsonKey(name: 'nro_puerta')
           String? nroPuerta,
-      String? ocupado,
-      String? uso,
-      String? muros,
-      String? techos,
-      @JsonKey(name: 'inst_electricas')
-          String? instElectricas,
-      @JsonKey(name: 'inst_sanitarias')
-          String? instSanitarias,
-      @JsonKey(name: 'calidad_construccion')
-          String? calidadConstruccion,
-      @JsonKey(name: 'puerta_tipo')
-          String? puertaTipo,
-      @JsonKey(name: 'puerta_material')
-          String? puertaMaterial,
-      @JsonKey(name: 'puerta_sistema')
-          String? puertaSistema,
-      @JsonKey(name: 'ventana_marco')
-          String? ventanaMarco,
-      @JsonKey(name: 'ventana_vidrio')
-          String? ventanaVidrio,
-      @JsonKey(name: 'ventana_sistema')
-          String? ventanaSistema,
-      @JsonKey(name: 'piso_tipo')
-          String? pisoTipo,
-      @JsonKey(name: 'piso_material')
-          String? pisoMaterial,
-      @JsonKey(name: 'revestimiento_tipo')
-          String? revestimientoTipo,
-      @JsonKey(name: 'revestimiento_material')
-          String? revestimientoMaterial,
-      @JsonKey(name: 'vias_dispone')
-          String? viasDispone,
-      @JsonKey(name: 'vias_calidad')
-          String? viasCalidad,
-      @JsonKey(name: 'vias_conservacion')
-          String? viasConservacion,
-      @JsonKey(name: 'veredas_dispone')
-          String? veredasDispone,
-      @JsonKey(name: 'veredas_calidad')
-          String? veredasCalidad,
-      @JsonKey(name: 'veredas_conservacion')
-          String? veredasConservacion,
-      @JsonKey(name: 'alcantarillado_dispone')
-          String? alcantarilladoDispone,
-      @JsonKey(name: 'alcantarillado_calidad')
-          String? alcantarilladoCalidad,
-      @JsonKey(name: 'alcantarillado_conservacion')
-          String? alcantarilladoConservacion,
-      @JsonKey(name: 'aguapotable_dispone')
-          String? aguapotableDispone,
-      @JsonKey(name: 'aguapotable_calidad')
-          String? aguapotableCalidad,
-      @JsonKey(name: 'aguapotable_conservacion')
-          String? aguapotableConservacion,
-      @JsonKey(name: 'alumbrado_dispone')
-          String? alumbradoDispone,
-      @JsonKey(name: 'alumbrado_calidad')
-          String? alumbradoCalidad,
-      @JsonKey(name: 'alumbrado_conservacion')
-          String? alumbradoConservacion,
+      @JsonKey(name: 'ocupado_codigo')
+          String? ocupadoCodigo,
+      @JsonKey(name: 'uso_codigo')
+          String? usoCodigo,
+      @JsonKey(name: 'muro_codigo')
+          String? muroCodigo,
+      @JsonKey(name: 'techo_codigo')
+          String? techoCodigo,
+      @JsonKey(name: 'instalacion_electrica_codigo')
+          String? instalacionElectricaCodigo,
+      @JsonKey(name: 'instalacion_sanitaria_codigo')
+          String? instalacionSanitariaCodigo,
+      @JsonKey(name: 'calidad_construccion_codigo')
+          String? calidadConstruccionCodigo,
+      @JsonKey(name: 'puerta_tipo_codigo')
+          String? puertaTipoCodigo,
+      @JsonKey(name: 'puerta_sistema_codigo')
+          String? puertaSistemaCodigo,
+      @JsonKey(name: 'puerta_material_codigo')
+          String? puertaMaterialCodigo,
+      @JsonKey(name: 'ventana_marco_codigo')
+          String? ventanaMarcoCodigo,
+      @JsonKey(name: 'ventana_vidrio_codigo')
+          String? ventanaVidrioCodigo,
+      @JsonKey(name: 'ventana_sistema_codigo')
+          String? ventanaSistemaCodigo,
+      @JsonKey(name: 'piso_tipo_codigo')
+          String? pisoTipoCodigo,
+      @JsonKey(name: 'piso_tipo2_codigo')
+          String? pisoTipo2Codigo,
+      @JsonKey(name: 'revestimiento_tipo_codigo')
+          String? revestimientoTipoCodigo,
+      @JsonKey(name: 'revestimiento_tipo2_codigo')
+          String? revestimientoTipo2Codigo,
+      @JsonKey(name: 'infraestructura_disponible_vias_codigo')
+          String? infraestructuraDisponibleViasCodigo,
+      @JsonKey(name: 'infraestructura_disponible_veredas_codigo')
+          String? infraestructuraDisponibleVeredasCodigo,
+      @JsonKey(name: 'infraestructura_disponible_alcantarillado_codigo')
+          String? infraestructuraDisponibleAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_disponible_agua_codigo')
+          String? infraestructuraDisponibleAguaCodigo,
+      @JsonKey(name: 'infraestructura_disponible_alumbrado_codigo')
+          String? infraestructuraDisponibleAlumbradoCodigo,
+      @JsonKey(name: 'infraestructura_calidad_vias_codigo')
+          String? infraestructuraCalidadViasCodigo,
+      @JsonKey(name: 'infraestructura_calidad_veredas_codigo')
+          String? infraestructuraCalidadVeredasCodigo,
+      @JsonKey(name: 'infraestructura_calidad_alcantarillado_codigo')
+          String? infraestructuraCalidadAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_calidad_agua_codigo')
+          String? infraestructuraCalidadAguaCodigo,
+      @JsonKey(name: 'infraestructura_calidad_alumbrado_codigo')
+          String? infraestructuraCalidadAlumbradoCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_vias_codigo')
+          String? infraestructuraConservacionViasCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_veredas_codigo')
+          String? infraestructuraConservacionVeredasCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_alcantarillado_codigo')
+          String? infraestructuraConservacionAlcantarilladoCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_agua_codigo')
+          String? infraestructuraConservacionAguaCodigo,
+      @JsonKey(name: 'infraestructura_conservacion_alumbrado_codigo')
+          String? infraestructuraConservacionAlumbradoCodigo,
+      String? longitud,
+      String? latitud,
+      String? usuario,
       @JsonKey(name: 'distribucion_inmueble')
           String? distribucionInmueble,
-      String? latitud,
-      String? longitud}) = _$_Visita;
+      String? observacion}) = _$_Visita;
 
   factory _Visita.fromJson(Map<String, dynamic> json) = _$_Visita.fromJson;
 
   @override
-  @JsonKey(name: 'inspeccion_id')
-  String? get inspeccionId;
+  @JsonKey(name: 'inspeccion_codigo')
+  String? get inspeccionCodigo;
   @override
   String? get atendido;
   @override
@@ -1241,104 +1391,112 @@ abstract class _Visita implements Visita {
   @JsonKey(name: 'nro_puerta')
   String? get nroPuerta;
   @override
-  String? get ocupado;
+  @JsonKey(name: 'ocupado_codigo')
+  String? get ocupadoCodigo;
   @override
-  String? get uso;
+  @JsonKey(name: 'uso_codigo')
+  String? get usoCodigo;
   @override
-  String? get muros;
+  @JsonKey(name: 'muro_codigo')
+  String? get muroCodigo;
   @override
-  String? get techos;
+  @JsonKey(name: 'techo_codigo')
+  String? get techoCodigo;
   @override
-  @JsonKey(name: 'inst_electricas')
-  String? get instElectricas;
+  @JsonKey(name: 'instalacion_electrica_codigo')
+  String? get instalacionElectricaCodigo;
   @override
-  @JsonKey(name: 'inst_sanitarias')
-  String? get instSanitarias;
+  @JsonKey(name: 'instalacion_sanitaria_codigo')
+  String? get instalacionSanitariaCodigo;
   @override
-  @JsonKey(name: 'calidad_construccion')
-  String? get calidadConstruccion;
+  @JsonKey(name: 'calidad_construccion_codigo')
+  String? get calidadConstruccionCodigo;
   @override
-  @JsonKey(name: 'puerta_tipo')
-  String? get puertaTipo;
+  @JsonKey(name: 'puerta_tipo_codigo')
+  String? get puertaTipoCodigo;
   @override
-  @JsonKey(name: 'puerta_material')
-  String? get puertaMaterial;
+  @JsonKey(name: 'puerta_sistema_codigo')
+  String? get puertaSistemaCodigo;
   @override
-  @JsonKey(name: 'puerta_sistema')
-  String? get puertaSistema;
+  @JsonKey(name: 'puerta_material_codigo')
+  String? get puertaMaterialCodigo;
   @override
-  @JsonKey(name: 'ventana_marco')
-  String? get ventanaMarco;
+  @JsonKey(name: 'ventana_marco_codigo')
+  String? get ventanaMarcoCodigo;
   @override
-  @JsonKey(name: 'ventana_vidrio')
-  String? get ventanaVidrio;
+  @JsonKey(name: 'ventana_vidrio_codigo')
+  String? get ventanaVidrioCodigo;
   @override
-  @JsonKey(name: 'ventana_sistema')
-  String? get ventanaSistema;
+  @JsonKey(name: 'ventana_sistema_codigo')
+  String? get ventanaSistemaCodigo;
   @override
-  @JsonKey(name: 'piso_tipo')
-  String? get pisoTipo;
+  @JsonKey(name: 'piso_tipo_codigo')
+  String? get pisoTipoCodigo;
   @override
-  @JsonKey(name: 'piso_material')
-  String? get pisoMaterial;
+  @JsonKey(name: 'piso_tipo2_codigo')
+  String? get pisoTipo2Codigo;
   @override
-  @JsonKey(name: 'revestimiento_tipo')
-  String? get revestimientoTipo;
+  @JsonKey(name: 'revestimiento_tipo_codigo')
+  String? get revestimientoTipoCodigo;
   @override
-  @JsonKey(name: 'revestimiento_material')
-  String? get revestimientoMaterial;
+  @JsonKey(name: 'revestimiento_tipo2_codigo')
+  String? get revestimientoTipo2Codigo;
   @override
-  @JsonKey(name: 'vias_dispone')
-  String? get viasDispone;
+  @JsonKey(name: 'infraestructura_disponible_vias_codigo')
+  String? get infraestructuraDisponibleViasCodigo;
   @override
-  @JsonKey(name: 'vias_calidad')
-  String? get viasCalidad;
+  @JsonKey(name: 'infraestructura_disponible_veredas_codigo')
+  String? get infraestructuraDisponibleVeredasCodigo;
   @override
-  @JsonKey(name: 'vias_conservacion')
-  String? get viasConservacion;
+  @JsonKey(name: 'infraestructura_disponible_alcantarillado_codigo')
+  String? get infraestructuraDisponibleAlcantarilladoCodigo;
   @override
-  @JsonKey(name: 'veredas_dispone')
-  String? get veredasDispone;
+  @JsonKey(name: 'infraestructura_disponible_agua_codigo')
+  String? get infraestructuraDisponibleAguaCodigo;
   @override
-  @JsonKey(name: 'veredas_calidad')
-  String? get veredasCalidad;
+  @JsonKey(name: 'infraestructura_disponible_alumbrado_codigo')
+  String? get infraestructuraDisponibleAlumbradoCodigo;
   @override
-  @JsonKey(name: 'veredas_conservacion')
-  String? get veredasConservacion;
+  @JsonKey(name: 'infraestructura_calidad_vias_codigo')
+  String? get infraestructuraCalidadViasCodigo;
   @override
-  @JsonKey(name: 'alcantarillado_dispone')
-  String? get alcantarilladoDispone;
+  @JsonKey(name: 'infraestructura_calidad_veredas_codigo')
+  String? get infraestructuraCalidadVeredasCodigo;
   @override
-  @JsonKey(name: 'alcantarillado_calidad')
-  String? get alcantarilladoCalidad;
+  @JsonKey(name: 'infraestructura_calidad_alcantarillado_codigo')
+  String? get infraestructuraCalidadAlcantarilladoCodigo;
   @override
-  @JsonKey(name: 'alcantarillado_conservacion')
-  String? get alcantarilladoConservacion;
+  @JsonKey(name: 'infraestructura_calidad_agua_codigo')
+  String? get infraestructuraCalidadAguaCodigo;
   @override
-  @JsonKey(name: 'aguapotable_dispone')
-  String? get aguapotableDispone;
+  @JsonKey(name: 'infraestructura_calidad_alumbrado_codigo')
+  String? get infraestructuraCalidadAlumbradoCodigo;
   @override
-  @JsonKey(name: 'aguapotable_calidad')
-  String? get aguapotableCalidad;
+  @JsonKey(name: 'infraestructura_conservacion_vias_codigo')
+  String? get infraestructuraConservacionViasCodigo;
   @override
-  @JsonKey(name: 'aguapotable_conservacion')
-  String? get aguapotableConservacion;
+  @JsonKey(name: 'infraestructura_conservacion_veredas_codigo')
+  String? get infraestructuraConservacionVeredasCodigo;
   @override
-  @JsonKey(name: 'alumbrado_dispone')
-  String? get alumbradoDispone;
+  @JsonKey(name: 'infraestructura_conservacion_alcantarillado_codigo')
+  String? get infraestructuraConservacionAlcantarilladoCodigo;
   @override
-  @JsonKey(name: 'alumbrado_calidad')
-  String? get alumbradoCalidad;
+  @JsonKey(name: 'infraestructura_conservacion_agua_codigo')
+  String? get infraestructuraConservacionAguaCodigo;
   @override
-  @JsonKey(name: 'alumbrado_conservacion')
-  String? get alumbradoConservacion;
+  @JsonKey(name: 'infraestructura_conservacion_alumbrado_codigo')
+  String? get infraestructuraConservacionAlumbradoCodigo;
+  @override
+  String? get longitud;
+  @override
+  String? get latitud;
+  @override
+  String? get usuario;
   @override
   @JsonKey(name: 'distribucion_inmueble')
   String? get distribucionInmueble;
   @override
-  String? get latitud;
-  @override
-  String? get longitud;
+  String? get observacion;
   @override
   @JsonKey(ignore: true)
   _$VisitaCopyWith<_Visita> get copyWith => throw _privateConstructorUsedError;

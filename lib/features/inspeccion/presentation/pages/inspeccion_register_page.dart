@@ -27,15 +27,8 @@ class InspeccionRegisterPage extends StatelessWidget {
   InspeccionRegisterPage({Key? key, required this.inspeccionID})
       : super(key: key);
 
-  final _registerFormKey = GlobalKey<FormBuilderState>();
   final visita = Visita();
-  final TextEditingController _atendidoController = TextEditingController();
-  final TextEditingController _direccionController = TextEditingController();
-  final TextEditingController _nro_suministroController =
-      TextEditingController();
-  final TextEditingController _nro_puertaController = TextEditingController();
-  final TextEditingController _detalleDistribucionController =
-      TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -53,48 +46,9 @@ class InspeccionRegisterPage extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: Column(
                       children: [
-                        BlocListener<VisitasBloc, VisitasState>(
-                            listener: (context, state) {
-                              state.maybeWhen(success: (success) {
-                                Alertify(
-                                  content: success!.message,
-                                  context: context,
-                                  isDismissible: true,
-                                  title: 'REGISTRADO',
-                                  alertType: AlertifyType.success,
-                                  buttonText: 'OK',
-                                  animationType: AnimationType.outToIn,
-                                  barrierColor: Colors.black.withOpacity(0.5),
-                                  onDismiss: () {
-                                    AutoRouter.of(context)
-                                        .navigateNamed('/home');
-                                  },
-                                ).show();
-                              }, orElse: () {
-                                Alertify(
-                                  content: "NO SE PUDO GRABAR",
-                                  context: context,
-                                  isDismissible: true,
-                                  title: 'ERROR',
-                                  alertType: AlertifyType.error,
-                                  buttonText: 'OK',
-                                  animationType: AnimationType.outToIn,
-                                  barrierColor: Colors.black.withOpacity(0.5),
-                                  onDismiss: () {
-                                    AutoRouter.of(context)
-                                        .navigateNamed('/home');
-                                  },
-                                ).show();
-                              });
-                            },
-                            child:
-                                const InspeccionRegisterForm() /* Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 20, right: 20),
-                                child: Column(
-                                  children: [InspeccionRegisterForm()],
-                                )) */
-                            )
+                        InspeccionRegisterForm(
+                          inspeccionID: inspeccionID,
+                        )
                       ],
                     ),
                   ),
@@ -107,27 +61,28 @@ class InspeccionRegisterPage extends StatelessWidget {
     );
   }
 
-  void _validateRegisterFields(BuildContext context) {
+/*   void _validateRegisterFields(BuildContext context) {
     final _registerVisitaBloc = context.read<VisitasBloc>();
 
     if (controller.form.valid) {
       final newVisita = Visita(
           inspeccionId: inspeccionID,
+          InspeccionRegisterForm.
           atendido: _atendidoController.text,
           direccion: _direccionController.text);
       _registerVisitaBloc.add(VisitasEvent.visitaSubmitted(newVisita));
     } else {
       controller.form.markAllAsTouched();
     }
-
-    /* if (_registerFormKey.currentState!.validate()) {
+ }
+ */
+  /* if (_registerFormKey.currentState!.validate()) {
       final newVisita = Visita(
           inspeccionId: widget.inspeccionID,
           atendido: _atendidoController.text,
           direccion: _direccionController.text);
       _registerVisitaBloc.add(VisitasEvent.visitaSubmitted(newVisita));
     } else {} */
-  }
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(

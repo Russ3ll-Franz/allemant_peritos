@@ -1,0 +1,7 @@
+https://github.com/ToniNgethe/beauty_weather_app/blob/main/lib/data/bloc/location/location_state.dart
+https://github.com/fyrozhaneefa/foodzer_customer_app/blob/master/lib/blocs/application_bloc.dart
+https://github.com/paDonde6946/pa_donde_app/tree/1412d9089e9688c6fd9ff352f5639055f84a4b69
+https://github.com/ktrunks/weather_app/blob/ded9c676ccf4fe3eb6045c3e821d380e3e54bbd1/lib/ui/home/home_bloc.dart
+https://github.com/madz/blochub/tree/601c4261fc70799199eb7c31868f9529321721d4/lib/features
+https://github.com/eliezerantonio/flutter-avancado/tree/a5e9ceab885ba8f9199e65de684b684e29904990/maps_apps/lib/bloc/search
+https://github.com/NestorDevs/Maps-App/blob/master/lib/bloc/mi_ubicacion/mi_ubicacion_bloc.dart

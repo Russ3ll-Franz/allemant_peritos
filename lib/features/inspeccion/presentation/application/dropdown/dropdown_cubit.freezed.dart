@@ -42,8 +42,29 @@ class _$DropdownStateTearOff {
           const <InstalacionElectricaInmueble>[],
       List<InstalacionSanitariaInmueble> iSanitariaInmueble =
           const <InstalacionSanitariaInmueble>[],
+      List<CalidadConstruccionInmueble> cConstruccionInmueble =
+          const <CalidadConstruccionInmueble>[],
+      List<PuertaTipoInmueble> puertaTipoInmueble =
+          const <PuertaTipoInmueble>[],
       List<PuertaSistemaInmueble> puertaSistemaInmueble =
-          const <PuertaSistemaInmueble>[]}) {
+          const <PuertaSistemaInmueble>[],
+      List<PuertaMaterialInmueble> puertaMaterialInmueble =
+          const <PuertaMaterialInmueble>[],
+      List<VentanaMarcoInmueble> ventanaMarcoInmueble =
+          const <VentanaMarcoInmueble>[],
+      List<VentanaVidrioInmueble> ventanaVidrioInmueble =
+          const <VentanaVidrioInmueble>[],
+      List<VentanaSistemaInmueble> ventanaSistemaInmueble =
+          const <VentanaSistemaInmueble>[],
+      List<PisoInmueble> pisoInmueble = const <PisoInmueble>[],
+      List<RevestimientoInmueble> revestimientoInmueble =
+          const <RevestimientoInmueble>[],
+      List<InfraestructuraInmueble> infraestructuraInmueble =
+          const <InfraestructuraInmueble>[],
+      List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble =
+          const <InfraestructuraCalidadInmueble>[],
+      List<InfraestructuraEstadoConservacion> infraestructuraEstadoCInmueble =
+          const <InfraestructuraEstadoConservacion>[]}) {
     return DropOcupadoInmueble(
       usoInmueble: usoInmueble,
       ocupadoInmueble: ocupadoInmueble,
@@ -51,7 +72,18 @@ class _$DropdownStateTearOff {
       techoInmueble: techoInmueble,
       iElectricaInmueble: iElectricaInmueble,
       iSanitariaInmueble: iSanitariaInmueble,
+      cConstruccionInmueble: cConstruccionInmueble,
+      puertaTipoInmueble: puertaTipoInmueble,
       puertaSistemaInmueble: puertaSistemaInmueble,
+      puertaMaterialInmueble: puertaMaterialInmueble,
+      ventanaMarcoInmueble: ventanaMarcoInmueble,
+      ventanaVidrioInmueble: ventanaVidrioInmueble,
+      ventanaSistemaInmueble: ventanaSistemaInmueble,
+      pisoInmueble: pisoInmueble,
+      revestimientoInmueble: revestimientoInmueble,
+      infraestructuraInmueble: infraestructuraInmueble,
+      infraestructuraCalidadInmueble: infraestructuraCalidadInmueble,
+      infraestructuraEstadoCInmueble: infraestructuraEstadoCInmueble,
     );
   }
 
@@ -80,7 +112,19 @@ mixin _$DropdownState {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)
         dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) =>
@@ -97,7 +141,19 @@ mixin _$DropdownState {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) =>
@@ -114,7 +170,19 @@ mixin _$DropdownState {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),
@@ -217,7 +285,19 @@ class _$_Initial implements _Initial {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)
         dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) {
@@ -237,7 +317,19 @@ class _$_Initial implements _Initial {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) {
@@ -257,7 +349,19 @@ class _$_Initial implements _Initial {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),
@@ -363,7 +467,19 @@ class _$_Loading implements _Loading {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)
         dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) {
@@ -383,7 +499,19 @@ class _$_Loading implements _Loading {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) {
@@ -403,7 +531,19 @@ class _$_Loading implements _Loading {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),
@@ -538,7 +678,19 @@ class _$DropUsoInmueble implements DropUsoInmueble {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)
         dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) {
@@ -558,7 +710,19 @@ class _$DropUsoInmueble implements DropUsoInmueble {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) {
@@ -578,7 +742,19 @@ class _$DropUsoInmueble implements DropUsoInmueble {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),
@@ -653,7 +829,18 @@ abstract class $DropOcupadoInmuebleCopyWith<$Res> {
       List<TechoInmueble> techoInmueble,
       List<InstalacionElectricaInmueble> iElectricaInmueble,
       List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-      List<PuertaSistemaInmueble> puertaSistemaInmueble});
+      List<CalidadConstruccionInmueble> cConstruccionInmueble,
+      List<PuertaTipoInmueble> puertaTipoInmueble,
+      List<PuertaSistemaInmueble> puertaSistemaInmueble,
+      List<PuertaMaterialInmueble> puertaMaterialInmueble,
+      List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+      List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+      List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+      List<PisoInmueble> pisoInmueble,
+      List<RevestimientoInmueble> revestimientoInmueble,
+      List<InfraestructuraInmueble> infraestructuraInmueble,
+      List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+      List<InfraestructuraEstadoConservacion> infraestructuraEstadoCInmueble});
 }
 
 /// @nodoc
@@ -675,7 +862,18 @@ class _$DropOcupadoInmuebleCopyWithImpl<$Res>
     Object? techoInmueble = freezed,
     Object? iElectricaInmueble = freezed,
     Object? iSanitariaInmueble = freezed,
+    Object? cConstruccionInmueble = freezed,
+    Object? puertaTipoInmueble = freezed,
     Object? puertaSistemaInmueble = freezed,
+    Object? puertaMaterialInmueble = freezed,
+    Object? ventanaMarcoInmueble = freezed,
+    Object? ventanaVidrioInmueble = freezed,
+    Object? ventanaSistemaInmueble = freezed,
+    Object? pisoInmueble = freezed,
+    Object? revestimientoInmueble = freezed,
+    Object? infraestructuraInmueble = freezed,
+    Object? infraestructuraCalidadInmueble = freezed,
+    Object? infraestructuraEstadoCInmueble = freezed,
   }) {
     return _then(DropOcupadoInmueble(
       usoInmueble: usoInmueble == freezed
@@ -702,10 +900,54 @@ class _$DropOcupadoInmuebleCopyWithImpl<$Res>
           ? _value.iSanitariaInmueble
           : iSanitariaInmueble // ignore: cast_nullable_to_non_nullable
               as List<InstalacionSanitariaInmueble>,
+      cConstruccionInmueble: cConstruccionInmueble == freezed
+          ? _value.cConstruccionInmueble
+          : cConstruccionInmueble // ignore: cast_nullable_to_non_nullable
+              as List<CalidadConstruccionInmueble>,
+      puertaTipoInmueble: puertaTipoInmueble == freezed
+          ? _value.puertaTipoInmueble
+          : puertaTipoInmueble // ignore: cast_nullable_to_non_nullable
+              as List<PuertaTipoInmueble>,
       puertaSistemaInmueble: puertaSistemaInmueble == freezed
           ? _value.puertaSistemaInmueble
           : puertaSistemaInmueble // ignore: cast_nullable_to_non_nullable
               as List<PuertaSistemaInmueble>,
+      puertaMaterialInmueble: puertaMaterialInmueble == freezed
+          ? _value.puertaMaterialInmueble
+          : puertaMaterialInmueble // ignore: cast_nullable_to_non_nullable
+              as List<PuertaMaterialInmueble>,
+      ventanaMarcoInmueble: ventanaMarcoInmueble == freezed
+          ? _value.ventanaMarcoInmueble
+          : ventanaMarcoInmueble // ignore: cast_nullable_to_non_nullable
+              as List<VentanaMarcoInmueble>,
+      ventanaVidrioInmueble: ventanaVidrioInmueble == freezed
+          ? _value.ventanaVidrioInmueble
+          : ventanaVidrioInmueble // ignore: cast_nullable_to_non_nullable
+              as List<VentanaVidrioInmueble>,
+      ventanaSistemaInmueble: ventanaSistemaInmueble == freezed
+          ? _value.ventanaSistemaInmueble
+          : ventanaSistemaInmueble // ignore: cast_nullable_to_non_nullable
+              as List<VentanaSistemaInmueble>,
+      pisoInmueble: pisoInmueble == freezed
+          ? _value.pisoInmueble
+          : pisoInmueble // ignore: cast_nullable_to_non_nullable
+              as List<PisoInmueble>,
+      revestimientoInmueble: revestimientoInmueble == freezed
+          ? _value.revestimientoInmueble
+          : revestimientoInmueble // ignore: cast_nullable_to_non_nullable
+              as List<RevestimientoInmueble>,
+      infraestructuraInmueble: infraestructuraInmueble == freezed
+          ? _value.infraestructuraInmueble
+          : infraestructuraInmueble // ignore: cast_nullable_to_non_nullable
+              as List<InfraestructuraInmueble>,
+      infraestructuraCalidadInmueble: infraestructuraCalidadInmueble == freezed
+          ? _value.infraestructuraCalidadInmueble
+          : infraestructuraCalidadInmueble // ignore: cast_nullable_to_non_nullable
+              as List<InfraestructuraCalidadInmueble>,
+      infraestructuraEstadoCInmueble: infraestructuraEstadoCInmueble == freezed
+          ? _value.infraestructuraEstadoCInmueble
+          : infraestructuraEstadoCInmueble // ignore: cast_nullable_to_non_nullable
+              as List<InfraestructuraEstadoConservacion>,
     ));
   }
 }
@@ -720,7 +962,20 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
       this.techoInmueble = const <TechoInmueble>[],
       this.iElectricaInmueble = const <InstalacionElectricaInmueble>[],
       this.iSanitariaInmueble = const <InstalacionSanitariaInmueble>[],
-      this.puertaSistemaInmueble = const <PuertaSistemaInmueble>[]});
+      this.cConstruccionInmueble = const <CalidadConstruccionInmueble>[],
+      this.puertaTipoInmueble = const <PuertaTipoInmueble>[],
+      this.puertaSistemaInmueble = const <PuertaSistemaInmueble>[],
+      this.puertaMaterialInmueble = const <PuertaMaterialInmueble>[],
+      this.ventanaMarcoInmueble = const <VentanaMarcoInmueble>[],
+      this.ventanaVidrioInmueble = const <VentanaVidrioInmueble>[],
+      this.ventanaSistemaInmueble = const <VentanaSistemaInmueble>[],
+      this.pisoInmueble = const <PisoInmueble>[],
+      this.revestimientoInmueble = const <RevestimientoInmueble>[],
+      this.infraestructuraInmueble = const <InfraestructuraInmueble>[],
+      this.infraestructuraCalidadInmueble =
+          const <InfraestructuraCalidadInmueble>[],
+      this.infraestructuraEstadoCInmueble =
+          const <InfraestructuraEstadoConservacion>[]});
 
   @JsonKey()
   @override
@@ -742,11 +997,44 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
   final List<InstalacionSanitariaInmueble> iSanitariaInmueble;
   @JsonKey()
   @override
+  final List<CalidadConstruccionInmueble> cConstruccionInmueble;
+  @JsonKey()
+  @override
+  final List<PuertaTipoInmueble> puertaTipoInmueble;
+  @JsonKey()
+  @override
   final List<PuertaSistemaInmueble> puertaSistemaInmueble;
+  @JsonKey()
+  @override
+  final List<PuertaMaterialInmueble> puertaMaterialInmueble;
+  @JsonKey()
+  @override
+  final List<VentanaMarcoInmueble> ventanaMarcoInmueble;
+  @JsonKey()
+  @override
+  final List<VentanaVidrioInmueble> ventanaVidrioInmueble;
+  @JsonKey()
+  @override
+  final List<VentanaSistemaInmueble> ventanaSistemaInmueble;
+  @JsonKey()
+  @override
+  final List<PisoInmueble> pisoInmueble;
+  @JsonKey()
+  @override
+  final List<RevestimientoInmueble> revestimientoInmueble;
+  @JsonKey()
+  @override
+  final List<InfraestructuraInmueble> infraestructuraInmueble;
+  @JsonKey()
+  @override
+  final List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble;
+  @JsonKey()
+  @override
+  final List<InfraestructuraEstadoConservacion> infraestructuraEstadoCInmueble;
 
   @override
   String toString() {
-    return 'DropdownState.dropDownOcupadoInmueble(usoInmueble: $usoInmueble, ocupadoInmueble: $ocupadoInmueble, muroInmueble: $muroInmueble, techoInmueble: $techoInmueble, iElectricaInmueble: $iElectricaInmueble, iSanitariaInmueble: $iSanitariaInmueble, puertaSistemaInmueble: $puertaSistemaInmueble)';
+    return 'DropdownState.dropDownOcupadoInmueble(usoInmueble: $usoInmueble, ocupadoInmueble: $ocupadoInmueble, muroInmueble: $muroInmueble, techoInmueble: $techoInmueble, iElectricaInmueble: $iElectricaInmueble, iSanitariaInmueble: $iSanitariaInmueble, cConstruccionInmueble: $cConstruccionInmueble, puertaTipoInmueble: $puertaTipoInmueble, puertaSistemaInmueble: $puertaSistemaInmueble, puertaMaterialInmueble: $puertaMaterialInmueble, ventanaMarcoInmueble: $ventanaMarcoInmueble, ventanaVidrioInmueble: $ventanaVidrioInmueble, ventanaSistemaInmueble: $ventanaSistemaInmueble, pisoInmueble: $pisoInmueble, revestimientoInmueble: $revestimientoInmueble, infraestructuraInmueble: $infraestructuraInmueble, infraestructuraCalidadInmueble: $infraestructuraCalidadInmueble, infraestructuraEstadoCInmueble: $infraestructuraEstadoCInmueble)';
   }
 
   @override
@@ -767,7 +1055,31 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
             const DeepCollectionEquality()
                 .equals(other.iSanitariaInmueble, iSanitariaInmueble) &&
             const DeepCollectionEquality()
-                .equals(other.puertaSistemaInmueble, puertaSistemaInmueble));
+                .equals(other.cConstruccionInmueble, cConstruccionInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.puertaTipoInmueble, puertaTipoInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.puertaSistemaInmueble, puertaSistemaInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.puertaMaterialInmueble, puertaMaterialInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.ventanaMarcoInmueble, ventanaMarcoInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.ventanaVidrioInmueble, ventanaVidrioInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.ventanaSistemaInmueble, ventanaSistemaInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.pisoInmueble, pisoInmueble) &&
+            const DeepCollectionEquality()
+                .equals(other.revestimientoInmueble, revestimientoInmueble) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraInmueble, infraestructuraInmueble) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraCalidadInmueble,
+                infraestructuraCalidadInmueble) &&
+            const DeepCollectionEquality().equals(
+                other.infraestructuraEstadoCInmueble,
+                infraestructuraEstadoCInmueble));
   }
 
   @override
@@ -779,7 +1091,18 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
       const DeepCollectionEquality().hash(techoInmueble),
       const DeepCollectionEquality().hash(iElectricaInmueble),
       const DeepCollectionEquality().hash(iSanitariaInmueble),
-      const DeepCollectionEquality().hash(puertaSistemaInmueble));
+      const DeepCollectionEquality().hash(cConstruccionInmueble),
+      const DeepCollectionEquality().hash(puertaTipoInmueble),
+      const DeepCollectionEquality().hash(puertaSistemaInmueble),
+      const DeepCollectionEquality().hash(puertaMaterialInmueble),
+      const DeepCollectionEquality().hash(ventanaMarcoInmueble),
+      const DeepCollectionEquality().hash(ventanaVidrioInmueble),
+      const DeepCollectionEquality().hash(ventanaSistemaInmueble),
+      const DeepCollectionEquality().hash(pisoInmueble),
+      const DeepCollectionEquality().hash(revestimientoInmueble),
+      const DeepCollectionEquality().hash(infraestructuraInmueble),
+      const DeepCollectionEquality().hash(infraestructuraCalidadInmueble),
+      const DeepCollectionEquality().hash(infraestructuraEstadoCInmueble));
 
   @JsonKey(ignore: true)
   @override
@@ -800,7 +1123,19 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)
         dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) {
@@ -811,7 +1146,18 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
         techoInmueble,
         iElectricaInmueble,
         iSanitariaInmueble,
-        puertaSistemaInmueble);
+        cConstruccionInmueble,
+        puertaTipoInmueble,
+        puertaSistemaInmueble,
+        puertaMaterialInmueble,
+        ventanaMarcoInmueble,
+        ventanaVidrioInmueble,
+        ventanaSistemaInmueble,
+        pisoInmueble,
+        revestimientoInmueble,
+        infraestructuraInmueble,
+        infraestructuraCalidadInmueble,
+        infraestructuraEstadoCInmueble);
   }
 
   @override
@@ -827,7 +1173,19 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) {
@@ -838,7 +1196,18 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
         techoInmueble,
         iElectricaInmueble,
         iSanitariaInmueble,
-        puertaSistemaInmueble);
+        cConstruccionInmueble,
+        puertaTipoInmueble,
+        puertaSistemaInmueble,
+        puertaMaterialInmueble,
+        ventanaMarcoInmueble,
+        ventanaVidrioInmueble,
+        ventanaSistemaInmueble,
+        pisoInmueble,
+        revestimientoInmueble,
+        infraestructuraInmueble,
+        infraestructuraCalidadInmueble,
+        infraestructuraEstadoCInmueble);
   }
 
   @override
@@ -854,7 +1223,19 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),
@@ -867,7 +1248,18 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
           techoInmueble,
           iElectricaInmueble,
           iSanitariaInmueble,
-          puertaSistemaInmueble);
+          cConstruccionInmueble,
+          puertaTipoInmueble,
+          puertaSistemaInmueble,
+          puertaMaterialInmueble,
+          ventanaMarcoInmueble,
+          ventanaVidrioInmueble,
+          ventanaSistemaInmueble,
+          pisoInmueble,
+          revestimientoInmueble,
+          infraestructuraInmueble,
+          infraestructuraCalidadInmueble,
+          infraestructuraEstadoCInmueble);
     }
     return orElse();
   }
@@ -916,14 +1308,25 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
 
 abstract class DropOcupadoInmueble implements DropdownState {
   const factory DropOcupadoInmueble(
-          {List<UsoInmueble> usoInmueble,
-          List<OcupadoInmueble> ocupadoInmueble,
-          List<MuroInmueble> muroInmueble,
-          List<TechoInmueble> techoInmueble,
-          List<InstalacionElectricaInmueble> iElectricaInmueble,
-          List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-          List<PuertaSistemaInmueble> puertaSistemaInmueble}) =
-      _$DropOcupadoInmueble;
+      {List<UsoInmueble> usoInmueble,
+      List<OcupadoInmueble> ocupadoInmueble,
+      List<MuroInmueble> muroInmueble,
+      List<TechoInmueble> techoInmueble,
+      List<InstalacionElectricaInmueble> iElectricaInmueble,
+      List<InstalacionSanitariaInmueble> iSanitariaInmueble,
+      List<CalidadConstruccionInmueble> cConstruccionInmueble,
+      List<PuertaTipoInmueble> puertaTipoInmueble,
+      List<PuertaSistemaInmueble> puertaSistemaInmueble,
+      List<PuertaMaterialInmueble> puertaMaterialInmueble,
+      List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+      List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+      List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+      List<PisoInmueble> pisoInmueble,
+      List<RevestimientoInmueble> revestimientoInmueble,
+      List<InfraestructuraInmueble> infraestructuraInmueble,
+      List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+      List<InfraestructuraEstadoConservacion>
+          infraestructuraEstadoCInmueble}) = _$DropOcupadoInmueble;
 
   List<UsoInmueble> get usoInmueble;
   List<OcupadoInmueble> get ocupadoInmueble;
@@ -931,7 +1334,18 @@ abstract class DropOcupadoInmueble implements DropdownState {
   List<TechoInmueble> get techoInmueble;
   List<InstalacionElectricaInmueble> get iElectricaInmueble;
   List<InstalacionSanitariaInmueble> get iSanitariaInmueble;
+  List<CalidadConstruccionInmueble> get cConstruccionInmueble;
+  List<PuertaTipoInmueble> get puertaTipoInmueble;
   List<PuertaSistemaInmueble> get puertaSistemaInmueble;
+  List<PuertaMaterialInmueble> get puertaMaterialInmueble;
+  List<VentanaMarcoInmueble> get ventanaMarcoInmueble;
+  List<VentanaVidrioInmueble> get ventanaVidrioInmueble;
+  List<VentanaSistemaInmueble> get ventanaSistemaInmueble;
+  List<PisoInmueble> get pisoInmueble;
+  List<RevestimientoInmueble> get revestimientoInmueble;
+  List<InfraestructuraInmueble> get infraestructuraInmueble;
+  List<InfraestructuraCalidadInmueble> get infraestructuraCalidadInmueble;
+  List<InfraestructuraEstadoConservacion> get infraestructuraEstadoCInmueble;
   @JsonKey(ignore: true)
   $DropOcupadoInmuebleCopyWith<DropOcupadoInmueble> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1012,7 +1426,19 @@ class _$_ErrorState implements _ErrorState {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)
         dropDownOcupadoInmueble,
     required TResult Function(String message) error,
   }) {
@@ -1032,7 +1458,19 @@ class _$_ErrorState implements _ErrorState {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
   }) {
@@ -1052,7 +1490,19 @@ class _$_ErrorState implements _ErrorState {
             List<TechoInmueble> techoInmueble,
             List<InstalacionElectricaInmueble> iElectricaInmueble,
             List<InstalacionSanitariaInmueble> iSanitariaInmueble,
-            List<PuertaSistemaInmueble> puertaSistemaInmueble)?
+            List<CalidadConstruccionInmueble> cConstruccionInmueble,
+            List<PuertaTipoInmueble> puertaTipoInmueble,
+            List<PuertaSistemaInmueble> puertaSistemaInmueble,
+            List<PuertaMaterialInmueble> puertaMaterialInmueble,
+            List<VentanaMarcoInmueble> ventanaMarcoInmueble,
+            List<VentanaVidrioInmueble> ventanaVidrioInmueble,
+            List<VentanaSistemaInmueble> ventanaSistemaInmueble,
+            List<PisoInmueble> pisoInmueble,
+            List<RevestimientoInmueble> revestimientoInmueble,
+            List<InfraestructuraInmueble> infraestructuraInmueble,
+            List<InfraestructuraCalidadInmueble> infraestructuraCalidadInmueble,
+            List<InfraestructuraEstadoConservacion>
+                infraestructuraEstadoCInmueble)?
         dropDownOcupadoInmueble,
     TResult Function(String message)? error,
     required TResult orElse(),

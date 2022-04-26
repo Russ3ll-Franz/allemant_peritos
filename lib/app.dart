@@ -6,16 +6,16 @@ import 'package:allemant_peritos/application/repository/user_repository.dart';
 import 'package:allemant_peritos/core/route/app_router.dart';
 import 'package:allemant_peritos/core/route/app_router.gr.dart';
 import 'package:allemant_peritos/features/inspeccion/domain/repository/i_inspeccion_repository.dart';
+import 'package:allemant_peritos/features/inspeccion/domain/repository/i_userlocation_repository.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/application/bloc/visitas_bloc.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/application/coordinacion/coordinacion_cubit.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/application/dropdown/dropdown_cubit.dart';
+import 'package:allemant_peritos/features/inspeccion/presentation/application/location/location_cubit.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_cubit.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'configs/constants.dart';
 
 class MyApp extends StatelessWidget {
@@ -24,12 +24,14 @@ class MyApp extends StatelessWidget {
       {Key? key,
       required this.authenticationRepository,
       required this.userRepository,
-      required this.inspeccionRepository})
+      required this.inspeccionRepository,
+      required this.userLocationRepository})
       : super(key: key);
 
   final AuthenticationRepository authenticationRepository;
   final UserRepository userRepository;
   final IInspeccionRepository inspeccionRepository;
+  final IUserLocationsRepository userLocationRepository;
   @override
   Widget build(BuildContext context) {
     //CORRECTO FUNCIONAODO
@@ -50,6 +52,7 @@ class MyApp extends StatelessWidget {
         RepositoryProvider.value(value: authenticationRepository),
         RepositoryProvider.value(value: userRepository),
         RepositoryProvider.value(value: inspeccionRepository),
+        RepositoryProvider.value(value: userLocationRepository),
       ],
       child: MultiBlocProvider(providers: [
         ///
@@ -87,6 +90,10 @@ class MyApp extends StatelessWidget {
             create: (context) => DropdownCubit(
                   inspeccionRepository: inspeccionRepository,
                 )),
+        BlocProvider(
+            create: (context) => LocationCubit(
+                  iUserLocationsRepository: userLocationRepository,
+                )),
       ], child: const MyView()),
     );
   }
@@ -111,7 +118,7 @@ class _MyViewState extends State<MyView> {
         final data = MediaQuery.of(context);
         final smallestSize = min(data.size.width, data.size.height);
         final textScaleFactor =
-            min(smallestSize / AppConstants.designScreenSize.width, 1.0);
+            min(smallestSize / AppConstants.designScreenSize.width, 2.0);
 
         return MediaQuery(
           data: data.copyWith(

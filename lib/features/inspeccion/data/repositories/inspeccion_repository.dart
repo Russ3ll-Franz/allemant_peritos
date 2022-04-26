@@ -1,17 +1,28 @@
 import 'package:allemant_peritos/core/error/exceptions.dart';
 import 'package:allemant_peritos/core/error/failures.dart';
 import 'package:allemant_peritos/features/inspeccion/data/datasources/inspeccion_remote_datasource.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/calidad_construccion_inmueble/calidad_construccion_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/coordinacion/coordinacion.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/infraestructura_calidad_inmueble/infraestructura_calidad_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/infraestructura_estado_conservacion/infraestructura_estado_conservacion.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/infraestructura_inmueble/infraestructura_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspeccion.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/instalacion_sanitaria_inmueble/instalacion_sanitaria_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/instalacion_electrica_inmueble/instalacion_electrica_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/muro_inmueble/muro_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/ocupado_inmueble/ocupado_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/piso_inmueble/piso_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/puerta_material_inmueble/puerta_material_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/puerta_sistema_inmueble/puerta_sistema_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/puerta_tipo_inmueble/puerta_tipo_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/revestimiento_inmueble/revestimiento_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/techo_inmueble/techo_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/uso_inmueble/uso_inmueble.dart';
-import 'package:allemant_peritos/features/inspeccion/data/model/visita/visitaResponse.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/ventana_vidrio_inmueble/ventana_vidrio_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/ventana_sistema_inmueble/ventana_sistema_inmueble.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/ventana_marco_inmueble/ventana_marco_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita_response/visita_response.dart';
 import 'package:allemant_peritos/features/inspeccion/domain/repository/i_inspeccion_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -92,17 +103,6 @@ class InspeccionRepository implements IInspeccionRepository {
   }
 
   @override
-  Future<Either<Failure, List<PuertaSistemaInmueble>>> getPuertaSistemaInmueble(
-      String name) async {
-    try {
-      final getMuro = await remoteDataSource.postPuertaSistemaInmueble(name);
-      return Right(getMuro);
-    } on ServerException {
-      return Left(ServerFailure());
-    }
-  }
-
-  @override
   Future<Either<Failure, List<TechoInmueble>>> getTechoInmueble(
       String name) async {
     try {
@@ -132,6 +132,147 @@ class InspeccionRepository implements IInspeccionRepository {
       final getInstalacionSanitaria =
           await remoteDataSource.postInstalacionSanitariaInmueble(name);
       return Right(getInstalacionSanitaria);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<CalidadConstruccionInmueble>>>
+      getCalidadConstruccionInmueble(String name) async {
+    try {
+      final getCalidadConstruccion =
+          await remoteDataSource.postCalidadConstruccionInmueble(name);
+      return Right(getCalidadConstruccion);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<PuertaSistemaInmueble>>> getPuertaSistemaInmueble(
+      String name) async {
+    try {
+      final getMuro = await remoteDataSource.postPuertaSistemaInmueble(name);
+      return Right(getMuro);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<PuertaMaterialInmueble>>>
+      getPuertaMaterialInmueble(String name) async {
+    try {
+      final getPuertaMaterial =
+          await remoteDataSource.postPuertaMaterialInmueble(name);
+      return Right(getPuertaMaterial);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<PuertaTipoInmueble>>> getPuertaTipoInmueble(
+      String name) async {
+    try {
+      final getPuertaTipo = await remoteDataSource.postPuertaTipoInmueble(name);
+      return Right(getPuertaTipo);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<VentanaMarcoInmueble>>> getVentanaMarcoInmueble(
+      String name) async {
+    try {
+      final getVentanaMarco =
+          await remoteDataSource.postVentanaMarcoInmueble(name);
+      return Right(getVentanaMarco);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<VentanaSistemaInmueble>>>
+      getVentanaSistemaInmueble(String name) async {
+    try {
+      final getVentanaSistema =
+          await remoteDataSource.postVentanaSistemanmueble(name);
+      return Right(getVentanaSistema);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<VentanaVidrioInmueble>>> getVentanaVidrioInmueble(
+      String name) async {
+    try {
+      final getVentanaVidrio =
+          await remoteDataSource.postVentanaVidrioInmueble(name);
+      return Right(getVentanaVidrio);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<PisoInmueble>>> getPisoInmueble(
+      String name) async {
+    try {
+      final getPiso = await remoteDataSource.postPisoInmueble(name);
+      return Right(getPiso);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<RevestimientoInmueble>>> getRevestimientoInmueble(
+      String name) async {
+    try {
+      final getRevestimiento =
+          await remoteDataSource.postRevestimientoInmueble(name);
+      return Right(getRevestimiento);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<InfraestructuraInmueble>>>
+      getInfraestructuraInmueble(String name) async {
+    try {
+      final getInfraestructura =
+          await remoteDataSource.postInfraestructuraInmueble(name);
+      return Right(getInfraestructura);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<InfraestructuraCalidadInmueble>>>
+      getInfraestructuraCalidadInmueble(String name) async {
+    try {
+      final getInfraestructuraCalidad =
+          await remoteDataSource.postInfraestructuraCalidadInmueble(name);
+      return Right(getInfraestructuraCalidad);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<InfraestructuraEstadoConservacion>>>
+      getInfraestructuraEstadoCInmueble(String name) async {
+    try {
+      final getInfraestructura = await remoteDataSource
+          .postInfraestructuraEstadoConservacionInmueble(name);
+      return Right(getInfraestructura);
     } on ServerException {
       return Left(ServerFailure());
     }

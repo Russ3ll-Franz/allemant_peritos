@@ -1,6 +1,7 @@
 import 'package:allemant_peritos/core/error/exceptions.dart';
 import 'package:allemant_peritos/core/error/failures.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita.dart';
+import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita_response/visita_response.dart';
 import 'package:allemant_peritos/features/inspeccion/domain/repository/i_inspeccion_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
@@ -15,13 +16,14 @@ class VisitaCubit extends Cubit<VisitaState> {
 
   IInspeccionRepository inspeccionRepository;
 
-  Future<void> saveInspeccion({required Visita visita}) async {
+  Future<VisitaResponse> saveInspeccion({required Visita visita}) async {
     final either = await inspeccionRepository.insertInspeccion(visita: visita);
 
     final response = either.fold(
       (l) => throw _getFailureAndThrowExpection(l),
       (r) => r,
     );
+    return response;
 /*     emit(VisitaState.loaded(inspeccion: response));
  */
   }

@@ -427,6 +427,8 @@ abstract class $VisitaSuccessCopyWith<$Res> {
           VisitaSuccess value, $Res Function(VisitaSuccess) then) =
       _$VisitaSuccessCopyWithImpl<$Res>;
   $Res call({VisitaResponse? visitaResponse});
+
+  $VisitaResponseCopyWith<$Res>? get visitaResponse;
 }
 
 /// @nodoc
@@ -449,6 +451,17 @@ class _$VisitaSuccessCopyWithImpl<$Res> extends _$VisitasStateCopyWithImpl<$Res>
           : visitaResponse // ignore: cast_nullable_to_non_nullable
               as VisitaResponse?,
     ));
+  }
+
+  @override
+  $VisitaResponseCopyWith<$Res>? get visitaResponse {
+    if (_value.visitaResponse == null) {
+      return null;
+    }
+
+    return $VisitaResponseCopyWith<$Res>(_value.visitaResponse!, (value) {
+      return _then(_value.copyWith(visitaResponse: value));
+    });
   }
 }
 
