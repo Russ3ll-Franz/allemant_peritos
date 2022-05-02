@@ -48,7 +48,8 @@ class LoginForm extends StatelessWidget {
             const Align(
                 alignment: Alignment.centerRight,
                 child: TextFrave(
-                    text: 'OLVIDO CONTRASEÑA?', color: Color(0xFF114472))),
+                    text: '¿Olvidaste la contraseña?',
+                    color: Color(0xFF114472))),
             SizedBox(
               height: 20,
             ),

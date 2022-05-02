@@ -1,4 +1,3 @@
-import 'package:allemant_peritos/configs/assets.dart';
 import 'package:allemant_peritos/configs/colors.dart';
 import 'package:allemant_peritos/configs/constants_alertify.dart';
 import 'package:allemant_peritos/configs/sizebox.dart';
@@ -28,7 +27,6 @@ import 'package:allemant_peritos/features/widgets/alertify.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -87,8 +85,6 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
   final TextEditingController _detalleDistribucionController =
       TextEditingController();
   final TextEditingController _observacionController = TextEditingController();
-  final TextEditingController _latitud = TextEditingController();
-  final TextEditingController _longitud = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -98,8 +94,6 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
 
   @override
   Widget build(BuildContext context) {
-    /*  context.read<DropdownCubit>().ocupadoInmueble(""); */
-
     return BlocListener<VisitasBloc, VisitasState>(
       listener: (context, state) {
         state.maybeWhen(success: (success) {
@@ -139,7 +133,9 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
           textInputAction: TextInputAction.next,
           controller: _atendidoController,
           maxLines: 1,
-          style: const TextStyle(fontSize: 20, color: Colors.black),
+          textCapitalization: TextCapitalization.characters,
+          style: const TextStyle(
+              fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
           decoration: InputDecoration(
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -147,8 +143,8 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
             labelStyle: const TextStyle(
               fontSize: 16,
             ),
-            hintText: 'Ingrese la persona que acceso a la visita',
-            hintStyle: const TextStyle(color: Color(0xFF114472)),
+            hintText: 'NOMBRE DEL PROPIETARIO',
+            hintStyle: const TextStyle(color: Color(0xFF114472), fontSize: 14),
             enabledBorder: OutlineInputBorder(
                 borderSide:
                     const BorderSide(color: Color(0xFF114472), width: 1.2),
@@ -181,6 +177,9 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
           textInputAction: TextInputAction.next,
           controller: _direccionController,
           maxLines: 2,
+          textCapitalization: TextCapitalization.characters,
+          style: const TextStyle(
+              fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
           decoration: InputDecoration(
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -210,7 +209,7 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
               borderRadius: BorderRadius.circular(10),
             ),
             prefixIcon: const Icon(
-              Iconsax.house,
+              FontAwesomeIcons.houseChimneyWindow,
               color: Color(0xFF114472),
             ),
             floatingLabelBehavior: FloatingLabelBehavior.never,
@@ -218,146 +217,89 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
         ),
         SizeBox.sizeRow,
         BlocBuilder<LocationCubit, LocationState>(builder: (_, state) {
-          state.maybeWhen(
-              orElse: () {},
-              locationUpdate: (position) {
-                latitud = position.latitude.toString();
-                longitud = position.longitude.toString();
-                print(latitud);
-                print(longitud);
-                return Column(
+          if (state is LocationPositionState) {
+            latitud = state.position.latitude.toString();
+            longitud = state.position.longitude.toString();
+
+            return Column(
+              children: [
+                TextFormField(
+                  autofocus: false,
+                  initialValue: '$latitud,  $longitud',
+                  maxLines: 1,
+                  enabled: false,
+                  style: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600),
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 10.0),
+                    labelText: 'LATITUDE',
+                    labelStyle: const TextStyle(
+                      fontSize: 16,
+                    ),
+                    hintStyle: const TextStyle(color: Color(0xFF114472)),
+                    disabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                            color: Color(0xFF114472), width: 1.2),
+                        borderRadius: BorderRadius.circular(10.0)),
+                    prefixIcon: const Icon(
+                      FontAwesomeIcons.map,
+                      color: Color(0xFF114472),
+                    ),
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                  ),
+                ),
+              ],
+            );
+          } else if (state is LocationLoadingState) {
+            return const CircularProgressIndicator();
+          }
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: Colors.amber.shade300,
+                ),
+                child: Row(
                   children: [
-                    TextFormField(
-                      autofocus: false,
-                      textInputAction: TextInputAction.next,
-                      controller: _latitud,
-                      onChanged: (text) {
-                        text = position.latitude.toString();
-                      },
-                      maxLines: 1,
-                      decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 10.0),
-                        labelText: 'LATITUD',
-                        labelStyle: const TextStyle(
-                          fontSize: 16,
+                    const Icon(Iconsax.information, size: 26),
+                    Expanded(
+                      child: Text(
+                        (state as LocationErrorState).message,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
                         ),
-                        hintStyle: const TextStyle(color: Color(0xFF114472)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color(0xFF114472), width: 1.2),
-                            borderRadius: BorderRadius.circular(10.0)),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                              color: Color(0xFF114472), width: 1.2),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                              color: Color.fromARGB(255, 230, 35, 9)),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                              color: Color.fromARGB(255, 192, 11, 11)),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        prefixIcon: const Icon(
-                          Iconsax.house,
-                          color: Color(0xFF114472),
-                        ),
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
                       ),
                     ),
                   ],
-                );
-              });
-          return const SizedBox.shrink();
+                ),
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.red),
+                onPressed: () {
+                  context.read<LocationCubit>().fetchUserCurrentLocation();
+                },
+                child: const Text('REINTENTAR'),
+              )
+            ],
+          );
         }),
-        TextFormField(
-          autofocus: false,
-          textInputAction: TextInputAction.next,
-          controller: _latitud,
-          maxLines: 1,
-          decoration: InputDecoration(
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-            labelText: 'LATITUD',
-            labelStyle: const TextStyle(
-              fontSize: 16,
-            ),
-            hintStyle: const TextStyle(color: Color(0xFF114472)),
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    const BorderSide(color: Color(0xFF114472), width: 1.2),
-                borderRadius: BorderRadius.circular(10.0)),
-            focusedBorder: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(color: Color(0xFF114472), width: 1.2),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(color: Color.fromARGB(255, 230, 35, 9)),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            prefixIcon: const Icon(
-              Iconsax.house,
-              color: Color(0xFF114472),
-            ),
-            floatingLabelBehavior: FloatingLabelBehavior.never,
-          ),
-        ),
-        SizeBox.sizeRow,
-        TextFormField(
-          autofocus: false,
-          textInputAction: TextInputAction.next,
-          controller: _longitud,
-          maxLines: 1,
-          decoration: InputDecoration(
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-            labelText: 'LONGITUD',
-            labelStyle: const TextStyle(
-              fontSize: 16,
-            ),
-            hintStyle: const TextStyle(color: Color(0xFF114472)),
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    const BorderSide(color: Color(0xFF114472), width: 1.2),
-                borderRadius: BorderRadius.circular(10.0)),
-            focusedBorder: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(color: Color(0xFF114472), width: 1.2),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(color: Color.fromARGB(255, 230, 35, 9)),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            prefixIcon: const Icon(
-              Iconsax.house,
-              color: Color(0xFF114472),
-            ),
-            floatingLabelBehavior: FloatingLabelBehavior.never,
-          ),
-        ),
         SizeBox.sizeRow,
         TextFormField(
           autofocus: false,
           textInputAction: TextInputAction.next,
           controller: _nroSuministroController,
+          textCapitalization: TextCapitalization.characters,
+          style: const TextStyle(
+              fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
           maxLines: 1,
           /*   showErrors: (control) =>
                                                               control.invalid &&
@@ -371,7 +313,7 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
               fontSize: 16,
             ),
             hintText: 'INGRESE EL SUMINISTRO DE LUZ O AGUA',
-            hintStyle: const TextStyle(color: Color(0xFF114472)),
+            hintStyle: const TextStyle(color: Color(0xFF114472), fontSize: 14),
             enabledBorder: OutlineInputBorder(
                 borderSide:
                     const BorderSide(color: Color(0xFF114472), width: 1.2),
@@ -392,7 +334,7 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
               borderRadius: BorderRadius.circular(10),
             ),
             prefixIcon: const Icon(
-              Iconsax.battery_3full,
+              FontAwesomeIcons.lightbulb,
               color: Color(0xFF114472),
             ),
             floatingLabelBehavior: FloatingLabelBehavior.never,
@@ -403,7 +345,10 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
           autofocus: false,
           textInputAction: TextInputAction.next,
           controller: _nroPuertaController,
+          textCapitalization: TextCapitalization.characters,
           maxLines: 1,
+          style: const TextStyle(
+              fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
           decoration: InputDecoration(
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -411,8 +356,8 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
             labelStyle: const TextStyle(
               fontSize: 16,
             ),
-            hintText: 'INGRESE EL NRODE PUERTA DEL DOMICILIO',
-            hintStyle: const TextStyle(color: Color(0xFF114472)),
+            hintText: 'INGRESE EL NRO DE PUERTA DEL DOMICILIO',
+            hintStyle: const TextStyle(color: Color(0xFF114472), fontSize: 14),
             enabledBorder: OutlineInputBorder(
                 borderSide:
                     const BorderSide(color: Color(0xFF114472), width: 1.2),
@@ -432,13 +377,9 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
                   const BorderSide(color: Color.fromARGB(255, 192, 11, 11)),
               borderRadius: BorderRadius.circular(10),
             ),
-            prefixIcon: IconButton(
-              icon: SvgPicture.asset(
-                Assets.assetsIconSvgDoorClosed,
-                color: const Color(0xFF114472),
-                width: 22,
-              ),
-              onPressed: () {},
+            prefixIcon: const Icon(
+              FontAwesomeIcons.doorClosedR,
+              color: Color(0xFF114472),
             ),
             floatingLabelBehavior: FloatingLabelBehavior.never,
           ),
@@ -1812,8 +1753,44 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
                   ),
                 ],
               );
+            } else if (state is DropDownLoading) {
+              return const CircularProgressIndicator();
             }
-            return const SizedBox.shrink();
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.amber.shade300,
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Iconsax.information, size: 26),
+                      Expanded(
+                        child: Text(
+                          (state as DropDownErrorState).message,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.red),
+                  onPressed: () {
+                    context.read<DropdownCubit>().ocupadoInmueble("");
+                  },
+                  child: const Text('REINTENTAR'),
+                )
+              ],
+            );
           },
         ),
         SizeBox.sizeRow,
@@ -1821,7 +1798,7 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
           autofocus: false,
           textInputAction: TextInputAction.next,
           controller: _detalleDistribucionController,
-          maxLines: 6,
+          maxLines: 4,
           style: const TextStyle(fontSize: 20, color: Colors.black),
           decoration: InputDecoration(
             contentPadding:
@@ -1862,8 +1839,8 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
         TextFormField(
           autofocus: false,
           textInputAction: TextInputAction.next,
-          controller: _detalleDistribucionController,
-          maxLines: 6,
+          controller: _observacionController,
+          maxLines: 3,
           style: const TextStyle(fontSize: 20, color: Colors.black),
           decoration: InputDecoration(
             contentPadding:
@@ -1909,34 +1886,40 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
                   _validateRegisterFields(context);
                 },
                 icon: const Icon(
-                  FontAwesomeIcons.home,
-                  size: 16,
+                  FontAwesomeIcons.floppyDisk,
+                  size: 22,
                 ),
                 label: const Text("GRABAR"),
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(160, 40),
+                  fixedSize: const Size(50, 45),
+                  minimumSize: const Size(150, 45),
                   primary: AppColors.lightGreen,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  textStyle: const TextStyle(fontSize: 16),
+                  textStyle: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.w400),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 )),
             ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  AutoRouter.of(context).replaceNamed('/home');
+                },
                 icon: const Icon(
-                  FontAwesomeIcons.map,
-                  size: 16,
+                  FontAwesomeIcons.ban,
+                  size: 22,
                 ),
                 label: const Text("CANCELAR"),
                 style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(50, 45),
                   primary: AppColors.lightRed,
-                  minimumSize: const Size(160, 40),
+                  minimumSize: const Size(150, 45),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  textStyle: const TextStyle(fontSize: 16),
+                  textStyle: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.w400),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 )),
@@ -2001,8 +1984,8 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
         infraestructuraConservacionAlcantarilladoCodigo: alcantarilladoEstadoConservacionValue?.infraestructuraConservacionId ?? '0',
         infraestructuraConservacionAguaCodigo: aguaPotableEstadoConservacionValue?.infraestructuraConservacionId ?? '0',
         infraestructuraConservacionAlumbradoCodigo: alumbradoEstadoConservacionValue?.infraestructuraConservacionId ?? '0',
-        latitud: "0.000000",
-        longitud: "0.000000",
+        latitud: latitud ?? "0.000000",
+        longitud: longitud ?? "0.000000",
         usuario: "3",
         distribucionInmueble: _detalleDistribucionController.text,
         observacion: _observacionController.text);

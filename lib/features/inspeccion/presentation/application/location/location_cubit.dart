@@ -8,7 +8,7 @@ part 'location_cubit.freezed.dart';
 
 class LocationCubit extends Cubit<LocationState> {
   LocationCubit({required this.iUserLocationsRepository})
-      : super(LocationState.init());
+      : super(const LocationState.init());
   IUserLocationsRepository iUserLocationsRepository;
   void fetchUserCurrentLocation() async {
     try {
@@ -17,7 +17,7 @@ class LocationCubit extends Cubit<LocationState> {
       bool serviceEnabled = await iUserLocationsRepository.isLocationEnabled();
       if (!serviceEnabled) {
         // Location services are not enabled don't continue
-        throw 'location services disabled! kindly enable them to continue using the app';
+        throw 'GPS INACTIVO!!, PERMITA INDICARLE LA UBICACIÓN ACTIVANDO SU GPS';
       }
       LocationPermission permission =
           await iUserLocationsRepository.checkPermission();

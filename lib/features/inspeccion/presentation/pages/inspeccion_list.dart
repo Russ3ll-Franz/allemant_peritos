@@ -39,7 +39,6 @@ class _InspeccionBodyState extends State<InspeccionBody> {
     context
         .read<InspeccionCubit>()
         .getTypeInspeccionByUser(widget.idTipoTasacion);
-    context.read<DropdownCubit>().ocupadoInmueble("");
 
     controller.addListener(() {
       double value = controller.offset / 119;

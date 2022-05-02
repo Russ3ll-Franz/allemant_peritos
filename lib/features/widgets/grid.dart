@@ -15,12 +15,12 @@ class MyListGrid {
 
 final List grids = [
   MyListGrid(
-      id: "1",
+      id: "2",
       title: "INTERIOR",
       image: "assets/images/menu/interior.png",
       color: AppColors.lightBlue),
   MyListGrid(
-      id: "2",
+      id: "1",
       title: "EXTERIOR",
       image: "assets/images/menu/casita.png",
       color: AppColors.lightCyan),

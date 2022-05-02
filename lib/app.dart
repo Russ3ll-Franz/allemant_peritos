@@ -128,7 +128,7 @@ class _MyViewState extends State<MyView> {
         );
       },
       theme: ThemeData(
-        textTheme: GoogleFonts.openSansTextTheme(),
+        textTheme: GoogleFonts.poppinsTextTheme(),
         appBarTheme:
             const AppBarTheme(color: Color.fromARGB(255, 212, 51, 212)),
         colorScheme: ColorScheme.fromSwatch(

@@ -22,8 +22,8 @@ class _$DropdownStateTearOff {
     return const _Initial();
   }
 
-  _Loading loading() {
-    return const _Loading();
+  DropDownLoading loading() {
+    return const DropDownLoading();
   }
 
   DropUsoInmueble dropDownUsoInmueble(
@@ -87,8 +87,8 @@ class _$DropdownStateTearOff {
     );
   }
 
-  _ErrorState error(String message) {
-    return _ErrorState(
+  DropDownErrorState error(String message) {
+    return DropDownErrorState(
       message,
     );
   }
@@ -191,29 +191,29 @@ mixin _$DropdownState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
+    required TResult Function(DropDownLoading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
     required TResult Function(DropOcupadoInmueble value)
         dropDownOcupadoInmueble,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(DropDownErrorState value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -376,11 +376,11 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
+    required TResult Function(DropDownLoading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
     required TResult Function(DropOcupadoInmueble value)
         dropDownOcupadoInmueble,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(DropDownErrorState value) error,
   }) {
     return initial(this);
   }
@@ -389,10 +389,10 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
   }) {
     return initial?.call(this);
   }
@@ -401,10 +401,10 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -419,25 +419,28 @@ abstract class _Initial implements DropdownState {
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class $DropDownLoadingCopyWith<$Res> {
+  factory $DropDownLoadingCopyWith(
+          DropDownLoading value, $Res Function(DropDownLoading) then) =
+      _$DropDownLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$DropdownStateCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
+class _$DropDownLoadingCopyWithImpl<$Res>
+    extends _$DropdownStateCopyWithImpl<$Res>
+    implements $DropDownLoadingCopyWith<$Res> {
+  _$DropDownLoadingCopyWithImpl(
+      DropDownLoading _value, $Res Function(DropDownLoading) _then)
+      : super(_value, (v) => _then(v as DropDownLoading));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  DropDownLoading get _value => super._value as DropDownLoading;
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$DropDownLoading implements DropDownLoading {
+  const _$DropDownLoading();
 
   @override
   String toString() {
@@ -447,7 +450,7 @@ class _$_Loading implements _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Loading);
+        (other.runtimeType == runtimeType && other is DropDownLoading);
   }
 
   @override
@@ -558,11 +561,11 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
+    required TResult Function(DropDownLoading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
     required TResult Function(DropOcupadoInmueble value)
         dropDownOcupadoInmueble,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(DropDownErrorState value) error,
   }) {
     return loading(this);
   }
@@ -571,10 +574,10 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
   }) {
     return loading?.call(this);
   }
@@ -583,10 +586,10 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -596,8 +599,8 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements DropdownState {
-  const factory _Loading() = _$_Loading;
+abstract class DropDownLoading implements DropdownState {
+  const factory DropDownLoading() = _$DropDownLoading;
 }
 
 /// @nodoc
@@ -769,11 +772,11 @@ class _$DropUsoInmueble implements DropUsoInmueble {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
+    required TResult Function(DropDownLoading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
     required TResult Function(DropOcupadoInmueble value)
         dropDownOcupadoInmueble,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(DropDownErrorState value) error,
   }) {
     return dropDownUsoInmueble(this);
   }
@@ -782,10 +785,10 @@ class _$DropUsoInmueble implements DropUsoInmueble {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
   }) {
     return dropDownUsoInmueble?.call(this);
   }
@@ -794,10 +797,10 @@ class _$DropUsoInmueble implements DropUsoInmueble {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
     required TResult orElse(),
   }) {
     if (dropDownUsoInmueble != null) {
@@ -1268,11 +1271,11 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
+    required TResult Function(DropDownLoading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
     required TResult Function(DropOcupadoInmueble value)
         dropDownOcupadoInmueble,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(DropDownErrorState value) error,
   }) {
     return dropDownOcupadoInmueble(this);
   }
@@ -1281,10 +1284,10 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
   }) {
     return dropDownOcupadoInmueble?.call(this);
   }
@@ -1293,10 +1296,10 @@ class _$DropOcupadoInmueble implements DropOcupadoInmueble {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
     required TResult orElse(),
   }) {
     if (dropDownOcupadoInmueble != null) {
@@ -1352,28 +1355,29 @@ abstract class DropOcupadoInmueble implements DropdownState {
 }
 
 /// @nodoc
-abstract class _$ErrorStateCopyWith<$Res> {
-  factory _$ErrorStateCopyWith(
-          _ErrorState value, $Res Function(_ErrorState) then) =
-      __$ErrorStateCopyWithImpl<$Res>;
+abstract class $DropDownErrorStateCopyWith<$Res> {
+  factory $DropDownErrorStateCopyWith(
+          DropDownErrorState value, $Res Function(DropDownErrorState) then) =
+      _$DropDownErrorStateCopyWithImpl<$Res>;
   $Res call({String message});
 }
 
 /// @nodoc
-class __$ErrorStateCopyWithImpl<$Res> extends _$DropdownStateCopyWithImpl<$Res>
-    implements _$ErrorStateCopyWith<$Res> {
-  __$ErrorStateCopyWithImpl(
-      _ErrorState _value, $Res Function(_ErrorState) _then)
-      : super(_value, (v) => _then(v as _ErrorState));
+class _$DropDownErrorStateCopyWithImpl<$Res>
+    extends _$DropdownStateCopyWithImpl<$Res>
+    implements $DropDownErrorStateCopyWith<$Res> {
+  _$DropDownErrorStateCopyWithImpl(
+      DropDownErrorState _value, $Res Function(DropDownErrorState) _then)
+      : super(_value, (v) => _then(v as DropDownErrorState));
 
   @override
-  _ErrorState get _value => super._value as _ErrorState;
+  DropDownErrorState get _value => super._value as DropDownErrorState;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_ErrorState(
+    return _then(DropDownErrorState(
       message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -1384,8 +1388,8 @@ class __$ErrorStateCopyWithImpl<$Res> extends _$DropdownStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ErrorState implements _ErrorState {
-  const _$_ErrorState(this.message);
+class _$DropDownErrorState implements DropDownErrorState {
+  const _$DropDownErrorState(this.message);
 
   @override
   final String message;
@@ -1399,7 +1403,7 @@ class _$_ErrorState implements _ErrorState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ErrorState &&
+            other is DropDownErrorState &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -1409,8 +1413,8 @@ class _$_ErrorState implements _ErrorState {
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorStateCopyWith<_ErrorState> get copyWith =>
-      __$ErrorStateCopyWithImpl<_ErrorState>(this, _$identity);
+  $DropDownErrorStateCopyWith<DropDownErrorState> get copyWith =>
+      _$DropDownErrorStateCopyWithImpl<DropDownErrorState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1517,11 +1521,11 @@ class _$_ErrorState implements _ErrorState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
+    required TResult Function(DropDownLoading value) loading,
     required TResult Function(DropUsoInmueble value) dropDownUsoInmueble,
     required TResult Function(DropOcupadoInmueble value)
         dropDownOcupadoInmueble,
-    required TResult Function(_ErrorState value) error,
+    required TResult Function(DropDownErrorState value) error,
   }) {
     return error(this);
   }
@@ -1530,10 +1534,10 @@ class _$_ErrorState implements _ErrorState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
   }) {
     return error?.call(this);
   }
@@ -1542,10 +1546,10 @@ class _$_ErrorState implements _ErrorState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
+    TResult Function(DropDownLoading value)? loading,
     TResult Function(DropUsoInmueble value)? dropDownUsoInmueble,
     TResult Function(DropOcupadoInmueble value)? dropDownOcupadoInmueble,
-    TResult Function(_ErrorState value)? error,
+    TResult Function(DropDownErrorState value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1555,11 +1559,11 @@ class _$_ErrorState implements _ErrorState {
   }
 }
 
-abstract class _ErrorState implements DropdownState {
-  const factory _ErrorState(String message) = _$_ErrorState;
+abstract class DropDownErrorState implements DropdownState {
+  const factory DropDownErrorState(String message) = _$DropDownErrorState;
 
   String get message;
   @JsonKey(ignore: true)
-  _$ErrorStateCopyWith<_ErrorState> get copyWith =>
+  $DropDownErrorStateCopyWith<DropDownErrorState> get copyWith =>
       throw _privateConstructorUsedError;
 }

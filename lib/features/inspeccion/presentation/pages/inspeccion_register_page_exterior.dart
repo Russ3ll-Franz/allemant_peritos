@@ -1,12 +1,13 @@
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita.dart';
+import 'package:allemant_peritos/features/inspeccion/presentation/pages/inspeccion_register_exteriores_form.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/pages/inspeccion_register_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class InspeccionRegisterPage extends StatelessWidget {
+class InspeccionRegisterExteriorPage extends StatelessWidget {
   final String inspeccionID;
 
-  InspeccionRegisterPage({Key? key, required this.inspeccionID})
+  InspeccionRegisterExteriorPage({Key? key, required this.inspeccionID})
       : super(key: key);
 
   final visita = Visita();
@@ -28,7 +29,7 @@ class InspeccionRegisterPage extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: Column(
                       children: [
-                        InspeccionRegisterForm(
+                        InspeccionRegisterExteriorForm(
                           inspeccionID: inspeccionID,
                         )
                       ],
@@ -72,10 +73,10 @@ class InspeccionRegisterPage extends StatelessWidget {
       elevation: 0,
       centerTitle: true,
       title: const Text(
-        "REGISTRAR INSPECCIÓN",
+        "INSPECCIÓN POR \nEXTERIORES",
+        textAlign: TextAlign.center,
         style: TextStyle(
-            fontFamily: 'Nunito',
-            fontSize: 18,
+            fontSize: 20,
             color: Color(0xFF545D68),
             fontWeight: FontWeight.bold),
       ),

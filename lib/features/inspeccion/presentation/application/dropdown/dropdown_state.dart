@@ -4,7 +4,7 @@ part of 'dropdown_cubit.dart';
 class DropdownState with _$DropdownState {
   const factory DropdownState.initial() = _Initial;
 
-  const factory DropdownState.loading() = _Loading;
+  const factory DropdownState.loading() = DropDownLoading;
 
   const factory DropdownState.dropDownUsoInmueble(
           {@Default(<UsoInmueble>[]) List<UsoInmueble> usoInmueble}) =
@@ -49,5 +49,5 @@ class DropdownState with _$DropdownState {
           List<InfraestructuraEstadoConservacion>
               infraestructuraEstadoCInmueble}) = DropOcupadoInmueble;
 
-  const factory DropdownState.error(String message) = _ErrorState;
+  const factory DropdownState.error(String message) = DropDownErrorState;
 }

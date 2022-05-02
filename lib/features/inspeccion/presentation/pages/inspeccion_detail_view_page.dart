@@ -8,6 +8,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class InspeccionDetailView extends StatefulWidget {
   final String displayInspeccion;
@@ -229,87 +230,72 @@ class InspeccionDetailViewBody extends StatelessWidget {
                         changeColorRiesgo(displayInspeccion!.riesgoNombre),
                       ],
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: const [
-                            Icon(FontAwesomeIcons.userSecret, size: 14),
-                            SizeBox.sizeSpaceWidthIcon,
-                            Text("PERITO :",
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color.fromRGBO(233, 115, 44, 1),
-                                    fontWeight: FontWeight.w900)),
-                          ],
-                        ),
-                        SizeBox.sizeRow,
-                        Text(
-                          displayInspeccion!.peritoNombre!.toUpperCase(),
-                          style: const TextStyle(
-                              fontSize: 14,
-                              color: Color(0xFF545D68),
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
                   ],
+                ),
+                SizeBox.sizeRow,
+
+                Row(
+                  children: const [
+                    Icon(FontAwesomeIcons.userSecret, size: 14),
+                    SizeBox.sizeSpaceWidthIcon,
+                    Text("PERITO :",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Color.fromRGBO(233, 115, 44, 1),
+                          fontWeight: FontWeight.bold,
+                        )),
+                  ],
+                ),
+                SizeBox.sizeRow,
+                Text(
+                  displayInspeccion!.peritoNombre!.toUpperCase(),
+                  style: const TextStyle(
+                      fontSize: 14,
+                      color: Color(0xFF545D68),
+                      fontWeight: FontWeight.bold),
                 ),
 
                 SizeBox.sizeRow,
                 //FECHA DE SOLICITUD
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: const [
-                            Icon(FontAwesomeIcons.calendar, size: 14),
-                            SizeBox.sizeSpaceWidthIcon,
-                            Text("FECHA DE SOLICITUD",
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color.fromRGBO(233, 115, 44, 1),
-                                    fontWeight: FontWeight.w900)),
-                          ],
-                        ),
-                        SizeBox.sizeRow,
-                        Text(
-                          displayInspeccion!.fechaSolicitud!.toUpperCase(),
-                          style: const TextStyle(
-                              fontSize: 14,
-                              color: Color(0xFF545D68),
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: const [
-                            Icon(FontAwesomeIcons.calendar, size: 14),
-                            SizeBox.sizeSpaceWidthIcon,
-                            Text("FECHA DE ENTREGA",
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color.fromRGBO(233, 115, 44, 1),
-                                    fontWeight: FontWeight.w900)),
-                          ],
-                        ),
-                        SizeBox.sizeRow,
-                        Text(
-                          displayInspeccion!.fechaEntrega!.toUpperCase(),
-                          style: const TextStyle(
-                              fontSize: 14,
-                              color: Color(0xFF545D68),
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
+                  children: const [
+                    Icon(FontAwesomeIcons.calendar, size: 14),
+                    SizeBox.sizeSpaceWidthIcon,
+                    Text("FECHA DE SOLICITUD",
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: Color.fromRGBO(233, 115, 44, 1),
+                            fontWeight: FontWeight.w900)),
                   ],
+                ),
+                SizeBox.sizeRow,
+                Text(
+                  displayInspeccion!.fechaSolicitud!.toUpperCase(),
+                  style: const TextStyle(
+                      fontSize: 14,
+                      color: Color(0xFF545D68),
+                      fontWeight: FontWeight.bold),
+                ),
+                SizeBox.sizeRow,
+
+                Row(
+                  children: const [
+                    Icon(FontAwesomeIcons.calendar, size: 14),
+                    SizeBox.sizeSpaceWidthIcon,
+                    Text("FECHA DE ENTREGA",
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: Color.fromRGBO(233, 115, 44, 1),
+                            fontWeight: FontWeight.w900)),
+                  ],
+                ),
+                SizeBox.sizeRow,
+                Text(
+                  displayInspeccion!.fechaEntrega!.toUpperCase(),
+                  style: const TextStyle(
+                      fontSize: 14,
+                      color: Color(0xFF545D68),
+                      fontWeight: FontWeight.bold),
                 ),
 
                 SizeBox.sizeRow,
@@ -467,8 +453,16 @@ class InspeccionDetailViewBody extends StatelessWidget {
                   children: <Widget>[
                     ElevatedButton.icon(
                         onPressed: () {
-                          AutoRouter.of(context).push(InspeccionRegisterRoute(
-                              inspeccionID: displayInspeccion!.inspeccionId!));
+                          if (displayInspeccion!.tipoInspeccionId! == "1") {
+                            AutoRouter.of(context).push(
+                                InspeccionRegisterExteriorRoute(
+                                    inspeccionID:
+                                        displayInspeccion!.inspeccionId!));
+                          } else {
+                            AutoRouter.of(context).push(InspeccionRegisterRoute(
+                                inspeccionID:
+                                    displayInspeccion!.inspeccionId!));
+                          }
                         },
                         icon: const Icon(
                           FontAwesomeIcons.home,

@@ -10,8 +10,8 @@
 //
 // ignore_for_file: type=lint
 
-import 'package:auto_route/auto_route.dart' as _i7;
-import 'package:flutter/material.dart' as _i8;
+import 'package:auto_route/auto_route.dart' as _i8;
+import 'package:flutter/material.dart' as _i9;
 
 import '../../features/inspeccion/presentation/pages/inspeccion_detail_page.dart'
     as _i5;
@@ -19,68 +19,79 @@ import '../../features/inspeccion/presentation/pages/inspeccion_page.dart'
     as _i4;
 import '../../features/inspeccion/presentation/pages/inspeccion_register_page.dart'
     as _i6;
+import '../../features/inspeccion/presentation/pages/inspeccion_register_page_exterior.dart'
+    as _i7;
 import '../../features/pages/home_page.dart' as _i2;
 import '../../features/pages/sign_in_page.dart' as _i3;
 import '../app_start_page.dart' as _i1;
 
-class AppRouter extends _i7.RootStackRouter {
-  AppRouter([_i8.GlobalKey<_i8.NavigatorState>? navigatorKey])
+class AppRouter extends _i8.RootStackRouter {
+  AppRouter([_i9.GlobalKey<_i9.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i7.PageFactory> pagesMap = {
+  final Map<String, _i8.PageFactory> pagesMap = {
     AppStartRoute.name: (routeData) {
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.AppStartPage());
     },
     HomeRoute.name: (routeData) {
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i2.HomePage());
     },
     SignInRoute.name: (routeData) {
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i3.SignInPage());
     },
     InspeccionRoute.name: (routeData) {
       final args = routeData.argsAs<InspeccionRouteArgs>();
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
           routeData: routeData,
           child: _i4.InspeccionPage(
               key: args.key, tipoInspeccionId: args.tipoInspeccionId));
     },
     InspeccionDetailRoute.name: (routeData) {
       final args = routeData.argsAs<InspeccionDetailRouteArgs>();
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
           routeData: routeData,
           child: _i5.InspeccionDetailPage(
               key: args.key, coordinacionID: args.coordinacionID));
     },
     InspeccionRegisterRoute.name: (routeData) {
       final args = routeData.argsAs<InspeccionRegisterRouteArgs>();
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
           routeData: routeData,
           child: _i6.InspeccionRegisterPage(
+              key: args.key, inspeccionID: args.inspeccionID));
+    },
+    InspeccionRegisterExteriorRoute.name: (routeData) {
+      final args = routeData.argsAs<InspeccionRegisterExteriorRouteArgs>();
+      return _i8.MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: _i7.InspeccionRegisterExteriorPage(
               key: args.key, inspeccionID: args.inspeccionID));
     }
   };
 
   @override
-  List<_i7.RouteConfig> get routes => [
-        _i7.RouteConfig(AppStartRoute.name, path: '/'),
-        _i7.RouteConfig(HomeRoute.name, path: '/home'),
-        _i7.RouteConfig(SignInRoute.name, path: '/signIn'),
-        _i7.RouteConfig(InspeccionRoute.name,
+  List<_i8.RouteConfig> get routes => [
+        _i8.RouteConfig(AppStartRoute.name, path: '/'),
+        _i8.RouteConfig(HomeRoute.name, path: '/home'),
+        _i8.RouteConfig(SignInRoute.name, path: '/signIn'),
+        _i8.RouteConfig(InspeccionRoute.name,
             path: '/inspeccion/:tipoInspeccionId'),
-        _i7.RouteConfig(InspeccionDetailRoute.name,
+        _i8.RouteConfig(InspeccionDetailRoute.name,
             path: '/inspeccion/:coordinacionId'),
-        _i7.RouteConfig(InspeccionRegisterRoute.name,
-            path: '/inspeccion/registrar')
+        _i8.RouteConfig(InspeccionRegisterRoute.name,
+            path: '/inspeccion/registrar'),
+        _i8.RouteConfig(InspeccionRegisterExteriorRoute.name,
+            path: '/inspeccion/exteriores/registrar')
       ];
 }
 
 /// generated route for
 /// [_i1.AppStartPage]
-class AppStartRoute extends _i7.PageRouteInfo<void> {
+class AppStartRoute extends _i8.PageRouteInfo<void> {
   const AppStartRoute() : super(AppStartRoute.name, path: '/');
 
   static const String name = 'AppStartRoute';
@@ -88,7 +99,7 @@ class AppStartRoute extends _i7.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.HomePage]
-class HomeRoute extends _i7.PageRouteInfo<void> {
+class HomeRoute extends _i8.PageRouteInfo<void> {
   const HomeRoute() : super(HomeRoute.name, path: '/home');
 
   static const String name = 'HomeRoute';
@@ -96,7 +107,7 @@ class HomeRoute extends _i7.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.SignInPage]
-class SignInRoute extends _i7.PageRouteInfo<void> {
+class SignInRoute extends _i8.PageRouteInfo<void> {
   const SignInRoute() : super(SignInRoute.name, path: '/signIn');
 
   static const String name = 'SignInRoute';
@@ -104,8 +115,8 @@ class SignInRoute extends _i7.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.InspeccionPage]
-class InspeccionRoute extends _i7.PageRouteInfo<InspeccionRouteArgs> {
-  InspeccionRoute({_i8.Key? key, required String tipoInspeccionId})
+class InspeccionRoute extends _i8.PageRouteInfo<InspeccionRouteArgs> {
+  InspeccionRoute({_i9.Key? key, required String tipoInspeccionId})
       : super(InspeccionRoute.name,
             path: '/inspeccion/:tipoInspeccionId',
             args: InspeccionRouteArgs(
@@ -117,7 +128,7 @@ class InspeccionRoute extends _i7.PageRouteInfo<InspeccionRouteArgs> {
 class InspeccionRouteArgs {
   const InspeccionRouteArgs({this.key, required this.tipoInspeccionId});
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
   final String tipoInspeccionId;
 
@@ -130,8 +141,8 @@ class InspeccionRouteArgs {
 /// generated route for
 /// [_i5.InspeccionDetailPage]
 class InspeccionDetailRoute
-    extends _i7.PageRouteInfo<InspeccionDetailRouteArgs> {
-  InspeccionDetailRoute({_i8.Key? key, required String coordinacionID})
+    extends _i8.PageRouteInfo<InspeccionDetailRouteArgs> {
+  InspeccionDetailRoute({_i9.Key? key, required String coordinacionID})
       : super(InspeccionDetailRoute.name,
             path: '/inspeccion/:coordinacionId',
             args: InspeccionDetailRouteArgs(
@@ -143,7 +154,7 @@ class InspeccionDetailRoute
 class InspeccionDetailRouteArgs {
   const InspeccionDetailRouteArgs({this.key, required this.coordinacionID});
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
   final String coordinacionID;
 
@@ -156,8 +167,8 @@ class InspeccionDetailRouteArgs {
 /// generated route for
 /// [_i6.InspeccionRegisterPage]
 class InspeccionRegisterRoute
-    extends _i7.PageRouteInfo<InspeccionRegisterRouteArgs> {
-  InspeccionRegisterRoute({_i8.Key? key, required String inspeccionID})
+    extends _i8.PageRouteInfo<InspeccionRegisterRouteArgs> {
+  InspeccionRegisterRoute({_i9.Key? key, required String inspeccionID})
       : super(InspeccionRegisterRoute.name,
             path: '/inspeccion/registrar',
             args: InspeccionRegisterRouteArgs(
@@ -169,12 +180,39 @@ class InspeccionRegisterRoute
 class InspeccionRegisterRouteArgs {
   const InspeccionRegisterRouteArgs({this.key, required this.inspeccionID});
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
   final String inspeccionID;
 
   @override
   String toString() {
     return 'InspeccionRegisterRouteArgs{key: $key, inspeccionID: $inspeccionID}';
+  }
+}
+
+/// generated route for
+/// [_i7.InspeccionRegisterExteriorPage]
+class InspeccionRegisterExteriorRoute
+    extends _i8.PageRouteInfo<InspeccionRegisterExteriorRouteArgs> {
+  InspeccionRegisterExteriorRoute({_i9.Key? key, required String inspeccionID})
+      : super(InspeccionRegisterExteriorRoute.name,
+            path: '/inspeccion/exteriores/registrar',
+            args: InspeccionRegisterExteriorRouteArgs(
+                key: key, inspeccionID: inspeccionID));
+
+  static const String name = 'InspeccionRegisterExteriorRoute';
+}
+
+class InspeccionRegisterExteriorRouteArgs {
+  const InspeccionRegisterExteriorRouteArgs(
+      {this.key, required this.inspeccionID});
+
+  final _i9.Key? key;
+
+  final String inspeccionID;
+
+  @override
+  String toString() {
+    return 'InspeccionRegisterExteriorRouteArgs{key: $key, inspeccionID: $inspeccionID}';
   }
 }

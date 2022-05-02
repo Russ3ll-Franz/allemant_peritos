@@ -51,131 +51,136 @@ class DropdownCubit extends Cubit<DropdownState> {
   }
  */
   Future<void> ocupadoInmueble(String name) async {
-    final eitherOcupado = await inspeccionRepository.getOcupadoInmueble(name);
-    final eitherUso = await inspeccionRepository.getUsoInmueble(name);
-    final eitherMuro = await inspeccionRepository.getMuroInmueble(name);
-    final eitherTecho = await inspeccionRepository.getTechoInmueble(name);
-    final eitheriElectrica =
-        await inspeccionRepository.getInstalacionElectricaInmueble(name);
-    final eitheriSanitaria =
-        await inspeccionRepository.getInstalacionSanitariaInmueble(name);
-    final eithercConstruccion =
-        await inspeccionRepository.getCalidadConstruccionInmueble(name);
-    final eitherPuertaTipo =
-        await inspeccionRepository.getPuertaTipoInmueble(name);
-    final eitherPuertaSistema =
-        await inspeccionRepository.getPuertaSistemaInmueble(name);
-    final eitherPuertaMaterial =
-        await inspeccionRepository.getPuertaMaterialInmueble(name);
-    final eitherVentanaMarco =
-        await inspeccionRepository.getVentanaMarcoInmueble(name);
-    final eitherVentanaVidrio =
-        await inspeccionRepository.getVentanaVidrioInmueble(name);
-    final eitherVentanaSistema =
-        await inspeccionRepository.getVentanaSistemaInmueble(name);
-    final eitherPiso = await inspeccionRepository.getPisoInmueble(name);
-    final eitherRevestimiento =
-        await inspeccionRepository.getRevestimientoInmueble(name);
-    final eitherInfraestructura =
-        await inspeccionRepository.getInfraestructuraInmueble(name);
-    final eitherInfraestructuraCalidad =
-        await inspeccionRepository.getInfraestructuraCalidadInmueble(name);
-    final eitherInfraestructuraEstadoC =
-        await inspeccionRepository.getInfraestructuraEstadoCInmueble(name);
+    try {
+      emit(const DropdownState.loading());
+      final eitherOcupado = await inspeccionRepository.getOcupadoInmueble(name);
+      final eitherUso = await inspeccionRepository.getUsoInmueble(name);
+      final eitherMuro = await inspeccionRepository.getMuroInmueble(name);
+      final eitherTecho = await inspeccionRepository.getTechoInmueble(name);
+      final eitheriElectrica =
+          await inspeccionRepository.getInstalacionElectricaInmueble(name);
+      final eitheriSanitaria =
+          await inspeccionRepository.getInstalacionSanitariaInmueble(name);
+      final eithercConstruccion =
+          await inspeccionRepository.getCalidadConstruccionInmueble(name);
+      final eitherPuertaTipo =
+          await inspeccionRepository.getPuertaTipoInmueble(name);
+      final eitherPuertaSistema =
+          await inspeccionRepository.getPuertaSistemaInmueble(name);
+      final eitherPuertaMaterial =
+          await inspeccionRepository.getPuertaMaterialInmueble(name);
+      final eitherVentanaMarco =
+          await inspeccionRepository.getVentanaMarcoInmueble(name);
+      final eitherVentanaVidrio =
+          await inspeccionRepository.getVentanaVidrioInmueble(name);
+      final eitherVentanaSistema =
+          await inspeccionRepository.getVentanaSistemaInmueble(name);
+      final eitherPiso = await inspeccionRepository.getPisoInmueble(name);
+      final eitherRevestimiento =
+          await inspeccionRepository.getRevestimientoInmueble(name);
+      final eitherInfraestructura =
+          await inspeccionRepository.getInfraestructuraInmueble(name);
+      final eitherInfraestructuraCalidad =
+          await inspeccionRepository.getInfraestructuraCalidadInmueble(name);
+      final eitherInfraestructuraEstadoC =
+          await inspeccionRepository.getInfraestructuraEstadoCInmueble(name);
 
-    final responseOcupado = eitherOcupado.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseUso = eitherUso.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseMuro = eitherMuro.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseTecho = eitherTecho.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseIElectrica = eitheriElectrica.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseISanitaria = eitheriSanitaria.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responsecConstruccion = eithercConstruccion.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responsePuertaSistema = eitherPuertaSistema.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responsePuertaTipo = eitherPuertaTipo.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responsePuertaMaterial = eitherPuertaMaterial.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseVentanaMarco = eitherVentanaMarco.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseVentanaVidrio = eitherVentanaVidrio.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseVentanaSistema = eitherVentanaSistema.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responsePiso = eitherPiso.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseRevestimiento = eitherRevestimiento.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseInfraestructura = eitherInfraestructura.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseInfraestructuraCalidad = eitherInfraestructuraCalidad.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
-    final responseInfraestructuraEstado = eitherInfraestructuraEstadoC.fold(
-      (l) => throw _getFailureAndThrowExpection(l),
-      (r) => r,
-    );
+      final responseOcupado = eitherOcupado.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseUso = eitherUso.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseMuro = eitherMuro.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseTecho = eitherTecho.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseIElectrica = eitheriElectrica.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseISanitaria = eitheriSanitaria.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responsecConstruccion = eithercConstruccion.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responsePuertaSistema = eitherPuertaSistema.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responsePuertaTipo = eitherPuertaTipo.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responsePuertaMaterial = eitherPuertaMaterial.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseVentanaMarco = eitherVentanaMarco.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseVentanaVidrio = eitherVentanaVidrio.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseVentanaSistema = eitherVentanaSistema.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responsePiso = eitherPiso.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseRevestimiento = eitherRevestimiento.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseInfraestructura = eitherInfraestructura.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseInfraestructuraCalidad = eitherInfraestructuraCalidad.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
+      final responseInfraestructuraEstado = eitherInfraestructuraEstadoC.fold(
+        (l) => throw _getFailureAndThrowExpection(l),
+        (r) => r,
+      );
 
-    emit(DropdownState.dropDownOcupadoInmueble(
-      ocupadoInmueble: responseOcupado,
-      usoInmueble: responseUso,
-      muroInmueble: responseMuro,
-      techoInmueble: responseTecho,
-      puertaSistemaInmueble: responsePuertaSistema,
-      puertaTipoInmueble: responsePuertaTipo,
-      iElectricaInmueble: responseIElectrica,
-      cConstruccionInmueble: responsecConstruccion,
-      iSanitariaInmueble: responseISanitaria,
-      puertaMaterialInmueble: responsePuertaMaterial,
-      ventanaMarcoInmueble: responseVentanaMarco,
-      ventanaVidrioInmueble: responseVentanaVidrio,
-      ventanaSistemaInmueble: responseVentanaSistema,
-      pisoInmueble: responsePiso,
-      revestimientoInmueble: responseRevestimiento,
-      infraestructuraInmueble: responseInfraestructura,
-      infraestructuraCalidadInmueble: responseInfraestructuraCalidad,
-      infraestructuraEstadoCInmueble: responseInfraestructuraEstado,
-    ));
+      emit(DropdownState.dropDownOcupadoInmueble(
+        ocupadoInmueble: responseOcupado,
+        usoInmueble: responseUso,
+        muroInmueble: responseMuro,
+        techoInmueble: responseTecho,
+        puertaSistemaInmueble: responsePuertaSistema,
+        puertaTipoInmueble: responsePuertaTipo,
+        iElectricaInmueble: responseIElectrica,
+        cConstruccionInmueble: responsecConstruccion,
+        iSanitariaInmueble: responseISanitaria,
+        puertaMaterialInmueble: responsePuertaMaterial,
+        ventanaMarcoInmueble: responseVentanaMarco,
+        ventanaVidrioInmueble: responseVentanaVidrio,
+        ventanaSistemaInmueble: responseVentanaSistema,
+        pisoInmueble: responsePiso,
+        revestimientoInmueble: responseRevestimiento,
+        infraestructuraInmueble: responseInfraestructura,
+        infraestructuraCalidadInmueble: responseInfraestructuraCalidad,
+        infraestructuraEstadoCInmueble: responseInfraestructuraEstado,
+      ));
+    } catch (e) {
+      emit(DropdownState.error(e.toString()));
+    }
   }
 
   Exception _getFailureAndThrowExpection(Failure l) {
