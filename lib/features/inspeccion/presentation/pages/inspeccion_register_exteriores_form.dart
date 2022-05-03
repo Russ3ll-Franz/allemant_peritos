@@ -114,7 +114,7 @@ class _InspeccionRegisterExteriorFormState
             animationType: AnimationType.outToIn,
             barrierColor: Colors.black.withOpacity(0.5),
             onDismiss: () {
-              AutoRouter.of(context).pop();
+              AutoRouter.of(context).navigateNamed('/home');
             },
           ).show();
         } else {
