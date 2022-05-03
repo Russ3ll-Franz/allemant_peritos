@@ -378,7 +378,7 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
               borderRadius: BorderRadius.circular(10),
             ),
             prefixIcon: const Icon(
-              FontAwesomeIcons.doorClosedR,
+              FontAwesomeIcons.doorClosed,
               color: Color(0xFF114472),
             ),
             floatingLabelBehavior: FloatingLabelBehavior.never,

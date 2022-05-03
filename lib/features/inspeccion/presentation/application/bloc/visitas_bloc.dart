@@ -28,6 +28,7 @@ class VisitasBloc extends Bloc<VisitasEvent, VisitasState> {
       (r) => r,
     );
     emit(VisitasState.success(visitaResponse: response));
+    print(response);
   }
 
   Exception _getFailureAndThrowExpection(Failure l) {
@@ -38,5 +39,10 @@ class VisitasBloc extends Bloc<VisitasEvent, VisitasState> {
     } else {
       return UnknownException();
     }
+  }
+
+  @override
+  Future<void> close() {
+    return super.close();
   }
 }

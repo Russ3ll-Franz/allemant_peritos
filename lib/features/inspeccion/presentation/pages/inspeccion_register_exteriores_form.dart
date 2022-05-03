@@ -1,6 +1,7 @@
 import 'package:allemant_peritos/configs/colors.dart';
 import 'package:allemant_peritos/configs/constants_alertify.dart';
 import 'package:allemant_peritos/configs/sizebox.dart';
+import 'package:allemant_peritos/core/route/app_router.gr.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/calidad_construccion_inmueble/calidad_construccion_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/infraestructura_calidad_inmueble/infraestructura_calidad_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/infraestructura_estado_conservacion/infraestructura_estado_conservacion.dart';
@@ -21,8 +22,8 @@ import 'package:allemant_peritos/features/inspeccion/data/model/ventana_sistema_
 import 'package:allemant_peritos/features/inspeccion/data/model/ventana_vidrio_inmueble/ventana_vidrio_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/application/bloc/visitas_bloc.dart';
-import 'package:allemant_peritos/features/inspeccion/presentation/application/dropdown/dropdown_cubit.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/application/location/location_cubit.dart';
+import 'package:allemant_peritos/features/pages/routes.dart';
 import 'package:allemant_peritos/features/widgets/alertify.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +103,34 @@ class _InspeccionRegisterExteriorFormState
   Widget build(BuildContext context) {
     return BlocListener<VisitasBloc, VisitasState>(
       listener: (context, state) {
-        state.maybeWhen(success: (success) {
+        if (state is VisitaSuccess) {
+          Alertify(
+            content: state.visitaResponse!.message!,
+            context: context,
+            isDismissible: true,
+            title: 'REGISTRADO',
+            alertType: AlertifyType.success,
+            buttonText: 'OK',
+            animationType: AnimationType.outToIn,
+            barrierColor: Colors.black.withOpacity(0.5),
+            onDismiss: () {
+              AutoRouter.of(context).pop();
+            },
+          ).show();
+        } else {
+          Alertify(
+                  content: "NO SE PUDO GRABAR",
+                  context: context,
+                  isDismissible: true,
+                  title: 'ERROR',
+                  alertType: AlertifyType.error,
+                  buttonText: 'OK',
+                  animationType: AnimationType.outToIn,
+                  barrierColor: Colors.black.withOpacity(0.5))
+              .show();
+        }
+
+        /* state.maybeWhen(success: (success) {
           Alertify(
             content: success!.message.toString(),
             context: context,
@@ -113,7 +141,7 @@ class _InspeccionRegisterExteriorFormState
             animationType: AnimationType.outToIn,
             barrierColor: Colors.black.withOpacity(0.5),
             onDismiss: () {
-              AutoRouter.of(context).replaceNamed('/home');
+              AutoRouter.of(context).pop();
             },
           ).show();
         }, orElse: () {
@@ -130,7 +158,7 @@ class _InspeccionRegisterExteriorFormState
               AutoRouter.of(context).navigateNamed('/home');
             }, */
           ).show();
-        });
+        }); */
       },
       child: Form(
           child: Column(children: [
@@ -340,7 +368,7 @@ class _InspeccionRegisterExteriorFormState
               borderRadius: BorderRadius.circular(10),
             ),
             prefixIcon: const Icon(
-              FontAwesomeIcons.doorClosedR,
+              FontAwesomeIcons.doorClosed,
               color: Color(0xFF114472),
             ),
             floatingLabelBehavior: FloatingLabelBehavior.never,
