@@ -5,10 +5,8 @@ part 'visita_response.g.dart';
 
 @freezed
 class VisitaResponse with _$VisitaResponse {
-  factory VisitaResponse({
-    bool? success,
-    String? message,
-  }) = _VisitaResponse;
+  factory VisitaResponse({bool? success, String? message, int? id}) =
+      _VisitaResponse;
 
   factory VisitaResponse.fromJson(Map<String, dynamic> json) =>
       _$VisitaResponseFromJson(json);

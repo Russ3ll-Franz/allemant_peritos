@@ -103,7 +103,7 @@ class _InspeccionRegisterExteriorFormState
   Widget build(BuildContext context) {
     return BlocListener<VisitasBloc, VisitasState>(
       listener: (context, state) {
-        if (state is VisitaSuccess) {
+        /*  if (state is VisitaSuccess) {
           Alertify(
             content: state.visitaResponse!.message!,
             context: context,
@@ -128,22 +128,24 @@ class _InspeccionRegisterExteriorFormState
                   animationType: AnimationType.outToIn,
                   barrierColor: Colors.black.withOpacity(0.5))
               .show();
-        }
+        } */
 
-        /* state.maybeWhen(success: (success) {
-          Alertify(
-            content: success!.message.toString(),
-            context: context,
-            isDismissible: true,
-            title: 'REGISTRADO',
-            alertType: AlertifyType.success,
-            buttonText: 'OK',
-            animationType: AnimationType.outToIn,
-            barrierColor: Colors.black.withOpacity(0.5),
-            onDismiss: () {
-              AutoRouter.of(context).pop();
-            },
-          ).show();
+        state.maybeWhen(success: (success) {
+          if (success!.success!) {
+            Alertify(
+              content: success.message.toString(),
+              context: context,
+              isDismissible: true,
+              title: 'REGISTRADO',
+              alertType: AlertifyType.success,
+              buttonText: 'OK',
+              animationType: AnimationType.outToIn,
+              barrierColor: Colors.black.withOpacity(0.5),
+              onDismiss: () {
+                AutoRouter.of(context).replaceNamed('/home');
+              },
+            ).show();
+          }
         }, orElse: () {
           Alertify(
             content: "NO SE PUDO GRABAR",
@@ -158,7 +160,7 @@ class _InspeccionRegisterExteriorFormState
               AutoRouter.of(context).navigateNamed('/home');
             }, */
           ).show();
-        }); */
+        });
       },
       child: Form(
           child: Column(children: [
@@ -457,7 +459,9 @@ class _InspeccionRegisterExteriorFormState
                 )),
             ElevatedButton.icon(
                 onPressed: () {
-                  AutoRouter.of(context).replaceNamed('/home');
+/*                   AutoRouter.of(context).replaceNamed('/home');
+ */
+                  Navigator.pop(context);
                 },
                 icon: const Icon(
                   FontAwesomeIcons.ban,

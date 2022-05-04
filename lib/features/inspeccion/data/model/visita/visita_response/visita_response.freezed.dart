@@ -22,10 +22,11 @@ VisitaResponse _$VisitaResponseFromJson(Map<String, dynamic> json) {
 class _$VisitaResponseTearOff {
   const _$VisitaResponseTearOff();
 
-  _VisitaResponse call({bool? success, String? message}) {
+  _VisitaResponse call({bool? success, String? message, int? id}) {
     return _VisitaResponse(
       success: success,
       message: message,
+      id: id,
     );
   }
 
@@ -41,6 +42,7 @@ const $VisitaResponse = _$VisitaResponseTearOff();
 mixin _$VisitaResponse {
   bool? get success => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,7 +55,7 @@ abstract class $VisitaResponseCopyWith<$Res> {
   factory $VisitaResponseCopyWith(
           VisitaResponse value, $Res Function(VisitaResponse) then) =
       _$VisitaResponseCopyWithImpl<$Res>;
-  $Res call({bool? success, String? message});
+  $Res call({bool? success, String? message, int? id});
 }
 
 /// @nodoc
@@ -69,6 +71,7 @@ class _$VisitaResponseCopyWithImpl<$Res>
   $Res call({
     Object? success = freezed,
     Object? message = freezed,
+    Object? id = freezed,
   }) {
     return _then(_value.copyWith(
       success: success == freezed
@@ -79,6 +82,10 @@ class _$VisitaResponseCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -90,7 +97,7 @@ abstract class _$VisitaResponseCopyWith<$Res>
           _VisitaResponse value, $Res Function(_VisitaResponse) then) =
       __$VisitaResponseCopyWithImpl<$Res>;
   @override
-  $Res call({bool? success, String? message});
+  $Res call({bool? success, String? message, int? id});
 }
 
 /// @nodoc
@@ -108,6 +115,7 @@ class __$VisitaResponseCopyWithImpl<$Res>
   $Res call({
     Object? success = freezed,
     Object? message = freezed,
+    Object? id = freezed,
   }) {
     return _then(_VisitaResponse(
       success: success == freezed
@@ -118,6 +126,10 @@ class __$VisitaResponseCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -125,7 +137,7 @@ class __$VisitaResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_VisitaResponse implements _VisitaResponse {
-  _$_VisitaResponse({this.success, this.message});
+  _$_VisitaResponse({this.success, this.message, this.id});
 
   factory _$_VisitaResponse.fromJson(Map<String, dynamic> json) =>
       _$$_VisitaResponseFromJson(json);
@@ -134,10 +146,12 @@ class _$_VisitaResponse implements _VisitaResponse {
   final bool? success;
   @override
   final String? message;
+  @override
+  final int? id;
 
   @override
   String toString() {
-    return 'VisitaResponse(success: $success, message: $message)';
+    return 'VisitaResponse(success: $success, message: $message, id: $id)';
   }
 
   @override
@@ -146,14 +160,16 @@ class _$_VisitaResponse implements _VisitaResponse {
         (other.runtimeType == runtimeType &&
             other is _VisitaResponse &&
             const DeepCollectionEquality().equals(other.success, success) &&
-            const DeepCollectionEquality().equals(other.message, message));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality().equals(other.id, id));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(success),
-      const DeepCollectionEquality().hash(message));
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
@@ -167,7 +183,8 @@ class _$_VisitaResponse implements _VisitaResponse {
 }
 
 abstract class _VisitaResponse implements VisitaResponse {
-  factory _VisitaResponse({bool? success, String? message}) = _$_VisitaResponse;
+  factory _VisitaResponse({bool? success, String? message, int? id}) =
+      _$_VisitaResponse;
 
   factory _VisitaResponse.fromJson(Map<String, dynamic> json) =
       _$_VisitaResponse.fromJson;
@@ -176,6 +193,8 @@ abstract class _VisitaResponse implements VisitaResponse {
   bool? get success;
   @override
   String? get message;
+  @override
+  int? get id;
   @override
   @JsonKey(ignore: true)
   _$VisitaResponseCopyWith<_VisitaResponse> get copyWith =>

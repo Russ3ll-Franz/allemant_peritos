@@ -24,7 +24,7 @@ final List grids = [
       title: "EXTERIOR",
       image: "assets/images/menu/casita.png",
       color: AppColors.lightCyan),
-  MyListGrid(
+  /* MyListGrid(
       id: "3",
       title: "VEHICULOS",
       image: "assets/images/menu/vehiculo.png",
@@ -33,5 +33,5 @@ final List grids = [
       id: "4",
       title: "MAQUINARIAS",
       image: "assets/images/menu/machine.png",
-      color: AppColors.lightYellow),
+      color: AppColors.lightYellow), */
 ];

@@ -98,7 +98,7 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
       listener: (context, state) {
         state.maybeWhen(success: (success) {
           Alertify(
-            content: success!.message.toString(),
+            content: success!.message!,
             context: context,
             isDismissible: true,
             title: 'REGISTRADO',
