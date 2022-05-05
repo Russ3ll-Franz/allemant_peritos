@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const <Widget>[
                   Text(
-                    "ALLEMANT PERITOS",
+                    "ALLEMANT PERITOS 🤓",
                     style: TextStyle(
                         color: Colors.grey,
                         fontWeight: FontWeight.bold,
