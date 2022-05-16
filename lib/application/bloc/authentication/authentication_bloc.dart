@@ -5,9 +5,7 @@ import 'package:allemant_peritos/application/repository/user_repository.dart';
 import 'package:allemant_peritos/core/http/http_exceptions.dart';
 import 'package:allemant_peritos/domain/models/user/user.dart';
 import 'package:bloc/bloc.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 part 'authentication_state.dart';
 part 'authentication_event.dart';
@@ -53,25 +51,6 @@ class AuthenticationBloc
     } else {
       return emit(const AuthenticationState.unauthenticated());
     }
-
-    /* switch (event.status) {
-      case AuthenticationStatus.unauthenticated:
-        return emit(const AuthenticationState.unauthenticated());
-      case AuthenticationStatus.authenticated:
-        /*  const storage = FlutterSecureStorage();
-
-        final userID = await storage.read(key: 'id');
-        print("MyId");
-        print(userID);
-        final user = await _tryGetUser(userID.toString());
-        print("MyUser");
-        print(user); */
-        return emit(user != null
-            ? AuthenticationState.authenticated(user: user)
-            : const AuthenticationState.unauthenticated());
-      default:
-        return emit(const AuthenticationState.unknown());
-    } */
   }
 
   void _onAuthenticationLogoutRequested(

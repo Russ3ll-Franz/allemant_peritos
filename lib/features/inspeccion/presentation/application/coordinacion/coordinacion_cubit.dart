@@ -14,7 +14,7 @@ class CoordinacionCubit extends Cubit<CoordinacionState> {
 
   IInspeccionRepository inspeccionRepository;
 
-  Future<void> getInspeccionByCoordinacion(String coordinacionId) async {
+/*   Future<void> getInspeccionByCoordinacion(String coordinacionId) async {
     emit(const CoordinacionState.loading());
     await Future.delayed(const Duration(milliseconds: 600), () {});
     final either = await inspeccionRepository.getInspeccionByCoordinacion(
@@ -25,6 +25,21 @@ class CoordinacionCubit extends Cubit<CoordinacionState> {
       (r) => r,
     );
     emit(CoordinacionState.loaded(inspeccion: response));
+  } */
+
+  Future<void> postInspeccionByAll(
+      {String? inspeccionTipo,
+      String? peritoID,
+      String? coordinacionCodigo}) async {
+    emit(const CoordinacionState.loading());
+    await Future.delayed(const Duration(milliseconds: 600), () {});
+    final either = await inspeccionRepository.postInspeccionByAll(
+        inspeccionTipo: inspeccionTipo, coordinacionCodigo: coordinacionCodigo);
+    final response = either.fold(
+      (l) => throw _getFailureAndThrowExpection(l),
+      (r) => r,
+    );
+    emit(CoordinacionState.loaded(response));
   }
 
   Exception _getFailureAndThrowExpection(Failure l) {

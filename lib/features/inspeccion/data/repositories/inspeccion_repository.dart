@@ -277,4 +277,17 @@ class InspeccionRepository implements IInspeccionRepository {
       return Left(ServerFailure());
     }
   }
+
+  @override
+  Future<Either<Failure, List<Coordinacion>>> postInspeccionByAll(
+      {String? inspeccionTipo, String? coordinacionCodigo}) async {
+    try {
+      final postCoordinacion = await remoteDataSource.postInspeccionByAll(
+          inspeccionTipo: inspeccionTipo.toString(),
+          coordinacionCodigo: coordinacionCodigo.toString());
+      return Right(postCoordinacion);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
+  }
 }

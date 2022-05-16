@@ -29,6 +29,9 @@ abstract class IInspeccionRepository {
 
   Future<Either<Failure, Coordinacion>> getInspeccionByCoordinacion(
       {required String coordinacionID});
+  Future<Either<Failure, List<Coordinacion>>> postInspeccionByAll(
+      {String? inspeccionTipo, String? coordinacionCodigo});
+
   Future<Either<Failure, VisitaResponse>> insertInspeccion(
       {required Visita visita});
   Future<Either<Failure, List<UsoInmueble>>> getUsoInmueble(String name);

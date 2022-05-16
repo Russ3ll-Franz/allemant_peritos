@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:allemant_peritos/core/http/api_response.dart';
 import 'package:allemant_peritos/core/http/http_methods.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/calidad_construccion_inmueble/calidad_construccion_inmueble.dart';
@@ -24,12 +22,15 @@ import 'package:allemant_peritos/features/inspeccion/data/model/ventana_sistema_
 import 'package:allemant_peritos/features/inspeccion/data/model/ventana_vidrio_inmueble/ventana_vidrio_inmueble.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/visita/visita_response/visita_response.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class IInspeccionRemoteDataSource {
   Future<List<Inspeccion>> getInspeccionTypeByUser(
       String userID, String tipoInspeccion);
   Future<Coordinacion> getInspeccionByCoordinacion(String coordinacionID);
+  Future<List<Coordinacion>> postInspeccionByAll(
+      {String inspeccionTipo, String coordinacionCodigo});
   Future<VisitaResponse> insertInspeccion(Visita visita);
   Future<List<UsoInmueble>> postUsoInmueble(String nombre);
   Future<List<OcupadoInmueble>> postOcupadoInmueble(String nombre);
@@ -98,6 +99,34 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
         final inspeccion = Coordinacion.fromJson(response.value[0]);
 
         return inspeccion;
+      } catch (e) {
+        throw Exception(e.toString());
+      }
+    } else {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<List<Coordinacion>> postInspeccionByAll(
+      {String? inspeccionTipo, String? coordinacionCodigo}) async {
+    const storage = FlutterSecureStorage();
+    String userID = await storage.read(key: 'id') ?? '';
+    var params = {
+      'inspeccion_tipo': '1,2',
+      'perito_codigo': '',
+      'coordinacion_codigo': coordinacionCodigo,
+    };
+    final response = await helper.post(
+      "intranet/inspeccion/search",
+      params,
+    );
+    if (response is APISuccess) {
+      try {
+        final mydata = (response.value as List)
+            .map((i) => Coordinacion.fromJson(i))
+            .toList();
+        return mydata;
       } catch (e) {
         throw Exception(e.toString());
       }

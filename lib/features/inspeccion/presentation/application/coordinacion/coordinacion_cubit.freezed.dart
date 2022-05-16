@@ -26,9 +26,9 @@ class _$CoordinacionStateTearOff {
     return const CoordinacionLoading();
   }
 
-  CoordinacionLoaded loaded({Coordinacion? inspeccion}) {
+  CoordinacionLoaded loaded(List<Coordinacion> inspeccion) {
     return CoordinacionLoaded(
-      inspeccion: inspeccion,
+      inspeccion,
     );
   }
 
@@ -48,7 +48,7 @@ mixin _$CoordinacionState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Coordinacion? inspeccion) loaded,
+    required TResult Function(List<Coordinacion> inspeccion) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,7 +56,7 @@ mixin _$CoordinacionState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Coordinacion? inspeccion)? loaded,
+    TResult Function(List<Coordinacion> inspeccion)? loaded,
     TResult Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,7 +64,7 @@ mixin _$CoordinacionState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Coordinacion? inspeccion)? loaded,
+    TResult Function(List<Coordinacion> inspeccion)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -156,7 +156,7 @@ class _$CoordinacionInitial implements CoordinacionInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Coordinacion? inspeccion) loaded,
+    required TResult Function(List<Coordinacion> inspeccion) loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -167,7 +167,7 @@ class _$CoordinacionInitial implements CoordinacionInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Coordinacion? inspeccion)? loaded,
+    TResult Function(List<Coordinacion> inspeccion)? loaded,
     TResult Function(String message)? error,
   }) {
     return initial?.call();
@@ -178,7 +178,7 @@ class _$CoordinacionInitial implements CoordinacionInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Coordinacion? inspeccion)? loaded,
+    TResult Function(List<Coordinacion> inspeccion)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -273,7 +273,7 @@ class _$CoordinacionLoading implements CoordinacionLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Coordinacion? inspeccion) loaded,
+    required TResult Function(List<Coordinacion> inspeccion) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -284,7 +284,7 @@ class _$CoordinacionLoading implements CoordinacionLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Coordinacion? inspeccion)? loaded,
+    TResult Function(List<Coordinacion> inspeccion)? loaded,
     TResult Function(String message)? error,
   }) {
     return loading?.call();
@@ -295,7 +295,7 @@ class _$CoordinacionLoading implements CoordinacionLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Coordinacion? inspeccion)? loaded,
+    TResult Function(List<Coordinacion> inspeccion)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -352,9 +352,7 @@ abstract class $CoordinacionLoadedCopyWith<$Res> {
   factory $CoordinacionLoadedCopyWith(
           CoordinacionLoaded value, $Res Function(CoordinacionLoaded) then) =
       _$CoordinacionLoadedCopyWithImpl<$Res>;
-  $Res call({Coordinacion? inspeccion});
-
-  $CoordinacionCopyWith<$Res>? get inspeccion;
+  $Res call({List<Coordinacion> inspeccion});
 }
 
 /// @nodoc
@@ -373,32 +371,21 @@ class _$CoordinacionLoadedCopyWithImpl<$Res>
     Object? inspeccion = freezed,
   }) {
     return _then(CoordinacionLoaded(
-      inspeccion: inspeccion == freezed
+      inspeccion == freezed
           ? _value.inspeccion
           : inspeccion // ignore: cast_nullable_to_non_nullable
-              as Coordinacion?,
+              as List<Coordinacion>,
     ));
-  }
-
-  @override
-  $CoordinacionCopyWith<$Res>? get inspeccion {
-    if (_value.inspeccion == null) {
-      return null;
-    }
-
-    return $CoordinacionCopyWith<$Res>(_value.inspeccion!, (value) {
-      return _then(_value.copyWith(inspeccion: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$CoordinacionLoaded implements CoordinacionLoaded {
-  const _$CoordinacionLoaded({this.inspeccion});
+  const _$CoordinacionLoaded(this.inspeccion);
 
   @override
-  final Coordinacion? inspeccion;
+  final List<Coordinacion> inspeccion;
 
   @override
   String toString() {
@@ -428,7 +415,7 @@ class _$CoordinacionLoaded implements CoordinacionLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Coordinacion? inspeccion) loaded,
+    required TResult Function(List<Coordinacion> inspeccion) loaded,
     required TResult Function(String message) error,
   }) {
     return loaded(inspeccion);
@@ -439,7 +426,7 @@ class _$CoordinacionLoaded implements CoordinacionLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Coordinacion? inspeccion)? loaded,
+    TResult Function(List<Coordinacion> inspeccion)? loaded,
     TResult Function(String message)? error,
   }) {
     return loaded?.call(inspeccion);
@@ -450,7 +437,7 @@ class _$CoordinacionLoaded implements CoordinacionLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Coordinacion? inspeccion)? loaded,
+    TResult Function(List<Coordinacion> inspeccion)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -499,10 +486,10 @@ class _$CoordinacionLoaded implements CoordinacionLoaded {
 }
 
 abstract class CoordinacionLoaded implements CoordinacionState {
-  const factory CoordinacionLoaded({Coordinacion? inspeccion}) =
+  const factory CoordinacionLoaded(List<Coordinacion> inspeccion) =
       _$CoordinacionLoaded;
 
-  Coordinacion? get inspeccion;
+  List<Coordinacion> get inspeccion;
   @JsonKey(ignore: true)
   $CoordinacionLoadedCopyWith<CoordinacionLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -575,7 +562,7 @@ class _$CoordinacionError implements CoordinacionError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Coordinacion? inspeccion) loaded,
+    required TResult Function(List<Coordinacion> inspeccion) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -586,7 +573,7 @@ class _$CoordinacionError implements CoordinacionError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Coordinacion? inspeccion)? loaded,
+    TResult Function(List<Coordinacion> inspeccion)? loaded,
     TResult Function(String message)? error,
   }) {
     return error?.call(message);
@@ -597,7 +584,7 @@ class _$CoordinacionError implements CoordinacionError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Coordinacion? inspeccion)? loaded,
+    TResult Function(List<Coordinacion> inspeccion)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

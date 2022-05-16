@@ -24,9 +24,9 @@ class _InspeccionDetailViewState extends State<InspeccionDetailView> {
   @override
   void initState() {
     super.initState();
-    context
+    /* context
         .read<CoordinacionCubit>()
-        .getInspeccionByCoordinacion(widget.displayInspeccion);
+        .getInspeccionByCoordinacion(widget.displayInspeccion); */
   }
 
   @override
@@ -36,7 +36,8 @@ class _InspeccionDetailViewState extends State<InspeccionDetailView> {
       if (state is CoordinacionLoading) {
         return LoadingIndicators.instance.smallLoadingAnimation(context);
       } else if (state is CoordinacionLoaded) {
-        return InspeccionDetailViewBody(displayInspeccion: state.inspeccion);
+/*         return InspeccionDetailViewBody(displayInspeccion: state.inspeccion);
+ */
       }
       //error state
       return Column(
