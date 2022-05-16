@@ -1,11 +1,14 @@
 import 'package:allemant_peritos/configs/colors.dart';
+import 'package:allemant_peritos/core/route/app_router.gr.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/coordinacion/coordinacion.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspeccion.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/application/coordinacion/coordinacion_cubit.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_cubit.dart';
 import 'package:allemant_peritos/features/widgets/loading_indicators.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ListInspeccion extends StatefulWidget {
   const ListInspeccion({Key? key, required this.idTipoTasacion})
@@ -157,9 +160,9 @@ class MyListaInspeccion extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             children: [
               Container(
-                height: 165,
+                height: 175,
                 width: double.infinity,
-                padding: EdgeInsets.all(6),
+                padding: const EdgeInsets.all(6),
                 child: Card(
                   elevation: 4.0,
                   shape: RoundedRectangleBorder(
@@ -167,7 +170,8 @@ class MyListaInspeccion extends StatelessWidget {
                   ),
                   child: InkWell(
                     onTap: () {
-                      print("object");
+                      context.pushRoute(DetailInspeccionRoute(
+                          receivedCoordinacion: inspeccionList[index]));
                     },
                     borderRadius: BorderRadius.circular(20),
                     child: Padding(
@@ -177,12 +181,10 @@ class MyListaInspeccion extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                              height: 80,
+                              height: MediaQuery.of(context).size.height,
                               width: 80,
                               decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-/*                                   borderRadius: BorderRadius.circular(15),
- */
+                                  borderRadius: BorderRadius.circular(15),
                                   color: Colors.cyan[50]),
                             ),
                           ),
@@ -191,57 +193,87 @@ class MyListaInspeccion extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                /* Container(
-                                          height: MediaQuery.of(context).size.height,
-                                          color: Colors.pinkAccent,
-                                        ), */
                                 Text(
                                     inspeccionList[index].tipoInspeccionNombre!,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color: Color.fromARGB(255, 0, 0, 0),
                                         fontSize: 25,
                                         fontWeight: FontWeight.bold)),
                                 const SizedBox(
+                                  height: 4,
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(FontAwesomeIcons.addressCard,
+                                        color: Colors.blue[900], size: 20),
+                                    const SizedBox(
+                                      width: 7,
+                                    ),
+                                    Text(
+                                        inspeccionList[index]
+                                            .coordinacionCorrelativo!,
+                                        style: const TextStyle(
+                                            letterSpacing: 3,
+                                            color: Color.fromARGB(255, 0, 0, 0),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w700)),
+                                  ],
+                                ),
+                                const SizedBox(
                                   height: 3,
                                 ),
-                                Text(
-                                    inspeccionList[index]
-                                        .coordinacionCorrelativo!,
-                                    style: TextStyle(
-                                        letterSpacing: 4,
-                                        color: Color.fromARGB(255, 0, 0, 0),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w300)),
-                                const SizedBox(
-                                  height: 2,
+                                Row(
+                                  children: [
+                                    Icon(FontAwesomeIcons.userTie,
+                                        size: 20, color: Colors.blue[900]),
+                                    const SizedBox(
+                                      width: 6,
+                                    ),
+                                    Flexible(
+                                      child: Text(
+                                          inspeccionList[index]
+                                              .solicitanteNombre!,
+                                          overflow: TextOverflow.fade,
+                                          maxLines: 1,
+                                          softWrap: false,
+                                          style: const TextStyle(
+                                              letterSpacing: 0,
+                                              color:
+                                                  Color.fromARGB(255, 0, 0, 0),
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w300)),
+                                    ),
+                                  ],
                                 ),
-                                Text(inspeccionList[index].solicitanteNombre!,
-                                    overflow: TextOverflow.fade,
-                                    maxLines: 1,
-                                    softWrap: false,
-                                    style: TextStyle(
-                                        letterSpacing: 0,
-                                        color: Color.fromARGB(255, 0, 0, 0),
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w300)),
                                 const SizedBox(
-                                  height: 2,
+                                  height: 3,
                                 ),
-                                Text("CONTACTO:",
+                                const Text("CONTACTO:",
                                     style: TextStyle(
                                         letterSpacing: 0,
                                         color: Color.fromARGB(255, 0, 0, 0),
                                         fontSize: 13,
                                         fontWeight: FontWeight.w600)),
-                                Text(inspeccionList[index].contactoNombre!,
-                                    overflow: TextOverflow.fade,
-                                    softWrap: false,
-                                    maxLines: 1,
-                                    style: TextStyle(
-                                        letterSpacing: 0,
-                                        color: Color.fromARGB(255, 0, 0, 0),
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w300)),
+                                Row(
+                                  children: [
+                                    const Icon(FontAwesomeIcons.phone,
+                                        size: 19,
+                                        color:
+                                            Color.fromARGB(255, 218, 10, 45)),
+                                    const SizedBox(
+                                      width: 6,
+                                    ),
+                                    Text(inspeccionList[index].contactoNombre!,
+                                        overflow: TextOverflow.fade,
+                                        softWrap: false,
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                            letterSpacing: 0,
+                                            color: Color.fromARGB(255, 0, 0, 0),
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w300)),
+                                  ],
+                                ),
                               ],
                             ),
                           ),
@@ -268,7 +300,7 @@ class MyListaInspeccion extends StatelessWidget {
 Widget alarmImage(String riesgoID) {
   if (riesgoID == "1") {
     return Image.asset(
-      'assets/images/menu/alarma_red.png',
+      'assets/images/menu/alarma_green.png',
       fit: BoxFit.cover,
       height: 60,
     );
@@ -278,11 +310,12 @@ Widget alarmImage(String riesgoID) {
       fit: BoxFit.cover,
       height: 60,
     );
-  } else {
+  } else if (riesgoID == "3") {
     return Image.asset(
-      'assets/images/menu/alarma_green.png',
+      'assets/images/menu/alarma_red.png',
       fit: BoxFit.cover,
       height: 60,
     );
   }
+  return Container();
 }

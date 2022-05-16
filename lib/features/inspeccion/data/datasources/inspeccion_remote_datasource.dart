@@ -114,7 +114,7 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
     String userID = await storage.read(key: 'id') ?? '';
     var params = {
       'inspeccion_tipo': '1,2',
-      'perito_codigo': '',
+      'perito_codigo': userID,
       'coordinacion_codigo': coordinacionCodigo,
     };
     final response = await helper.post(

@@ -14,6 +14,7 @@ class AppRouteObserver extends AutoRouterObserver {
   homeRouter,
   signInRouter,
   inspeccionRouter,
+  detailInspeccionRouter,
   inspeccionDetailRouter,
   inspeccionRegisterRouter,
   inspeccionExteriorRegisterRouter
