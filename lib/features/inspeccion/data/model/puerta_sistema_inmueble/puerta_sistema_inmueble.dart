@@ -3,10 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'puerta_sistema_inmueble.freezed.dart';
 part 'puerta_sistema_inmueble.g.dart';
 
-List<PuertaSistemaInmueble> puertaSistemaInmuebleFromJson(List<dynamic> data) =>
-    List<PuertaSistemaInmueble>.from(
-        data.map((x) => PuertaSistemaInmueble.fromJson(x)));
-
 @freezed
 class PuertaSistemaInmueble with _$PuertaSistemaInmueble {
   factory PuertaSistemaInmueble(

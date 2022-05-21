@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     final userName = context.select(
-      (AuthenticationBloc bloc) => bloc.state.user!.full_name,
+      (AuthenticationBloc bloc) => bloc.state.user?.full_name,
     );
     return Scaffold(
       appBar: AppBar(
@@ -124,13 +124,22 @@ class _HomePageState extends State<HomePage> {
                   )
                 ]),
               ),
-             
+
               SizedBox(height: 10), */
               /* Expanded(
                 child: ListInspeccion(
                   idTipoTasacion: tipoInspeccion,
                 ),
               ), */
+
+              Text('LISTA DE INSPECCIONES',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold)),
+              const SizedBox(
+                height: 5,
+              ),
               ListInspeccion(
                 idTipoTasacion: tipoInspeccion,
               ),
@@ -149,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.blue,
               ),
               child: UserAccountsDrawerHeader(
-                accountName: Text(userName),
+                accountName: Text(userName ?? ''),
                 currentAccountPicture: const CircleAvatar(
                   radius: 40.0,
                   backgroundImage: AssetImage('assets/images/person/user.jpg'),

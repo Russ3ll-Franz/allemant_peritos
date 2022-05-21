@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:allemant_peritos/core/http/api_response.dart';
 import 'package:allemant_peritos/core/http/http_methods.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/calidad_construccion_inmueble/calidad_construccion_inmueble.dart';
@@ -114,7 +115,7 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
     String userID = await storage.read(key: 'id') ?? '';
     var params = {
       'inspeccion_tipo': '1,2',
-      'perito_codigo': userID,
+      'perito_codigo': '',
       'coordinacion_codigo': coordinacionCodigo,
     };
     final response = await helper.post(
@@ -137,6 +138,9 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
 
   @override
   Future<VisitaResponse> insertInspeccion(Visita visita) async {
+    const storage = FlutterSecureStorage();
+    String userID = await storage.read(key: 'id') ?? '';
+
     final response = await helper.post("intranet/visita/insert", visita);
     if (response is APISuccess) {
       final data = response.value;
@@ -147,6 +151,8 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
       } catch (e) {
         throw Exception(e.toString());
       }
+    } else if (response is APIError) {
+      throw Exception(response.exception.toString());
     } else {
       throw Exception();
     }
@@ -249,6 +255,8 @@ class InspeccionRemoteDataSource implements IInspeccionRemoteDataSource {
       } catch (e) {
         throw Exception(e.toString());
       }
+    } else if (response is APIError) {
+      throw Exception(response.exception);
     } else {
       throw Exception();
     }

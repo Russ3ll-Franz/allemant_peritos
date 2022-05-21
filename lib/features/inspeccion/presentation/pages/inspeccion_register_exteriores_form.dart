@@ -1,3 +1,4 @@
+import 'package:allemant_peritos/application/bloc/authentication/authentication_bloc.dart';
 import 'package:allemant_peritos/configs/colors.dart';
 import 'package:allemant_peritos/configs/constants_alertify.dart';
 import 'package:allemant_peritos/configs/sizebox.dart';
@@ -88,6 +89,7 @@ class _InspeccionRegisterExteriorFormState
   final TextEditingController _detalleDistribucionController =
       TextEditingController();
   final TextEditingController _observacionController = TextEditingController();
+  String? userId;
   @override
   void initState() {
     super.initState();
@@ -101,66 +103,43 @@ class _InspeccionRegisterExteriorFormState
 
   @override
   Widget build(BuildContext context) {
+    userId = context.select(
+      (AuthenticationBloc bloc) => bloc.state.user!.id,
+    );
     return BlocListener<VisitasBloc, VisitasState>(
       listener: (context, state) {
-        /*  if (state is VisitaSuccess) {
-          Alertify(
-            content: state.visitaResponse!.message!,
-            context: context,
-            isDismissible: true,
-            title: 'REGISTRADO',
-            alertType: AlertifyType.success,
-            buttonText: 'OK',
-            animationType: AnimationType.outToIn,
-            barrierColor: Colors.black.withOpacity(0.5),
-            onDismiss: () {
-              AutoRouter.of(context).navigateNamed('/home');
+        state.maybeWhen(
+            success: (success) {
+              Alertify(
+                content: success!.message!,
+                context: context,
+                isDismissible: true,
+                title: 'REGISTRADO',
+                alertType: AlertifyType.success,
+                buttonText: 'OK',
+                animationType: AnimationType.outToIn,
+                barrierColor: Colors.black.withOpacity(0.5),
+                onDismiss: () {
+                  AutoRouter.of(context).replaceNamed('/home');
+                },
+              ).show();
             },
-          ).show();
-        } else {
-          Alertify(
-                  content: "NO SE PUDO GRABAR",
-                  context: context,
-                  isDismissible: true,
-                  title: 'ERROR',
-                  alertType: AlertifyType.error,
-                  buttonText: 'OK',
-                  animationType: AnimationType.outToIn,
-                  barrierColor: Colors.black.withOpacity(0.5))
-              .show();
-        } */
-
-        state.maybeWhen(success: (success) {
-          if (success!.success!) {
-            Alertify(
-              content: success.message.toString(),
-              context: context,
-              isDismissible: true,
-              title: 'REGISTRADO',
-              alertType: AlertifyType.success,
-              buttonText: 'OK',
-              animationType: AnimationType.outToIn,
-              barrierColor: Colors.black.withOpacity(0.5),
-              onDismiss: () {
-                AutoRouter.of(context).replaceNamed('/home');
-              },
-            ).show();
-          }
-        }, orElse: () {
-          Alertify(
-            content: "NO SE PUDO GRABAR",
-            context: context,
-            isDismissible: true,
-            title: 'ERROR',
-            alertType: AlertifyType.error,
-            buttonText: 'OK',
-            animationType: AnimationType.outToIn,
-            barrierColor: Colors.black.withOpacity(0.5),
-            /*  onDismiss: () {
+            error: (error) {
+              Alertify(
+                content: error,
+                context: context,
+                isDismissible: true,
+                title: 'ERROR',
+                alertType: AlertifyType.error,
+                buttonText: 'OK',
+                animationType: AnimationType.outToIn,
+                barrierColor: Colors.black.withOpacity(0.5),
+                /*  onDismiss: () {
               AutoRouter.of(context).navigateNamed('/home');
             }, */
-          ).show();
-        });
+              ).show();
+            },
+            orElse: () {});
       },
       child: Form(
           child: Column(children: [
@@ -543,7 +522,7 @@ class _InspeccionRegisterExteriorFormState
         infraestructuraConservacionAlumbradoCodigo: alumbradoEstadoConservacionValue?.infraestructuraConservacionId ?? '0',
         latitud: latitud ?? "0.000000",
         longitud: longitud ?? "0.000000",
-        usuario: "3",
+        usuario: userId,
         distribucionInmueble: _detalleDistribucionController.text,
         observacion: _observacionController.text);
     _registerVisitaBloc.add(VisitasEvent.visitaSubmitted(newVisita));

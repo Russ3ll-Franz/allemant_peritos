@@ -1,4 +1,4 @@
-import 'package:allemant_peritos/configs/colors.dart';
+import 'package:allemant_peritos/application/bloc/authentication/authentication_bloc.dart';
 import 'package:allemant_peritos/configs/constants_alertify.dart';
 import 'package:allemant_peritos/configs/sizebox.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/calidad_construccion_inmueble/calidad_construccion_inmueble.dart';
@@ -42,6 +42,7 @@ class InspeccionRegisterForm extends StatefulWidget {
 class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
   final visita = Visita();
 
+  String? userId;
   UsoInmueble? usoValue;
   OcupadoInmueble? ocupadoValue;
   MuroInmueble? muroValue;
@@ -94,37 +95,43 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
 
   @override
   Widget build(BuildContext context) {
+    userId = context.select(
+      (AuthenticationBloc bloc) => bloc.state.user!.id,
+    );
     return BlocListener<VisitasBloc, VisitasState>(
       listener: (context, state) {
-        state.maybeWhen(success: (success) {
-          Alertify(
-            content: success!.message!,
-            context: context,
-            isDismissible: true,
-            title: 'REGISTRADO',
-            alertType: AlertifyType.success,
-            buttonText: 'OK',
-            animationType: AnimationType.outToIn,
-            barrierColor: Colors.black.withOpacity(0.5),
-            onDismiss: () {
-              AutoRouter.of(context).replaceNamed('/home');
+        state.maybeWhen(
+            success: (success) {
+              Alertify(
+                content: success!.message!,
+                context: context,
+                isDismissible: true,
+                title: 'REGISTRADO',
+                alertType: AlertifyType.success,
+                buttonText: 'OK',
+                animationType: AnimationType.outToIn,
+                barrierColor: Colors.black.withOpacity(0.5),
+                onDismiss: () {
+                  AutoRouter.of(context).replaceNamed('/home');
+                },
+              ).show();
             },
-          ).show();
-        }, orElse: () {
-          Alertify(
-            content: "NO SE PUDO GRABAR",
-            context: context,
-            isDismissible: true,
-            title: 'ERROR',
-            alertType: AlertifyType.error,
-            buttonText: 'OK',
-            animationType: AnimationType.outToIn,
-            barrierColor: Colors.black.withOpacity(0.5),
-            /*  onDismiss: () {
+            error: (error) {
+              Alertify(
+                content: error,
+                context: context,
+                isDismissible: true,
+                title: 'ERROR',
+                alertType: AlertifyType.error,
+                buttonText: 'OK',
+                animationType: AnimationType.outToIn,
+                barrierColor: Colors.black.withOpacity(0.5),
+                /*  onDismiss: () {
               AutoRouter.of(context).navigateNamed('/home');
             }, */
-          ).show();
-        });
+              ).show();
+            },
+            orElse: () {});
       },
       child: Form(
           child: Column(children: [
@@ -1881,48 +1888,59 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            ElevatedButton.icon(
-                onPressed: () {
-                  _validateRegisterFields(context);
-                },
-                icon: const Icon(
-                  FontAwesomeIcons.floppyDisk,
-                  size: 22,
-                ),
-                label: const Text("GRABAR"),
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(50, 45),
-                  minimumSize: const Size(150, 45),
-                  primary: AppColors.lightGreen,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  textStyle: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.w400),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                )),
-            ElevatedButton.icon(
-                onPressed: () {
-                  AutoRouter.of(context).replaceNamed('/home');
-                },
-                icon: const Icon(
-                  FontAwesomeIcons.ban,
-                  size: 22,
-                ),
-                label: const Text("CANCELAR"),
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(50, 45),
-                  primary: AppColors.lightRed,
-                  minimumSize: const Size(150, 45),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  textStyle: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.w400),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                )),
+            Flexible(
+              child: SizedBox(
+                height: 50,
+                width: MediaQuery.of(context).size.width,
+                child: ElevatedButton(
+                    onPressed: () {
+                      _validateRegisterFields(context);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFF238F50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Registrar",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    )),
+              ),
+            ),
+            SizeBox.sizeSpaceWidthIcon,
+            Flexible(
+              child: SizedBox(
+                height: 50,
+                width: MediaQuery.of(context).size.width,
+                child: ElevatedButton(
+                    onPressed: () {
+                      AutoRouter.of(context).replaceNamed('/home');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Color.fromRGBO(255, 36, 0, 1),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Cancelar",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    )),
+              ),
+            ),
           ],
         )
       ])),
@@ -1986,7 +2004,7 @@ class _InspeccionRegisterFormState extends State<InspeccionRegisterForm> {
         infraestructuraConservacionAlumbradoCodigo: alumbradoEstadoConservacionValue?.infraestructuraConservacionId ?? '0',
         latitud: latitud ?? "0.000000",
         longitud: longitud ?? "0.000000",
-        usuario: "3",
+        usuario: userId,
         distribucionInmueble: _detalleDistribucionController.text,
         observacion: _observacionController.text);
     _registerVisitaBloc.add(VisitasEvent.visitaSubmitted(newVisita));

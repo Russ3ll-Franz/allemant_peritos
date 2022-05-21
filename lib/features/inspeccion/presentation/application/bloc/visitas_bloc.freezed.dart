@@ -256,6 +256,12 @@ class _$VisitasStateTearOff {
       visitaResponse: visitaResponse,
     );
   }
+
+  VisitaError error(String message) {
+    return VisitaError(
+      message,
+    );
+  }
 }
 
 /// @nodoc
@@ -267,18 +273,21 @@ mixin _$VisitasState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(VisitaResponse? visitaResponse) success,
+    required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(VisitaResponse? visitaResponse)? success,
+    TResult Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(VisitaResponse? visitaResponse)? success,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -286,18 +295,21 @@ mixin _$VisitasState {
   TResult map<TResult extends Object?>({
     required TResult Function(Initital value) initial,
     required TResult Function(VisitaSuccess value) success,
+    required TResult Function(VisitaError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initital value)? initial,
     TResult Function(VisitaSuccess value)? success,
+    TResult Function(VisitaError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initital value)? initial,
     TResult Function(VisitaSuccess value)? success,
+    TResult Function(VisitaError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -359,6 +371,7 @@ class _$Initital implements Initital {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(VisitaResponse? visitaResponse) success,
+    required TResult Function(String message) error,
   }) {
     return initial();
   }
@@ -368,6 +381,7 @@ class _$Initital implements Initital {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(VisitaResponse? visitaResponse)? success,
+    TResult Function(String message)? error,
   }) {
     return initial?.call();
   }
@@ -377,6 +391,7 @@ class _$Initital implements Initital {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(VisitaResponse? visitaResponse)? success,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -390,6 +405,7 @@ class _$Initital implements Initital {
   TResult map<TResult extends Object?>({
     required TResult Function(Initital value) initial,
     required TResult Function(VisitaSuccess value) success,
+    required TResult Function(VisitaError value) error,
   }) {
     return initial(this);
   }
@@ -399,6 +415,7 @@ class _$Initital implements Initital {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initital value)? initial,
     TResult Function(VisitaSuccess value)? success,
+    TResult Function(VisitaError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -408,6 +425,7 @@ class _$Initital implements Initital {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initital value)? initial,
     TResult Function(VisitaSuccess value)? success,
+    TResult Function(VisitaError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -501,6 +519,7 @@ class _$VisitaSuccess implements VisitaSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(VisitaResponse? visitaResponse) success,
+    required TResult Function(String message) error,
   }) {
     return success(visitaResponse);
   }
@@ -510,6 +529,7 @@ class _$VisitaSuccess implements VisitaSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(VisitaResponse? visitaResponse)? success,
+    TResult Function(String message)? error,
   }) {
     return success?.call(visitaResponse);
   }
@@ -519,6 +539,7 @@ class _$VisitaSuccess implements VisitaSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(VisitaResponse? visitaResponse)? success,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -532,6 +553,7 @@ class _$VisitaSuccess implements VisitaSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(Initital value) initial,
     required TResult Function(VisitaSuccess value) success,
+    required TResult Function(VisitaError value) error,
   }) {
     return success(this);
   }
@@ -541,6 +563,7 @@ class _$VisitaSuccess implements VisitaSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initital value)? initial,
     TResult Function(VisitaSuccess value)? success,
+    TResult Function(VisitaError value)? error,
   }) {
     return success?.call(this);
   }
@@ -550,6 +573,7 @@ class _$VisitaSuccess implements VisitaSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initital value)? initial,
     TResult Function(VisitaSuccess value)? success,
+    TResult Function(VisitaError value)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -566,5 +590,144 @@ abstract class VisitaSuccess implements VisitasState {
   VisitaResponse? get visitaResponse;
   @JsonKey(ignore: true)
   $VisitaSuccessCopyWith<VisitaSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $VisitaErrorCopyWith<$Res> {
+  factory $VisitaErrorCopyWith(
+          VisitaError value, $Res Function(VisitaError) then) =
+      _$VisitaErrorCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class _$VisitaErrorCopyWithImpl<$Res> extends _$VisitasStateCopyWithImpl<$Res>
+    implements $VisitaErrorCopyWith<$Res> {
+  _$VisitaErrorCopyWithImpl(
+      VisitaError _value, $Res Function(VisitaError) _then)
+      : super(_value, (v) => _then(v as VisitaError));
+
+  @override
+  VisitaError get _value => super._value as VisitaError;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(VisitaError(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VisitaError implements VisitaError {
+  const _$VisitaError(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'VisitasState.error(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is VisitaError &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  $VisitaErrorCopyWith<VisitaError> get copyWith =>
+      _$VisitaErrorCopyWithImpl<VisitaError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(VisitaResponse? visitaResponse) success,
+    required TResult Function(String message) error,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(VisitaResponse? visitaResponse)? success,
+    TResult Function(String message)? error,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(VisitaResponse? visitaResponse)? success,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initital value) initial,
+    required TResult Function(VisitaSuccess value) success,
+    required TResult Function(VisitaError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initital value)? initial,
+    TResult Function(VisitaSuccess value)? success,
+    TResult Function(VisitaError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initital value)? initial,
+    TResult Function(VisitaSuccess value)? success,
+    TResult Function(VisitaError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VisitaError implements VisitasState {
+  const factory VisitaError(String message) = _$VisitaError;
+
+  String get message;
+  @JsonKey(ignore: true)
+  $VisitaErrorCopyWith<VisitaError> get copyWith =>
       throw _privateConstructorUsedError;
 }

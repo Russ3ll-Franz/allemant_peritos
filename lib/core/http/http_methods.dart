@@ -100,10 +100,10 @@ class HttpMethodsType {
           return APIResponse.success(response.data);
         }
       } else {
-        // if (response.statusCode! == 404) {
-        //   return const APIResponse.error(HttpException.error());
-        // } else
-        if (response.statusCode! == 401) {
+        if (response.statusCode! == 400) {
+          return APIResponse.error(
+              HttpException.errorWithMessage(response.data['message']));
+        } else if (response.statusCode! == 401) {
           return const APIResponse.error(
               HttpException.unauthorised("Acceso Negado"));
         } else if (response.statusCode! == 502) {

@@ -16,7 +16,7 @@ class InspeccionPage extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
 
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     final double categoryHeight = size.height * 0.25;
     return Scaffold(
       appBar: buildAppBar(context),

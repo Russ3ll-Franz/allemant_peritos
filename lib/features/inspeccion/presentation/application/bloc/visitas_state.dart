@@ -5,4 +5,6 @@ class VisitasState with _$VisitasState {
   const factory VisitasState.initial() = Initital;
   const factory VisitasState.success({VisitaResponse? visitaResponse}) =
       VisitaSuccess;
+
+  const factory VisitasState.error(String message) = VisitaError;
 }

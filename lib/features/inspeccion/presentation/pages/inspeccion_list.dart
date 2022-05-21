@@ -1,11 +1,7 @@
-import 'dart:ffi';
-
 import 'package:allemant_peritos/configs/colors.dart';
 import 'package:allemant_peritos/core/route/app_router.gr.dart';
 import 'package:allemant_peritos/features/inspeccion/data/model/inspeccion/inspeccion.dart';
-import 'package:allemant_peritos/features/inspeccion/presentation/application/dropdown/dropdown_cubit.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/cubit/inspeccion_cubit.dart';
-import 'package:allemant_peritos/features/inspeccion/presentation/routes/routes.dart';
 import 'package:allemant_peritos/features/inspeccion/presentation/widgets/inspeccion_tipo_screen.dart';
 import 'package:allemant_peritos/features/widgets/loading_indicators.dart';
 import 'package:auto_route/auto_route.dart';

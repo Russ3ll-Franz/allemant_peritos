@@ -430,12 +430,12 @@ class DetailInspeccionPage extends StatelessWidget {
                                 onPressed: () {
                                   if (receivedCoordinacion.tipoInspeccionId! ==
                                       "1") {
-                                    AutoRouter.of(context).push(
+                                    AutoRouter.of(context).popAndPush(
                                         InspeccionRegisterExteriorRoute(
                                             inspeccionID: receivedCoordinacion
                                                 .inspeccionId!));
                                   } else {
-                                    AutoRouter.of(context).push(
+                                    AutoRouter.of(context).popAndPush(
                                         InspeccionRegisterRoute(
                                             inspeccionID: receivedCoordinacion
                                                 .inspeccionId!));
@@ -447,7 +447,7 @@ class DetailInspeccionPage extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                 ),
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     "Registrar",
                                     style: TextStyle(

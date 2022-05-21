@@ -79,88 +79,11 @@ class MyListaInspeccion extends StatelessWidget {
     return Expanded(
       child: ListView.builder(
         itemBuilder: (context, index) {
-          /* return SizedBox(
-            height: 215,
-            child: Stack(alignment: Alignment.bottomCenter, children: [
-              Container(
-                height: 190,
-                width: double.infinity,
-                padding: const EdgeInsets.all(8.0),
-                child: Card(
-                  elevation: 4.0,
-                  child: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(inspeccionList[index].tipoInspeccionNombre!,
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 0, 0, 0),
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold)),
-                        const SizedBox(
-                          height: 3,
-                        ),
-                        Text(inspeccionList[index].coordinacionCorrelativo!,
-                            style: TextStyle(
-                                letterSpacing: 4,
-                                color: Color.fromARGB(255, 0, 0, 0),
-                                fontSize: 15,
-                                fontWeight: FontWeight.w300)),
-                        const SizedBox(
-                          height: 2,
-                        ),
-                        Flexible(
-                          child: Text(inspeccionList[index].solicitanteNombre!,
-                              overflow: TextOverflow.fade,
-                              softWrap: false,
-                              style: TextStyle(
-                                  letterSpacing: 0,
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w300)),
-                        ),
-                        const SizedBox(
-                          height: 2,
-                        ),
-                        ElevatedButton(
-                          //on pressed
-                          onPressed: () async {},
-                          //text to shoe in to the button
-                          child: const Text('Registrar!',
-                              style: TextStyle(color: Colors.white)),
-                          //style section code here
-                          style: ButtonStyle(
-                            elevation: MaterialStateProperty.all<double>(0),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                            )),
-                            backgroundColor:
-                                MaterialStateProperty.all<Color>(Colors.black),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  color: Color.fromARGB(255, 255, 235, 206),
-                ),
-              ),
-              Positioned(
-                  right: 0,
-                  top: 0,
-                  child: alarmImage(inspeccionList[index].riesgoId!))
-            ]),
-          ); */
           return Stack(
             alignment: Alignment.bottomCenter,
             children: [
               Container(
-                height: 175,
+                height: 210,
                 width: double.infinity,
                 padding: const EdgeInsets.all(6),
                 child: Card(
@@ -185,7 +108,7 @@ class MyListaInspeccion extends StatelessWidget {
                               width: 80,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
-                                  color: Colors.cyan[50]),
+                                  color: Color.fromRGBO(254, 236, 232, 1)),
                             ),
                           ),
                           Flexible(
@@ -274,6 +197,51 @@ class MyListaInspeccion extends StatelessWidget {
                                             fontWeight: FontWeight.w300)),
                                   ],
                                 ),
+                                const SizedBox(
+                                  height: 3,
+                                ),
+                                const Text("FECHA Y HORA:",
+                                    style: TextStyle(
+                                        letterSpacing: 0,
+                                        color: Color.fromARGB(255, 0, 0, 0),
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w600)),
+                                Row(
+                                  children: [
+                                    const Icon(FontAwesomeIcons.calendar,
+                                        size: 19, color: Colors.lightBlue),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
+                                    Text(inspeccionList[index].inspeccionFecha!,
+                                        overflow: TextOverflow.fade,
+                                        softWrap: false,
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                            letterSpacing: 0,
+                                            color: Color.fromARGB(255, 0, 0, 0),
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w300)),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    const Icon(FontAwesomeIcons.clock,
+                                        size: 19,
+                                        color: Color.fromRGBO(3, 169, 244, 1)),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
+                                    Text(inspeccionList[index].inspeccionHora!,
+                                        overflow: TextOverflow.fade,
+                                        softWrap: false,
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                            letterSpacing: 0,
+                                            color: Color.fromARGB(255, 0, 0, 0),
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w300)),
+                                  ],
+                                ),
                               ],
                             ),
                           ),
@@ -285,7 +253,7 @@ class MyListaInspeccion extends StatelessWidget {
               ),
               Positioned(
                   left: 30,
-                  bottom: 55,
+                  bottom: 75,
                   child: alarmImage(inspeccionList[index].riesgoId!)),
             ],
           );
