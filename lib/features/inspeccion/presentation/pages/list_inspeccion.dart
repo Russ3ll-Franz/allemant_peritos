@@ -67,11 +67,15 @@ class _ListInspeccionState extends State<ListInspeccion> {
 
 class MyListaInspeccion extends StatelessWidget {
   final List<Coordinacion> inspeccionList;
+/*   final ValueGetter<Future<void>> onRefresh;
+ */
   final _scrollController = ScrollController();
 
   MyListaInspeccion({
     Key? key,
     required this.inspeccionList,
+/*     required this.onRefresh,
+ */
   }) : super(key: key);
 
   @override
@@ -186,15 +190,19 @@ class MyListaInspeccion extends StatelessWidget {
                                     const SizedBox(
                                       width: 6,
                                     ),
-                                    Text(inspeccionList[index].contactoNombre!,
-                                        overflow: TextOverflow.fade,
-                                        softWrap: false,
-                                        maxLines: 1,
-                                        style: const TextStyle(
-                                            letterSpacing: 0,
-                                            color: Color.fromARGB(255, 0, 0, 0),
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.w300)),
+                                    Flexible(
+                                      child: Text(
+                                          inspeccionList[index].contactoNombre!,
+                                          overflow: TextOverflow.fade,
+                                          softWrap: false,
+                                          maxLines: 1,
+                                          style: const TextStyle(
+                                              letterSpacing: 0,
+                                              color:
+                                                  Color.fromARGB(255, 0, 0, 0),
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w300)),
+                                    ),
                                   ],
                                 ),
                                 const SizedBox(

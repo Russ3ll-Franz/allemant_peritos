@@ -48,90 +48,11 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Stack(children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-          child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: SizedBox(
             height: height,
             width: width,
             child: Column(children: <Widget>[
-              /*  SizedBox(
-                height: 215,
-                child: Stack(alignment: Alignment.bottomCenter, children: [
-                  Container(
-                    height: 195,
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(8.0),
-                    child: Card(
-                      elevation: 4.0,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text('50% off',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.bold)),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            const Text('For Any Courses',
-                                style: TextStyle(
-                                    letterSpacing: 2,
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w300)),
-                            const SizedBox(
-                              height: 6,
-                            ),
-                            ElevatedButton(
-                              //on pressed
-                              onPressed: () async {},
-                              //text to shoe in to the button
-                              child: const Text('Join Now!',
-                                  style: TextStyle(color: Colors.white)),
-                              //style section code here
-                              style: ButtonStyle(
-                                elevation: MaterialStateProperty.all<double>(0),
-                                shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(18.0),
-                                )),
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Colors.black),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      color: Colors.blueAccent,
-                    ),
-                  ),
-                  Positioned(
-                    right: -2,
-                    top: -2,
-                    child: Image.network(
-                      'https://i.ibb.co/7Kr3Vc2/Screenshot-2022-02-23-at-6-11-05-PM-removebg-preview.png',
-                      fit: BoxFit.cover,
-                      height: 205,
-                    ),
-                  )
-                ]),
-              ),
-
-              SizedBox(height: 10), */
-              /* Expanded(
-                child: ListInspeccion(
-                  idTipoTasacion: tipoInspeccion,
-                ),
-              ), */
-
               Text('LISTA DE INSPECCIONES',
                   style: TextStyle(
                       color: Colors.black,
